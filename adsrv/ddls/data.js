@@ -1,5 +1,5 @@
 {
-    2: {
+    "2": {
         desc: "binary options",
         type: "ddls",
         rndrTyp: "img",
@@ -21,7 +21,7 @@
         ],
         id: 2
     },
-    3: {
+    "3": {
         desc: "binary options arabic",
         type: "ddls",
         rndrTyp: "img",
@@ -44,7 +44,7 @@
         ],
         id: 3
     },
-    4: {
+    "4": {
         desc: "binary options russia",
         type: "ddls",
         rndrTyp: "img",
@@ -66,7 +66,7 @@
         ],
         id: 4
     },
-    5: {
+    "5": {
         desc: "binary options italy",
         type: "ddls",
         rndrTyp: "img",
@@ -86,7 +86,7 @@
         ],
         id: 5
     },
-    6: {
+    "6": {
         desc: "888 sport Spain ",
         type: "ddls",
         rndrTyp: "img",
