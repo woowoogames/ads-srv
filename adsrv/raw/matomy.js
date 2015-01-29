@@ -108,6 +108,7 @@ function init(){
 	console.log("forked");
 	matomyChild.on('message',function(mess){
 		data = mess.matomy;
+		matomyChild.kill('SIGINT');
 	});
 }
 init();
