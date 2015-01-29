@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		@html.block('content')
+		<script src="scripts/jquery.min.js"></script>
+		<script>
+			function rpt(typ, msg,justGetTheUrl /* set true only to get the report is being sent by external provider (guy) */) {
+					try {
+
+						// CTX_Vx_typ_prdct_cntry_ctgry_feed_bnr_freemsg
+
+						var prdct = gBnrObj.prdct || "na";
+						var cntry = gBnrObj.cntry || "na";
+						var ctgry = gBnrObj.ctgry || "na";
+						var feed = gBnrObj.feed || "na";
+						var hardid = gBnrObj.hardid || "1234";
+						var bnr = "na";
+						var info = "na";
+
+						try{
+							if (msg) {
+								var b = msg.split("_");
+								if (b && b.length >= 1) {
+									if (b.length == 3) {
+										bnr = b[0] + "-" + b[1];
+										info = b[2] || "na";
+									}
+									else {
+										bnr = b[0] + "-" + (b[1] || "");
+										info = "na";
+									}
+								}
+							}
+						}
+						catch (e) { }
+
+						ctgry = ctgry.replace(/&/g, "ANDAND");
+						ctgry = ctgry.replace(/ /g, "");
+
+						var msg_ = "CTX_V7_" + typ + "_" + prdct + "_" + cntry + "_" + ctgry + "_" + feed + "_" + (msg || "na");
+						var rpt = "https://reports.montiera.com/reports/pxlRprt.srf?rid=coms" +
+									"&vrsn=v7" +
+									"&op=" + typ.toLowerCase() +
+									"&prdct=" + prdct.toLowerCase() +
+									"&cntry=" + cntry.toLowerCase() +
+									"&ctgry=" + ctgry.toLowerCase() +
+									"&feed=" + feed.toLowerCase() +
+									"&bnr=" + bnr.toLowerCase() +
+									"&info=" + info.toLowerCase() +
+									"&brwsr=" + brwsr().toLowerCase() +
+									// "&hardid=" + hardid.toLowerCase() + 
+									"&rnd=" + rnd();
+
+						// http://reports.montiera.com/reports/pxlRprt.srf?rid=coms&vrsn=v7&op=show&prdct=coms003&cntry=uk&ctgry=mobile&feed=amazon&bnr=0&info=abc&brwsr=ie&hardid=12345&rnd=123
+
+						if (!justGetTheUrl) {
+
+						    var pxl = document.createElement("img");
+						    pxl.setAttribute("src", rpt);
+						    document.getElementsByTagName("body")[0].appendChild(pxl);
+
+						}
+
+						return rpt;
+
+						//var s = document.createElement("script");
+						//s.setAttribute("src", "https://reports.montiera.com/reports/jsCnt.srf?rid=" + msg_ + "&hardId=" + hardid.toLowerCase() + "&r=" + rnd());
+						//document.getElementsByTagName("head")[0].appendChild(s);
+					}
+					catch (e) { }
+				}
+
+				function rnd(){
+					var n = Math.floor((Math.random() * 100000) + 1);
+					return n;
+				}
+
+				function brwsr () {
+					try{
+						var ua = navigator.userAgent, tem,
+						M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+						if (/trident/i.test(M[1])) {
+							tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+							return 'IE-' + (tem[1] || '');
+						}
+						if (M[1] === 'Chrome') {
+							tem = ua.match(/\bOPR\/(\d+)/)
+							if (tem != null) return 'Opera ' + tem[1];
+						}
+						M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+						if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+						return M.join('-');
+					}
+					catch (e) {}
+					return "brwsr";
+				}
+
+
+		</script>
+
+
+		@html.block('scripts')
+		
+	</body>
+
+</html>

@@ -1,0 +1,348 @@
+﻿@{
+	
+	var tmpltNames = ["t1_b.html","t10_b.html","t2_b.html","t3_b.html","t4_b.html","t5_b.html","t6_b.html","t7_b.html","t8_b.html","t9_b.html"];
+	var rnd = Math.floor(Math.random() * tmpltNames.length);
+    var theTmplt  =  tmpltNames[rnd];
+
+}
+		
+
+
+@html.extend('layout', function(model){
+  
+	@html.block('content', function(model){
+				
+			@{
+
+				switch(theTmplt){
+
+					case "t1_b.html" :
+						  <text>
+							<div style="padding:0px;margin:0px;width:300px;height:250px;background-image:url('/images/t1.png');background-repeat:no-repeat;overflow:hidden"> 
+								<div id="rowBnr" style="text-decoration:none;width:300px;height:250px;cursor:pointer;">
+									<div style="width:300px;height:205px;">
+										<div style="width:155px;height:205px;float:left;cursor:pointer;">
+											<div style="padding-top:110px;padding-left:10px;color:#808080;font-family:arial,sans-serif;font-size:24px;height:28px;overflow:hidden;width:150px;">Best Offer</div>
+											<div id="txt1" style="padding-left:10px;color:#E8335D;font-family:arial,sans-serif;font-size:22px;height:24px;overflow:hidden;width:150px;">
+												
+												Now: @(model.prc || "Find Out")
+											</div>
+										</div>
+										<div style="width:145px;height:205px;float:left;cursor:pointer;">
+											<img id="img1" src="@(model.img || '/images/pxl.png')" style="width:145px;height:170px;margin-top:15px;cursor:pointer;" />
+										</div>
+									</div>
+									<div style="width:300px;height:45px;cursor:pointer;">
+										<div style="width:170px;height:45px;float:left;">
+											<div id="store1" style="padding-left:10px;padding-top:10px;color:#333333;font-family:arial,sans-serif;font-size:14px;width:165px;">
+
+												<b>By:@(model.store || "various stores")</b> 
+											</div>
+										</div>
+										<div style="width:130px;height:45px;float:left;"></div>
+									</div>
+								</div>
+							</div>
+						</text>
+					break;
+
+					case "t10_b.html" :
+						<text>
+							<div style="padding:0px;margin:0px;width:300px;height:250px;overflow:hidden">
+								<div id="rowBnr" style="text-decoration:none;width:300px;height:250px;padding:0;margin:0;color:white;font-family:arial,sans-serif;cursor:pointer;">
+									
+									<div style="width:300px;height:250px;overflow:hidden;float:left;cursor:pointer;">
+										<img id="img1" src="@(model.img || '/images/pxl.png')" style="width:300px;height:250px;cursor:pointer;" />
+									</div>
+									<div style="position:absolute;right:0;top:0;width:120px;height:200px;overflow:hidden;opacity:0.7;padding-top:50px;cursor:pointer;background-color:#f9f9f9;cursor:pointer;">
+										<div id="txt1" style="width:110px;height:50px;margin:5px;color:black;font-size:22px;overflow:hidden;background-color:#f9f9f9;opacity:0.5;">
+											@(model.name.slice(0,12))
+										</div>
+										<div id="txt2" style="width:110px;height:100px;margin:5px;font-size:13px;overflow:hidden;color:black;background-color:#f9f9f9;opacity:0.5;">
+											@(model.name.slice(12))
+										</div>
+										<div style="width:80px;height:20px;margin-top:10px;padding-left:5px;font-size:13px;overflow:hidden;color:red;">Try to open!</div>
+									</div>
+									
+								</div>
+							</div>
+						</text>
+					break;
+
+
+
+					case "t2_b.html" :
+						<text>
+							<div style="padding:0px;margin:0px;width:300px;height:250px;background-image:url('/images/t2.png');background-repeat:no-repeat;overflow:hidden">
+								<div id="rowBnr" style="text-decoration:none;width:300px;height:250px;cursor:pointer;">
+									<div style="width:152px;height:250px;float:left;">
+										<div style="width:150px;height:248px;float:left;cursor:pointer;">
+											<div id="txt1" style="padding-top:20px;padding-left:5px;color:#E8335D;font-family:arial,sans-serif;font-size:14px;height:14px;overflow:hidden;width:145px;text-align:center">
+
+												@(model.name.slice(0,17))
+
+											</div>
+											<div id="txt2" style="padding-left:5px;color:#E8335D;font-family:arial,sans-serif;font-size:24px;height:25px;overflow:hidden;width:145px;text-align:center">
+
+												@(model.prc || "$ Find Out")
+
+											</div>
+											<div style="width:128px;height:195px;float:left;padding-left:10px;">
+												<img id="img1" src="@(model.img || '/images/pxl.png')" style="width:130px;height:162px;margin-top:15px;cursor:pointer;" />
+											</div>
+										</div>
+									</div>
+									<div style="width:125px;height:250px;float:left;cursor:pointer;">
+										<div style="width:168px;height:248px;float:left;">
+											<div id="txt3" style="padding-left:12px;padding-top:10px;color:#f9f9f9;font-family:arial,sans-serif;font-size:17px;height:168px;overflow:hidden;width:128px;">
+
+												@(model.name.slice(0,75))
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</text>
+					break;
+
+
+					case "t3_b.html" :
+						<text>
+							<div style="padding:0px;margin:0px;width:300px;height:250px;background-image:url('/images/t3.png');background-repeat:no-repeat;overflow:hidden">
+								<div id="rowBnr" style="text-decoration:none;width:280px;height:230px;padding-top:5px;padding-left:5px;padding-right:5px;cursor:pointer">
+									<div id="txt1" style="color:#333333;font-family:arial narrow,sans-serif;font-size:24px;height:27px;overflow:hidden;width:278px;text-align:center">
+										@(model.name.slice(0,40))
+									</div>
+									<div id="txt2" style="padding-left:5px;color:#E8335D;font-family:arial,sans-serif;font-size:16px;height:22px;overflow:hidden;width:278px;text-align:center">
+										@(model.prc || "$ Find Out")
+									</div>
+									<div style="width:200px;height:130px;padding-left:50px;">
+										<img id="img1" src="@(model.img || '/images/pxl.png')" style="width:200px;height:130px;cursor:pointer" />
+									</div>
+								</div>
+							</div>
+						</text>
+					break;
+
+
+
+					case "t4_b.html" :
+						<text>
+							<body style="padding:0px;margin:0px;width:300px;height:250px;background-image:url('/images/t4.png');background-repeat:no-repeat;overflow:hidden">
+								<div id="rowBnr" style="text-decoration:none;width:300px;height:250px;cursor:pointer;">
+									<div style="height:250px;overflow:hidden;width:150px;z-index:1;float:left;background-color:white;cursor:pointer;">
+										<img id="img1" src="@(model.img || '/images/pxl.png')" style="width:190px;height:190px;margin-top:30px;" />
+									</div>
+									<div style="height:250px;overflow:hidden;width:150px;z-index:2;float:left;cursor:pointer;">
+										<div id="txt1" style="padding-left:5px;margin-top:28px;color:#808080;font-family:arial,sans-serif;font-size:14px;height:16px;overflow:hidden;width:140px;">
+											@((model.store || "various stores").slice(0,30))
+										</div>
+										<div id="txt2" style="margin-top:50px;padding-left:5px;color:#808080;font-family:arial,sans-serif;font-size:15px;height:85px;overflow:hidden;width:140px;">
+											@((model.name || "various stores").slice(0,120))
+										</div>
+									</div>
+								</div>
+							</body>
+						</text>
+					break;
+
+
+
+					case "t5_b.html" :
+						<text>
+							<div style="padding:0px;margin:0px;width:300px;height:250px;background-image:url('images/t5.png');background-repeat:no-repeat;overflow:hidden">
+								<div id="rowBnr" style="text-decoration:none;width:300px;height:250px;cursor:pointer">
+									<div id="txt1" style="width:250px;margin-top:30px;margin-left:25px;height:25px;overflow:hidden;color:white;font-family:arial,sans-serif;font-size:22px;text-align:center">
+										@model.name.toUpperCase().slice(0,20)
+									</div>
+									
+									<div id="txt2" style="margin-top:5px;width:250px;margin-left:25px;height:35px;overflow:hidden;color:white;font-family:arial,sans-serif;font-size:30px;text-align:center;cursor:pointer">
+
+										@model.name.toUpperCase().slice(-20).slice(0,13)
+										
+
+									</div>
+
+									<div id="txt3" style="width:250px;margin-top:33px;margin-left:25px;height:18px;overflow:hidden;color:white;font-family:arial,sans-serif;font-size:18px;text-align:center;cursor:pointer">
+										
+										From: @(model.store || "various stores")
+
+									</div>
+
+								</div>
+							</div>
+						</text>
+					break;
+
+					@* check from here *@
+
+
+					case "t6_b.html" :
+						<text>
+							<div style="padding:0px;margin:0px;width:300px;height:250px;background-image:url('images/t6.png');background-repeat:no-repeat;overflow:hidden">
+								<div id="rowBnr" style="text-decoration:none;width:300px;height:250px;padding:0;margin:0;cursor:pointer;">
+									<div style="width:300px;height:220px;overflow:hidden;color:white;cursor:pointer;">
+										<img id="img1" src="@(model.img || 'images/pxl.png')" style="width:300px;height:250px;cursor:pointer;" />
+									</div>
+									<div id="txt3" style="width:280px;height:20px;padding-top:7px;overflow:hidden;color:white;padding-left:10px;font-family:arial,sans-serif;font-size:13px;cursor:pointer;">
+										From: @(model.store || "various stores")
+									</div>
+
+									<div style="position:absolute;top:50px;left:0;width:140px;height:100px;overflow:hidden;color:white;background-color:#f9f9f9;cursor:pointer;">
+										<div id="txt1" style="color:green;width:130px;padding:5px;height:20px;font-family:arial,sans-serif;font-size:20px;overflow:hidden;">
+											@model.name.toUpperCase().slice(0,9)
+										</div>
+										<div id="txt2" style="color:#808080;width:130px;padding:5px;height:52px;font-family:arial,sans-serif;font-size:16px;overflow:hidden;">
+											@model.name.toUpperCase().slice(9,50)
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</text>
+					break;
+
+
+					case "t7_b.html" :
+						<text>
+							<div style="padding:0px;margin:0px;width:300px;height:250px;overflow:hidden">
+								<div id="rowBnr" style="text-decoration:none;width:300px;height:250px;padding:0;margin:0;cursor:pointer;">
+									<div style="width:300px;height:230px;overflow:hidden;color:white;z-index:1;cursor:pointer;">
+										<img id="img1" src="@(model.img || 'images/pxl.png')" style="width:300px;height:230px;cursor:pointer;" />
+									</div>
+									<div id="txt3" style="position:absolute;top:235px;left:0;width:280px;height:15px;overflow:hidden;color:black;z-index:2;padding-left:10px;font-family:arial,sans-serif;font-size:13px;cursor:pointer;">
+
+										From: @(model.store || "various stores")
+
+									</div>
+									<div style="position:absolute;top:100px;left:0;width:300px;height:98px;overflow:hidden;color:white;background-image:url('images/t7.png');background-repeat:no-repeat;z-index:2;cursor:pointer">
+										<div style="color:#455ad8;width:260px;padding-left:20px;margin-top:4px;height:28px;font-family:arial,sans-serif;font-size:28px;overflow:hidden;text-align:center;">		SALE SALE SALE
+										</div>
+
+										<div id="txt2" style="color:black;width:260px;padding-left:20px;margin-top:2px;height:22px;font-family:arial,sans-serif;font-size:18px;overflow:hidden;text-align:center;">
+
+											@model.name.slice(0,30)
+										
+										</div>
+									</div>
+
+									
+								</div>
+							</div>
+						</text>
+					break;
+
+
+
+					case "t8_b.html" :
+						<text>
+							<div style="padding:0px;margin:0px;width:300px;height:250px;background-image:url('images/t8.png');background-repeat:no-repeat;overflow:hidden">
+								<div id="rowBnr" style="text-decoration:none;width:300px;height:250px;padding:0;margin:0;color:white;font-family:arial,sans-serif;cursor:pointer;">
+									<div id="txt1" style="margin-top:16px;width:280px;padding-left:10px;height:34px;font-size:34px;overflow:hidden;">
+										ONLINE OFFERS
+									</div>
+									<div id="txt2" style="margin-top:10px;width:250px;padding-left:25px;height:70px;font-size:20px;overflow:hidden;font-family:Arial">
+										@model.name.slice(0,70)
+									</div>
+								</div>
+								<div style="position:absolute;top:200px;left:0;width:300px;height:50px;overflow:hidden;color:white;cursor:pointer;">
+									<div id="txt3" style="margin-top:18px;width:200px;padding-left:20px;font-family:arial,sans-serif;font-size:14px;overflow:hidden;float:left">
+										From: @(model.store || "various stores")
+									</div>
+									<div style="margin-top:18px;width:40px;padding-left:20px;font-family:arial,sans-serif;font-size:13px;overflow:hidden;float:left">
+										View
+									</div>
+								</div>
+							</div>
+						</text>
+					break;
+
+
+
+
+					case "t9_b.html" :
+						<text>
+							<div style="padding:0px;margin:0px;width:300px;height:250px;background-image:url('images/t9.png');background-repeat:no-repeat;overflow:hidden">
+								<div id="rowBnr" style="text-decoration:none;width:300px;height:250px;padding:0;margin:0;color:white;font-family:arial,sans-serif;cursor:pointer;">
+									<div style="width:300px;height:20px;margin-top:25px;color:white;cursor:pointer;">
+										<div style="width:70px;padding-left:10px;font-size:16px;overflow:hidden;float:left">From</div>
+										<div id="txt3" style="margin-left:100px;width:115px;height:16px;font-size:16px;overflow:hidden;font-family:arial,sans-serif;float:left;text-align:center">
+											@(model.store || "various stores")
+										</div>
+									</div>
+									<div id="txt1" style="width:280px;height:29px;margin-top:15px;margin-left:10px;text-align:center;color:black;font-size:26px;overflow:hidden;cursor:pointer;">
+										@model.name.slice(0,30)
+									</div>
+									<div style="width:300px;height:98px;margin-top:10px;color:black;cursor:pointer;">
+										<div id="txt2" style="width:140px;padding-left:10px;padding-top:15px;height:62px;font-size:13px;overflow:hidden;float:left;color:#808080">
+
+											@model.name.slice(30,200)
+
+										</div>
+										<div style="width:140px;height:98px;font-size:20px;overflow:hidden;font-family:arial,sans-serif;float:left">
+											<img src="@(model.img || 'images/pxl.png')" style="width:130px;height:98px;cursor:pointer;" />
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</text>
+					break;
+
+
+
+
+				}
+
+
+
+			}
+				
+
+		
+	})
+
+	@html.block('scripts', function(model){
+
+			<script>
+
+				var gBnrObj = {
+					    "cntry": "@model.cntry",
+					    "hardid": "@model.hardid",
+					    "ctgry": "@model.ctgry",
+					    "prc": "@model.prc",
+					    "feed": "@model.feed",
+					    "prdct": "@model.prdct",
+					    "img": "@model.img",
+					    "sz": "@model.sz",
+					    "lnk": "@model.lnk",
+					    "st": "@model.term",
+					    "name": "@model.name",
+					    "store": "@model.store",
+					    "logo": "@model.logo",
+					    "rtng": "@(model.rtng || 'pxl.png')",
+					    "typ": "tmplt",
+					    "dealuid": "",
+					    "trndid": "",
+					    "frmprdct": "@model.prdct",
+					    "frminfo": "http://www.xrosview.com/info.htm?logic=mntctx1"
+			    	};
+
+
+				$("#rowBnr").click(function () {
+
+					window.open("@model.lnk");
+					rpt("clk", "@(theTmplt +'_na')");
+				}); 
+
+
+				rpt("show", "@(theTmplt +'_na')");
+
+		    </script>
+
+
+	})
+
+
+})

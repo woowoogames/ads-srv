@@ -1,0 +1,21 @@
+{
+  "name": "nodesrv",
+  "version": "0.0.0",
+  "description": "nodesrv",
+  "main": "app.js",
+  "author": {
+    "name": "user",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+    "node.extend": "^1.1.2",
+    "q": "^1.1.2",
+    "request": "^2.44.0",
+    "stylus": "*",
+    "underscore": "^1.7.0",
+    "vash": "^0.7.12-1",
+    "xml2json": "^0.5.1"
+  }
+}
