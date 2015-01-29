@@ -222,10 +222,10 @@ var modules = function(){
         var all_modules = null;
         for(var type in modules){
             if(!all_modules){
-                all_modules = this.createArray(type,fs.readdirSync("./adSrv/"+type+"/"));
+                all_modules = this.createArray(type,fs.readdirSync("./adsrv/"+type+"/"));
             }
             else{
-                all_modules = all_modules.concat(this.createArray(type,fs.readdirSync("./adSrv/"+type+"/")));
+                all_modules = all_modules.concat(this.createArray(type,fs.readdirSync("./adsrv/"+type+"/")));
             }
         }
         //load each module in all_modules array --> all files in the four folders ddls/feeds/raw/trnds
