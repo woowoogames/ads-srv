@@ -1,110 +1,110 @@
 {
     "2": {
-        desc: "binary options",
-        type: "ddls",
-        rndrTyp: "img",
-        ctgry: [
+        "desc": "binary options",
+        "type": "ddls",
+        "rndrTyp": "img",
+        "ctgry": [
             "forex"
         ],
-        cntry: [
+        "cntry": [
             "uk",
             "za",
             "au"
         ],
-        feed: "",
-        standalone: false,
-        source: [
+        "feed": "",
+        "standalone": false,
+        "source": [
             "http://fmtrader.ck-cdn.com/tn/serve/?cid=386590"
         ],
-        lnk: [
+        "lnk": [
             "http://go.fmtrader.com/visit/?bta=35192&nci=5687ns"
         ],
-        id: 2
+        "id": 2
     },
     "3": {
-        desc: "binary options arabic",
-        type: "ddls",
-        rndrTyp: "img",
-        ctgry: [
+        "desc": "binary options arabic",
+        "type": "ddls",
+        "rndrTyp": "img",
+        "ctgry": [
             "binary options"
         ],
-        cntry: [
+        "cntry": [
             "tn",
             "ae",
             "lb",
             "sa"
         ],
-        feed: "",
-        standalone: false,
-        source: [
+        "feed": "",
+        "standalone": false,
+        "source": [
             "http://fmtrader.ck-cdn.com/tn/serve/?cid=386710"
         ],
-        lnk: [
+        "lnk": [
             "http://go.fmtrader.com/visit/?bta=35192&nci=5642"
         ],
-        id: 3
+        "id": 3
     },
     "4": {
-        desc: "binary options russia",
-        type: "ddls",
-        rndrTyp: "img",
-        ctgry: [
+        "desc": "binary options russia",
+        "type": "ddls",
+        "rndrTyp": "img",
+        "ctgry": [
             "binary options"
         ],
-        cntry: [
+        "cntry": [
             "by",
             "ru",
             "ua"
         ],
-        feed: "",
-        standalone: false,
-        source: [
+        "feed": "",
+        "standalone": false,
+        "source": [
             "http://fmtrader.ck-cdn.com/tn/serve/?cid=386726"
         ],
-        lnk: [
+        "lnk": [
             "http://go.fmtrader.com/visit/?bta=35192&nci=5583"
         ],
-        id: 4
+        "id": 4
     },
     "5": {
-        desc: "binary options italy",
-        type: "ddls",
-        rndrTyp: "img",
-        ctgry: [
+        "desc": "binary options italy",
+        "type": "ddls",
+        "rndrTyp": "img",
+        "ctgry": [
             "binary options"
         ],
-        cntry: [
+        "cntry": [
             "it"
         ],
-        feed: "",
-        standalone: false,
-        source: [
+        "feed": "",
+        "standalone": false,
+        "source": [
             "http://fmtrader.ck-cdn.com/tn/serve/?cid=386732"
         ],
-        lnk: [
+        "lnk": [
             "http://go.fmtrader.com/visit/?bta=35192&nci=5677"
         ],
-        id: 5
+        "id": 5
     },
     "6": {
-        desc: "888 sport Spain ",
-        type: "ddls",
-        rndrTyp: "img",
-        ctgry: [
+        "desc": "888 sport Spain ",
+        "type": "ddls",
+        "rndrTyp": "img",
+        "ctgry": [
             "Sports & Games Books",
             "Magazines & Newspapers"
         ],
-        cntry: [
+        "cntry": [
             "es"
         ],
-        feed: "",
-        standalone: false,
-        source: [
+        "feed": "",
+        "standalone": false,
+        "source": [
             "https://mmwebhandler.888.com/I/34482?sr=1130293"
         ],
-        lnk: [
+        "lnk": [
             "https://mmwebhandler.888.com/C/34482?sr=1130293&"
         ],
-        id: 6
+        "id": 6
     }
 }
