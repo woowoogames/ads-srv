@@ -4,6 +4,7 @@ var feedsMngr = require('./feedsmngr'),
 	baseApi = require("./baseapi"),
 	path = require("path"),
 	ddlsMngr = require('./ddls/ddlmngr'),
+	utl = require("./utl"),
 	lgcMngr = require('./lgcmngr');
 
 // load the system resources
@@ -11,9 +12,6 @@ var rsrcMngr = {
 
 
 	init: function (clbk) {
-
-
-
 		/*
 		setInterval(function () {
 			rsrcMngr.loadFeeds("http://cdn.montiera.com/coms/adsrv/feeds.js", "/ddls/data.js", function () {
@@ -35,7 +33,7 @@ var rsrcMngr = {
 		setInterval(function () {
 			rsrcMngr.loadFeeds("http://cdn-int.montiera.com/data/coms/lgc.js", "/ddls/data.js", function () {
 				ddlsMngr.loadDdls(function (status) {
-					console.log("rsrcMngr::loadTrnds.loadFeeds - status=[" + status + "]");
+					utl.log("[rsrcMngr.js][init::loadTrnds][loadFeeds] - status = [" + status + "]");
 				});
 			});
 		// }, 1000 * 5); // debug

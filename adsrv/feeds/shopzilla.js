@@ -1,6 +1,7 @@
 ﻿
 var utils = require('util'),
 	baseApi = require("../baseapi"),
+	utl = require("../utl")
 	frmtr = require("../formatter");
 
 var shopzilla = function () {
@@ -45,13 +46,10 @@ var shopzilla = function () {
 	};
 
 	this.getOffers = function (prms, clbk) {
-
-
-		console.log("shopzilla::getOffers");
+		utl.log("[shopzilla.js][getOffers]");
 
 		this.mPrms = prms;
 		this.mClbk = clbk;
-
 		try {
 
 			var url = this.getURL();
@@ -77,12 +75,13 @@ var shopzilla = function () {
 						}
 					}
 				}
-				catch (e) { error = e; }
-				that.mClbk(1, error);
+				catch (e) { 
+					that.mClbk(1,"[shopzilla.js][getOffers] - status - " + e);
+			    }
 			});
 		}
 		catch (e) {
-			that.mClbk(1, e);
+			that.mClbk(1,"[shopzilla.js][getOffers] - fatal error - status - " + e);
 		}
 	};
 

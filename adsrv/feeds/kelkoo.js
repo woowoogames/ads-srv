@@ -3,6 +3,7 @@
 	queystring = require('querystring'),
 	crypto = require('crypto'),
 	baseApi = require("../baseapi"),
+	utl = require("../utl"),
 	frmtr = require("../formatter");
 
 
@@ -83,12 +84,10 @@ var kelkoo = function () {
 	};
     
 	this.getOffers = function (prms, clbk) {
-
-		console.log("kelkoo::getOffers");
+		utl.log("[kelkoo.js][getOffers]");
 
 		this.mPrms = prms;
 		this.mClbk = clbk;
-
 		this.mPrms.st = this.mPrms.st.replace(/ /g, "-");
 
 		this.config.host = utils.format(this.config.host, this.mPrms.cntry);
@@ -118,12 +117,13 @@ var kelkoo = function () {
 						}
 					}
 				}
-				catch (e) { error = e; }
-				that.mClbk(1, error);
+				catch (e) {
+					that.mClbk(1,"[kelkoo.js][getOffers] - status - " + e);
+				}
 			});
 		}
 		catch (e) {
-			that.mClbk(1, e);
+			that.mClbk(1,"[kelkoo.js][getOffers] - fatal error - status - " + e);
 		}
 	};
 

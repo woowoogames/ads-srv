@@ -1,6 +1,7 @@
 
 var utils = require('util'),
 	baseApi = require("../baseapi"),
+	utl = require("../utl")
 	frmtr = require("../formatter");
 
 
@@ -12,12 +13,10 @@ var firstOffer = function () {
 	this.mPrms = null;
 
 	this.getOffers = function (prms, clbk) {
-
-		console.log("firstOffer::getOffers");
+		utl.log("[firstoffer.js][getOffers]");
 
 		this.mPrms = prms;
 		this.mClbk = clbk;
-
 		try {
 			var url = this.getURL(), that = this;
 			var n = prms.n || 10;
@@ -35,11 +34,11 @@ var firstOffer = function () {
 					}
 				}
 				catch (e) { error = e; }
-				that.mClbk(1, error);
+				that.mClbk(1,"[firstoffer.js][getOffers] - status - " + e);
 			});
 		}
 		catch (e) {
-			that.mClbk(1, e);
+			that.mClbk(1,"[firstoffer.js][getOffers] - fatal error - status - " + e);
 		}
 	};
 

@@ -1,5 +1,6 @@
 var utils = require('util'),
 baseApi = require("../baseapi"),
+utl = require("../utl")
 frmtr = require("../formatter");
 var crty=[];
 var categories_switch= {"adult" : "Sex Shop",
@@ -74,6 +75,7 @@ var buscape = function () {
 	var that = this;
 
 	this.getOffers = function (prms, clbk) {
+		utl.log("[buscape.js][getOffers]");
 		this.mPrms = prms;
 		this.mClbk = clbk;
 		try {
@@ -96,7 +98,7 @@ var buscape = function () {
 					else{ //results found
 						var offers = data.offer;
 						if(typeof offers !== "undefined" && offers.length==0){
-							that.mClbk(1, "buscape::getOffers - no results");
+							that.mClbk(1, "[buscape.js][getOffers] - no results");
 						}
 						else{
 							var results = that.format(offers);
@@ -105,12 +107,12 @@ var buscape = function () {
 					}
 				}
 				else{
-					that.mClbk(1, "buscape::getOffers - no results");
+					that.mClbk(1, "[buscape.js][getOffers] - no results");
 				}
 			});
 		}
-		catch(e){
-			that.mClbk(1, e);
+		catch(err){
+			that.mClbk(1, "[buscape.js][getOffers] - fatal error - status - " + err);
 		}
 	}
 
@@ -174,7 +176,7 @@ var buscape = function () {
 		var url = map.key;
 		if(typ == "prdct"){
 			url += "?keyword=" + that.mPrms.st;
-			url += "&mdasc=" + that.mPrms.subid;
+			url += "&mdasc=" + that.mPrms.prdct;
 			url += "&results=" + that.mPrms.n;
 		}
 		url += "&format=json";
@@ -192,11 +194,11 @@ var init = function(){
 				set_categories(data.subcategory,"subcategory");
 				set_categories(data.top5category,"top5category");
 			}
-			console.log("buscape default categoreis - Loaded");
+			utl.log("[buscape.js][init] - buscape default categoreis - Loaded")
 		},1000000);
 	}
 	catch(err){
-		console.log("buscape default categoreis -  Erorr Loading!")
+		utl.log("[buscape.js][init] - buscape default categoreis -  Erorr Loading!")
 	}
 }
 
@@ -249,5 +251,5 @@ function set_categories(tags,type){
 		crty.push(add);
 	}
 }
-init();
+//init();
 module.exports = buscape;

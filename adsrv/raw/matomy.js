@@ -2,6 +2,7 @@ var data = {};
 
 var utils = require('util'),
 baseApi = require("../baseapi"),
+utl = require("../utl")
 frmtr = require("../formatter");
 
 var resolutions = {
@@ -32,6 +33,7 @@ var ctrgyMapper = {
 
 var matomy = function () {
 	this.getOffers = function (prms, clbk) {
+		utl.log("[matomy.js][getOffers]");
 		try{
 			var resolution = resolutions[prms.sz];
 			var country = prms.cntry;
@@ -46,14 +48,15 @@ var matomy = function () {
 		    		clbk(0,matomyResults);
 		    	}
 		    	else{
-		    		clbk(1,"no match - matomy");
+		    		clbk(1,"[matomy.js][getOffers] - no match");	
 		    	}
 		    }
 		    else{
-		    	clbk(1,"no match - matomy");
+		    	clbk(1,"[matomy.js][getOffers] - no match");
 		    }
 		}
 		catch(err){
+			that.mClbk(1, "[matomy.js][getOffers] - fatal error - status - " + err);
 			clbk(1,e);
 		}
 	}
@@ -105,7 +108,8 @@ function shuffle(n,arr){
 function init(){
 	var fork = require('child_process').fork;
 	var matomyChild = fork('./adsrv/raw/matomy_node_server/matomy.js');
-	console.log("forked");
+
+	utl.log("[matomy.js][init] - process forked");
 	matomyChild.on('message',function(mess){
 		data = mess.matomy;
 		matomyChild.kill('SIGINT');

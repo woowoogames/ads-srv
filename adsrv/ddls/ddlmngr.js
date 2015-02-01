@@ -1,6 +1,7 @@
 
 var baseApi = require("../baseapi"),
 	path = require("path"),
+	utl = require("../utl")
 	frmtr = require("../formatter");
 
 
@@ -26,7 +27,7 @@ var ddlsMngr = {
 					ddlsMngr.mDdlsMapIdx = ddlsMngr.createIdxMap();
 				}
 				else {
-					console.log("ddlsMngr::loadDdls:: error getting ddls");
+					utl.log("[ddlmngr.js][loadDdls] - error getting ddls");
 				}
 
 				clbk(err || 1);
@@ -42,7 +43,7 @@ var ddlsMngr = {
 		try {
 
 			if (!ddlsMngr.mDdlsMapIdx || ddlsMngr.mDdlsMap.length == 0) {
-				console.log("ddlsMngr::getOffers error - no map");
+				utl.log("[ddlmngr.js][getOffers] - error - no map");
 				return [];
 			}
 
@@ -51,9 +52,14 @@ var ddlsMngr = {
 				cntry = ddlsMngr.mDdlsMapIdx["int"];
 			}
 
+			if(!cntry){
+				utl.log("[ddlmngr.js][getOffers] - no deals for int");
+				return [];
+			}
+
 			var ctgry = cntry[prms.ctgry];
 			if (!ctgry) {
-				console.log("ddlsMngr::getOffers - no deals");
+				utl.log("[ddlmngr.js][getOffers] - no deals");
 				return [];
 			}
 
@@ -80,12 +86,12 @@ var ddlsMngr = {
 				return rslt;
 			}
 			else{
-				console.log("ddlsMngr::getOffers - unknown error");
+				utl.log("[ddlmngr.js][getOffers] - unknown error");
 				return [];
 			}
 		}
 		catch (e) {
-			console.log("ddlsMngr::getOffers - error [" + e + "]");
+			utl.log("[ddlmngr.js][getOffers] - error [" + e + "]");
 			return [];
 		}
 	},
@@ -155,7 +161,7 @@ var ddlsMngr = {
 			}
 		}
 		catch (e) {
-			console.log("ddlsMngr::createIdxMap error " + e);
+			utl.log("[ddlsMngr.js][createIdxMap] - error - " + e);
 		}
 		return idxMap;
 	}

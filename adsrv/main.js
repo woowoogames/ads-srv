@@ -7,12 +7,13 @@ var feedsMngr = require('./feedsmngr'),
 	lgcMngr = require('./lgcmngr'),
 	baseApi = require("./baseapi"),
 	// path = require("path"),
+	utl = require("./utl"),
 	frmtr = require("./formatter"),
 	_ = require("underscore");
 
 
 	var adSrv = {
-		modules:{},
+
 	/******************************************************************************************************
 	*
 	* @cntry - the client country
@@ -27,11 +28,11 @@ var feedsMngr = require('./feedsmngr'),
 	processRequest: function (request, response) {
 
 		try {
+			utl.log("[main.js][processRequest] url - " + request.url);
 
 			// check the session ? 
 			// request.session.name = request.session.name || new Date().toUTCString();
 			// console.log(request.sessionID);
-
 
 			// request params
 			var requestParams = adSrv.getRequestParams(request);
@@ -72,28 +73,29 @@ var feedsMngr = require('./feedsmngr'),
 	init: function () {
 
 		//loading all feeds moudle each modoule init will be execute if exiest
-		var moudles_loader = new offersMngr.modules;
-		moudles_loader.init();
-		adSrv.modules = moudles_loader.modules;
+
+		offersMngr.mdlsMngr.init(function (status) {
+			console.log("[main.js][init]" + status);
+		});
 
 		rsrcMngr.init(function (status) {
-			console.log("rsrcMngr.init::status=[" + status + "]");
+			console.log("[main.js][init][rsrcMngr.init] - status=[" + status + "]");
 		});
 		
 		feedsMngr.init(function (status) {
-			console.log("feedsMngr.init::status=[" + status + "]");
+			console.log("[main.js][init][feedsMngr.init] - status=[" + status + "]");
 		});
 
 		lgcMngr.init(function (status) {
-			console.log("lgcMngr.init::status=[" + status + "]");
+			console.log("[main.js][init][lgcMngr.init] - status=[" + status + "]");
 		});
 
 		ddlsMngr.init(function (status) {
-			console.log("ddlsMngr.init::status=[" + status + "]");
+			console.log("[main.js][init][ddlsMngr.init] - status=[" + status + "]");
 		});
         
 		trndsMngr.init(function (status) {
-			console.log("trndsMngr.init::status=[" + status + "]");
+			console.log("[main.js][init][trndsMngr.init] - status=[" + status + "]\n");
 		});
 	},
 
@@ -121,7 +123,17 @@ var feedsMngr = require('./feedsmngr'),
 };
 
 module.exports = adSrv;
-module.exports.modules = adSrv.modules;
+
+/*
+utl.log("[file][[obj]]::[func]]] desc " + param):
+
+1. log url //done
+2. filters - enabled filters list
+3. feeds - success / fail + reason + result count 
+*/
+
+
+
 
 
 

@@ -31,6 +31,7 @@
 
 var baseApi = require("../baseapi"),
 	path = require("path"),
+	utl = require("../utl")
 	frmtr = require("../formatter");
 
 
@@ -55,7 +56,7 @@ var trndsMngr = {
 					trndsMngr.mTrndsMapIdx = trndsMngr.createIdxMap();
 				}
 				else {
-					console.log("trndsMngr::loadTrnds:: error getting trnds");
+					utl.log("[trndsMngr.js][loadTrnds] -  error getting trnds");
 				}
 
 				clbk(err || 1);
@@ -71,7 +72,7 @@ var trndsMngr = {
 		try {
 
 			if (!trndsMngr.mTrndsMapIdx || trndsMngr.mTrndsMap.length == 0) {
-				console.log("trndsMngr::getOffers error - no map");
+				utl.log("[trndsMngr.js][getOffers] -  error - no map");
 				return [];
 			}
 
@@ -82,7 +83,7 @@ var trndsMngr = {
 
 			var ctgry = cntry[prms.ctgry];
 			if (!ctgry) {
-				console.log("trndsMngr::getOffers - no deals");
+				utl.log("[trndsMngr.js][getOffers] - no deals");
 				return [];
 			}
 
@@ -109,12 +110,12 @@ var trndsMngr = {
 				return rslt;
 			}
 			else{
-				console.log("trndsMngr::getOffers - unknown error");
+				utl.log("[trndsMngr.js][getOffers] - unknown error");
 				return [];
 			}
 		}
 		catch (e) {
-			console.log("trndsMngr::getOffers - error [" + e + "]");
+			utl.log("[trndsMngr.js][getOffers] - error [" + e + "]");
 			return [];
 		}
 	},
@@ -185,12 +186,11 @@ var trndsMngr = {
 			}
 		}
 		catch (e) {
-			console.log("trndsMngr::createIdxMap error " + e);
+			utl.log("[trndsMngr.js][createIdxMap] -  error " + e);
 		}
 		return idxMap;
 	}
 };
-
 
 module.exports = trndsMngr;
 

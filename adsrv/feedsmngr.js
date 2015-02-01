@@ -1,6 +1,8 @@
 ﻿
 var baseApi = require('./baseapi'),
+	utl = require('./utl'),
 	_ = require("underscore"),
+	utl = require("./utl"),
 	path = require("path");
 
 
@@ -34,8 +36,14 @@ var feedsMngr = {
 	},
 
 	getFeeds : function (requestParams){
-        console.log("feedsMngr");
 		var feeds = feedsMngr.filterFeeds(requestParams);
+
+		var str = "[";
+		for(var i=0 ; i<feeds.length ; i++){
+			str += feeds[i].name + ",";
+		}
+		str = str.substring(0,str.length-1);
+		utl.log("[feedmngr.js][feedsMngr::getFeeds] feeds found " + str + "]");
 		return feeds;
 	},
 

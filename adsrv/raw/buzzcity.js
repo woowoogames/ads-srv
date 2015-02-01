@@ -1,5 +1,6 @@
 var utils = require('util'),
 baseApi = require("../baseapi"),
+utl = require("../utl")
 frmtr = require("../formatter");
 
 var buzzcity = function () {
@@ -15,12 +16,13 @@ var buzzcity = function () {
 			  };
 
 	this.getOffers = function (prms, clbk) {
+		utl.log("[buzzcity.js][getOffers]");
 		this.mPrms = prms;
 		this.mClbk = clbk;
 		try{
 			var url = this.getURL("prdct");
 			if(!url)
-				that.mClbk(1, "buzzcity::getOffers - no results");
+				that.mClbk(1, "[buzzcity.js][getOffers] - no results");
 			else{
 				baseApi.httpGetTimeout(url, function (error, response, body) {
 					var data;
@@ -33,13 +35,13 @@ var buzzcity = function () {
 						that.mClbk(0, results);
 					}
 					else{
-						that.mClbk(1, "buzzcity::getOffers - no results");
+						that.mClbk(1, "[buzzcity.js][getOffers] - no results");
 					}
 				});
 			}
 		}
 		catch(err){
-			that.mClbk(1, e);
+			that.mClbk(1, "[buscape.js][getOffers] - fatal error - status - " + err);
 		}
 	}
 
