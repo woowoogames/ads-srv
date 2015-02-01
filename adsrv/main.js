@@ -112,7 +112,8 @@ var feedsMngr = require('./feedsmngr'),
 			if (requestObject.limit) {
 				requestObject.limit = parseInt(requestObject.limit);
 			}
-			requestObject.sz = "300"; // request.params.size;
+			//requestObject.sz = "300"; // request.params.size;
+			requestObject.sz = request.params.size;
 			return requestObject;
 		}
 		catch (e) { 
