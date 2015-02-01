@@ -168,21 +168,21 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
 
     	if (!feedHandler) {
     		console.log("getAsyncRawOffers::err:: failed to load module");
-    		that.getAsyncOffers();
+    		that.getAsyncRawOffers();
     		return;
     	}
     	var worker = new feedHandler();
     	worker.getOffers(that.mPrms, function (error, offers) {
     		try{
     			if (error || !offers || !offers.length) {
-    				that.getAsyncOffers(); // try another feed
+    				that.getAsyncRawOffers(); // try another feed
     			}
     			else {
     				that.processOffers("raw", offers);
     			}
     		}
     		catch (e) {
-    			that.getAsyncOffers(); // try another feed
+    			that.getAsyncRawOffers(); // try another feed
     		}
     	});
     };

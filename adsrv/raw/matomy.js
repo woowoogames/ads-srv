@@ -35,12 +35,16 @@ var matomy = function () {
 	this.getOffers = function (prms, clbk) {
 		utl.log("[matomy.js][getOffers]");
 		try{
+			//console.log(data);
 			var resolution = resolutions[prms.sz];
 			var country = prms.cntry;
 			var category = prms.ctgry;
 			var n = prms.n;
 			category = ctrgyMapper[category];
 		    var arr = data[country][category][resolution];
+		    console.log(country + " " + category + " " + resolution);
+		    console.log("###################################matomy#######################")
+		    console.log(arr);
 		    if(typeof arr !== 'undefined'){
 		    	var results = shuffle(n,arr);
 		    	if(results.length>0){
