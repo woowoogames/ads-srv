@@ -42,9 +42,9 @@ var matomy = function () {
 			var n = prms.n;
 			category = ctrgyMapper[category];
 		    var arr = data[country][category][resolution];
-		    console.log(country + " " + category + " " + resolution);
-		    console.log("###################################matomy#######################")
-		    console.log(arr);
+		    // console.log(country + " " + category + " " + resolution);
+		    // console.log("###################################matomy#######################")
+		    // console.log(arr);
 		    if(typeof arr !== 'undefined'){
 		    	var results = shuffle(n,arr);
 		    	if(results.length>0){
