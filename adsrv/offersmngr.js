@@ -1,5 +1,4 @@
-﻿
-/******************************************************************
+﻿/******************************************************************
 
 	Offers provider (feed, raw, ddl) should implement:
 	
@@ -31,18 +30,14 @@
 	@status code - 1 for success, 0 for error
 	@JSON - hold the offers or the failure string 
 
-
 *******************************************************************/
-
-
-
 
 var baseApi = require('./baseapi'),
 	ddlsMngr = require('./ddls/ddlmngr'),
 	trndsMngr = require('./trnds/trndmngr'),
+    utl = require("./utl"),
     fs = require('fs'),
 	_ = require("underscore"); 
-
 
 var offersMngr = function (requestParams, feeds, finalCallback) {
 
@@ -115,11 +110,7 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
     		return;
     	}
 
-    	var feedHandler = that.mFeedHandlers[feed.name];
-    	if (!feedHandler) {
-    		feedHandler = that.loadModule(feed);
-
-    	}
+    	var feedHandler = mdlsMngr.modules.feeds[feed.name];
 
     	if (!feedHandler) {
     		console.log("getAsyncOffers::err:: failed to load module");
@@ -137,9 +128,11 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
     	worker.getOffers(that.mPrms, function (error, offers) {
     		try{
     			if (error || !offers || !offers.length) {
+                    utl.log("[offersmngr.js][worker.getOffers] - status [" + error +"]");
     				that.getAsyncOffers(); // try another feed
     			}
     			else {
+                    utl.log("[offersmngr.js][worker.getOffers] - status [" + error +"]");
     				that.processOffers("feeds", offers);
     			}
     		}
@@ -171,11 +164,8 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
     		that.processOffers("raw", []);
     		return;
     	}
-    	var feedHandler = that.mFeedHandlers[raw.name];
-    	if (!feedHandler) {
-    		feedHandler = that.loadModule(raw);
+        var feedHandler = mdlsMngr.modules.raw[raw.name];
 
-    	}
     	if (!feedHandler) {
     		console.log("getAsyncRawOffers::err:: failed to load module");
     		that.getAsyncOffers();
@@ -211,50 +201,47 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
 
 };
 
-var modules = function(){
-    this.modules ={
-        "feeds":[],
-        "raw":[],
-        "ddls":[],
-        "trnds":[]
+var mdlsMngr ={
+    modules : {
+        "feeds":{},
+        "raw":{},
+        "ddls":{},
+        "trnds":{}
     },
-    this.require_modules =  function(callback,modules){
-        var all_modules = null;
-        for(var type in modules){
-            if(!all_modules){
-                all_modules = this.createArray(type,fs.readdirSync("./adsrv/"+type+"/"));
-            }
-            else{
+    require_modules : function(clbk){
+        try{
+            var all_modules = [];
+            for(var type in mdlsMngr.modules){
                 all_modules = all_modules.concat(this.createArray(type,fs.readdirSync("./adsrv/"+type+"/")));
             }
-        }
-        //load each module in all_modules array --> all files in the four folders ddls/feeds/raw/trnds
-        for(var i=0 ; i<all_modules.length ; i++){
-            if(all_modules[i].file.indexOf(".js")!=-1 && all_modules[i].file!="data.js"){
-                var fileName = all_modules[i].file.replace(".js","");
-                var currModule = require("./"+ all_modules[i].type +"/"+ fileName);
-                var add ={};
-                add[fileName] = currModule; 
-                callback(add,all_modules[i].type,modules);
+            //load each module in all_modules array --> all files in the four folders ddls/feeds/raw/trnds
+            for(var i=0 ; i<all_modules.length ; i++){
+                if(all_modules[i].file.indexOf(".js")!=-1 && all_modules[i].file!="data.js"){
+                    var fileName = all_modules[i].file.replace(".js","");
+                    var currModule = require("./"+ all_modules[i].type +"/"+ fileName);
+                    //mdlsMngr.modules[all_modules[i].type].push(currModule);
+                    mdlsMngr.modules[all_modules[i].type][fileName] = currModule;
+                }
             }
         }
+        catch(e){
+            clbk("[offermngr.js][mdlsMngr::init] - error loding modules"); 
+        }
+        clbk("\n[offermngr.js][mdlsMngr::init] - modules loaded");
     },
-    this.addModule = function(toAdd,type,modules){
-        modules[type].push(toAdd);
-    },
-    this.createArray = function(type,file_names){
+    createArray : function(type,file_names){
         var answer =[];
         for(var i = 0; i<file_names.length ;i++){
             answer.push({file:file_names[i],type:type});
         }
         return answer;
     },
-    this.init = function(){
-        this.require_modules(this.addModule,this.modules);
+    init : function(clbk){
+        mdlsMngr.require_modules(clbk);
     }
-};
+}
 
 module.exports = {
-    modules : modules,
+    mdlsMngr : mdlsMngr,
     offersMngr : offersMngr
 }

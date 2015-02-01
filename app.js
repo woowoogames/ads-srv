@@ -32,6 +32,7 @@ var express = require('express');
 var cluster = require('cluster');
 var http = require('http');
 var path = require('path');
+var utl = require("./adsrv/utl");
 var numCPUs = 1; // require('os').cpus().length;
 
 var routes = require('./routes');
@@ -45,7 +46,7 @@ var app = express();
 
 var port = process.argv[2] || 3000;
 
-console.log("port = " + port);
+utl.log("port = " + port);
 app.set('port', port); // 49421
 
 // app.set('views', path.join(__dirname, 'views'));
@@ -82,7 +83,7 @@ app.use(globalErrorHandler);
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'vash');
 
-console.log("express loaded");
+utl.log("express loaded");
 
 //app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 //app.use(express.static(path.join(__dirname, 'public')));
@@ -105,7 +106,6 @@ app.get('/offers', adsrv.processRequest);
 //app.get('/trnds', adsrv.process..);
 //app.get('/offers:sz', adsrv.process..);  
 
-console.log("handlers set");
 
 app.use(express.static(__dirname + '/public'));
 
@@ -114,12 +114,8 @@ adsrv.init();
 // Workers shares TCP connection -- In this case its a HTTP server
 // console.log('worker #' + cluster.worker.id + " process #" + cluster.worker.process.pid + " listening on port #" + app.get('port'));
 http.createServer(app).listen(app.get('port'), function () {
-    console.log('Express server listening on port ' + app.get('port'));
+    console.log('\n[app.js] Express server listening on port ' + app.get('port') +"\n");
 });
-
-
-console.log("server is ready");
-
 /*
 if (cluster.isMaster) {
     

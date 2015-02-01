@@ -1,6 +1,7 @@
 
 var utils = require('util'),
 	baseApi = require("../baseapi"),
+	utl = require("../utl")		
 	frmtr = require("../formatter");
 
 
@@ -14,12 +15,10 @@ var shopping = function () {
 	var that = this;
 
 	this.getOffers = function (prms, clbk) {
-
-		console.log("shopping::getOffers");
+		utl.log("[shopping.js][getOffers]");
 
 		this.mPrms = prms;
 		this.mClbk = clbk;
-
 		try {
 			var url = this.getURL("prdct");
 			var n = prms.n || 10;
@@ -45,7 +44,7 @@ var shopping = function () {
 								return;
 							}
 							else {
-								that.mClbk(1, "shopping::getOffers - no results");
+								that.mClbk(1, "[shopping.js][getOffers] - no results");
 							}
 						}
 						else if (itms.product && itms.product.length > 0) {
@@ -66,16 +65,16 @@ var shopping = function () {
 											}
 										}
 									}
-									catch (e) { error = e; }
-									that.mClbk(1, error);
+									catch (e) {
+										that.mClbk(1,"[shopping.js][getOffers] - status - " + e);
+									}
 								});
 							}
 						}
 					}
 				}
 				catch (e) {
-					error = e;
-					that.mClbk(1, error);
+					that.mClbk(1,"[shopping.js][getOffers] - fatal error - status - " + e);
 				}
 			});
 		}
