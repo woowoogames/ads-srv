@@ -23,7 +23,18 @@ var server = app.listen(4000, function() {
 	console.log('Listening on port %d', server.address().port);
 });
 
-// process.on('message',function(mess){
-// 	console.log(mess);
-// 	process.send({hello:"matomy message"});
-// });
+
+process.on("SIGINT", function() {
+   console.log("Matomy Child SIGINT exiting");
+   process.exit();
+});
+
+process.on("SIGTERM", function() {
+   console.log("Matomy Child SIGTERM detected");
+   process.exit();
+});
+
+process.on("exit", function() {
+   console.log("Matomy Child exit detected");
+   process.exit();
+});
