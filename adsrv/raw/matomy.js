@@ -1,5 +1,5 @@
-var fork = require('child_process').fork;
-var matomyChild = fork('./adsrv/raw/matomy_node_server/matomy.js');
+// var fork = require('child_process').fork;
+// var matomyChild = fork('./adsrv/raw/matomy_node_server/matomy.js');
 var data = {};
 
 var utils = require('util'),
@@ -35,6 +35,12 @@ var ctrgyMapper = {
 
 var matomy = function () {
 	this.getOffers = function (prms, clbk) {
+
+////////////////////////////////////////////////////////
+		clbk(0,[]);
+		return;
+////////////////////////////////////////////////////////
+
 		utl.log("[matomy.js][getOffers]");
 		try{
 			//console.log(data);
@@ -123,14 +129,14 @@ matomyChild.on("exit", function() {
 	  console.log("[################ - matomyChild - exit]");
 });
 
-
+/*
 process.on("SIGINT", function() {
 	  console.log("[################ - main - SIGINT]");
 	  matomyChild.kill();
 	  process.exit();
 });
+*/
 
-
-init();
+// init();
 
 module.exports = matomy;

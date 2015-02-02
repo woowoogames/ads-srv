@@ -3,10 +3,10 @@
         "name": "matomy",
         "type" : "raw",
         "requireSearchTerm": false,
-        "active": true,
+        "active": false,
         "handler": "./raw/matomy",
         "coverage": {
-            "geo": {
+            "cntry": {
                 "type": "white",
                 "values" :["de","es","fr","in","pl","uk","us"]
             },
@@ -23,9 +23,9 @@
         "active": true,
         "handler": "./feeds/kelkoo",
         "coverage": {
-            "geo": {
+            "cntry": {
                 "type": "white",
-                "values" :["us", "gb", "it", "se", "no", "ru", "dk", "de", "nl", "es"]
+                "values" :["it", "es", "fr", "de", "nl", "be", "ru", "br", "dk", "no", "se", "uk"]
             },
             "prdct": {
                 "type": "white",
@@ -40,9 +40,9 @@
         "active": true,
         "handler": "./feeds/shopzilla",
         "coverage": {
-            "geo": {
+            "cntry": {
                 "type": "white",
-                "values" :["us","br","de","fr","gb"]
+                "values" :["us"]
             },
             "prdct": {
               
@@ -58,9 +58,26 @@
         "active": true,
         "handler": "./feeds/pricegong",
         "coverage": {
-            "geo": {
+            "cntry": {
                 "type": "white",
-                "values" : ["us", "br", "de", "fr", "gb"]
+                "values" : ["it", "es", "fr", "de", "nl", "be", "ru", "br", "dk", "no", "se", "ca"]
+            },
+            "prdct": {
+                "type": "white",
+                "values" : ["all"]
+            }
+        }
+    },
+     {
+        "name": "ebay",
+        "type": "feed",
+        "requireSearchTerm": true,
+        "active": true,
+        "handler": "./feeds/shopping",
+        "coverage": {
+            "cntry": {
+                "type": "white",
+                "values" : ["uk"]
             },
             "prdct": {
                 "type": "white",
@@ -75,9 +92,9 @@
         "active": true,
         "handler": "./feeds/firstoffer",
         "coverage": {
-            "geo": {
+            "cntry": {
                 "type": "white",
-                "values" :["us", "br", "de", "fr", "gb"]
+                "values" :["in"]
             },
             "prdct" : {
                 "type" : "white",
@@ -92,7 +109,7 @@
     "active": true,
     "handler": "./ddls/ddlmngr",
     "coverage": {
-            "geo": {
+            "cntry": {
                 "type": "white",
                 "values": ["all"]
             },
@@ -106,10 +123,10 @@
     "name": "trnds",
     "type": "trnds",
     "requireSearchTerm": false,
-    "active": true,
+    "active": false,
     "handler": "./trnds/trndmngr",
     "coverage": {
-            "geo": {
+            "cntry": {
                 "type": "white",
                 "values": ["all"]
             },
@@ -126,7 +143,7 @@
         "active":true,
         "handler":"./feeds/buscape",
         "coverage":{  
-            "geo":{  
+            "cntry":{  
                 "type":"white",
                 "values":[  "br","ar","co","cl","mx","pe","ve"]
             },
@@ -145,7 +162,7 @@
     "active":true,
     "handler":"./raw/buzzcity",
     "coverage":{  
-           "geo":{  
+           "cntry":{  
               "type":"white",
               "values":[  "id","my","in","za","th","br","uk","ng"]
            },

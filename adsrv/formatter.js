@@ -128,6 +128,7 @@ var formatter = {
 			case "iframe":
 			case "html":
 			case "htmlpg":
+			case "any":
 				// ok
 				break;
 

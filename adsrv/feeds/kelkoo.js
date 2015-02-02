@@ -94,7 +94,7 @@ var kelkoo = function () {
 		this.config.path = utils.format(this.config.path, this.mPrms.st, this.mPrms.n, this.mPrms.prdct);
 
 		try {
-			var geoObject = this.config.geosMap[this.config.geo];
+			var geoObject = this.config.geosMap[this.mPrms.cntry];
 			var signedURL = this.signURL(geoObject);
 
 			baseApi.httpGetTimeout(signedURL, function (error, response, body) {
