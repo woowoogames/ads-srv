@@ -29,7 +29,10 @@
       "binary options"
     ],
     "cntry": [
-      
+      "tn",
+      "ae",
+      "lb",
+      "sa"
     ],
     "feed": "",
     "standalone": false,

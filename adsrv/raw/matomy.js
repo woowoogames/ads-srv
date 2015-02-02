@@ -119,15 +119,15 @@ function shuffle(n,arr){
 
 function init(){
 	utl.log("[matomy.js][init] - process forked");
-	matomyChild.on('message',function(mess){
-		data = mess.matomy;
-		matomyChild.kill();
-	});
+	//matomyChild.on('message',function(mess){
+	//	data = mess.matomy;
+	//	matomyChild.kill();
+	//});
 }
 
-matomyChild.on("exit", function() {
-	  console.log("[################ - matomyChild - exit]");
-});
+//matomyChild.on("exit", function() {
+//	  console.log("[################ - matomyChild - exit]");
+//});
 
 /*
 process.on("SIGINT", function() {
