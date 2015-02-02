@@ -1,15 +1,29 @@
 ﻿{
-    "us": {
-        "shopzilla": 1,
-        "ebay": 2,
-        "kelkoo": 3,
-        "pricegong": 4,
-        "firstoffer": 4,
-        "matomy": 1
+    "ar": {
+        "buscape": 1
+    },
+    "be": {
+        "pricegong": 1
+    },
+    "br": {
+        "buscape": 1,
+        "buzzcity": 1
+    },
+    "ca": {
+        "pricegong": 1
+    },
+    "cl": {
+        "buscape": 1
+    },
+    "co": {
+        "buscape": 1
     },
     "de": {
         "pricegong": 1,
         "matomy": 1
+    },
+    "dk": {
+        "kelkoo": 1
     },
     "es": {
         "pricegong": 1,
@@ -19,41 +33,55 @@
         "pricegong": 1,
         "matomy": 1
     },
-    "br": {
-        "buscape": 1,
-        "buzzcity": 1
-    },
-    "ar": {
-        "buscape": 1
-    },
-    "co": {
-        "buscape": 1
-    },
-    "cl": {
-        "buscape": 1
-    },
-    "mx": {
-        "buscape": 1
-    },
-    "pe": {
-        "buscape": 1
-    },
-    "ve": {
-        "buscape": 1
-    },
     "id": {
         "buzzcity": 1
+    },
+    "in": {
+        "firstoffer" :1,
+        "buzzcity": 1,
+        "matomy": 1
+    },
+    "it": {
+        "kelkoo": 1
+    },
+    "us": {
+        "shopzilla": 1,
+        "matomy": 1
     },
     "my": {
         "buzzcity": 1
     },
-    "in": {
-        "buzzcity": 1,
-        "matomy": 1
+    "mx": {
+        "buscape": 1
     },
-    "za": {
+    "ng": {
         "buzzcity": 1
     },
+    "nl": {
+        "kelkoo": 1
+    },
+    "no": {
+        "kelkoo": 1
+    },
+    "pl": {
+        "matomy": 1
+    },
+    "pe": {
+        "buscape": 1
+    },
+
+    "ru": {
+        "kelkoo": 1
+    },
+    "se": {
+        "kelkoo": 1
+    },
+
+    "ve": {
+        "buscape": 1
+    },
+
+
     "th": {
         "buzzcity": 1
     },
@@ -62,13 +90,8 @@
         "buzzcity": 1,
         "matomy": 1
     },
-    "ng": {
+    "za": {
         "buzzcity": 1
-    },
-    "pl": {
-        "matomy": 1
-    },
-    "ca": {
-        "pricegong": 1
     }
+    
 }
