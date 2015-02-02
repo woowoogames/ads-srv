@@ -239,9 +239,5 @@ function get_json_response(resulution,programs,category){
 init(function(){
 	create_data_object();
 	process.send({matomy:data});
-	// process.on('message',function(args){
-	// 	console.log(args);
-	// });
-	
 	console.log("done!");
 });

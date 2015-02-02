@@ -1,3 +1,5 @@
+var fork = require('child_process').fork;
+var matomyChild = fork('./adsrv/raw/matomy_node_server/matomy.js');
 var data = {};
 
 var utils = require('util'),
@@ -110,15 +112,25 @@ function shuffle(n,arr){
 }
 
 function init(){
-	var fork = require('child_process').fork;
-	var matomyChild = fork('./adsrv/raw/matomy_node_server/matomy.js');
-
 	utl.log("[matomy.js][init] - process forked");
 	matomyChild.on('message',function(mess){
 		data = mess.matomy;
-		matomyChild.kill('SIGINT');
+		matomyChild.kill();
 	});
 }
+
+matomyChild.on("exit", function() {
+	  console.log("[################ - matomyChild - exit]");
+});
+
+
+process.on("SIGINT", function() {
+	  console.log("[################ - main - SIGINT]");
+	  matomyChild.kill();
+	  process.exit();
+});
+
+
 init();
 
 module.exports = matomy;
