@@ -44,7 +44,7 @@ var app = express();
 // all environments
 
 
-var port = process.argv[2] || 3000;
+var port = process.argv[2] || 80;
 
 utl.log("port = " + port);
 app.set('port', port); // 49421
