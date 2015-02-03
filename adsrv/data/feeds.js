@@ -20,7 +20,7 @@
         "name": "kelkoo",
         "type" : "feed",
         "requireSearchTerm": true,
-        "active": true,
+        "active": false,
         "handler": "./feeds/kelkoo",
         "coverage": {
             "cntry": {
