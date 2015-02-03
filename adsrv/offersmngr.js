@@ -37,6 +37,7 @@ var baseApi = require('./baseapi'),
 	trndsMngr = require('./trnds/trndmngr'),
     utl = require("./utl"),
     fs = require('fs'),
+    path = require("path"),
 	_ = require("underscore"); 
 
 var offersMngr = function (requestParams, feeds, finalCallback) {
@@ -110,7 +111,7 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
     		return;
     	}
 
-    	var feedHandler = mdlsMngr.modules.feeds[feed.name];
+    	var feedHandler = mdlsMngr.modules.feed[feed.name];
 
     	if (!feedHandler) {
     		console.log("getAsyncOffers::err:: failed to load module");
@@ -202,39 +203,46 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
 };
 
 var mdlsMngr ={
+    mapData : {},
     modules : {
-        "feeds":{},
+        "feed":{},
         "raw":{},
         "ddls":{},
         "trnds":{}
     },
     require_modules : function(clbk){
         try{
-            var all_modules = [];
-            for(var type in mdlsMngr.modules){
-                all_modules = all_modules.concat(this.createArray(type,fs.readdirSync("./adsrv/"+type+"/")));
-            }
-            //load each module in all_modules array --> all files in the four folders ddls/feeds/raw/trnds
-            for(var i=0 ; i<all_modules.length ; i++){
-                if(all_modules[i].file.indexOf(".js")!=-1 && all_modules[i].file!="data.js"){
-                    var fileName = all_modules[i].file.replace(".js","");
-                    var currModule = require("./"+ all_modules[i].type +"/"+ fileName);
-                    //mdlsMngr.modules[all_modules[i].type].push(currModule);
-                    mdlsMngr.modules[all_modules[i].type][fileName] = currModule;
+            mdlsMngr.loadFeeds(function(){
+                for(var i=0 ; i< mdlsMngr.mapData.length ; i++){
+                    if(mdlsMngr.mapData[i].active){
+                        var currentModule = require(mdlsMngr.mapData[i].handler);
+                        var fileName = mdlsMngr.mapData[i].handler.replace(/^.*[\\\/]/, '');
+                        mdlsMngr.modules[mdlsMngr.mapData[i].type][fileName] = currentModule;
+                    }
                 }
-            }
+            });
         }
         catch(e){
             clbk("[offermngr.js][mdlsMngr::init] - error loding modules"); 
         }
         clbk("\n[offermngr.js][mdlsMngr::init] - modules loaded");
     },
-    createArray : function(type,file_names){
-        var answer =[];
-        for(var i = 0; i<file_names.length ;i++){
-            answer.push({file:file_names[i],type:type});
+    loadFeeds : function (clbk){
+        try {
+            // load the feedsmap into memory
+            baseApi.readFile(path.join(path.dirname(__filename), "/data/feeds.js"),'utf8',function (err, data) {
+                if (!err) {
+                    mdlsMngr.mapData = JSON.parse(data);
+                }
+                else {
+                    console.log("feedsMngr::loadFeeds:: error getting feedsmap");
+                }
+                clbk(err || 1);
+            });
         }
-        return answer;
+        catch (e) {
+            clbk(e);
+        }
     },
     init : function(clbk){
         mdlsMngr.require_modules(clbk);
