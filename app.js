@@ -27,12 +27,12 @@ should we put the hardid->UCD in radis? we can then collect info about the user.
  */
 
 console.log("start");
-
 var express = require('express');
 var cluster = require('cluster');
 var http = require('http');
 var path = require('path');
 var utl = require("./adsrv/utl");
+var prcsmngr = require('./adsrv/prcsmngr');
 var numCPUs = 1; // require('os').cpus().length;
 
 var routes = require('./routes');
@@ -42,7 +42,6 @@ var adsrv = require('./adsrv/main');
 var app = express();
 
 // all environments
-
 
 var port = process.argv[2] || 80;
 
@@ -116,6 +115,14 @@ adsrv.init();
 http.createServer(app).listen(app.get('port'), function () {
     console.log('\n[app.js] Express server listening on port ' + app.get('port') +"\n");
 });
+
+process.on("SIGINT", function() {
+      utl.log("\n\n\n******************************** - app.js process - SIGINT - Killed - ********************************]");
+      prcsmngr.killAll();
+      process.exit();
+});
+
+
 /*
 if (cluster.isMaster) {
     

@@ -22,22 +22,24 @@ var server = app.listen(4000, function() {
 
 
 process.on("SIGINT", function() {
-   console.log("Matomy Child SIGINT exiting");
+   console.log("[matomy.js - child][exit] - Matomy Child SIGINT exiting");
    process.exit();
 });
 
 process.on("SIGTERM", function() {
-   console.log("Matomy Child SIGTERM detected");
+   console.log("[matomy.js - child][exit] - Matomy Child SIGTERM detected");
    process.exit();
 });
 
 process.on("exit", function() {
-   console.log("Matomy Child exit detected");
+   console.log("[matomy.js - child][exit] -  Matomy child exit detected");
    process.exit();
 });
 
-(function(){
+function init(){
+   console.log("I'm Alive!");
 	routes_load_data.refresh.refresh_programs();
 	routes_load_data.refresh.refresh_banners();
-})();
+};
 
+init();
