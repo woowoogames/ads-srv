@@ -5,7 +5,8 @@ var feedsMngr = require('./feedsmngr'),
 	path = require("path"),
 	ddlsMngr = require('./ddls/ddlmngr'),
 	utl = require("./utl"),
-	lgcMngr = require('./lgcmngr');
+	lgcMngr = require('./lgcmngr'),
+	prcsMngr = require('./prcsmngr');
 
 // load the system resources
 var rsrcMngr = {
@@ -30,6 +31,9 @@ var rsrcMngr = {
 			});
 		}, 1000 * 60 * 60); // 1 hour
 		*/
+		// setInterval(function () {
+		// 	prcsMngr.fork('./adsrv/raw/matomy_node_server/matomy.js');
+		// }, 1000 * 10); // temp - 15 min 
 		setInterval(function () {
 			rsrcMngr.loadFeeds("http://cdn-int.montiera.com/data/coms/lgc.js", "/ddls/data.js", function () {
 				ddlsMngr.loadDdls(function (status) {
