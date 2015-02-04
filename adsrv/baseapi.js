@@ -4,6 +4,7 @@ var fs = require("fs"),
 	utils = require('util'),
 	request = require('request'),
 	http = require('http'),
+	https = require('https'),
     xml2json = require("xml2json"),
 	extend = require('node.extend'),
 	querystring = require('querystring');
@@ -101,7 +102,6 @@ var baseApi = {
 
     httpGetTimeout: function (url, callback) {
     	try {
-
     		var request = http.get(url, function (res) {
 
     			var body = "";
@@ -128,6 +128,30 @@ var baseApi = {
     			return callback(1, "httpGet2 timeout", null);
     		});
 
+    	}
+    	catch (e) {
+    		callback(1, null, e);
+    	}
+    },
+    httpsGetTimeout: function (url,timeout, callback) {
+    	try {
+    		var request = https.get(url, function (res) {
+    			var body = "";
+    			res.on('data', function (data) {
+    				body += data;
+    			}).on('end', function () {
+    				console.log("httpsGetTimeout::end");
+    				return callback(null, res, body);
+    			}).on('error', function (err) {
+    				console.log("httpsGetTimeout::err [" + err.message + "]");
+    				return callback(err, res, body);
+    			});
+    		});
+    		request.setTimeout(timeout || 3000, function () {
+				request.abort();
+				console.log("httpsGetTimeout -- timeout");
+    			return callback(1, "httpsGet2 timeout", null);
+    		});
     	}
     	catch (e) {
     		callback(1, null, e);
