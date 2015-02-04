@@ -31,8 +31,8 @@ var cluster = require('cluster');
 var http = require('http');
 var path = require('path');
 var utl = require("./adsrv/utl");
-var prcsmngr = require('./adsrv/prcsmngr');
 var numCPUs = 1; // require('os').cpus().length;
+var baseApi = require('./adsrv/baseapi');
 
 var routes = require('./routes');
 var adsrv = require('./adsrv/main');
@@ -120,7 +120,7 @@ http.createServer(app).listen(app.get('port'), function () {
 
 process.on("SIGINT", function() {
       utl.log("\n\n\n******************************** - app.js process - SIGINT - Killed - ********************************]");
-      prcsmngr.killAll();
+      baseApi.killAll();
       process.exit();
 });
 /*

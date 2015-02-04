@@ -8,15 +8,29 @@ var fs = require("fs"),
 	utl = require('./utl'),
     xml2json = require("xml2json"),
 	extend = require('node.extend'),
-	querystring = require('querystring');
+	querystring = require('querystring'),
+	fork = require('child_process').fork;
 
 
 var baseApi = {
-
+	alivePrcs:{},
+	fork : function(path){
+		var fileName = path.replace(/^.*[\\\/]/, '').replace('.js','');
+		baseApi.alivePrcs[fileName] = fork(path);
+	},
+	kill : function(moduleToKill){
+		baseApi.alivePrcs[moduleToKill].kill();
+	},
+	killAll : function(){
+		utl.log("[prcsmngr.js][killAll] - Kill All Forked Processes");
+		for (var process in baseApi.alivePrcs) {
+			utl.log(process + " Killed");
+			baseApi.kill(process);
+			delete baseApi.alivePrcs.process;
+		}
+	},
 	readFile: function (path, encoding, callback) {
-
 		try {
-
 			var fn = function (err, data) {
 				if (err) {
 					utl.log("[baseapi.js][readFile::err] error while reading file [" + path + "][" + err + "]");
@@ -26,7 +40,6 @@ var baseApi = {
 					callback(null, data.replace(/^\uFEFF/, '')); // get rid of BOM markers.
 				}
 			};
-
 			if (!encoding) {
 				encoding = "utf8";
 			}
@@ -34,7 +47,6 @@ var baseApi = {
 				callback = encoding;
 				encoding = "utf8";
 			}
-
 			return fs.readFile(path, encoding, fn);
 		}
 		catch (e) {}
@@ -45,11 +57,8 @@ var baseApi = {
 	},
 
 	writeFile: function (path, data, callback) {
-
 		alert("writeFile - don't use this !!");
-
 		return; 
-
 		fs.writeFile(path, data, function (err) {
 			callback(err);
 		});
