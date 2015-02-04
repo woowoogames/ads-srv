@@ -33,7 +33,7 @@ var rsrcMngr = {
 		*/
 		// setInterval(function () {
 		// 	prcsMngr.fork('./adsrv/raw/matomy_node_server/matomy.js');
-		// }, 1000 * 10); // temp - 15 min 
+		// }, 1000 * 10 * 10); // temp - 10 min 
 		setInterval(function () {
 			rsrcMngr.loadFeeds("http://cdn-int.montiera.com/data/coms/lgc.js", "/ddls/data.js", function () {
 				ddlsMngr.loadDdls(function (status) {

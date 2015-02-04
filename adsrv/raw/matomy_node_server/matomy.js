@@ -31,15 +31,31 @@ process.on("SIGTERM", function() {
    process.exit();
 });
 
-process.on("exit", function() {
-   console.log("[matomy.js - child][exit] -  Matomy child exit detected");
-   process.exit();
-});
+// process.on("exit", function() {
+//    console.log("[matomy.js - child][exit] -  Matomy child exit detected");
+//    process.exit();
+// });
 
 function init(){
    console.log("I'm Alive!");
-	routes_load_data.refresh.refresh_programs();
-	routes_load_data.refresh.refresh_banners();
+   var bannerDone = false;
+   var programDone = false;
+	routes_load_data.refresh.refresh_programs(function(type){
+      if(type=="programDone")
+         programDone = true;
+      if(bannerDone && programDone){
+         console.log("KILL ME");
+         //process.exit();
+      }
+   });
+	routes_load_data.refresh.refresh_banners(function(type){
+      if(type=="bannerDone")
+         bannerDone = true;
+      if(bannerDone && programDone){
+         console.log("KILL ME");
+         //process.exit();
+      }
+   });
 };
 
 init();
