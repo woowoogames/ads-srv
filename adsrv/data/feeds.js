@@ -69,7 +69,7 @@
         }
     },
      {
-        "name": "ebay",
+        "name": "shopping",
         "type": "feed",
         "requireSearchTerm": true,
         "active": true,

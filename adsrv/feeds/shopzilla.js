@@ -74,6 +74,11 @@ var shopzilla = function () {
 							that.mClbk(0, rslt);
 							return;
 						}
+						else{
+
+							utl.log("[shopzilla.js][getOffers] - return 0 results");
+							that.mClbk(0, []);
+						}
 					}
 				}
 				catch (e) { 

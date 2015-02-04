@@ -83,6 +83,7 @@ var ddlsMngr = {
 
 			var rslt = ddlsMngr.format(offers);
 			if (rslt && rslt.length) {
+				utl.log("[ddlmngr.js][getOffers] - returned [" + rslt.length + "] offers");
 				return rslt;
 			}
 			else{
