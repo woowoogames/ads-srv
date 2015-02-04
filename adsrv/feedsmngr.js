@@ -21,16 +21,16 @@ var feedsMngr = {
 			baseApi.readFile(path.join(path.dirname(__filename), "/data/feeds.js"), function (err, data) {
 				if (!err) {
 					feedsMngr.feedsMap = JSON.parse(data);
-					// console.log("feedsMngr::init::" + data);
 				}
 				else {
-					console.log("feedsMngr::loadFeeds:: error getting feedsmap");
+					utl.log("[feedsmngr.js][loadFeeds::err] error getting feedsmap [" + err + "]");
 				}
 
 				clbk(err || 1);
 			});
 		}
 		catch (e) {
+			utl.log("[feedsmngr.js][loadFeeds::err] -- [" + e + "]");
 			clbk(e);
 		}
 	},
@@ -43,7 +43,7 @@ var feedsMngr = {
 			str += feeds[i].name + ",";
 		}
 		str = str.substring(0,str.length-1);
-		utl.log("[feedmngr.js][feedsMngr::getFeeds] feeds found " + str + "]");
+		utl.log("[feedsmngr.js][getFeeds] feeds found " + str + "]");
 		return feeds;
 	},
 

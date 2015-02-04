@@ -28,17 +28,18 @@ var firstOffer = function () {
 						data = JSON.parse(body);
 						var rslt = that.format(data);
 						if (rslt && rslt.length) {
+							utl.log("[firstoffer.js][getOffers] - return [" + rslt.length + "] results");
 							that.mClbk(0, rslt);
 							return;
 						}
 					}
 				}
 				catch (e) { error = e; }
-				that.mClbk(1,"[firstoffer.js][getOffers] - status - " + e);
+				that.mClbk(1,"[firstoffer.js][getOffers::err] - error getting feed [" + error + "]");
 			});
 		}
 		catch (e) {
-			that.mClbk(1,"[firstoffer.js][getOffers] - fatal error - status - " + e);
+			that.mClbk(1, "[firstoffer.js][getOffers::err] -- fatal error [" + e + "]");
 		}
 	};
 
@@ -70,7 +71,9 @@ var firstOffer = function () {
 
 					rsltArr.push(obj);
 				}
-				catch (e) { }
+				catch (e) {
+					utl.log("[firstoffer.js][format::err] -- [" + e + "]");
+				}
 			}
 
 			if (rsltArr.length > 0) {

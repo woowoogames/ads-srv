@@ -1,4 +1,6 @@
 ﻿
+var utl = require("./utl");
+
 var formatter = {
 
 	cnfg : {
@@ -73,7 +75,7 @@ var formatter = {
 					var crnt = nOffrsArr[typ][i];
 
 					if (!formatter.validTypes(crnt)) {
-						nOffrsArr[typ].splice(i, 1);
+						nOffrsArr[typ].splice(i, 1);  // 2do - potential error
 						continue;
 					}
 
@@ -86,7 +88,7 @@ var formatter = {
 					crnt.meta.prdct = requestParams.prdct;
 				}
 				catch (e) {
-					console.log("formatter::normalize - error [" + e + "]");
+					utl.log("[formatter.js][normalize::err] - [" + e + "]");
 					nOffrsArr[typ].splice(i, 1);
 				}
 			}
@@ -133,7 +135,7 @@ var formatter = {
 				break;
 
 			default:
-				console.log("formatter::validTypes - error unknown type [" + offer.typ + "]");
+				utl.log("[formatter.js][normalize] error unknown type [" + offer.typ + "]");
 				return false;
 		}
 
@@ -146,7 +148,7 @@ var formatter = {
 				break;
 
 			default:
-				console.log("formatter::validTypes - error unknown ofrtype [" + offer.ofrtype + "]");
+				utl.log("[formatter.js][normalize] error unknown ofrtype [" + offer.ofrtype + "]");
 				return false;
 		}
 

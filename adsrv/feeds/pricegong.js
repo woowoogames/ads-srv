@@ -13,7 +13,8 @@ var priceGong = function () {
 	this.mPrms = null;
 
 	this.getOffers = function (prms, clbk) {
-		utl.log("[priceGong.js][getOffers]");
+
+		utl.log("[pricegong.js][getOffers]");
 
 		this.mPrms = prms;
 		this.mClbk = clbk;
@@ -39,18 +40,20 @@ var priceGong = function () {
 
 						var rslt = that.format(selectOffers);
 						if (rslt && rslt.length) {
+							utl.log("[pricegong.js][getOffers] - return [" + rslt.length + "] results");
 							that.mClbk(0, rslt);
 							return;
 						}
 					}
 				}
 				catch (e) {
-					 that.mClbk(1,"[priceGong.js][getOffers] - status - " + e);
+					error = e;
 				}
+				that.mClbk(1, "[pricegong.js][getOffers::err] - error getting feed [" + error + "]");
 			});
 		}
 		catch (e) {
-			that.mClbk(1,"[pricegong.js][getOffers] - fatal error - status - " + e);
+			that.mClbk(1, "[pricegong.js][getOffers::err] -- fatal error [" + e + "]");
 		}
 	};
 
@@ -81,7 +84,9 @@ var priceGong = function () {
 
 					rsltArr.push(obj);
 				}
-				catch (e) { }
+				catch (e) {
+					utl.log("[pricegong.js][format::err] -- [" + e + "]");
+				}
 			}
 
 			if (rsltArr.length > 0) {

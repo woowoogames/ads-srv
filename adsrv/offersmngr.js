@@ -76,28 +76,37 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
 
 	this.processOffers = function (typ, offers) {
 
-		console.log("processing offers by [" + typ + "]");
+		if (!offers) {
+			utl.log("[offrsmngr.js][processOffers] - processing offers by [" + typ + "] offers is null");
+		}
+		else {
+			// utl.log("[offrsmngr.js][processOffers] - processing offers by [" + typ + "] len [" + offers.length + "]");
+			if (offers && offers.length > 0) {
 
-		if (offers && offers.length) {
-			if (!that.mRsltsArr[typ]) {
-				that.mRsltsArr[typ] = [];
-			}
-			for (var i = 0 ; i < offers.length ; i++) {
-				that.mRsltsArr[typ].push(offers[i]);
+				try {
+					if (!that.mRsltsArr[typ]) {
+						that.mRsltsArr[typ] = [];
+					}
+					for (var i = 0 ; i < offers.length ; i++) {
+						that.mRsltsArr[typ].push(offers[i]);
+					}
+				}
+				catch (e) { }
 			}
 		}
 
-		console.log("processing offers left [" + (that.mPrcsCount - 1) + "]");
+		utl.log("[offrsmngr.js][processOffers] - processing offers left [" + (that.mPrcsCount - 1) + "]");
 
 		if ((--that.mPrcsCount) == 0) {
-			try{
-				that.mClbk(0, that.mRsltsArr);
-			}
-			catch (e) { }
+			utl.log("[offrsmngr.js][processOffers] - processing offers done.");
+			that.mClbk(0, that.mRsltsArr);
 		}
+
 	};
 
     this.getAsyncOffers = function () {
+
+    	utl.log("[offrsmngr.js][getAsyncOffers] - feeds left [" + that.mFeeds.feeds.length + "]");
 
     	if (that.mFeeds.feeds.length == 0) {
     		that.processOffers("feeds", []);
@@ -112,28 +121,22 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
     	}
 
     	var feedHandler = mdlsMngr.modules.feed[feed.name];
+    	utl.log("[offrsmngr.js][getAsyncOffers] - trying feed [" + feed.name + "]");
 
     	if (!feedHandler) {
-    		console.log("getAsyncOffers::err:: failed to load module");
+    		utl.log("[offrsmngr.js][getAsyncOffers::err] - failed to load module [" + feed.name + "]");
     		that.getAsyncOffers();
     		return;
     	}
+
     	var worker = new feedHandler();
-
-    	/*
-    	that.mFeedTimerId = window.setTimeout(function () {
-			// 2do - try another feed is the current one don't return after 2-3 seconds
-    	}, 2000)
-		*/
-
     	worker.getOffers(that.mPrms, function (error, offers) {
     		try{
+    			utl.log("[offersmngr.js][getAsyncOffers][worker.getOffers] - status [" + error + "]");
     			if (error || !offers || !offers.length) {
-                    utl.log("[offersmngr.js][worker.getOffers] - status [" + error +"]");
     				that.getAsyncOffers(); // try another feed
     			}
     			else {
-                    utl.log("[offersmngr.js][worker.getOffers] - status [" + error +"]");
     				that.processOffers("feeds", offers);
     			}
     		}
@@ -144,11 +147,13 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
     };
 
     this.getDdls = function () {
-    	try{
-    		var offers = ddlsMngr.getOffers(that.mPrms);
-    		if (offers && offers.constructor === Array) {
-    			that.processOffers("ddls", offers);
-    			return;
+    	try {
+    		if (that.mFeeds.ddls.length > 0) {
+    			var offers = ddlsMngr.getOffers(that.mPrms);
+    			if (offers && offers.constructor === Array) {
+    				that.processOffers("ddls", offers);
+    				return;
+    			}
     		}
     	}
     	catch (e) { }
@@ -168,13 +173,14 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
         var feedHandler = mdlsMngr.modules.raw[raw.name];
 
     	if (!feedHandler) {
-    		console.log("getAsyncRawOffers::err:: failed to load module");
+    		utl.log("[offersmngr.js][getAsyncRawOffers::err] - failed to load module [" + raw.name + "]");
     		that.getAsyncRawOffers();
     		return;
     	}
     	var worker = new feedHandler();
     	worker.getOffers(that.mPrms, function (error, offers) {
-    		try{
+    		try {
+    			utl.log("[offersmngr.js][getAsyncRawOffers][worker.getOffers] - status [" + error + "]");
     			if (error || !offers || !offers.length) {
     				that.getAsyncRawOffers(); // try another feed
     			}
@@ -190,10 +196,12 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
 
     this.getTrnds = function () {
     	try {
-    		var offers = trndsMngr.getOffers(that.mPrms);
-    		if (offers && offers.constructor === Array) {
-    			that.processOffers("trnds", offers);
-    			return;
+    		if (that.mFeeds.trnds.length > 0) {
+    			var offers = trndsMngr.getOffers(that.mPrms);
+    			if (offers && offers.constructor === Array) {
+    				that.processOffers("trnds", offers);
+    				return;
+    			}
     		}
     	}
     	catch (e) { }
@@ -223,9 +231,10 @@ var mdlsMngr ={
             });
         }
         catch(e){
-            clbk("[offermngr.js][mdlsMngr::init] - error loding modules"); 
+            utl.log("[offersmngr.js][mdlsMngr::err] error loding modules [" + e + "]");
+	    clbk(0); 
         }
-        clbk("\n[offermngr.js][mdlsMngr::init] - modules loaded");
+        clbk(1);
     },
     loadFeeds : function (clbk){
         try {
