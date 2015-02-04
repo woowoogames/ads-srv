@@ -26,7 +26,6 @@ should we put the hardid->UCD in radis? we can then collect info about the user.
 
  */
 
-console.log("start");
 var express = require('express');
 var cluster = require('cluster');
 var http = require('http');
@@ -45,7 +44,7 @@ var app = express();
 
 var port = process.argv[2] || 80;
 
-utl.log("port = " + port);
+utl.log("[app.js] port = " + port);
 app.set('port', port); // 49421
 
 // app.set('views', path.join(__dirname, 'views'));
@@ -66,13 +65,13 @@ var notFoundErrorHandler = function (req, res, next) {
 	res.status = 404;
 	res.description = "Not Found";
 	res.send();
-	console.log("404 error !!!");
+	utl.log("404 error !!!");
 };
 
 var globalErrorHandler = function (err, req, res, next) {
 	// next();
 	// handle 500 (internal server error)
-	console.log("global error !!! [" + err + "] -- [" + err.stack + "]");
+	utl.log("global error !!! [" + err + "] -- [" + err.stack + "]");
 };
 
 app.use(notFoundErrorHandler);
@@ -82,7 +81,8 @@ app.use(globalErrorHandler);
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'vash');
 
-utl.log("express loaded");
+utl.log("[app.js] express loaded");
+utl.log("\n");
 
 //app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 //app.use(express.static(path.join(__dirname, 'public')));
@@ -111,9 +111,11 @@ app.use(express.static(__dirname + '/public'));
 
 adsrv.init();
 // Workers shares TCP connection -- In this case its a HTTP server
-// console.log('worker #' + cluster.worker.id + " process #" + cluster.worker.process.pid + " listening on port #" + app.get('port'));
+// utl.log('worker #' + cluster.worker.id + " process #" + cluster.worker.process.pid + " listening on port #" + app.get('port'));
 http.createServer(app).listen(app.get('port'), function () {
-    console.log('\n[app.js] Express server listening on port ' + app.get('port') +"\n");
+	setTimeout(function () {
+		utl.log("[app.js] Express server listening on port " + app.get('port') + "\n");
+	}, 200);
 });
 
 process.on("SIGINT", function() {
@@ -121,19 +123,17 @@ process.on("SIGINT", function() {
       prcsmngr.killAll();
       process.exit();
 });
-
-
 /*
 if (cluster.isMaster) {
     
-    console.log("numCPUs = " + numCPUs);
+    utl.log("numCPUs = " + numCPUs);
     for (var i = 0; i < numCPUs; i++) {
         var w = cluster.fork();
-        console.log('created worker #' + w.id + " process #" + w.process.pid);
+        utl.log('created worker #' + w.id + " process #" + w.process.pid);
     }
     
     cluster.on('exit', function (worker, code, signal) {
-        console.log('worker ' + worker.process.pid + ' died');
+        utl.log('worker ' + worker.process.pid + ' died');
     });
     
     adsrv.init();
@@ -141,9 +141,9 @@ if (cluster.isMaster) {
 else if (cluster.isWorker) {
     
     // Workers shares TCP connection -- In this case its a HTTP server
-    console.log('worker #' + cluster.worker.id + " process #" + cluster.worker.process.pid + " listening on port #" + app.get('port'));
+    utl.log('worker #' + cluster.worker.id + " process #" + cluster.worker.process.pid + " listening on port #" + app.get('port'));
     http.createServer(app).listen(app.get('port'), function () {
-        console.log('Express server listening on port ' + app.get('port'));
+        utl.log('Express server listening on port ' + app.get('port'));
     });
 }
 */

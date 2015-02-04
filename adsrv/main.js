@@ -30,10 +30,6 @@ var feedsMngr = require('./feedsmngr'),
 		try {
 			utl.log("[main.js][processRequest] url - " + request.url);
 
-			// check the session ? 
-			// request.session.name = request.session.name || new Date().toUTCString();
-			// console.log(request.sessionID);
-
 			// request params
 			var requestParams = adSrv.getRequestParams(request);
 
@@ -65,7 +61,7 @@ var feedsMngr = require('./feedsmngr'),
 			om.getOffers();
 		}
 		catch (e) {
-			console.log("processRequest::err::[" + e + "]");
+			utl.log("[main.js][processRequest::err][" + e + "]");
 			response.jsonp({ "error": e });
         }
 	},
@@ -75,27 +71,27 @@ var feedsMngr = require('./feedsmngr'),
 		//loading all feeds moudle each modoule init will be execute if exiest
 
 		offersMngr.mdlsMngr.init(function (status) {
-			console.log("[main.js][init]" + status);
+			utl.log("[main.js][init][mdlsMngr.init] - status=[" + status + "]");
 		});
 
 		rsrcMngr.init(function (status) {
-			console.log("[main.js][init][rsrcMngr.init] - status=[" + status + "]");
+			utl.log("[main.js][init][rsrcMngr.init] - status=[" + status + "]");
 		});
 		
 		feedsMngr.init(function (status) {
-			console.log("[main.js][init][feedsMngr.init] - status=[" + status + "]");
+			utl.log("[main.js][init][feedsMngr.init] - status=[" + status + "]");
 		});
 
 		lgcMngr.init(function (status) {
-			console.log("[main.js][init][lgcMngr.init] - status=[" + status + "]");
+			utl.log("[main.js][init][lgcMngr.init] - status=[" + status + "]");
 		});
 
 		ddlsMngr.init(function (status) {
-			console.log("[main.js][init][ddlsMngr.init] - status=[" + status + "]");
+			utl.log("[main.js][init][ddlsMngr.init] - status=[" + status + "]");
 		});
         
 		trndsMngr.init(function (status) {
-			console.log("[main.js][init][trndsMngr.init] - status=[" + status + "]\n");
+			utl.log("[main.js][init][trndsMngr.init] - status=[" + status + "]\n");
 		});
 	},
 
@@ -124,14 +120,6 @@ var feedsMngr = require('./feedsmngr'),
 };
 
 module.exports = adSrv;
-
-/*
-utl.log("[file][[obj]]::[func]]] desc " + param):
-
-1. log url //done
-2. filters - enabled filters list
-3. feeds - success / fail + reason + result count 
-*/
 
 
 

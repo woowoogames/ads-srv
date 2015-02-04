@@ -5,6 +5,7 @@ var fs = require("fs"),
 	request = require('request'),
 	http = require('http'),
 	https = require('https'),
+	utl = require('./utl'),
     xml2json = require("xml2json"),
 	extend = require('node.extend'),
 	querystring = require('querystring');
@@ -18,7 +19,7 @@ var baseApi = {
 
 			var fn = function (err, data) {
 				if (err) {
-					console.log(err);
+					utl.log("[baseapi.js][readFile::err] error while reading file [" + path + "][" + err + "]");
 					callback.call(null, "");
 				}
 				else {
@@ -57,13 +58,13 @@ var baseApi = {
 	createFile : function (path, callback){
 		fs.open(path, "wx", function (err, fd) {
 			if (err) {
-				console.log("error while creating file [" + err + "]");
+				utl.log("[baseapi.js][createFile::err] error while creating file [" + path + "][" + err + "]");
 				callback(null);
 			}
 			else {
 				fs.close(fd, function (err) {
 					if (err) {
-						console.log("error while creating file [" + path + "]");
+						utl.log("[baseapi.js][createFile::err] error while closing file [" + path + "][" + err + "]");
 						callback(null);
 					}
 					else {
@@ -106,17 +107,12 @@ var baseApi = {
 
     			var body = "";
     			res.on('data', function (data) {
-
     				body += data;
-
     			}).on('end', function () {
-
-    				console.log("httpGetTimeout::end");
+    				// utl.log("[baseapi.js][httpGetTimeout] end");
     				return callback(null, res, body);
-
     			}).on('error', function (err) {
-
-    				console.log("httpGetTimeout::err [" + err.message + "]");
+    				utl.log("[baseapi.js][httpGetTimeout::err] [" + err.message + "]");
     				return callback(err, res, body);
     			});
 				
@@ -124,12 +120,13 @@ var baseApi = {
 
     		request.setTimeout(3000, function () {
 				request.abort();
-				console.log("httpGetTimeout -- timeout");
+				utl.log("[baseapi.js][httpGetTimeout] timeout");
     			return callback(1, "httpGet2 timeout", null);
     		});
 
     	}
     	catch (e) {
+    		utl.log("[baseapi.js][httpGetTimeout::err] [" + e + "]");
     		callback(1, null, e);
     	}
     },
@@ -177,49 +174,9 @@ var baseApi = {
     },
 
     param: function (object) {
-
         return querystring.stringify(object);
-
     }
-
 };
-
 
 module.exports = baseApi;
 
-/*
-
-var timeout_wrapper = function (req) {
-	return function () {
-		// do some logging, cleaning, etc. depending on req
-		req.abort();
-	};
-};
-
-var request = http.get(options, function (res) {
-	res.on('data', function (data) {
-		file.write(data);
-		// reset timeout
-		clearTimeout(timeout);
-		timeout = setTimeout(fn, 10000);
-	}).on('end', function () {
-		// clear timeout
-		clearTimeout(timeout);
-		file.end();
-		console.log(file_name + ' downloaded ');
-		cb(null, file.path);
-	}).on('error', function (err) {
-		// clear timeout
-		clearTimeout(timeout);
-		console.log("Got error: " + err.message);
-		cb(err, null);
-	});
-});
-
-// generate timeout handler
-var fn = timeout_wrapper(request);
-
-// set initial timeout
-var timeout = setTimeout(fn, 10000);
-
-*/

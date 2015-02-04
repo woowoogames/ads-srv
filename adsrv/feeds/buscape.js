@@ -93,15 +93,18 @@ var buscape = function () {
 						fix_category = fix_category.replace(/&/g, 'n').toLowerCase();
 						var ctgry = categories_switch[fix_category];
 						var default_ctgry_obj = get_defualt_category(geo,ctgry);
+						utl.log("[buscape.js][getOffers] - return default results");
 						that.mClbk(0,[default_ctgry_obj]);
 					}
 					else{ //results found
 						var offers = data.offer;
 						if(typeof offers !== "undefined" && offers.length==0){
-							that.mClbk(1, "[buscape.js][getOffers] - no results");
+							utl.log("[buscape.js][getOffers] - return 0 results");
+							that.mClbk(1, []);
 						}
 						else{
 							var results = that.format(offers);
+							utl.log("[buscape.js][getOffers] - return [" + results.length + "] results");
 							that.mClbk(0, results);
 						}
 					}
@@ -112,7 +115,7 @@ var buscape = function () {
 			});
 		}
 		catch(err){
-			that.mClbk(1, "[buscape.js][getOffers] - fatal error - status - " + err);
+			that.mClbk(1,"[buscape.js][getOffers::err] - error getting feed [" + err + "]");
 		}
 	}
 
@@ -164,11 +167,15 @@ var buscape = function () {
 					obj.store.rtng = offers[i].offer.seller.rating.useraveragerating.rating;
 					rsltArr.push(obj);
 				}
-				catch(e){}
+				catch(e){
+					utl.log("[buscape.js][format::err] -- [" + e + "]");
+				}
 			}
 			return rsltArr;			
 		}
-		catch(err){}
+		catch(err){
+			utl.log("[buscape.js][format::err] -- [" + e + "]");
+		}
 	}
 
 	this.getURL = function (typ) {

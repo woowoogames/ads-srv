@@ -55,7 +55,7 @@ var shopzilla = function () {
 			var url = this.getURL();
 
 			if (!url) {
-				return that.mClbk(1, "shopzilla::getOffers - error - country is not supported [" + this.mPrms.cntry + "]");
+				return that.mClbk(1, "[shopzilla.js][getOffers::err] -- country is not supported [" + this.mPrms.cntry + "]");
 			}
 
 			var n = prms.n || 10;
@@ -70,18 +70,20 @@ var shopzilla = function () {
 
 						var rslt = that.format(selectOffers);
 						if (rslt && rslt.length) {
+							utl.log("[shopzilla.js][getOffers] - return [" + rslt.length + "] results");
 							that.mClbk(0, rslt);
 							return;
 						}
 					}
 				}
 				catch (e) { 
-					that.mClbk(1,"[shopzilla.js][getOffers] - status - " + e);
-			    }
+					error = e;
+				}
+				that.mClbk(1, "[shopzilla.js][getOffers::err] - error getting feed [" + error + "]");
 			});
 		}
 		catch (e) {
-			that.mClbk(1,"[shopzilla.js][getOffers] - fatal error - status - " + e);
+			that.mClbk(1, "[shopzilla.js][getOffers::err] -- fatal error [" + e + "]");
 		}
 	};
 
@@ -188,7 +190,9 @@ var shopzilla = function () {
 
 					rsltArr.push(obj);
 				}
-				catch (e) { }
+				catch (e) {
+					utl.log("[shopzilla.js][format::err] -- [" + e + "]");
+				}
 			}
 
 			if (rsltArr.length > 0) {

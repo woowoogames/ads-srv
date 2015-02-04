@@ -40,6 +40,7 @@ var shopping = function () {
 
 							var rslt = that.format(selectOffers);
 							if (rslt && rslt.length) {
+								utl.log("[shopping.js][getOffers(1)] - return [" + rslt.length + "] results");
 								that.mClbk(0, rslt);
 								return;
 							}
@@ -60,25 +61,40 @@ var shopping = function () {
 
 											var rslt = that.format(selectOffers);
 											if (rslt && rslt.length) {
+												utl.log("[shopping.js][getOffers(2)] - return [" + rslt.length + "] results");
 												that.mClbk(0, rslt);
 												return;
 											}
 										}
 									}
 									catch (e) {
-										that.mClbk(1,"[shopping.js][getOffers] - status - " + e);
+										error = e;
 									}
+									that.mClbk(1, "[shopping.js][getOffers::err(2)] -- getting feed [" + error + "]");
 								});
 							}
+							else {
+								utl.log("[shopping.js][getOffers] - return [0] results");
+								that.mClbk(0, []);
+							}
 						}
+						else {
+							utl.log("[shopping.js][getOffers] - return [0] results");
+							that.mClbk(0, []);
+						}
+					}
+					else {
+						utl.log("[shopping.js][getOffers] - return [0] results");
+						that.mClbk(0, []);
 					}
 				}
 				catch (e) {
-					that.mClbk(1,"[shopping.js][getOffers] - fatal error - status - " + e);
+					that.mClbk(1, "[shopping.js][getOffers::err] -- fatal error [" + e + "]");
 				}
 			});
 		}
 		catch (e) {
+			utl.log("[shopping.js][getOffers::err] -- fatal error [" + e + "]");
 			that.mClbk(1, e);
 		}
 	};
@@ -123,7 +139,9 @@ var shopping = function () {
 
 					rsltArr.push(obj);
 				}
-				catch (e) { }
+				catch (e) {
+					utl.log("[shopping.js][format::err] -- [" + e + "]");
+				}
 			}
 
 			if (rsltArr.length > 0) {

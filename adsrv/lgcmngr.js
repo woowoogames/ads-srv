@@ -1,6 +1,7 @@
 ﻿
 
 var baseApi = require('./baseapi'),
+	utl = require("./utl"),
 	path = require("path");
 
 var lgcMngr = {
@@ -20,13 +21,14 @@ var lgcMngr = {
 					lgcMngr.mRankMap = JSON.parse(data);
 				}
 				else {
-					console.log("lgcMngr::init:: error getting feedsmap");
+					utl.log("[lgcmngr.js][loadRanks::err] - error getting mRankMap [" + err +"]");
 				}
 
 				clbk(err || 1);
 			});
 		}
 		catch (e) {
+			utl.log("[lgcmngr.js][loadRanks::err] -- [" + e + "]");
 			clbk(e);
 		}
 	},

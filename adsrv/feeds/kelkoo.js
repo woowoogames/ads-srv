@@ -111,6 +111,7 @@ var kelkoo = function () {
 
 							var rslt = that.format(selectedOffers);
 							if (rslt && rslt.length) {
+								utl.log("[kelkoo.js][getOffers] - return [" + rslt.length + "] results");
 								that.mClbk(0, rslt);
 								return;
 							}
@@ -118,12 +119,13 @@ var kelkoo = function () {
 					}
 				}
 				catch (e) {
-					that.mClbk(1,"[kelkoo.js][getOffers] - status - " + e);
+					error = e;
 				}
+				that.mClbk(1, "[kelkoo.js][getOffers::err] - error getting feed [" + error + "]");
 			});
 		}
 		catch (e) {
-			that.mClbk(1,"[kelkoo.js][getOffers] - fatal error - status - " + e);
+			that.mClbk(1, "[kelkoo.js][getOffers::err] -- fatal error [" + e + "]");
 		}
 	};
 
@@ -198,7 +200,9 @@ var kelkoo = function () {
 
 					rsltArr.push(obj);
 				}
-				catch (e) { }
+				catch (e) {
+					utl.log("[kelkoo.js][format::err] -- [" + e + "]");
+				}
 			}
 
 			if (rsltArr.length > 0) {
