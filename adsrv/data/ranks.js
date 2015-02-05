@@ -45,6 +45,7 @@
         "kelkoo": 1
     },
     "us": {
+        "admarketplace":1,
         "shopzilla": 1,
         "matomy": 1
     },

@@ -1,5 +1,22 @@
 ﻿[
     {
+        "name": "admarketplace",
+        "type" : "feed",
+        "requireSearchTerm": true,
+        "active": false,
+        "handler": "./feeds/admarketplace",
+        "coverage": {
+            "cntry": {
+                "type": "white",
+                "values" :["us"]
+            },
+            "prdct": {
+                "type": "white",
+                "values": ["all"]
+            }
+        }
+    },
+    {
         "name": "matomy",
         "type" : "raw",
         "requireSearchTerm": false,
@@ -20,7 +37,7 @@
         "name": "kelkoo",
         "type" : "feed",
         "requireSearchTerm": true,
-        "active": false,
+        "active": true,
         "handler": "./feeds/kelkoo",
         "coverage": {
             "cntry": {
@@ -123,7 +140,7 @@
     "name": "trnds",
     "type": "trnds",
     "requireSearchTerm": false,
-    "active": false,
+    "active": true,
     "handler": "./trnds/trndmngr",
     "coverage": {
             "cntry": {

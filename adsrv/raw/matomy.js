@@ -36,7 +36,7 @@ var matomy = function () {
 	this.getOffers = function (prms, clbk) {
 		utl.log("[matomy.js][getOffers]");
 		try{
-			var resolution = resolutions[prms.sz];
+			var resolution = resolutions[prms.type];
 			var country = prms.cntry;
 			var category = prms.ctgry;
 			var n = prms.n;
