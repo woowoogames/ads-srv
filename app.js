@@ -97,7 +97,7 @@ if ('development' == app.get('env')) {
 //app.get('/rpt', rpt.index); // client reports 
 // http://localhost:3000/offers/300/?cntry=us&prdct=coms001&st=xbox&ctgry=mobile&subid=&n=10&ip=&typ
 
-app.get('/offers/:size', adsrv.processRequest);
+app.get('/offers/:type', adsrv.processRequest);
 app.get('/offers', adsrv.processRequest);
 
 //app.get('/300', adsrv.process..);

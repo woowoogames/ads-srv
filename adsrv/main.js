@@ -109,7 +109,7 @@ var feedsMngr = require('./feedsmngr'),
 				requestObject.limit = parseInt(requestObject.limit);
 			}
 			//requestObject.sz = "300"; // request.params.size;
-			requestObject.sz = request.params.size;
+			requestObject.type = request.params.type;
 			return requestObject;
 		}
 		catch (e) { 
