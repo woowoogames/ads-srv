@@ -144,6 +144,7 @@ var formatter = {
 			case "ddl":
 			case "raw":
 			case "trnd":
+			case "serp":
 				// ok
 				break;
 
