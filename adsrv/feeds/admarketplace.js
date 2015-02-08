@@ -36,6 +36,7 @@ var admarketplace = function () {
 				if(prms.type === 'serp'){
 					var n = prms.n || 10;
 					var url = this.getURL(prms.type);
+					console.log("********" + url);
 					baseApi.httpGetTimeout(url, function (error, response, body) {
 						if(error){
 							that.mClbk(1, "[admarketplace.js][getOffers::err] -- fatal error [" + err + "]");
@@ -44,7 +45,7 @@ var admarketplace = function () {
 						var data = baseApi.xmlToJSON(body);
 						if(typeof data.result.adlistings !== 'undefined'){
 							var results = that.format(data.result.adlistings.listing,prms.type);
-							utl.log("[admarketplace.js][getOffers] - return 0 results");
+							//utl.log("[admarketplace.js][getOffers] - return 0 results");
 							that.mClbk(0, results);
 						}
 						else{
@@ -67,10 +68,10 @@ var admarketplace = function () {
 					for(var i=0 ; i<offers.length; i++){
 						var obj = frmtr.getOfferObject();
 						obj.typ = "img";
-						if(type=='serp')
-							obj.ofrtype = "serp";
-						else
-							obj.ofrtype = "feed";
+						// if(type=='serp')
+						// 	obj.ofrtype = "serp";
+						// else
+						obj.ofrtype = "feed";
 						obj.desc.short = offers[i].description;
 						obj.img.small = offers[i].thumbnail;
 						obj.meta.feed = "admrktplce";
@@ -86,10 +87,10 @@ var admarketplace = function () {
 				else{
 					var obj = frmtr.getOfferObject();
 					obj.typ = "img";
-					if(type=='serp')
-						obj.ofrtype = "serp";
-					else
-						obj.ofrtype = "feed";
+					// if(type=='serp')
+					// 	obj.ofrtype = "serp";
+					// else
+					obj.ofrtype = "feed";
 					obj.desc.short = offers.description;
 					obj.img.small = offers.thumbnail;
 					obj.meta.feed = "admrktplce";
@@ -121,7 +122,7 @@ var admarketplace = function () {
 		var prdct = that.mPrms.prdct;
 		var n = that.mPrms.n;
 		if(type == 'serp'){
-			url = "http://montiera_search_us.ampfeed.com/xmlamp/feed?partner=pub_montiera&v=2&kw=" + st + "&results=" + n + "&ip=" + ip + "&proxy-ip=" + ip + "&ua=" + ua;
+			url = "http://montiera_search_us.ampfeed.com/xmlamp/feed?partner=pub_montiera_search_us&v=2&kw=" + st + "&results=" + n + "&ip=" + ip + "&proxy-ip=" + ip + "&ua=" + ua;
 		}
 		else{
 			url = "http://montiera.ampfeed.com/xmlamp/feed?partner=pub_montiera&v=2&kw=" + st + "&img=1&ptype=pc&puburl=ebay.com&sub1=" + prdct + "&results=" + n + "&ip=" + ip + "&proxy-ip=" + ip + "&ua="+ua+"&rfr=montiera.com";
