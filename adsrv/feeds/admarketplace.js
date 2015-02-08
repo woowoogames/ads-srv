@@ -68,10 +68,10 @@ var admarketplace = function () {
 					for(var i=0 ; i<offers.length; i++){
 						var obj = frmtr.getOfferObject();
 						obj.typ = "img";
-						// if(type=='serp')
-						// 	obj.ofrtype = "serp";
-						// else
-						obj.ofrtype = "feed";
+						if(type=='serp')
+							obj.ofrtype = "serp";
+						else
+							obj.ofrtype = "feed";
 						obj.desc.short = offers[i].description;
 						obj.img.small = offers[i].thumbnail;
 						obj.meta.feed = "admrktplce";
@@ -87,10 +87,10 @@ var admarketplace = function () {
 				else{
 					var obj = frmtr.getOfferObject();
 					obj.typ = "img";
-					// if(type=='serp')
-					// 	obj.ofrtype = "serp";
-					// else
-					obj.ofrtype = "feed";
+					if(type=='serp')
+						obj.ofrtype = "serp";
+					else
+						obj.ofrtype = "feed";
 					obj.desc.short = offers.description;
 					obj.img.small = offers.thumbnail;
 					obj.meta.feed = "admrktplce";
