@@ -153,6 +153,8 @@ var buscape = function () {
 					obj.ofrtype = "feed";
 					obj.desc.short = offers[i].offer.offershortname;
 					obj.desc.long = offers[i].offer.offername
+					if(typeof offers[i].offer.thumbnail === 'undefined')
+						continue;
 					obj.img.small = offers[i].offer.thumbnail.url;
 					obj.img.big = null;
 					obj.meta.feed = "bscpe";
@@ -163,6 +165,8 @@ var buscape = function () {
 					obj.lnk = offers[i].offer.links[0].link.url;
 					obj.prc = offers[i].offer.price.value;
 					obj.store.name = offers[i].offer.seller.sellername;
+					if(typeof offers[i].offer.seller.thumbnail === 'undefined')
+						continue;
 					obj.store.logo = offers[i].offer.seller.thumbnail.url;
 					obj.store.rtng = offers[i].offer.seller.rating.useraveragerating.rating;
 					rsltArr.push(obj);
