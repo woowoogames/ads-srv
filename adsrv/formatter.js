@@ -1,8 +1,10 @@
 ﻿
-var utl = require("./utl");
+var utl = require("./utl"),
+	path = require("path"),
+	baseApi = require("./baseapi");
 
 var formatter = {
-
+	geos:[],
 	cnfg : {
 
 		maxShortDesc: 100,
@@ -156,6 +158,43 @@ var formatter = {
 		return true;
 	},
 
+	validProduct : function(prdct){
+		var validProduct = prdct.match(/coms0[0-9][0-9]/g);
+		if(validProduct)
+			return true;
+		else
+			return false;
+	},
+	validIp : function(ip){
+		var ipPattern = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]).){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/g;
+		return ipPattern.test(ip);
+	},
+
+	validCntry : function(cntry){
+		if(formatter.geos.indexOf(cntry)!=-1)
+			return true;
+		else
+			return false;
+	},
+
+	isValidRequest : function(requestObject){
+		for(var key in requestObject){
+			if(key == "prdct"){
+				if(!formatter.validProduct(requestObject[key]))
+					return false;
+			}
+			if(key == "ip"){
+				if(!formatter.validIp(requestObject[key]))
+					return false;
+			}
+			if(key == "cntry"){
+				if(!formatter.validCntry(requestObject[key]))
+					return false;
+			}
+		}
+		return true;
+	},
+
 	getPrice: function (n, crncy) {
 		try {
 			if (!crncy) {
@@ -180,7 +219,15 @@ var formatter = {
 	}
 
 }
-
+function init(){
+	baseApi.readFile(path.join(path.dirname(__filename), "/data/ranks.js"),function (err, data){
+		var allGeos = JSON.parse(data);
+		for(var key in allGeos){
+			formatter.geos.push(key);
+		}
+	});
+}
+init();
 
 
 module.exports = formatter;

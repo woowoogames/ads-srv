@@ -33,32 +33,37 @@ var feedsMngr = require('./feedsmngr'),
 			// request params
 			var requestParams = adSrv.getRequestParams(request);
 
-			// list of feeds to work with according to the request params
-			var feeds = feedsMngr.getFeeds(requestParams);
+			if(requestParams){
+				// list of feeds to work with according to the request params
+				var feeds = feedsMngr.getFeeds(requestParams);
 
-			// choose the best feeds to work with, sort by priority
-			var sFeeds = lgcMngr.sortFeeds(requestParams.cntry, feeds);
+				// choose the best feeds to work with, sort by priority
+				var sFeeds = lgcMngr.sortFeeds(requestParams.cntry, feeds);
 
-			// Ask the feeds for offers, format and choose the best offers, respond the client 
-			var om = new offersMngr.offersMngr(requestParams, sFeeds, function (error, offers) {
+				// Ask the feeds for offers, format and choose the best offers, respond the client 
+				var om = new offersMngr.offersMngr(requestParams, sFeeds, function (error, offers) {
 
-				response.header("Cache-Control", "no-cache, no-store, must-revalidate");
-				response.header("Pragma", "no-cache");
-				response.header("Expires", 0);
+					response.header("Cache-Control", "no-cache, no-store, must-revalidate");
+					response.header("Pragma", "no-cache");
+					response.header("Expires", 0);
 
-				var resData = (error ? { "error": error } : offers);
-				resData = frmtr.normalize(requestParams, resData); // add env params to each offer (cntry, ctgry, prdct etc.)
-				resData = lgcMngr.chooseOffers(requestParams, resData); // choose the best offers to return to the client
+					var resData = (error ? { "error": error } : offers);
+					resData = frmtr.normalize(requestParams, resData); // add env params to each offer (cntry, ctgry, prdct etc.)
+					resData = lgcMngr.chooseOffers(requestParams, resData); // choose the best offers to return to the client
 
-				if (requestParams.callback) {
-					response.jsonp(resData);
-				}
-				else {
-					response.json(resData);
-				}
-			});
-
-			om.getOffers();
+					if (requestParams.callback) {
+						response.jsonp(resData);
+					}
+					else {
+						response.json(resData);
+					}
+				});
+				om.getOffers();
+			}//invalid request
+			else{
+				utl.log("[main.js][processRequest] - invalid request");
+				response.jsonp({status : "invalid request"});
+			}
 		}
 		catch (e) {
 			utl.log("[main.js][processRequest::err][" + e + "]");
@@ -104,13 +109,17 @@ var feedsMngr = require('./feedsmngr'),
 					requestObject[key] = "uk";
 				}
 			});
-
-			if (requestObject.limit) {
-				requestObject.limit = parseInt(requestObject.limit);
+			if(frmtr.isValidRequest(requestObject)){
+					if (requestObject.limit) {
+						requestObject.limit = parseInt(requestObject.limit);
+					}
+				//requestObject.sz = "300"; // request.params.size;
+				requestObject.type = request.params.type;
+				return requestObject;
 			}
-			//requestObject.sz = "300"; // request.params.size;
-			requestObject.type = request.params.type;
-			return requestObject;
+			else{//request isn't valid!
+				return null;
+			}
 		}
 		catch (e) { 
             console.log(e);        
