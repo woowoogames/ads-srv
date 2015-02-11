@@ -66,10 +66,22 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
 
 	this.getOffers = function () {
 		try {
-			this.getAsyncOffers();
-			this.getDdls();
-			this.getAsyncRawOffers();
-			this.getTrnds();
+            if(typeof this.mPrms.type === 'undefined'){ // all four - feeds/raw/ddls/trnds
+                this.getAsyncOffers();
+                this.getDdls();
+                this.getAsyncRawOffers();
+                this.getTrnds();
+            }
+            else{
+                if(this.mPrms.type === 'ddls'){ // only ddls
+                    this.mPrcsCount = 1;
+                    this.getDdls();    
+                }
+                if(this.mPrms.type === 'trnds'){// only/trnds
+                    this.mPrcsCount = 1;
+                    this.getTrnds();
+                }
+            }
 		}
 		catch (e) { }
 	};

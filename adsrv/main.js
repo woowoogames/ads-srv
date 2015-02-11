@@ -109,12 +109,12 @@ var feedsMngr = require('./feedsmngr'),
 					requestObject[key] = "uk";
 				}
 			});
+			//requestObject.sz = "300"; // request.params.size;
+			requestObject.type = request.params.type;
 			if(frmtr.isValidRequest(requestObject)){
 				if (requestObject.limit) {
 					requestObject.limit = parseInt(requestObject.limit);
 				}
-				//requestObject.sz = "300"; // request.params.size;
-				requestObject.type = request.params.type;
 				return requestObject;
 			}
 			else{//request isn't valid!
