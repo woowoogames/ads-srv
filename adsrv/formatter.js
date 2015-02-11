@@ -179,6 +179,8 @@ var formatter = {
 	},
 
 	isValidRequest : function(requestObject){
+		if(!formatter.isValidPath(requestObject))
+			return false;
 		if(formatter.isValidQueryParams(requestObject)){
 			for(var key in requestObject){
 				if(key == "prdct"){
@@ -203,6 +205,17 @@ var formatter = {
 	isValidQueryParams : function(requestObject){
 		var validQuery = requestObject.hasOwnProperty('prdct') && requestObject.hasOwnProperty('cntry') && requestObject.hasOwnProperty('ctgry');
 		return validQuery;
+	},
+
+	isValidPath : function(requestObject){
+		if(typeof requestObject.type === 'undefined')
+			return true;
+		else{
+			if(requestObject.type == "serp" || requestObject.type == "ddls" || requestObject.type == "trnds")
+				return true;
+			else
+				return false;
+		}
 	},
 
 	getPrice: function (n, crncy) {

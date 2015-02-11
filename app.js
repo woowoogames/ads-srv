@@ -64,8 +64,10 @@ var notFoundErrorHandler = function (req, res, next) {
 	// handle 404 
 	res.status = 404;
 	res.description = "Not Found";
-	res.send();
-	utl.log("404 error !!!");
+	// res.send();
+	// utl.log("404 error !!!");
+    utl.log("[main.js][processRequest] - invalid request");
+    res.jsonp({status : "invalid request"});
 };
 
 var globalErrorHandler = function (err, req, res, next) {
