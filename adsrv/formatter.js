@@ -159,12 +159,13 @@ var formatter = {
 	},
 
 	validProduct : function(prdct){
-		var validProduct = prdct.match(/coms0[0-9][0-9]/g);
+		var validProduct = prdct.match(/coms0.[0-9][0-9]{0,7}/g);
 		if(validProduct)
-			return true;
+			return validProduct.length == 1 && prdct.length == 7; 
 		else
 			return false;
 	},
+
 	validIp : function(ip){
 		var ipPattern = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]).){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/g;
 		return ipPattern.test(ip);
@@ -178,21 +179,30 @@ var formatter = {
 	},
 
 	isValidRequest : function(requestObject){
-		for(var key in requestObject){
-			if(key == "prdct"){
-				if(!formatter.validProduct(requestObject[key]))
-					return false;
+		if(formatter.isValidQueryParams(requestObject)){
+			for(var key in requestObject){
+				if(key == "prdct"){
+					if(!formatter.validProduct(requestObject[key]))
+						return false;
+				}
+				if(key == "ip"){
+					if(!formatter.validIp(requestObject[key]))
+						return false;
+				}
+				if(key == "cntry"){
+					if(!formatter.validCntry(requestObject[key]))
+						return false;
+				}
 			}
-			if(key == "ip"){
-				if(!formatter.validIp(requestObject[key]))
-					return false;
-			}
-			if(key == "cntry"){
-				if(!formatter.validCntry(requestObject[key]))
-					return false;
-			}
+			return true;
 		}
-		return true;
+		else
+			return false;			
+	},
+
+	isValidQueryParams : function(requestObject){
+		var validQuery = requestObject.hasOwnProperty('prdct') && requestObject.hasOwnProperty('cntry') && requestObject.hasOwnProperty('ctgry');
+		return validQuery;
 	},
 
 	getPrice: function (n, crncy) {

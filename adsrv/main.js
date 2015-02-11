@@ -110,9 +110,9 @@ var feedsMngr = require('./feedsmngr'),
 				}
 			});
 			if(frmtr.isValidRequest(requestObject)){
-					if (requestObject.limit) {
-						requestObject.limit = parseInt(requestObject.limit);
-					}
+				if (requestObject.limit) {
+					requestObject.limit = parseInt(requestObject.limit);
+				}
 				//requestObject.sz = "300"; // request.params.size;
 				requestObject.type = request.params.type;
 				return requestObject;
