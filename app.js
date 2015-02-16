@@ -136,30 +136,3 @@ process.on('uncaughtException', function (err) {
     console.log( "[Inside 'uncaughtException' event] " + err.stack || err.message );
 });
 
-
-/*
-if (cluster.isMaster) {
-    
-    utl.log("numCPUs = " + numCPUs);
-    for (var i = 0; i < numCPUs; i++) {
-        var w = cluster.fork();
-        utl.log('created worker #' + w.id + " process #" + w.process.pid);
-    }
-    
-    cluster.on('exit', function (worker, code, signal) {
-        utl.log('worker ' + worker.process.pid + ' died');
-    });
-    
-    adsrv.init();
-} 
-else if (cluster.isWorker) {
-    
-    // Workers shares TCP connection -- In this case its a HTTP server
-    utl.log('worker #' + cluster.worker.id + " process #" + cluster.worker.process.pid + " listening on port #" + app.get('port'));
-    http.createServer(app).listen(app.get('port'), function () {
-        utl.log('Express server listening on port ' + app.get('port'));
-    });
-}
-*/
-
-// module.exports.app = app;

@@ -1,9 +1,14 @@
 
 var baseApi = require("../baseapi"),
 	path = require("path"),
-	utl = require("../utl")
+	utl = require("../utl"),
+	fs = require("fs"),
 	frmtr = require("../formatter");
 
+
+
+var fsWatchHandl = 0;
+var dataFilePath = path.join(path.dirname(__filename), "/data.js");
 
 var ddlsMngr = {
 
@@ -15,6 +20,16 @@ var ddlsMngr = {
 	// public 
 	init : function (clbk){
 		ddlsMngr.loadDdls(clbk);
+
+
+		fs.watch(dataFilePath, function(e) {
+
+			clearTimeout(fsWatchHandl);
+			fsWatchHandl = setTimeout(function() {
+				console.log(dataFilePath + " changed");
+				ddlsMngr.loadDdls(function() {});	
+			}, 5000);
+		});
 	},
 
 

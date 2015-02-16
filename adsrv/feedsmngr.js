@@ -3,8 +3,12 @@ var baseApi = require('./baseapi'),
 	utl = require('./utl'),
 	_ = require("underscore"),
 	utl = require("./utl"),
+	fs = require("fs"),
 	path = require("path");
 
+
+var feedFilePath = path.join(path.dirname(__filename), "/data/feeds.js");
+var fsWatchHandl = 0;
 
 var feedsMngr = {
 
@@ -13,12 +17,21 @@ var feedsMngr = {
 	// public 
 	init : function (clbk){
 		feedsMngr.loadFeeds(clbk);
+		fs.watch(feedFilePath, function(e){
+			clearTimeout(fsWatchHandl);
+			fsWatchHandl = setTimeout(function() {
+				console.log(feedFilePath + " changed");
+				feedsMngr.loadFeeds(function() {
+					//console.dir(feedsMngr.feedsMap);
+				});	
+			},500);
+		});
 	},
 
 	loadFeeds : function (clbk){
 		try {
 			// load the feedsmap into memory
-			baseApi.readFile(path.join(path.dirname(__filename), "/data/feeds.js"), function (err, data) {
+			baseApi.readFile(feedFilePath, function (err, data) {
 				if (!err) {
 					feedsMngr.feedsMap = JSON.parse(data);
 				}
