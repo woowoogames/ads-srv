@@ -26,6 +26,11 @@ should we put the hardid->UCD in radis? we can then collect info about the user.
 
  */
 
+var APPLICATION_NAME = process.env.STRONGLOOP_APP_NAME || 'vertical-add-server';
+var API_KEY = 'a962830f5d6aad44063364defe5a05ed';
+require('strong-agent').profile(API_KEY, APPLICATION_NAME);
+
+
 var express = require('express');
 var cluster = require('cluster');
 var http = require('http');
