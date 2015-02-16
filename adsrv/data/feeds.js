@@ -3,7 +3,7 @@
         "name": "admarketplace",
         "type" : "feed",
         "requireSearchTerm": true,
-        "active": false,
+        "active": true,
         "handler": "./feeds/admarketplace",
         "coverage": {
             "cntry": {
@@ -20,7 +20,7 @@
         "name": "matomy",
         "type" : "raw",
         "requireSearchTerm": false,
-        "active": false,
+        "active": true,
         "handler": "./raw/matomy",
         "coverage": {
             "cntry": {
