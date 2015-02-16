@@ -125,6 +125,13 @@ process.on("SIGINT", function() {
       baseApi.killAll();
       process.exit();
 });
+
+process.on('uncaughtException', function (err) {
+    console.log( "UNCAUGHT EXCEPTION ", arguments );
+    console.log( "[Inside 'uncaughtException' event] " + err.stack || err.message );
+});
+
+
 /*
 if (cluster.isMaster) {
     
