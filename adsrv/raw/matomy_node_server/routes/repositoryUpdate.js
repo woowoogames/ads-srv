@@ -5,12 +5,13 @@ var baseApi = require("../../../baseapi.js");
 var q = require('q');
 var xml_data=null;
 
-var progarms_contray = ["us","fr","pl","es","de","uk","in"];
+var progarms_country = ["us","fr","pl","es","de","gb","in"];
 var ad_sizes = ['300x250','160x600','728x90'];
-
+var pathGetCodes = [];
 
 var refresh_banners = function (callback){	
 	try{
+		createGetCodePath();
 		var promises = [];
 		promises.push(resulutions_execute());
 		q.all(promises).then(function() {
@@ -19,6 +20,19 @@ var refresh_banners = function (callback){
 		});
 	}
 	catch(err){}
+}
+
+var createGetCodePath = function(){
+	for(var i=0 ; i<progarms_country.length ;i++){
+		for(var j=0 ; j<ad_sizes.length ;j++){
+			var resulution = ad_sizes[j].split('x');
+			pathGetCodes.push({
+				country : progarms_country[i],
+				size: ad_sizes[j],
+				url:"https://network.adsmarket.com/site/API2?userid=215541&key=c99a05a58833a5585f07ca45745dde73&fn=getcodes&Type=2|3&width=" + resulution[0] +"&height=" + resulution[1] + "&country=" + progarms_country[i]
+			});
+		}
+	}
 }
 
 var refresh_programs = function(callback){
@@ -64,19 +78,20 @@ function delayedLoop(collection, callback, interval){
 var resulutions_execute = function(){
 	var defered = q.defer();
 	try{
-		delayedLoop(ad_sizes,function(idx,curr_size,callback){
-			var resulution = curr_size.split('x');
-			var path_to_save_to = './matomy_data/ad/banners/1/' + ad_sizes[idx];
-			var path = "https://network.adsmarket.com/site/API2?userid=215541&key=c99a05a58833a5585f07ca45745dde73&fn=getcodes&Type=2|3&width=" + resulution[0] +"&height=" + resulution[1];
+		delayedLoop(pathGetCodes,function(idx,currPath,callback){
+			var resulution = currPath.size.split('x');
+			var path_to_save_to = './matomy_data/ad/banners/' + pathGetCodes[idx].country + "/" + pathGetCodes[idx].size;
+			//var path = "https://network.adsmarket.com/site/API2?userid=215541&key=c99a05a58833a5585f07ca45745dde73&fn=getcodes&Type=2|3&width=" + resulution[0] +"&height=" + resulution[1];
+			var path = currPath.url;
 			baseApi.httpsGetTimeout(path,1000000000,function(err, res, body){
 				baseApi.writeFileSync(path_to_save_to +'.xml',body);
+				console.log("done :" + currPath.country + " " + currPath.size);
 				if(callback)
 					callback();
-				if(idx == ad_sizes.length-1) {
+				if(idx == pathGetCodes.length-1) {
 					defered.resolve();
 				}
 			});
-			//create_file_ajax_request("https://network.adsmarket.com/site/API2?userid=215541&key=c99a05a58833a5585f07ca45745dde73&fn=getcodes&Type=2|3&width=" + resulution[0] +"&height=" + resulution[1],path_to_save_to,callback);
 		});
 	}
 	catch(err){
@@ -88,15 +103,16 @@ var resulutions_execute = function(){
 var program_excecute = function(){
 	var defered = q.defer();
 	try{
-		delayedLoop(progarms_contray,function(idx,curr_contry,callback){
-			var path_to_save_to = "./matomy_data/programs/1/"+progarms_contray[idx];
+		delayedLoop(progarms_country,function(idx,curr_contry,callback){
+			var path_to_save_to = "./matomy_data/programs/"+progarms_country[idx];
 			//create_file_ajax_request("https://network.adsmarket.com/site/API2?userid=215541&key=c99a05a58833a5585f07ca45745dde73&fn=findprograms&countries=" + curr_contry ,path_to_save_to,callback);
-			var path = "https://network.adsmarket.com/site/API2?userid=215541&key=c99a05a58833a5585f07ca45745dde73&fn=findprograms&countries=" + curr_contry;
+			var path = "https://network.adsmarket.com/site/API2?userid=215541&key=c99a05a58833a5585f07ca45745dde73&fn=findprograms&relationship_status=3&countries=" + curr_contry;
 			baseApi.httpsGetTimeout(path,1000000000,function(err, res, body){
 				baseApi.writeFileSync(path_to_save_to +'.xml',body);
+				console.log("done :" + path_to_save_to + ".xml");
 				if(callback)
 					callback();
-				if(idx == progarms_contray.length-1) {
+				if(idx == progarms_country.length-1) {
 					defered.resolve();
 				}
 			});
@@ -112,27 +128,3 @@ module.exports.refresh = {
 	refresh_banners:refresh_banners,
 	refresh_programs:refresh_programs
 }
-
-
-// var create_file_ajax_request = function (path,path_to_save_to,callback)
-// {
-// 	console.log(path);
-// 	try{
-// 		xmlhttp.onreadystatechange=function()
-// 		{
-// 			if (xmlhttp.readyState==4 && xmlhttp.status==200)
-// 			{
-// 				xml_data = xmlhttp.responseText;
-// 				baseApi.writeFileSync(path_to_save_to +'.xml',xml_data);
-// 				console.log('finished!');
-// 				if(callback)
-// 					callback();
-// 			}
-// 		}
-// 		xmlhttp.open("GET",path,true);
-// 		xmlhttp.send();
-// 	}
-// 	catch(err){
-// 		console.log(err);
-// 	}
-// }

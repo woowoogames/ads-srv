@@ -8,20 +8,22 @@ var baseApi = require("../baseapi"),
 var data={};
 var resolutions = {
 	"160" : "160x600",
-	"728" : "728x90" 
+	"728" : "728x90",
+	"300" : "300x250"
 };
 
 var ctrgyMapper = {
-    "mobile": "'Mobile Content'",
+    "mobile": "Mobile Content",
     "videogames":"Games",
     "downloads":"Downloads",
     "travel":"Travel",
     "dating":"Dating",
-    "health":"'Health and Wellness'",
+    "health":"Health and Wellness",
     "finance":"Finance",
     "celebsngossip":"Other",
     "shopping":"eCommerce"
 };
+
 // Incentivized
 // Entertainment
 // Insurance
@@ -118,51 +120,54 @@ function shuffle(n,arr){
 		return results;
 }
 
+// var all_resulutions = {
+// 	key_300x250 : undefined,
+// 	key_160x600 : undefined,
+// 	key_728x90  : undefined
+// };
 var all_resulutions = {
-	key_300x250 : undefined,
-	key_160x600 : undefined,
-	key_728x90  : undefined
+	key_300x250 : {},
+	key_160x600 : {},
+	key_728x90  : {}
 };
 var all_programs = {
 	key_us: undefined,
-	key_uk: undefined,
 	key_pl: undefined,
 	key_es: undefined,
 	key_de: undefined,
 	key_fr: undefined,
 	key_in: undefined
 };
-var flag = true;
-var resulution_to_load = [/*"300x250",*/"160x600","728x90"];
-var program_to_load = ["us","fr","pl","es","de","uk","in"];
-var categories_to_load=["Biz Op",
-						"Consumer Products",
-						"Dating",
-						"Downloads",
-						"Entertainment",
-						"Finance",
-						"Games",
-						"Health and Wellness",
-						"Incentivized",
-						"Lead Generation",
-						"Mobile Apps",
-						"Mobile Optimized",
-						"Other",
-						"Software",
-						"Surveys",
-						"Travel",
-						"eCommerce"];
-
+var resulution_to_load = ["300x250","160x600","728x90"];
+var program_to_load = ["us","fr","pl","es","de","in"];
+// var categories_to_load=["Biz Op",
+// 						"Consumer Products",
+// 						"Dating",
+// 						"Downloads",
+// 						"Entertainment",
+// 						"Finance",
+// 						"Games",
+// 						"Health and Wellness",
+// 						"Incentivized",
+// 						"Lead Generation",
+// 						"Mobile Apps",
+// 						"Mobile Optimized",
+// 						"Other",
+// 						"Software",
+// 						"Surveys",
+// 						"Travel",
+// 						"eCommerce"];
+var categories_to_load = [];
+var pathGetCodes = [];
 
 function create_data_object(){
-	// flag=false;
 	for(var i=0 ; i<program_to_load.length ; i++){
 		data[program_to_load[i]] = get_all_country_categires(all_programs['key_'+program_to_load[i]]);
 	}
 	for(var i=0 ; i<program_to_load.length ; i++){
 		for(var j=0 ; j<resulution_to_load.length ; j++){
 			for(var k=0 ; k<categories_to_load.length ; k++){
-				var json_response = get_json_response(all_resulutions['key_'+resulution_to_load[j]],
+				var json_response = get_json_response(all_resulutions['key_'+resulution_to_load[j]][program_to_load[i]],
 					all_programs['key_'+program_to_load[i]],categories_to_load[k]);
 				if(json_response.length>0){
 					var c =data[program_to_load[i]];
@@ -241,13 +246,50 @@ function get_json_response(resulution,programs,category){
 
 	function init(callback){
 		var promises = [];
-		promises.push(init_files(resulution_to_load,"matomy_node_server/matomy_data/ad/banners/",all_resulutions,undefined));
-		promises.push(init_files(program_to_load,"matomy_node_server/matomy_data/programs/",all_programs,get_program_id_category));
+		loadCategories();
+		createGetCodePath();
+		promises.push(initBanners());
+	    promises.push(init_files(program_to_load,"matomy_node_server/matomy_data/programs/",all_programs,get_program_id_category));
 		q.all(promises).then(function() {
-			//console.log('great sucess **********');
 			callback();
-		})
+		});
 	}
+
+	function initBanners(){
+		var defered = q.defer();
+		delayedLoop(pathGetCodes,function(idx,curr,callback){
+			try{
+				baseApi.readFile(path.join(path.dirname(__filename),"matomy_node_server/matomy_data/ad/banners/" + curr.country + "/" + curr.size + '.xml'),function(err,data){
+						var result = baseApi.xmlToJSON(data);
+						if(typeof result !== 'undefined'){
+							all_resulutions["key_" + curr.size][curr.country] = result;
+							utl.log("[matomy.js][initBanners] - read " + curr.country + "/" + curr.size + ".xml file finished! ");
+							callback();
+							if(idx == pathGetCodes.length-1) {
+								defered.resolve();
+							}
+						}
+					});
+			}
+			catch(err){
+				console.log("init failed!");
+			}
+		});
+		return defered.promise;
+	}
+
+	var createGetCodePath = function(){
+		for(var i=0 ; i<program_to_load.length ;i++){
+			for(var j=0 ; j<resulution_to_load.length ;j++){
+				var resulution = resulution_to_load[j].split('x');
+				pathGetCodes.push({
+					country : program_to_load[i],
+					size: resulution_to_load[j]
+				});
+			}
+		}
+	}
+
 
 	function init_files(files_to_load,relative_path,load_to,execute_function){
 		var defered = q.defer();
@@ -262,7 +304,7 @@ function get_json_response(resulution,programs,category){
 							else{
 								load_to["key_" + curr_array_obj] = result;
 							}
-							utl.log("[matomy.js][init_files] - read " + curr_array_obj + " file finished! ")
+							utl.log("[matomy.js][init_files] - read " + curr_array_obj + " file finished! ");
 							callback();
 							if(idx == files_to_load.length-1) {
 								defered.resolve();
@@ -301,6 +343,19 @@ function get_json_response(resulution,programs,category){
 			}
 		}
 		return programid_category_array;
+	}
+
+
+	function loadCategories(){
+		var defered = q.defer();
+		baseApi.readFile(path.join(path.dirname(__filename),"matomy_node_server/matomy_data/category.xml"),function(err,data){
+			var ctgrs = baseApi.xmlToJSON(data);
+			for(var i=0 ; i<ctgrs.reply.categories.category.length ; i++){
+				categories_to_load.push(ctgrs.reply.categories.category[i].category_title);
+			}
+			defered.resolve();
+		});
+		return defered.promise;
 	}
 
 init(function(){

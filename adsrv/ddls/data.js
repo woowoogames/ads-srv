@@ -106,5 +106,26 @@
       "https://mmwebhandler.888.com/C/34482?sr=1130293&"
     ],
     "id": 6
+  },
+  "ddls7": {
+    "desc": "miniplay",
+    "rndrTyp": "iframe",
+    "size": "300x250",
+    "ctgry": [
+      "Video Games"
+    ],
+    "cntry": [
+      "us"
+    ],
+    "domains": [],
+    "feed": "miniplay",
+    "standalone": true,
+    "source": [
+      "http://widgets.moosite.com/hot-games/?widget=Affiliate&p=eyJ1c2VySWQiOjYzLCJ0eXBlIjoiMzAweDI1MCAoQiBkYXJrKSIsIm1rdCI6IlpKQUZNT05USUVSQU1PTlRJRVJBIiwib3B0aW9uYWxQYXJhbXMiOnsibWt0YSI6IiIsImNzc0ZpbGUiOiIiLCJtb3JlVXJsIjoiIiwid2ViSWQiOiIxIiwic3NsIjpmYWxzZX19&s=745764f8c159d7f674d8bdcaa3016da0"
+    ],
+    "lnk": [],
+    "subidkey": "",
+    "subidval": "",
+    "id": "ddls7"
   }
 }
