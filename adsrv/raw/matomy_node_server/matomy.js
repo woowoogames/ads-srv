@@ -37,23 +37,26 @@ process.on("SIGTERM", function() {
 // });
 
 function init(){
-   console.log("I'm Alive!");
+   setTimeout(function(){
+         console.log("Matomy update process KILLED! - timeout - one hour");
+         process.exit();
+   },1000 * 60 * 60);//kill process after 1 hour
    var bannerDone = false;
    var programDone = false;
 	routes_load_data.refresh.refresh_programs(function(type){
       if(type=="programDone")
          programDone = true;
       if(bannerDone && programDone){
-         console.log("KILL ME");
-         //process.exit();
+         console.log("Matomy update process KILLED!");
+         process.exit();
       }
    });
 	routes_load_data.refresh.refresh_banners(function(type){
       if(type=="bannerDone")
          bannerDone = true;
       if(bannerDone && programDone){
-         console.log("KILL ME");
-         //process.exit();
+         console.log("Matomy update process KILLED!");
+         process.exit();
       }
    });
 };
