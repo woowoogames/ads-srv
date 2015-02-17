@@ -11,28 +11,28 @@ var resolutions = {
 	"728" : "728x90",
 	"300" : "300x250"
 };
-
 var ctrgyMapper = {
-    "mobile": "Mobile Content",
-    "videogames":"Games",
+    "mobile": "Mobile Content"/*["Mobile Content","Mobile Apps","Mobile Optimized","Telecom"]*/,
+    "video games":"Games",
     "downloads":"Downloads",
     "travel":"Travel",
     "dating":"Dating",
     "health":"Health and Wellness",
     "finance":"Finance",
     "celebsngossip":"Other",
-    "shopping":"eCommerce"
+    "shopping": "Shopping"/*["eCommerce","Shopping","Shopping Clubs"]*/,
+    "education":"Education",
+    "spiritual" :"Astrology",
+    "web market" : "Auctions",
+    "gambling" : "Gambling" /*["Gambling","Lottery"]*/,
+    "lifestyle" : "Lifestyle & Fashion",
+    "trends" : "Incentivized",
+    "home entertainment": "Entertainment",
+    "computers & tablets" : "Software",
+    "management & success" : "Biz Op",
+    "hobbies" : "Other",
+    "professional services" : "Home Services"
 };
-
-// Incentivized
-// Entertainment
-// Insurance
-// 'Lead Generation'
-// 'Mobile Apps'
-// 'Consumer Products'
-// Software
-// Surveys 
-// 'Biz Op'
 
 var matomy = function () {
 	this.getOffers = function (prms, clbk) {
@@ -48,6 +48,8 @@ var matomy = function () {
 		    	var results = shuffle(n,arr);
 		    	if(results.length>0){
 		    		var matomyResults = this.format(results,resolution);
+		    		this.productAndSubid(matomyResults,prms.prdct,prms.subid);
+		    		console.log(matomyResults);
 		    		clbk(0,matomyResults);
 		    	}
 		    	else{
@@ -61,6 +63,14 @@ var matomy = function () {
 		catch(err){
 			that.mClbk(1, "[matomy.js][getOffers] - fatal error - status - " + err);
 			clbk(1,e);
+		}
+	},
+	this.productAndSubid = function(matomyResults,productId,subId){
+		for(var i = 0 ; i < matomyResults.length ; i++){
+			matomyResults[i].lnk += "&dp=" + productId;
+			if(typeof subId !== 'undefined'){
+				matomyResults[i].lnk += "&dp2=" + subId;
+			}
 		}
 	},
 	this.safeResults = function(country,category,resolution){
@@ -363,3 +373,47 @@ init(function(){
 	console.log("[matomy.js][init] - done! - all files loaded to memory");
 });
 module.exports = matomy;
+
+
+
+
+
+
+
+
+
+
+
+//Co-Reg
+//FB Apps
+//Consumer Products
+// Daily Deals
+// Insurance
+// Lead Generation
+// Pay Per Call
+// Social
+// Surveys
+// Utilities
+
+
+// var ctrgyMapper = {
+//     "mobile": "Mobile Content",
+//     "videogames":"Games",
+//     "downloads":"Downloads",
+//     "travel":"Travel",
+//     "dating":"Dating",
+//     "health":"Health and Wellness",
+//     "finance":"Finance",
+//     "celebsngossip":"Other",
+//     "shopping":"eCommerce",
+//     "education":""
+// };
+// Incentivized
+// Entertainment
+// Insurance
+// 'Lead Generation'
+// 'Mobile Apps'
+// 'Consumer Products'
+// Software
+// Surveys 
+// 'Biz Op'

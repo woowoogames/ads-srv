@@ -20,7 +20,7 @@
         "name": "matomy",
         "type" : "raw",
         "requireSearchTerm": false,
-        "active": true,
+        "active": false,
         "handler": "./raw/matomy",
         "coverage": {
             "cntry": {
