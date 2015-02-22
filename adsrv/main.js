@@ -9,7 +9,8 @@ var feedsMngr = require('./feedsmngr'),
 	// path = require("path"),
 	utl = require("./utl"),
 	frmtr = require("./formatter"),
-	_ = require("underscore");
+	_ = require("underscore"),
+	influxReporter = require('../influx-client');
 
 
 	var adSrv = {
@@ -26,13 +27,17 @@ var feedsMngr = require('./feedsmngr'),
 	*******************************************************************************************************/
 
 	processRequest: function (request, response) {
-
+		
 		try {
 			utl.log("[main.js][processRequest] url - " + request.url);
 
+			
 			// request params
 			var requestParams = adSrv.getRequestParams(request);
-
+			influxReporter.report('adsrvr', {
+				country: requestParams.cntry,
+				category: requestParams.ctgry,
+			});
 			if(requestParams){
 				// list of feeds to work with according to the request params
 				var feeds = feedsMngr.getFeeds(requestParams);

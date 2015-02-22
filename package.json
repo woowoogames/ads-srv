@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "express": "3.4.4",
+    "influx": "^3.3.0",
     "jade": "*",
     "node.extend": "^1.1.2",
     "q": "^1.1.2",
