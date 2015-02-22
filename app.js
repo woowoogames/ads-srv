@@ -39,7 +39,6 @@ var utl = require("./adsrv/utl");
 var numCPUs = 1; // require('os').cpus().length;
 var baseApi = require('./adsrv/baseapi');
 
-var routes = require('./routes');
 var adsrv = require('./adsrv/main');
 
 
@@ -99,7 +98,6 @@ if ('development' == app.get('env')) {
     app.use(express.errorHandler());
 }
 
-// app.get('/', routes.index);
 // app.get('/log', log.index); // logger on the server
 //app.get('/rpt', rpt.index); // client reports 
 // http://localhost:3000/offers/300/?cntry=us&prdct=coms001&st=xbox&ctgry=mobile&subid=&n=10&ip=&typ
