@@ -1,5 +1,22 @@
 ﻿[
     {
+        "name": "adworldmedia",
+        "type" : "feed",
+        "requireSearchTerm": true,
+        "active": true,
+        "handler": "./feeds/adworldmedia",
+        "coverage": {
+            "cntry": {
+                "type": "white",
+                "values" :["us","ca","uk","au","nz"]
+            },
+            "prdct": {
+                "type": "white",
+                "values": ["all"]
+            }
+        }
+    },
+    {
         "name": "admarketplace",
         "type" : "feed",
         "requireSearchTerm": true,
