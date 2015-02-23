@@ -14,7 +14,6 @@ var adworldmedia = function () {
 		this.mClbk = clbk;
 		try {
 			var url = this.getURL();
-			console.log(url);
 			var n = prms.n || 10;
 			baseApi.httpGetTimeout(url, function (error, response, body) {
 				if(typeof body !== 'undefined'){
@@ -92,7 +91,7 @@ var adworldmedia = function () {
     	var prdct = that.mPrms.prdct;
     	var st = that.mPrms.st;
     	var ip = that.mPrms.ip;
-    	var referurl = "http%3A%2F%2Ftest.com%2F%3Fq%3Dsex%2Bdating";
+    	var referurl = that.mPrms.host;
     	var url = "http://xml.trafficfeeder.com/search?feed=41672&auth=J5bVSB&subid=" + prdct + "&ua=" + ua + "&url=" + referurl + "&user_ip=" + ip + "&query=" + st + "&count=" + count + "&format=json";
     	return url;
     }

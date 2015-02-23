@@ -36,7 +36,6 @@ var admarketplace = function () {
 				if(prms.type === 'serp'){
 					var n = prms.n || 10;
 					var url = this.getURL(prms.type);
-					console.log("********" + url);
 					baseApi.httpGetTimeout(url, function (error, response, body) {
 						if(error){
 							that.mClbk(1, "[admarketplace.js][getOffers::err] -- fatal error [" + err + "]");

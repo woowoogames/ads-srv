@@ -30,7 +30,6 @@ var feedsMngr = require('./feedsmngr'),
 		
 		try {
 			utl.log("[main.js][processRequest] url - " + request.url);
-
 			
 			// request params
 			var requestParams = adSrv.getRequestParams(request);
@@ -43,7 +42,7 @@ var feedsMngr = require('./feedsmngr'),
 				var feeds = feedsMngr.getFeeds(requestParams);
 
 				// choose the best feeds to work with, sort by priority
-				var sFeeds = lgcMngr.sortFeeds(requestParams.cntry, feeds);
+				var sFeeds = lgcMngr.sortFeeds(requestParams, feeds);
 
 				// Ask the feeds for offers, format and choose the best offers, respond the client 
 				var om = new offersMngr.offersMngr(requestParams, sFeeds, function (error, offers) {

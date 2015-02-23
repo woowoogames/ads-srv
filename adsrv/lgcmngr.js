@@ -33,7 +33,8 @@ var lgcMngr = {
 		}
 	},
 
-	sortFeeds: function (cntry, pFeeds) {
+	sortFeeds: function (requestParams, pFeeds) {
+		var cntry = requestParams.cntry;
 
 		if (!pFeeds || pFeeds.constructor !== Array || pFeeds.length == 0) {
 			return [];
@@ -67,7 +68,23 @@ var lgcMngr = {
 		rslts.feeds = lgcMngr.sortByRank(cntry, rslts.feeds);
 		rslts.raw = lgcMngr.sortByRank(cntry, rslts.raw);
 
+		if(requestParams.type == "serp"){
+			rslts.feeds = lgcMngr.sortBySerp(cntry, rslts.feeds);
+		}
+
 		return rslts;
+	},
+
+	sortBySerp : function(cntry, feeds){
+		var serp =[];
+		var nonSerp = [];
+		for(var i = 0 ; i < feeds.length ; i++){
+			if(feeds[i].isSerp)
+				serp.push(feeds[i]);
+			else
+				nonSerp.push(feeds[i]);
+		}
+		return nonSerp.concat(serp);
 	},
 
 	sortByRank: function (cntry, feeds) {
