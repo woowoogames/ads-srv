@@ -2,6 +2,9 @@
     "ar": {
         "buscape": 1
     },
+    "au":{
+        "adworldmedia":1
+    },
     "be": {
         "pricegong": 1
     },
@@ -10,6 +13,7 @@
         "buzzcity": 1
     },
     "ca": {
+        "adworldmedia":1,
         "pricegong": 1
     },
     "cl": {
@@ -45,6 +49,7 @@
         "kelkoo": 1
     },
     "us": {
+        "adworldmedia":1,
         "admarketplace":1,
         "shopzilla": 1,
         "matomy": 1
@@ -87,6 +92,7 @@
         "buzzcity": 1
     },
     "uk": {
+        "adworldmedia":1,
         "ebay": 1,
         "buzzcity": 1,
         "matomy": 1
