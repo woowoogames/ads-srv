@@ -4,6 +4,7 @@
         "type" : "feed",
         "requireSearchTerm": true,
         "active": true,
+        "isSerp": false,
         "handler": "./feeds/adworldmedia",
         "coverage": {
             "cntry": {
@@ -21,6 +22,7 @@
         "type" : "feed",
         "requireSearchTerm": true,
         "active": true,
+        "isSerp": true,
         "handler": "./feeds/admarketplace",
         "coverage": {
             "cntry": {
@@ -38,6 +40,7 @@
         "type" : "raw",
         "requireSearchTerm": false,
         "active": false,
+        "isSerp": false,
         "handler": "./raw/matomy",
         "coverage": {
             "cntry": {
@@ -55,6 +58,7 @@
         "type" : "feed",
         "requireSearchTerm": true,
         "active": true,
+        "isSerp": false,
         "handler": "./feeds/kelkoo",
         "coverage": {
             "cntry": {
@@ -72,6 +76,7 @@
         "type": "feed",
         "requireSearchTerm": true,
         "active": true,
+        "isSerp": false,
         "handler": "./feeds/shopzilla",
         "coverage": {
             "cntry": {
@@ -90,6 +95,7 @@
         "type": "feed",
         "requireSearchTerm": true,
         "active": true,
+        "isSerp": false,
         "handler": "./feeds/pricegong",
         "coverage": {
             "cntry": {
@@ -107,6 +113,7 @@
         "type": "feed",
         "requireSearchTerm": true,
         "active": true,
+        "isSerp": false,
         "handler": "./feeds/shopping",
         "coverage": {
             "cntry": {
@@ -124,6 +131,7 @@
         "type": "feed",
         "requireSearchTerm": true,
         "active": true,
+        "isSerp": false,
         "handler": "./feeds/firstoffer",
         "coverage": {
             "cntry": {
@@ -141,6 +149,7 @@
     "type": "ddls",
     "requireSearchTerm": false,
     "active": true,
+    "isSerp": false,
     "handler": "./ddls/ddlmngr",
     "coverage": {
             "cntry": {
@@ -158,6 +167,7 @@
     "type": "trnds",
     "requireSearchTerm": false,
     "active": true,
+    "isSerp": false,
     "handler": "./trnds/trndmngr",
     "coverage": {
             "cntry": {
@@ -171,12 +181,13 @@
         }
     },
     {  
-        "name":"buscape",
-        "type":"feed",
-        "requireSearchTerm":true,
-        "active":true,
-        "handler":"./feeds/buscape",
-        "coverage":{  
+    "name":"buscape",
+    "type":"feed",
+    "requireSearchTerm":true,
+    "active":true,
+    "isSerp": false,
+    "handler":"./feeds/buscape",
+    "coverage":{  
             "cntry":{  
                 "type":"white",
                 "values":[  "br","ar","co","cl","mx","pe","ve"]
@@ -194,6 +205,7 @@
     "type":"raw",
     "requireSearchTerm":false,
     "active":true,
+    "isSerp": false,
     "handler":"./raw/buzzcity",
     "coverage":{  
            "cntry":{  

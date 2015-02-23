@@ -50,8 +50,8 @@
     },
     "us": {
         "adworldmedia":1,
-        "admarketplace":1,
         "shopzilla": 1,
+        "admarketplace":1,
         "matomy": 1
     },
     "my": {
