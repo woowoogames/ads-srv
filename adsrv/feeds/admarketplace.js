@@ -121,7 +121,7 @@ var admarketplace = function () {
 		var prdct = that.mPrms.prdct;
 		var n = that.mPrms.n;
 		if(type == 'serp'){
-			url = "http://montiera_search_us.ampfeed.com/xmlamp/feed?partner=pub_montiera_search_us&v=2&kw=" + st + "&results=" + n + "&ip=" + ip + "&proxy-ip=" + ip + "&ua=" + ua;
+			url = "http://montiera_search_us.ampfeed.com/xmlamp/feed?partner=pub_montiera_search_us&v=2&kw=" + st + "&sub1=" + prdct + "&results=" + n + "&ip=" + ip + "&proxy-ip=" + ip + "&ua=" + ua;
 		}
 		else{
 			url = "http://montiera.ampfeed.com/xmlamp/feed?partner=pub_montiera&v=2&kw=" + st + "&img=1&ptype=pc&puburl=ebay.com&sub1=" + prdct + "&results=" + n + "&ip=" + ip + "&proxy-ip=" + ip + "&ua="+ua+"&rfr=montiera.com";
