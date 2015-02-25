@@ -169,6 +169,7 @@ var buscape = function () {
 						continue;
 					obj.store.logo = offers[i].offer.seller.thumbnail.url;
 					obj.store.rtng = offers[i].offer.seller.rating.useraveragerating.rating;
+					obj.uid = "bscpe";
 					rsltArr.push(obj);
 				}
 				catch(e){

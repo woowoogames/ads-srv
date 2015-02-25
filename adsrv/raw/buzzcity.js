@@ -67,6 +67,7 @@ var buzzcity = function () {
 					obj.store.name = "";
 					obj.store.logo = "";
 					obj.store.rtng = "";
+					obj.uid = "buzcty";
 					rsltArr.push(obj);
 				}
 				catch(e){}
