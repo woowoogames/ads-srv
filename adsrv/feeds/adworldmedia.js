@@ -72,6 +72,7 @@ var adworldmedia = function () {
 					obj.meta.ctgry = that.mPrms.ctgry;
 					obj.meta.prdct = that.mPrms.prdct;
 					obj.lnk = offers[i].url;
+					obj.uid = "adwrld";
 					rsltArr.push(obj);
 				}
 				catch(e){
