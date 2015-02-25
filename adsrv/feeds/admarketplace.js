@@ -21,14 +21,26 @@ var admarketplace = function () {
 						return;
 					}
 					var data = baseApi.xmlToJSON(body);
-					if(typeof data.result.adlistings !== 'undefined'){
-						var results = that.format(data.result.adlistings.listing,prms.type);
-						utl.log("[admarketplace.js][getOffers] - return [" + results.length + "] results");
-						that.mClbk(0, results);
+					if(typeof data !== 'undefined'){
+						if(typeof data.result !== 'undefined'){
+							if(typeof data.result.adlistings !== 'undefined'){
+								var results = that.format(data.result.adlistings.listing,prms.type);
+								utl.log("[admarketplace.js][getOffers] - return [" + results.length + "] results");
+								that.mClbk(0, results);
+							}
+							else{
+								utl.log("[admarketplace.js][getOffers] - return 0 results");
+								that.mClbk(1, []);
+							}
+						}
+						else{
+							utl.log("[admarketplace.js][getOffers] - return 0 results");
+							that.mClbk(1, []);
+						}
 					}
 					else{
 						utl.log("[admarketplace.js][getOffers] - return 0 results");
-						that.mClbk(0, []);
+						that.mClbk(1, []);
 					}
 				});
 			}
@@ -42,13 +54,25 @@ var admarketplace = function () {
 							return;
 						}
 						var data = baseApi.xmlToJSON(body);
-						if(typeof data.result.adlistings !== 'undefined'){
-							var results = that.format(data.result.adlistings.listing,prms.type);
-							//utl.log("[admarketplace.js][getOffers] - return 0 results");
-							that.mClbk(0, results);
+						if(typeof data !== 'undefined'){
+							if(typeof data.result !== 'undefined'){
+								if(typeof data.result.adlistings !== 'undefined'){
+									var results = that.format(data.result.adlistings.listing,prms.type);
+									that.mClbk(0, results);
+								}
+								else{
+									utl.log("[admarketplace.js][getOffers] - return 0 results");
+									that.mClbk(1, []);
+								}
+							}
+							else{
+								utl.log("[admarketplace.js][getOffers] - return 0 results");
+								that.mClbk(1, []);
+							}
 						}
 						else{
-
+							utl.log("[admarketplace.js][getOffers] - return 0 results");
+							that.mClbk(1, []);
 						}
 					});
 				}
