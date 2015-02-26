@@ -171,7 +171,7 @@ var shopzilla = function () {
 
 					obj.typ = "any";
 					obj.ofrtype = "feed";
-					obj.uid = "shpzl";
+					obj.uid = "";
 					obj.stndaln = offer.standalone;
 
 					obj.desc.short = offer.title || "";
@@ -196,7 +196,7 @@ var shopzilla = function () {
 							obj.store.rtng = offer.merchantRating.value;
 						}
 					}
-					obj.meta.feed = "";
+					obj.meta.feed = "shpzl";
 					rsltArr.push(obj);
 				}
 				catch (e) {
