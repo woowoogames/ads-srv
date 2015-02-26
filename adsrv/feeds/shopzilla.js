@@ -142,8 +142,8 @@ var shopzilla = function () {
 
 	this.gtImg = function (imgs) {
 		try{
-			if (imgs.image && imgs.image[3] && imgs.image[3].value) {
-				return imgs.image[3].value;
+			if (imgs.image && imgs.image[0] && imgs.image[0].value) {
+				return imgs.image[0].value;
 			}
 			else if(imgs.image) {
 				for (var i = imgs.image.length - 1 ; i >= 0 ; i--) {
@@ -175,11 +175,11 @@ var shopzilla = function () {
 					obj.stndaln = offer.standalone;
 
 					obj.desc.short = offer.title || "";
-					// obj.desc.long = ??? ///////////////////////////////////////////
+				    obj.desc.long = offer.description;
 
 					obj.img.small = that.gtImg(offer.images);
 					try{
-						obj.img.big = offer.images.image[4].value;
+						obj.img.big = offer.images.image[2].value;
 					}
 					catch(e){
 						obj.img.big = "";
@@ -191,8 +191,12 @@ var shopzilla = function () {
 					obj.store.name = offer.merchantName || "";
 					obj.store.logo = offer.merchantLogoUrl || "";
 
-					obj.meta.feed = "shpzl";
-
+					if(typeof offer.merchantRating !== 'undefined'){
+						if(typeof offer.merchantRating.value !== 'undefined'){
+							obj.store.rtng = offer.merchantRating.value;
+						}
+					}
+					obj.meta.feed = "";
 					rsltArr.push(obj);
 				}
 				catch (e) {
