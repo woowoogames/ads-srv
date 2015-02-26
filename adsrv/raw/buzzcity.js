@@ -8,12 +8,12 @@ var buzzcity = function () {
 	this.mPrms = null;
 	var that = this;
 
-	var ctry ={ "dating":"126792",
-				"religion":"126790",
-				"gambling":"126791",
-				"Brand":"126788",
-				"GeneralContent":"126789"
-			  };
+	var ctgry ={ "dating":"126792",
+				 "spiritual":"126790",
+				 "gambling":"126791",
+				 "Brand":"126788",
+				 "GeneralContent":"126789"
+			   };
 
 	this.getOffers = function (prms, clbk) {
 		utl.log("[buzzcity.js][getOffers]");
@@ -81,7 +81,17 @@ var buzzcity = function () {
 		var map = that.mPrms.cntry || that.geoMap["in"];
 		var ip = that.mPrms.ip;
 		var ua = "SAMSUNG-GT-S5620/1.0";
-		var partner_id = ctry[that.mPrms.ctgry];
+		var partner_id;
+		if(ctgry.hasOwnProperty(that.mPrms.ctgry))
+			partner_id = ctgry[that.mPrms.ctgry];
+		else{
+			var rand = Math.random();
+			if(rand<0.5)
+				partner_id = ctgry["Brand"];
+			else
+				partner_id = ctgry["GeneralContent"];
+		}
+		console.log(partner_id);
 		if(typeof partner_id === "undefined")
 			return null;
 		var url = "http://show.buzzcity.net/showads.php?get=rich&partnerid=" + partner_id + "&ip=" + ip + "&ua=" + ua + "&imgsize=300x250&fmt=json&limit=100&v=3";
