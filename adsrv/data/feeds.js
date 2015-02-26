@@ -210,7 +210,7 @@
     "coverage":{  
            "cntry":{  
               "type":"white",
-              "values":[  "id","my","in","za","th","br","uk","ng"]
+              "values":["id","my","in","za","th","br","uk","ng"]
            },
            "prdct":{  
               "type":"white",
