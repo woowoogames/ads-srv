@@ -102,5 +102,9 @@
     },
     "za": {
         "buzzcity": 1
+    },
+    "int" :{
+        "ddls" : 1,
+        "trnds" : 2
     }
 }
