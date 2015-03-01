@@ -5,7 +5,6 @@ frmtr = require("../formatter");
 var whiteList = require("../data/adworldlist");
 
 var adworldmedia = function () {
-
 	this.mClbk = null;
 	this.mPrms = null;
 
@@ -15,11 +14,7 @@ var adworldmedia = function () {
 		this.mPrms = prms;
 		this.mClbk = clbk;
 		try {
-			if(!whiteList.test(prms.host)){
-				utl.log("[adworldmedia.js][getOffers] - return [0] results");
-				that.mClbk(0, []);
-			}
-			else{
+			if(prms.ctgry=="adult" && (typeof whiteList[prms.host] !== 'undefined')){
 				var url = this.getURL();
 				var n = prms.n || 10;
 				baseApi.httpGetTimeout(url, function (error, response, body) {
@@ -57,6 +52,10 @@ var adworldmedia = function () {
 						that.mClbk(0, []);
 					}
 				});
+			}
+			else{
+				utl.log("[adworldmedia.js][getOffers] - return [0] results");
+				that.mClbk(0, []);
 			}
 		}
 		catch (e) {
