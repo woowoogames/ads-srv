@@ -40,6 +40,7 @@ var ddlsMngr = {
 				if (!err) {
 					ddlsMngr.mDdlsMap = JSON.parse(data);
 					ddlsMngr.mDdlsMapIdx = ddlsMngr.createIdxMap();
+					ddlsMngr.ddlsMapToLower(ddlsMngr.mDdlsMapIdx);
 				}
 				else {
 					utl.log("[ddlmngr.js][loadDdls] - error getting ddls");
@@ -56,8 +57,7 @@ var ddlsMngr = {
 	getOffers : function (prms) {
 
 		try {
-
-			if (!ddlsMngr.mDdlsMapIdx || ddlsMngr.mDdlsMap.length == 0) {
+			if (!ddlsMngr.mDdlsMapIdx || Object.keys(ddlsMngr.mDdlsMap).length == 0) {
 				utl.log("[ddlmngr.js][getOffers] - error - no map");
 				return [];
 			}
@@ -110,6 +110,23 @@ var ddlsMngr = {
 			utl.log("[ddlmngr.js][getOffers] - error [" + e + "]");
 			return [];
 		}
+	},
+
+	ddlsMapToLower : function(){
+		for(var key in ddlsMngr.mDdlsMapIdx){
+			ddlsMngr.mDdlsMapIdx[key] = ddlsMngr.objToLower(ddlsMngr.mDdlsMapIdx[key]);
+		}
+	},
+
+	objToLower : function(obj){
+		var key, keys = Object.keys(obj);
+		var n = keys.length;
+		var newobj={}
+		while (n--) {
+		  key = keys[n];
+		  newobj[key.toLowerCase()] = obj[key];
+		}
+		return newobj;
 	},
 
 	format : function (rslt) {

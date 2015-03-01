@@ -88,16 +88,16 @@
     },
     "uk": {
         "adworldmedia": 1,
-        "shopzilla": 2,
+        "pricegong": 2,
         "ebay": 1,
         "buzzcity": 1,
         "matomy": 1
     },
     "us": {
-        "adworldmedia": 2,
-        "shopzilla": 1,
+        "adworldmedia": 1,
+        "pricegong": 2,
         "ebay": 3,
-        "admarketplace": 2,
+        "admarketplace": 4,
         "matomy": 1
     },
     "za": {
