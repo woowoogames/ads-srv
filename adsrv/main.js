@@ -120,6 +120,8 @@ var feedsMngr = require('./feedsmngr'),
 				if (requestObject.limit) {
 					requestObject.limit = parseInt(requestObject.limit);
 				}
+				if(typeof requestObject.cntry == 'undefined')
+					requestObject.cntry = 'int';
 				return requestObject;
 			}
 			else{//request isn't valid!

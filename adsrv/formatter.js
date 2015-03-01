@@ -4,7 +4,6 @@ var utl = require("./utl"),
 	baseApi = require("./baseapi");
 
 var formatter = {
-	geos:[],
 	cnfg : {
 
 		maxShortDesc: 100,
@@ -171,12 +170,6 @@ var formatter = {
 		return ipPattern.test(ip);
 	},
 
-	validCntry : function(cntry){
-		if(formatter.geos.indexOf(cntry)!=-1)
-			return true;
-		else
-			return false;
-	},
 
 	isValidRequest : function(requestObject){
 		if(!formatter.isValidPath(requestObject))
@@ -191,10 +184,6 @@ var formatter = {
 					if(!formatter.validIp(requestObject[key]))
 						return false;
 				}
-				if(key == "cntry"){
-					if(!formatter.validCntry(requestObject[key]))
-						return false;
-				}
 			}
 			return true;
 		}
@@ -203,7 +192,7 @@ var formatter = {
 	},
 
 	isValidQueryParams : function(requestObject){
-		var validQuery = requestObject.hasOwnProperty('prdct') && requestObject.hasOwnProperty('cntry') && requestObject.hasOwnProperty('ctgry');
+		var validQuery = requestObject.hasOwnProperty('prdct') && requestObject.hasOwnProperty('ctgry');
 		return validQuery;
 	},
 
@@ -243,15 +232,5 @@ var formatter = {
 	}
 
 }
-function init(){
-	baseApi.readFile(path.join(path.dirname(__filename), "/data/ranks.js"),function (err, data){
-		var allGeos = JSON.parse(data);
-		for(var key in allGeos){
-			formatter.geos.push(key);
-		}
-	});
-}
-init();
-
 
 module.exports = formatter;
