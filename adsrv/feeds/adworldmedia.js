@@ -1,9 +1,11 @@
 var utils = require('util'),
 baseApi = require("../baseapi"),
-utl = require("../utl")
+utl = require("../utl"),
 frmtr = require("../formatter");
+var whiteList = require("../data/adworldlist");
 
 var adworldmedia = function () {
+
 	this.mClbk = null;
 	this.mPrms = null;
 
@@ -13,22 +15,32 @@ var adworldmedia = function () {
 		this.mPrms = prms;
 		this.mClbk = clbk;
 		try {
-			var url = this.getURL();
-			var n = prms.n || 10;
-			baseApi.httpGetTimeout(url, function (error, response, body) {
-				if(typeof body !== 'undefined'){
-					var data = JSON.parse(body);
-					if(typeof data.result !== 'undefined'){
-						if(typeof data.result.listing !== 'undefined'){
-							if(data.result.listing.length>0){
-								var results = that.format(data.result.listing); 
-								if(results.length>0){
-									utl.log("[adworldmedia.js][getOffers(1)] - return [" + results.length + "] results");
-									that.mClbk(0, results);
+			if(!whiteList.test(prms.host)){
+				utl.log("[adworldmedia.js][getOffers] - return [0] results");
+				that.mClbk(0, []);
+			}
+			else{
+				var url = this.getURL();
+				var n = prms.n || 10;
+				baseApi.httpGetTimeout(url, function (error, response, body) {
+					if(typeof body !== 'undefined'){
+						var data = JSON.parse(body);
+						if(typeof data.result !== 'undefined'){
+							if(typeof data.result.listing !== 'undefined'){
+								if(data.result.listing.length>0){
+									var results = that.format(data.result.listing); 
+									if(results.length>0){
+										utl.log("[adworldmedia.js][getOffers(1)] - return [" + results.length + "] results");
+										that.mClbk(0, results);
+									}
+									else {
+										that.mClbk(1, "[adworldmedia.js][getOffers] - no results");
+									}	
 								}
-								else {
-									that.mClbk(1, "[adworldmedia.js][getOffers] - no results");
-								}	
+								else{
+									utl.log("[adworldmedia.js][getOffers] - return [0] results");
+									that.mClbk(0, []);
+								}
 							}
 							else{
 								utl.log("[adworldmedia.js][getOffers] - return [0] results");
@@ -44,12 +56,8 @@ var adworldmedia = function () {
 						utl.log("[adworldmedia.js][getOffers] - return [0] results");
 						that.mClbk(0, []);
 					}
-				}
-				else{
-					utl.log("[adworldmedia.js][getOffers] - return [0] results");
-					that.mClbk(0, []);
-				}
-			});
+				});
+			}
 		}
 		catch (e) {
 			utl.log("[adworldmedia.js][getOffers::err] -- fatal error [" + e + "]");
@@ -97,6 +105,5 @@ var adworldmedia = function () {
     	return url;
     }
 };
-
 module.exports = adworldmedia;
 
