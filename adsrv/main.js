@@ -30,7 +30,7 @@ var feedsMngr = require('./feedsmngr'),
 		
 		try {
 			utl.log("[main.js][processRequest] url - " + request.url);
-			
+
 			// request params
 			var requestParams = adSrv.getRequestParams(request);
 			influxReporter.report('adsrvr', {
@@ -115,7 +115,16 @@ var feedsMngr = require('./feedsmngr'),
 				}
 			});
 			//requestObject.sz = "300"; // request.params.size;
-			requestObject.type = request.params.type;
+			if(typeof request.params.type !== 'undefined' && typeof request.params.qa !== 'undefined'){
+				requestObject.type = request.params.type;
+				requestObject.qa = request.params.qa;
+			}
+			else if(typeof request.params.qa === 'undefined' && typeof request.params.type !== 'undefined' && request.params.type!== 'serp' && request.params.type!== 'ddls' && request.params.type!== 'trnds'){
+				requestObject.qa = request.params.type;
+			}
+			else{
+				requestObject.type = request.params.type;
+			}
 			if(frmtr.isValidRequest(requestObject)){
 				if (requestObject.limit) {
 					requestObject.limit = parseInt(requestObject.limit);

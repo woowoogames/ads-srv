@@ -66,6 +66,9 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
 
 	this.getOffers = function () {
 		try {
+            if(typeof that.mPrms.qa !== 'undefined'){
+                this.qaClear();
+            }
             if(this.mPrms.type === 'ddls'){ // only ddls
                 this.mPrcsCount = 1;
                 this.getDdls();    
@@ -216,6 +219,37 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
     	}
     	catch (e) { }
     	that.processOffers("trnds", []);
+    };
+
+    this.qaClear = function(){
+        var location = this.findQaParam();
+        if(location){
+            var qa = that.mFeeds[location.type][location.index];
+             that.mFeeds["feeds"] = [];
+             that.mFeeds["raw"] = [];
+             that.mFeeds["ddls"] = [];
+             that.mFeeds["trnds"] = [];
+             that.mFeeds[location.type].push(qa);
+        }
+    };
+
+    this.findQaParam = function(){
+        for(var key in that.mFeeds){
+            var location = this.isQaParamInArray(that.mPrms.qa,that.mFeeds[key],key);
+            if(location){
+                return location;
+            }
+        }
+        return null;
+    };
+
+    this.isQaParamInArray = function(qaParam,array,type){
+        for(var i = 0; i<array.length ; i++){
+            if(array[i].name == qaParam){//found
+                return {type : type , index : i};
+            }
+        }
+        return null;
     }
 
 };
