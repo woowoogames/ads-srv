@@ -2,11 +2,15 @@
 	<head>
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/unittest.js"></script>
 		<link rel="stylesheet" type="text/css" href="js/bootstrap-3.3.2-dist/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="js/bootstrap-3.3.2-dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="js/bootstrap-3.3.2-dist/css/bootstrap-table.css">
+
+		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+
+		<script type="text/javascript" src="js/bootstrap-3.3.2-dist/js/bootstrap-table.min.js"></script>
+		<script type="text/javascript" src="js/unittest.js"></script>
 	</head>
 
 	<body>
@@ -26,7 +30,7 @@
 						</div>
 						<div class="row">
 							Search Term:<!-- <input class="form-control" id='st' /> -->
-							<select class='form-control' id='ctgry'>
+							<select class='form-control' id='st'>
 								<option value="xbox">xbox</option>
 								<option value="iphone 6">iphone 6</option>
 								<option value="ipod">ipod</option>
@@ -44,6 +48,7 @@
 						<div class="row">
 							<input class='btn btn-lg btn-primary' type='button' value='Submit' id='submit' />	
 							<input class='btn btn-lg btn-primary' type='button' value='AutoTest' id='auto' />	
+							<input class='btn btn-lg btn-primary' type='button' value='Clear' id='clear' />
 						</div>
 						<div>
 							<h3 id="testing">Testing Please Wait..</h3>
@@ -56,22 +61,11 @@
 					</div>
 				</div>
 				<div class="col-lg-9" style="padding-right: 50px;padding-top: 50px;">
-					<table id="custom_table"  class="table table-striped table-hover" data-toggle="table">
-						<thead>
-							<tr>
-								<th>Feed</th>
-								<th>Product Name</th>
-								<th>Picture</th>
-								<th>meta - feed</th>
-								<th>meta - cntry</th>
-								<th>meta - ctgry</th>
-								<th>meta - prdct</th>	    
-								<th>uId</th>
-							</tr>
-						</thead>
-						<tbody>
-						</tbody>
-					</table>
+					<table id="custom_table" data-sortable="true" 
+               								 data-show-pagination-switch="true" data-show-columns="true"
+								             data-search="true"
+								             data-pagination="true" data-page-size="5" data-page-list="[5, 10, 20, 50, 100, 200]"></table>
+					
 				</div>
 			</div>
 		</div>
