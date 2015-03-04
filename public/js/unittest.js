@@ -54,8 +54,8 @@ $(document).ready(function(){
 	};
 
 	var feeds;
-	//var host = 'http://204.145.74.4';
-	var host = 'http://localhost';
+	var host = 'http://204.145.74.4';
+	//var host = 'http://localhost';
 	$.ajax({
 		url : host + '/data/feeds.js',
 		contentType: "application/json",
