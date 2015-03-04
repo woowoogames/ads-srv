@@ -3,6 +3,7 @@
         "buscape": 1
     },
     "au": {
+        "pricegong": 2,
         "adworldmedia": 1
     },
     "be": {
@@ -10,13 +11,13 @@
         "pricegong": 1
     },
     "br": {
-        "kelkoo": 2,
+        "pricegong": 2,
         "buscape": 1,
         "buzzcity": 1
     },
     "ca": {
-        "adworldmedia": 2,
-        "pricegong": 1
+        "adworldmedia": 1,
+        "pricegong": 2
     },
     "cl": {
         "buscape": 1
@@ -30,7 +31,8 @@
         "matomy": 1
     },
     "dk": {
-        "kelkoo": 1
+        "kelkoo": 1,
+        "pricegong": 2
     },
     "es": {
         "kelkoo": 2,
@@ -51,7 +53,8 @@
         "matomy": 1
     },
     "it": {
-        "kelkoo": 1
+        "pricegong": 1,
+        "kelkoo": 2
     },
     "my": {
         "buzzcity": 1
@@ -63,10 +66,15 @@
         "buzzcity": 1
     },
     "nl": {
-        "kelkoo": 1
+        "pricegong": 1,
+        "kelkoo": 2
     },
     "no": {
-        "kelkoo": 1
+        "pricegong": 1,
+        "kelkoo": 2
+    },
+    "nz": {
+        "adworldmedia": 1
     },
     "pl": {
         "matomy": 1
@@ -75,10 +83,12 @@
         "buscape": 1
     },
     "ru": {
-        "kelkoo": 1
+        "kelkoo": 1,
+        "pricegong": 2
     },
     "se": {
-        "kelkoo": 1
+        "kelkoo": 1,
+        "pricegong": 2
     },
     "ve": {
         "buscape": 1
@@ -88,8 +98,8 @@
     },
     "uk": {
         "adworldmedia": 1,
-        "pricegong": 2,
-        "ebay": 1,
+        "pricegong": 3,
+        "ebay": 2,
         "buzzcity": 1,
         "matomy": 1
     },
