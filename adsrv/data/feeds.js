@@ -81,7 +81,7 @@
         "coverage": {
             "cntry": {
                 "type": "white",
-                "values" :["us"]
+                "values" :["us","de","fr","uk"]
             },
             "prdct": {
               
@@ -100,7 +100,7 @@
         "coverage": {
             "cntry": {
                 "type": "white",
-                "values" : ["it", "es", "fr", "de", "nl", "be", "ru", "br", "dk", "no", "se", "ca"]
+                "values" : ["at","au","be", "br", "ca", "it", "es", "fr", "de", "nl", "ru", "dk", "no", "se","gb","in","jp","pl","us"]
             },
             "prdct": {
                 "type": "white",
@@ -118,7 +118,7 @@
         "coverage": {
             "cntry": {
                 "type": "white",
-                "values" : ["uk"]
+                "values" : ["uk","us", "de", "fr"]
             },
             "prdct": {
                 "type": "white",
