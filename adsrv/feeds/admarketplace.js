@@ -101,12 +101,12 @@ var admarketplace = function () {
 						else
 							obj.ofrtype = "feed";
 						obj.desc.short = offers[i].description;
-						obj.img.small = offers[i].thumbnail;
+						if(typeof offers[i].thumbnail !== 'undefined')
+							obj.img.small = offers[i].thumbnail;
 						obj.meta.feed = "admrktplce";
 						obj.meta.cntry = that.mPrms.cntry;
 						obj.meta.ctgry = that.mPrms.ctgry;
 						obj.meta.prdct = that.mPrms.prdct;
-						obj.meta.sz = null;
 						obj.lnk = offers[i].clickurl;
 						obj.uid = "admrktplce";
 						rsltArr.push(obj);
@@ -120,12 +120,12 @@ var admarketplace = function () {
 					else
 						obj.ofrtype = "feed";
 					obj.desc.short = offers.description;
-					obj.img.small = offers.thumbnail;
+					if(typeof offers[i].thumbnail !== 'undefined')
+						obj.img.small = offers.thumbnail;
 					obj.meta.feed = "admrktplce";
 					obj.meta.cntry = that.mPrms.cntry;
 					obj.meta.ctgry = that.mPrms.ctgry;
 					obj.meta.prdct = that.mPrms.prdct;
-					obj.meta.sz = null;
 					obj.lnk = offers.clickurl;
 					obj.uid = "admrktplce";
 					rsltArr.push(obj);

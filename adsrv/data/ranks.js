@@ -16,7 +16,7 @@
     "br": {
         "pricegong": 2,
         "buscape": 1,
-        "buzzcity": 1
+        "buzzcity": 3
     },
     "ca": {
         "adworldmedia": 1,
@@ -113,7 +113,7 @@
         "adworldmedia": 1,
         "pricegong": 2,
         "ebay": 3,
-        "admarketplace": 4,
+        "shopzilla": 4,
         "matomy": 1
     },
     "za": {
