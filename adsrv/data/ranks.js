@@ -2,6 +2,9 @@
     "ar": {
         "buscape": 1
     },
+    "at":{
+        "pricegong": 1
+    },
     "au": {
         "pricegong": 2,
         "adworldmedia": 1
@@ -55,6 +58,9 @@
     "it": {
         "pricegong": 1,
         "kelkoo": 2
+    },
+    "jp":{
+        "pricegong": 1
     },
     "my": {
         "buzzcity": 1
