@@ -13,6 +13,11 @@ var admarketplace = function () {
 		this.mClbk = clbk;
 		try {
 			if(typeof prms.type === "undefined"){
+
+				utl.log("[admarketplace.js][getOffers] - return 0 results");
+				that.mClbk(1, []);
+				return;
+
 				var n = prms.n || 10;
 				var url = this.getURL(prms.type);
 				baseApi.httpGetTimeout(url, function (error, response, body) {
