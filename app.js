@@ -26,9 +26,9 @@ should we put the hardid->UCD in radis? we can then collect info about the user.
 
  */
 
-var APPLICATION_NAME = process.env.STRONGLOOP_APP_NAME || 'vertical-add-server';
-var API_KEY = 'a962830f5d6aad44063364defe5a05ed';
-require('strong-agent').profile(API_KEY, APPLICATION_NAME);
+// var APPLICATION_NAME = process.env.STRONGLOOP_APP_NAME || 'vertical-add-server';
+// var API_KEY = 'a962830f5d6aad44063364defe5a05ed';
+// require('strong-agent').profile(API_KEY, APPLICATION_NAME);
 
 
 var express = require('express');
@@ -137,4 +137,26 @@ process.on('uncaughtException', function (err) {
     console.log( "UNCAUGHT EXCEPTION ", arguments );
     console.log( "[Inside 'uncaughtException' event] " + err.stack || err.message );
 });
+
+
+
+ 
+
+// var matomyUpdate = new CronJob({
+//   cronTime: '00 00 * * * *',
+//   onTick: function() {
+//     	//console.log("Matomy update");
+//     	exec(['node', path.join(path.dirname(__filename),"/adsrv/raw/matomy_node_server/matomy.js")],
+//     		{timeout:1000 * 60 * 60 * 2,killSignal:'SIGINT'},//kill process after 2 hours
+//     		function(err, out, code) {
+// 	    		if (err instanceof Error)
+// 	    			throw err;
+// 	    		process.stderr.write(err);
+// 	    		process.stdout.write(out);
+//         	});
+//   },
+//   start: true
+// });
+
+
 

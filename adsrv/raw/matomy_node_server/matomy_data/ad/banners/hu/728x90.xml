@@ -1586,6 +1586,135 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>9472761</creative_id>
+			<creative_name>22_Em_SWF_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/9472761</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>49</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQcpllnYGaiZByll6he8OMZWubX8p-nYlqcJY</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>9472851</creative_id>
+			<creative_name>01_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/9472851</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>35</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQcpllnYKZiZByll6he8OMZWubX8p-nYlqcJY</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>9472931</creative_id>
+			<creative_name>13_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/9472931</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>48</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQcpllnYOXiZByll6he8OMZWubX8p-nYlqcJY</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>9473011</creative_id>
+			<creative_name>20_en_em_gif_728</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/9473011</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>37</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQcpllnnqViZByll6he8OMZWubX8p-nYlqcJY</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>9473091</creative_id>
+			<creative_name>26_en_em_gif_728</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/9473091</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>36</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQcpllnnqdiZByll6he8OMZWubX8p-nYlqcJY</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>9473171</creative_id>
+			<creative_name>31_en_EM_GIF_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/9473171</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>35</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQcpllnnubiZByll6he8OMZWubX8p-nYlqcJY</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>9473251</creative_id>
+			<creative_name>32_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/9473251</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>35</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQcpllnnyZiZByll6he8OMZWubX8p-nYlqcJY</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>9473751</creative_id>
 			<creative_name>20_pt_em_gif_728</creative_name>
 			<campaign_id>491951</campaign_id>
@@ -2162,6 +2291,27 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>9530121</creative_id>
+			<creative_name>33_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/9530121</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>27</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQcpphm3uWiZByll6he8OMZWubX8p-nYlqcJY</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>9530201</creative_id>
 			<creative_name>33_en_em_gif_728x90</creative_name>
 			<campaign_id>491941</campaign_id>
@@ -2846,6 +2996,27 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>10256581</creative_id>
+			<creative_name>34_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/10256581</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>37</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQapVgoICZkGKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>10256661</creative_id>
 			<creative_name>34_en_em_gif_728x90</creative_name>
 			<campaign_id>435661</campaign_id>
@@ -3098,6 +3269,45 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>14397031</creative_id>
+			<creative_name>36_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/14397031</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>30</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQaplhpIGUi2KYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>14397111</creative_id>
+			<creative_name>37_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/14397111</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQaplhpIGViWKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>14397191</creative_id>
 			<creative_name>36_es_em_gif_728x90</creative_name>
 			<campaign_id>491961</campaign_id>
@@ -4682,6 +4892,81 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>14996851</creative_id>
+			<creative_name>33_opt_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/14996851</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>26</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQaplnpICcjWKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>14996931</creative_id>
+			<creative_name>38blau_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/14996931</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>34</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQaplnpICdi2KYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>14997011</creative_id>
+			<creative_name>38gruen_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/14997011</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>32</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQaplnpIGUiWKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>14997091</creative_id>
+			<creative_name>38rot_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/14997091</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>36</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQaplnpIGUkWKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>14997171</creative_id>
 			<creative_name>33_opt_en_em_gif_728x90</creative_name>
 			<campaign_id>435661</campaign_id>
@@ -5366,6 +5651,45 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>15348271</creative_id>
+			<creative_name>39_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/15348271</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>37</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQapphn4KWj2KYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>15348351</creative_id>
+			<creative_name>45_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/15348351</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>39</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQapphn4KXjWKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>15348431</creative_id>
 			<creative_name>39_bg_em_gif_728x90</creative_name>
 			<campaign_id>496111</campaign_id>
@@ -6104,6 +6428,27 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>17317451</creative_id>
+			<creative_name>46_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/17317451</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQapxhnIGYjWKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>17317531</creative_id>
 			<creative_name>46_es_em_gif_728x90</creative_name>
 			<campaign_id>491961</campaign_id>
@@ -6392,6 +6737,63 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>17913181</creative_id>
+			<creative_name>20_ar_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/17913181</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQapxnnH2VkGKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>17913261</creative_id>
+			<creative_name>26_ar_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/17913261</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>31</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQapxnnH2WjmKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>17913341</creative_id>
+			<creative_name>39_ar_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/17913341</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>36</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQapxnnH2XjGKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>17913661</creative_id>
 			<creative_name>20_ar_em_gif_728x90</creative_name>
 			<campaign_id>665171</campaign_id>
@@ -12836,6 +13238,423 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>19045761</creative_id>
+			<creative_name>01_en_em_gif_728x90_4623</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19045761</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>35</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en3-bjmKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19045841</creative_id>
+			<creative_name>13_en_em_gif_728x90_4631</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19045841</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>48</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en3-cjGKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19045921</creative_id>
+			<creative_name>20_en_em_gif_728_4639</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19045921</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>37</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en3-dimKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19046001</creative_id>
+			<creative_name>22_en_em_swf_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19046001</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>50</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4CUiGKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19046081</creative_id>
+			<creative_name>26_en_em_gif_728_4647</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19046081</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>36</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4CUkGKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19046161</creative_id>
+			<creative_name>31_en_EM_GIF_728x90_4655</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19046161</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>35</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4CVjmKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19046241</creative_id>
+			<creative_name>31_en_em_swf_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19046241</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>50</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4CWjGKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19046321</creative_id>
+			<creative_name>32_en_em_gif_728x90_4663</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19046321</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>35</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4CXimKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19046401</creative_id>
+			<creative_name>33_en_em_gif_728x90_4671</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19046401</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>24</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4CYiGKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19046481</creative_id>
+			<creative_name>34_en_em_gif_728x90_4679</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19046481</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>37</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4CYkGKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19046561</creative_id>
+			<creative_name>36_en_em_gif_728x90_4687</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19046561</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>30</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4CZjmKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19046641</creative_id>
+			<creative_name>37_en_em_gif_728x90_4695</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19046641</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4CajGKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19046721</creative_id>
+			<creative_name>38blau_en_em_gif_728x90_4703</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19046721</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>34</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4CbimKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19046801</creative_id>
+			<creative_name>38gruen_en_em_gif_728x90_4711</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19046801</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>32</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4CciGKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19046881</creative_id>
+			<creative_name>38rot_en_em_gif_728x90_4719</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19046881</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>36</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4CckGKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19046961</creative_id>
+			<creative_name>39_en_em_gif_728x90_4727</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19046961</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>37</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4CdjmKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19047041</creative_id>
+			<creative_name>39_en_em_swf_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19047041</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>49</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4GUjGKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19047121</creative_id>
+			<creative_name>45_en_em_gif_728x90_4735</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19047121</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>39</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4GVimKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19047201</creative_id>
+			<creative_name>46_en_em_gif_728x90_4743</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19047201</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4GWiGKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19047281</creative_id>
+			<creative_name>47_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19047281</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>86</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4GWkGKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19047381</creative_id>
+			<creative_name>48_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19047381</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>37</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4GXkGKYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19047471</creative_id>
+			<creative_name>49_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19047471</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>45</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4GYj2KYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19047571</creative_id>
+			<creative_name>50_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19047571</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>128</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5en4GZj2KYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>19048001</creative_id>
 			<creative_name>20_bg_em_gif_728_4751</creative_name>
 			<campaign_id>496111</campaign_id>
@@ -16958,6 +17777,423 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>19067241</creative_id>
+			<creative_name>01_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19067241</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>35</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYGWjGKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19067321</creative_id>
+			<creative_name>13_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19067321</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>48</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYGXimKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19067401</creative_id>
+			<creative_name>20_en_em_gif_728</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19067401</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>37</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYGYiGKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19067481</creative_id>
+			<creative_name>22_en_em_swf_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19067481</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>50</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYGYkGKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19067561</creative_id>
+			<creative_name>26_en_em_gif_728</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19067561</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>36</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYGZjmKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19067641</creative_id>
+			<creative_name>31_en_EM_GIF_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19067641</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>35</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYGajGKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19067721</creative_id>
+			<creative_name>31_en_em_swf_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19067721</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>50</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYGbimKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19067801</creative_id>
+			<creative_name>32_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19067801</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>35</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYGciGKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19067881</creative_id>
+			<creative_name>33_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19067881</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>24</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYGckGKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19067961</creative_id>
+			<creative_name>34_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19067961</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>37</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYGdjmKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19068041</creative_id>
+			<creative_name>36_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19068041</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>30</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYKUjGKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19068121</creative_id>
+			<creative_name>37_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19068121</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYKVimKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19068201</creative_id>
+			<creative_name>38blau_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19068201</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>34</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYKWiGKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19068281</creative_id>
+			<creative_name>38gruen_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19068281</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>32</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYKWkGKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19068361</creative_id>
+			<creative_name>38rot_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19068361</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>36</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYKXjmKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19068441</creative_id>
+			<creative_name>39_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19068441</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>37</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYKYjGKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19068521</creative_id>
+			<creative_name>39_en_em_swf_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19068521</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>49</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYKZimKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19068601</creative_id>
+			<creative_name>45_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19068601</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>39</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYKaiGKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19068681</creative_id>
+			<creative_name>46_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19068681</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYKakGKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19068761</creative_id>
+			<creative_name>47_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19068761</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>86</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYKbjmKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19068861</creative_id>
+			<creative_name>48_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19068861</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>37</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYKcjmKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19068951</creative_id>
+			<creative_name>49_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19068951</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>45</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYKdjWKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>19069051</creative_id>
+			<creative_name>50_en_em_gif_728x90</creative_name>
+			<campaign_id>665191</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/19069051</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>128</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQap5eoYOUjWKYnl-bgJW3ZW2XZJypmo5map5f</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>19589371</creative_id>
 			<creative_name>engagement_728x90_hammer</creative_name>
 			<campaign_id>295861</campaign_id>
@@ -17102,6 +18338,27 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>24037125</creative_id>
+			<creative_name>76_en_em_gif_728x90</creative_name>
+			<campaign_id>491971</campaign_id>
+			<program_id>44261</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/44261/24037125</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>39</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5lenoGVimaYnl-bgJW3ZW2XZJypmJFicpxf</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>24037285</creative_id>
 			<creative_name>76_en_em_gif_728x90</creative_name>
 			<campaign_id>622641</campaign_id>
@@ -17426,6 +18683,8 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+=======
 			<creative_id>20899691</creative_id>
 			<creative_name>FR_M2_728x90_0213_1</creative_name>
 			<campaign_id>808801</campaign_id>
@@ -17462,6 +18721,7 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+>>>>>>> master
 			<creative_id>20899901</creative_id>
 			<creative_name>TR_M2_728x90_0213_1</creative_name>
 			<campaign_id>808901</campaign_id>
@@ -17858,6 +19118,8 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+=======
 			<creative_id>25028685</creative_id>
 			<creative_name>M2_FR_728x90_140701</creative_name>
 			<campaign_id>808801</campaign_id>
@@ -17876,6 +19138,7 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+>>>>>>> master
 			<creative_id>26401303</creative_id>
 			<creative_name>2014-10-31_M2_Bannerset_fuer_Lykaner_oriental_ES_728x90_141118</creative_name>
 			<campaign_id>808791</campaign_id>
@@ -17912,6 +19175,8 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+=======
 			<creative_id>26401833</creative_id>
 			<creative_name>M2_Bannerset_728x90_FR</creative_name>
 			<campaign_id>808801</campaign_id>
@@ -17948,6 +19213,7 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+>>>>>>> master
 			<creative_id>26402133</creative_id>
 			<creative_name>M2_Bannerset_728x90_IT</creative_name>
 			<campaign_id>808811</campaign_id>
@@ -18272,6 +19538,45 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>22037891</creative_id>
+			<creative_name>OG_Banner_Redesign_728x90_DSNR_US</creative_name>
+			<campaign_id>871471</campaign_id>
+			<program_id>116591</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/22037891</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5denoGckWKYll6cgZm3YmqbY6R7w5BoapllnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>22037901</creative_id>
+			<creative_name>OG_Banner_Redesign_728x90_US</creative_name>
+			<campaign_id>871471</campaign_id>
+			<program_id>116591</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/22037901</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5denoGdiGKYll6cgZm3YmqbY6R7w5BoapllnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>22038611</creative_id>
 			<creative_name>OG_Banner_Redesign_728x90_DSNR_HU</creative_name>
 			<campaign_id>871511</campaign_id>
@@ -18308,6 +19613,81 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>22106521</creative_id>
+			<creative_name>OG_Banner_Redesign_728x90_DSNR_EN</creative_name>
+			<campaign_id>880751</campaign_id>
+			<program_id>116591</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/22106521</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5dfm4CZimKYll6cgZm3YmqbY6R7w5BpaZxjnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>22106531</creative_id>
+			<creative_name>OG_Banner_Redesign_728x90_EN</creative_name>
+			<campaign_id>880751</campaign_id>
+			<program_id>116591</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/22106531</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5dfm4CZi2KYll6cgZm3YmqbY6R7w5BpaZxjnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>22106781</creative_id>
+			<creative_name>OG_Banner_Redesign_728x90_DSNR_ES</creative_name>
+			<campaign_id>880761</campaign_id>
+			<program_id>116591</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/22106781</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5dfm4CbkGKYll6cgZm3YmqbY6R7w5BpaZxknA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>22106791</creative_id>
+			<creative_name>OG_Banner_Redesign_728x90_ES</creative_name>
+			<campaign_id>880761</campaign_id>
+			<program_id>116591</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/22106791</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5dfm4CbkWKYll6cgZm3YmqbY6R7w5BpaZxknA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>22107041</creative_id>
 			<creative_name>OG_Banner_Redesign_728x90_DSNR_PT</creative_name>
 			<campaign_id>880771</campaign_id>
@@ -18344,6 +19724,81 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>22107301</creative_id>
+			<creative_name>OG_Banner_Redesign_728x90_DSNR_TR</creative_name>
+			<campaign_id>880781</campaign_id>
+			<program_id>116591</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/22107301</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5dfm4GXiGKYll6cgZm3YmqbY6R7w5BpaZxmnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>22107311</creative_id>
+			<creative_name>OG_Banner_Redesign_728x90_TR</creative_name>
+			<campaign_id>880781</campaign_id>
+			<program_id>116591</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/22107311</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5dfm4GXiWKYll6cgZm3YmqbY6R7w5BpaZxmnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>22107481</creative_id>
+			<creative_name>OG_Banner_Redesign_728x90_DSNR_FR</creative_name>
+			<campaign_id>880791</campaign_id>
+			<program_id>116591</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/22107481</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5dfm4GYkGKYll6cgZm3YmqbY6R7w5BpaZxnnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>22107491</creative_id>
+			<creative_name>OG_Banner_Redesign_728x90_FR</creative_name>
+			<campaign_id>880791</campaign_id>
+			<program_id>116591</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/22107491</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>38</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5dfm4GYkWKYll6cgZm3YmqbY6R7w5BpaZxnnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>22107741</creative_id>
 			<creative_name>OG_Banner_Redesign_728x90_DE</creative_name>
 			<campaign_id>880801</campaign_id>
@@ -18524,6 +19979,45 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>23332241</creative_id>
+			<creative_name>OG_banner_728x90_HR</creative_name>
+			<campaign_id>871471</campaign_id>
+			<program_id>116591</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/23332241</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>36</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5hhnnyWjGKYll6cgZm3YmqbY6R7w5BoapllnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>23332381</creative_id>
+			<creative_name>OG_generic_banner_728x90_HR</creative_name>
+			<campaign_id>871471</campaign_id>
+			<program_id>116591</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/23332381</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>33</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5hhnnyXkGKYll6cgZm3YmqbY6R7w5BoapllnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>23333361</creative_id>
 			<creative_name>OG_banner_728x90_HU</creative_name>
 			<campaign_id>871511</campaign_id>
@@ -18560,6 +20054,81 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>23334201</creative_id>
+			<creative_name>OG_banner_728x90_EN</creative_name>
+			<campaign_id>880751</campaign_id>
+			<program_id>116591</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/23334201</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>39</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5hhnn6WiGKYll6cgZm3YmqbY6R7w5BpaZxjnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>23334341</creative_id>
+			<creative_name>OG_generic_banner_728x90_EN</creative_name>
+			<campaign_id>880751</campaign_id>
+			<program_id>116591</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/23334341</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>32</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5hhnn6XjGKYll6cgZm3YmqbY6R7w5BpaZxjnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>23334481</creative_id>
+			<creative_name>OG_banner_728x90_ES</creative_name>
+			<campaign_id>880761</campaign_id>
+			<program_id>116591</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/23334481</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>36</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5hhnn6YkGKYll6cgZm3YmqbY6R7w5BpaZxknA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>23334621</creative_id>
+			<creative_name>OG_generic_banner_728x90_ES</creative_name>
+			<campaign_id>880761</campaign_id>
+			<program_id>116591</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/23334621</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>33</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5hhnn6aimKYll6cgZm3YmqbY6R7w5BpaZxknA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>23334761</creative_id>
 			<creative_name>OG_banner_728x90_PT</creative_name>
 			<campaign_id>880771</campaign_id>
@@ -18596,6 +20165,81 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>23335041</creative_id>
+			<creative_name>OG_banner_728x90_TR</creative_name>
+			<campaign_id>880781</campaign_id>
+			<program_id>116591</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/23335041</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>39</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5hhnn-UjGKYll6cgZm3YmqbY6R7w5BpaZxmnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>23335181</creative_id>
+			<creative_name>OG_generic_banner_728x90_TR</creative_name>
+			<campaign_id>880781</campaign_id>
+			<program_id>116591</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/23335181</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>34</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5hhnn-VkGKYll6cgZm3YmqbY6R7w5BpaZxmnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>23335321</creative_id>
+			<creative_name>OG_banner_728x90_FR</creative_name>
+			<campaign_id>880791</campaign_id>
+			<program_id>116591</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/23335321</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>37</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5hhnn-XimKYll6cgZm3YmqbY6R7w5BpaZxnnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>23335451</creative_id>
+			<creative_name>OG_generic_banner_728x90_FR</creative_name>
+			<campaign_id>880791</campaign_id>
+			<program_id>116591</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/116591/23335451</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>32</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5hhnn-YjWKYll6cgZm3YmqbY6R7w5BpaZxnnA</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>23335591</creative_id>
 			<creative_name>OG_banner_728x90_DE</creative_name>
 			<campaign_id>880801</campaign_id>
@@ -21026,6 +22670,171 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>26851523</creative_id>
+			<creative_name>6</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26851523</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>123</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmoHuZimSYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>26851533</creative_id>
+			<creative_name>7</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26851533</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>126</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmoHuZi2SYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>26851543</creative_id>
+			<creative_name>728x90a</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26851543</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>10</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmoHuZjGSYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>26851553</creative_id>
+			<creative_name>728x90b</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26851553</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>14</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmoHuZjWSYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>26851563</creative_id>
+			<creative_name>728x90c</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26851563</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>16</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmoHuZjmSYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>26851573</creative_id>
+			<creative_name>728x90d</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26851573</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>15</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmoHuZj2SYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>26851583</creative_id>
+			<creative_name>728x90e</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26851583</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>15</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmoHuZkGSYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>26851593</creative_id>
+			<creative_name>728x90f</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26851593</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>16</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmoHuZkWSYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>26851603</creative_id>
+			<creative_name>728x90g</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26851603</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>11</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmoHuaiGSYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>26950933</creative_id>
 			<creative_name>728x90a_96</creative_name>
 			<campaign_id>905381</campaign_id>
@@ -21278,6 +23087,135 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>26951613</creative_id>
+			<creative_name>728x90a_129</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26951613</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>27</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tnoHuaiWSYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>26951623</creative_id>
+			<creative_name>728x90b_130</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26951623</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>33</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tnoHuaimSYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>26951633</creative_id>
+			<creative_name>728x90c_131</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26951633</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>33</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tnoHuai2SYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>26951643</creative_id>
+			<creative_name>728x90d_132</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26951643</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>31</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tnoHuajGSYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>26951653</creative_id>
+			<creative_name>728x90e_133</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26951653</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>32</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tnoHuajWSYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>26951663</creative_id>
+			<creative_name>728x90f_134</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26951663</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>33</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tnoHuajmSYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+			<creative_id>26951673</creative_id>
+			<creative_name>728x90g_135</creative_name>
+			<campaign_id>1203383</campaign_id>
+			<program_id>120051</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/120051/26951673</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>29</size>
+			<traffic_sources>
+				<traffic_source>
+					<traffic_source_id>169711</traffic_source_id>
+					<traffic_source_name>Montiera</traffic_source_name>
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tnoHuaj2SYm2Gif5mJkGqXXpt_lbdia5VhnoKX</click_url>
+				</traffic_source>
+			</traffic_sources>
+		</creative>
+		<creative>
+=======
+>>>>>>> master
 			<creative_id>26951953</creative_id>
 			<creative_name>728x90a</creative_name>
 			<campaign_id>1210133</campaign_id>
@@ -39404,6 +41342,17 @@
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>27170423</creative_id>
+			<creative_name>728x90_CZ_01</creative_name>
+			<campaign_id>1121056</campaign_id>
+			<program_id>139276</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139276/27170423</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>14</size>
+=======
 			<creative_id>26879063</creative_id>
 			<creative_name>728x90_1</creative_name>
 			<campaign_id>1204053</campaign_id>
@@ -39413,15 +41362,31 @@
 			<width>728</width>
 			<height>90</height>
 			<size>39</size>
+>>>>>>> master
 			<traffic_sources>
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5xfonqYimSYm2Gif5mJkGqYZ52Bmrdiapdfm3-a</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmooOUjmSYm2Wke5mOkGqYZ6R9mrdia5Vim3-X</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>27170433</creative_id>
+			<creative_name>728x90_DE_01</creative_name>
+			<campaign_id>1121056</campaign_id>
+			<program_id>139276</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139276/27170433</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>14</size>
+=======
 			<creative_id>26879073</creative_id>
 			<creative_name>728x90</creative_name>
 			<campaign_id>1204053</campaign_id>
@@ -39431,15 +41396,31 @@
 			<width>728</width>
 			<height>90</height>
 			<size>40</size>
+>>>>>>> master
 			<traffic_sources>
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5xfonqYi2SYm2Gif5mJkGqYZ52Bmrdiapdfm3-a</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmooOUj2SYm2Wke5mOkGqYZ6R9mrdia5Vim3-X</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>27170443</creative_id>
+			<creative_name>728x90_EN_01</creative_name>
+			<campaign_id>1121056</campaign_id>
+			<program_id>139276</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139276/27170443</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>22</size>
+=======
 			<creative_id>26879283</creative_id>
 			<creative_name>728x90_1</creative_name>
 			<campaign_id>1206273</campaign_id>
@@ -39449,15 +41430,31 @@
 			<width>728</width>
 			<height>90</height>
 			<size>39</size>
+>>>>>>> master
 			<traffic_sources>
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5xfonqYjGSYm2Gif5mJkGqYZ52Bmrdiapdfm3-a</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmooOWkGSYm2Wke5mOkGqYZ6R9mrdia5VknYGX</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>27170453</creative_id>
+			<creative_name>728x90_EN_02</creative_name>
+			<campaign_id>1121056</campaign_id>
+			<program_id>139276</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139276/27170453</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>17</size>
+=======
 			<creative_id>26879293</creative_id>
 			<creative_name>728x90</creative_name>
 			<campaign_id>1206273</campaign_id>
@@ -39485,15 +41482,31 @@
 			<width>728</width>
 			<height>90</height>
 			<size>39</size>
+>>>>>>> master
 			<traffic_sources>
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5xfonqYjWSYm2Gif5mJkGqYZ52Bmrdiapdfm3-a</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmooOYkWSYm2Wke5mOkGqYZ6R9mrdia5VknYKX</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>27170523</creative_id>
+			<creative_name>728x90_ES_01</creative_name>
+			<campaign_id>1121056</campaign_id>
+			<program_id>139276</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139276/27170523</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>14</size>
+=======
 			<creative_id>26879503</creative_id>
 			<creative_name>728x90</creative_name>
 			<campaign_id>1206283</campaign_id>
@@ -39521,15 +41534,31 @@
 			<width>728</width>
 			<height>90</height>
 			<size>39</size>
+>>>>>>> master
 			<traffic_sources>
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5xfonqZimSYm2Gif5mJkGqYZ52Bmrdiapdfm3-a</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmooObiGSYm2Wke5mOkGqYZ6R9mrdia5VknYOX</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>27170533</creative_id>
+			<creative_name>728x90_FR_01</creative_name>
+			<campaign_id>1121056</campaign_id>
+			<program_id>139276</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139276/27170533</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>16</size>
+=======
 			<creative_id>26879713</creative_id>
 			<creative_name>728x90</creative_name>
 			<campaign_id>1206293</campaign_id>
@@ -39557,15 +41586,31 @@
 			<width>728</width>
 			<height>90</height>
 			<size>104</size>
+>>>>>>> master
 			<traffic_sources>
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5xfonqZi2SYm2Gif5mJkGqYZ52Bmrdiapdfm3-a</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5pmnoOai2eYmWWfepSJkGqZYJt6mrdiaphmn4Ca</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>27170543</creative_id>
+			<creative_name>728x90_IT_01</creative_name>
+			<campaign_id>1121056</campaign_id>
+			<program_id>139276</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139276/27170543</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>14</size>
+=======
 			<creative_id>25839646</creative_id>
 			<creative_name>pg_sf_CAROUSELv2_mordor_IT_728x90_2</creative_name>
 			<campaign_id>1138466</campaign_id>
@@ -39575,15 +41620,31 @@
 			<width>728</width>
 			<height>90</height>
 			<size>52</size>
+>>>>>>> master
 			<traffic_sources>
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5xfonqZjGSYm2Gif5mJkGqYZ52Bmrdiapdfm3-a</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5pmnoOajGeYmWWfepSJkGqZYJt6mrdiaphmn4Ca</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>27170553</creative_id>
+			<creative_name>728x90_PT_01</creative_name>
+			<campaign_id>1121056</campaign_id>
+			<program_id>139276</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139276/27170553</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>14</size>
+=======
 			<creative_id>25839656</creative_id>
 			<creative_name>pg_sf_CAROUSELv2_mordor_IT_728x90</creative_name>
 			<campaign_id>1138466</campaign_id>
@@ -39611,15 +41672,31 @@
 			<width>728</width>
 			<height>90</height>
 			<size>40</size>
+>>>>>>> master
 			<traffic_sources>
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5xfonqZjWSYm2Gif5mJkGqYZ52Bmrdiapdfm3-a</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5pmnoOajmeYmWWfepSJkGqZYJt6mrdiaphmn4Ca</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>27170563</creative_id>
+			<creative_name>728x90_TR_01</creative_name>
+			<campaign_id>1121056</campaign_id>
+			<program_id>139276</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139276/27170563</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>12</size>
+=======
 			<creative_id>25839676</creative_id>
 			<creative_name>pg_sf_CAROUSELv2_mordor_IT_728x90_40k_2</creative_name>
 			<campaign_id>1138466</campaign_id>
@@ -39629,15 +41706,31 @@
 			<width>728</width>
 			<height>90</height>
 			<size>40</size>
+>>>>>>> master
 			<traffic_sources>
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5xfonqZjmSYm2Gif5mJkGqYZ52Bmrdiapdfm3-a</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5pmnoOaj2eYmWWfepSJkGqZYJt6mrdiaphmn4Ca</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>26879063</creative_id>
+			<creative_name>728x90_1</creative_name>
+			<campaign_id>1204053</campaign_id>
+			<program_id>139936</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139936/26879063</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>39</size>
+=======
 			<creative_id>25839686</creative_id>
 			<creative_name>pg_sf_CAROUSELv2_mordor_IT_728x90_40k</creative_name>
 			<campaign_id>1138466</campaign_id>
@@ -39665,15 +41758,28 @@
 			<width>728</width>
 			<height>90</height>
 			<size>40</size>
+>>>>>>> master
 			<traffic_sources>
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmooOUjmSYm2Wke5mOkGqYZ6R9mrdia5Vim3-X</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5pmn3qbjmeYmWWfepSJkGqZYJt6mrdiaphmoHqa</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>26879073</creative_id>
+			<creative_name>728x90</creative_name>
+			<campaign_id>1204053</campaign_id>
+			<program_id>139936</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139936/26879073</content_url>
+=======
 			<creative_id>25840906</creative_id>
 			<creative_name>pg_sf_CAROUSELv2_mordor_DE_728x90</creative_name>
 			<campaign_id>1138506</campaign_id>
@@ -39698,6 +41804,7 @@
 			<program_id>142006</program_id>
 			<type>Banner</type>
 			<content_url>http://network.adsmarket.com/ctv/142006/25840916</content_url>
+>>>>>>> master
 			<width>728</width>
 			<height>90</height>
 			<size>40</size>
@@ -39705,11 +41812,23 @@
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmooOUj2SYm2Wke5mOkGqYZ6R9mrdia5Vim3-X</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5pmn3qdiWeYmWWfepSJkGqZYJt6mrdiaphmoHqa</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>26879283</creative_id>
+			<creative_name>728x90_1</creative_name>
+			<campaign_id>1206273</campaign_id>
+			<program_id>139936</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139936/26879283</content_url>
+=======
 			<creative_id>25841076</creative_id>
 			<creative_name>pg_sf_CAROUSELv2_DE_728x90</creative_name>
 			<campaign_id>1138506</campaign_id>
@@ -39788,6 +41907,7 @@
 			<program_id>142006</program_id>
 			<type>Banner</type>
 			<content_url>http://network.adsmarket.com/ctv/142006/25841216</content_url>
+>>>>>>> master
 			<width>728</width>
 			<height>90</height>
 			<size>39</size>
@@ -39795,11 +41915,23 @@
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmooOWkGSYm2Wke5mOkGqYZ6R9mrdia5VknYGX</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5pmn3uWiWeYmWWfepSJkGqZYJt6mrdiaphmoHya</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>26879293</creative_id>
+			<creative_name>728x90</creative_name>
+			<campaign_id>1206273</campaign_id>
+			<program_id>139936</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139936/26879293</content_url>
+=======
 			<creative_id>25843816</creative_id>
 			<creative_name>pg_sf_CAROUSELv2_HU_728x90_1</creative_name>
 			<campaign_id>1143996</campaign_id>
@@ -39824,6 +41956,7 @@
 			<program_id>142006</program_id>
 			<type>Banner</type>
 			<content_url>http://network.adsmarket.com/ctv/142006/25843826</content_url>
+>>>>>>> master
 			<width>728</width>
 			<height>90</height>
 			<size>40</size>
@@ -39831,11 +41964,23 @@
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmooOWkWSYm2Wke5mOkGqYZ6R9mrdia5VknYGX</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5pmn32cimeYmWWfepSJkGqZYJt6mrdiaplhpIOa</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>26879493</creative_id>
+			<creative_name>728x90_1</creative_name>
+			<campaign_id>1206283</campaign_id>
+			<program_id>139936</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139936/26879493</content_url>
+=======
 			<creative_id>25843836</creative_id>
 			<creative_name>pg_sf_CAROUSELv2_HU_728x90_40k</creative_name>
 			<campaign_id>1143996</campaign_id>
@@ -39878,6 +42023,7 @@
 			<program_id>142006</program_id>
 			<type>Banner</type>
 			<content_url>http://network.adsmarket.com/ctv/142006/25844116</content_url>
+>>>>>>> master
 			<width>728</width>
 			<height>90</height>
 			<size>39</size>
@@ -39885,11 +42031,23 @@
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmooOYkWSYm2Wke5mOkGqYZ6R9mrdia5VknYKX</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5pmn36ViWeYmWWfepSJkGqZYJt6mrdiaplhpIOa</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>26879503</creative_id>
+			<creative_name>728x90</creative_name>
+			<campaign_id>1206283</campaign_id>
+			<program_id>139936</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139936/26879503</content_url>
+=======
 			<creative_id>25844126</creative_id>
 			<creative_name>pg_sf_CAROUSELv2_mordor_HU_728x90_40k_1</creative_name>
 			<campaign_id>1143996</campaign_id>
@@ -39914,6 +42072,7 @@
 			<program_id>142006</program_id>
 			<type>Flash Banner</type>
 			<content_url>http://network.adsmarket.com/ctv/142006/25844136</content_url>
+>>>>>>> master
 			<width>728</width>
 			<height>90</height>
 			<size>40</size>
@@ -39921,11 +42080,26 @@
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmooOZiGSYm2Wke5mOkGqYZ6R9mrdia5VknYKX</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5pmn36Vi2eYmWWfepSJkGqZYJt6mrdiaplhpIOa</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>26879703</creative_id>
+			<creative_name>728x90_1</creative_name>
+			<campaign_id>1206293</campaign_id>
+			<program_id>139936</program_id>
+			<type>Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139936/26879703</content_url>
+			<width>728</width>
+			<height>90</height>
+			<size>39</size>
+=======
 			<creative_id>25844556</creative_id>
 			<creative_name>pg_sf_CAROUSELv2_mordor_HU_728x90_1</creative_name>
 			<campaign_id>1143996</campaign_id>
@@ -39935,15 +42109,28 @@
 			<width>728</width>
 			<height>90</height>
 			<size>104</size>
+>>>>>>> master
 			<traffic_sources>
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmooObiGSYm2Wke5mOkGqYZ6R9mrdia5VknYOX</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5pmn36ZjWeYmWWfepSJkGqZYJt6mrdiaplhpIOa</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>
 		<creative>
+<<<<<<< HEAD
+			<creative_id>26879713</creative_id>
+			<creative_name>728x90</creative_name>
+			<campaign_id>1206293</campaign_id>
+			<program_id>139936</program_id>
+			<type>Flash Banner</type>
+			<content_url>http://network.adsmarket.com/ctv/139936/26879713</content_url>
+=======
 			<creative_id>25844566</creative_id>
 			<creative_name>pg_sf_CAROUSELv2_mordor_HU_728x90</creative_name>
 			<campaign_id>1143996</campaign_id>
@@ -39986,6 +42173,7 @@
 			<program_id>142006</program_id>
 			<type>Banner</type>
 			<content_url>http://network.adsmarket.com/ctv/142006/26309053</content_url>
+>>>>>>> master
 			<width>728</width>
 			<height>90</height>
 			<size>40</size>
@@ -39993,6 +42181,9 @@
 				<traffic_source>
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
+<<<<<<< HEAD
+					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5tmooObiWSYm2Wke5mOkGqYZ6R9mrdia5VknYOX</click_url>
+=======
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5thm4OUjWSYmWWfepSJkGqZYJt6mrdiaphmoHqa</click_url>
 				</traffic_source>
 			</traffic_sources>
@@ -40030,6 +42221,7 @@
 					<traffic_source_id>169711</traffic_source_id>
 					<traffic_source_name>Montiera</traffic_source_name>
 					<click_url>http://network.adsmarket.com/click/imJummKcqZWOanCWX8p6w4iQa5thm4OVkWSYmWWfepSJkGqZYJt6mrdiaphmoHqa</click_url>
+>>>>>>> master
 				</traffic_source>
 			</traffic_sources>
 		</creative>

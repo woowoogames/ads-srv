@@ -6,16 +6,17 @@
   "dependencies": {
     "express": "^4.10.4",
     "jquery": "^2.1.1",
-    "request": "^2.53.0",
     "node.extend": "^1.1.2",
+    "path": "^0.11.14",
+    "request": "^2.53.0",
     "stylus": "*",
-    "xml2js": "^0.4.4",
-    "xmldom": "^0.1.19",
-    "xmlhttprequest": "^1.6.0",
-    "xpath": "^0.0.7",
     "underscore": "^1.7.0",
     "vash": "^0.7.12-1",
-    "xml2json": "^0.5.1"
+    "xml2js": "^0.4.4",
+    "xml2json": "^0.5.1",
+    "xmldom": "^0.1.19",
+    "xmlhttprequest": "^1.6.0",
+    "xpath": "^0.0.7"
   },
   "devDependencies": {},
   "scripts": {

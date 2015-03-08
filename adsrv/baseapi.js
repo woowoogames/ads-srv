@@ -9,11 +9,32 @@ var fs = require("fs"),
     xml2json = require("xml2json"),
 	extend = require('node.extend'),
 	querystring = require('querystring'),
+    CronJob = require('cron').CronJob,
+    exec = require('exec'),
 	fork = require('child_process').fork;
 
-
 var baseApi = {
+	cronJobs:{},
 	alivePrcs:{},
+	cron:function(cronName,path,cronTime,callback){
+		var cronJob = new CronJob({
+			cronTime: cronTime,
+			onTick: function() {
+		    	console.log("[baseapi.js][baseApi][cron] - cron " + cronName);
+		    	exec(['node',path],
+		    		{timeout:1000 * 60 * 60 * 2,killSignal:'SIGINT'},//kill process after 2 hours
+		    		function(err, out, code) {
+		    			if (err instanceof Error)
+		    				throw err;
+		    			process.stderr.write(err);
+		    			process.stdout.write(out);
+		    			callback();
+		    		});
+		    },
+		    start: true
+		});
+		baseApi.cronJobs[cronName] = cronJob;
+	},
 	fork : function(path){
 		var fileName = path.replace(/^.*[\\\/]/, '').replace('.js','');
 		baseApi.alivePrcs[fileName] = fork(path);
