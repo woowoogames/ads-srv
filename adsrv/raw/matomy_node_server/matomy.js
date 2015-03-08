@@ -51,14 +51,14 @@ function init(){
          process.exit();
       }
    });
-	routes_load_data.refresh.refresh_banners(function(type){
-      if(type=="bannerDone")
-         bannerDone = true;
-      if(bannerDone && programDone){
-         console.log("Matomy update process KILLED!");
-         process.exit();
-      }
-   });
+	// routes_load_data.refresh.refresh_banners(function(type){
+ //      if(type=="bannerDone")
+ //         bannerDone = true;
+ //      if(bannerDone && programDone){
+ //         console.log("Matomy update process KILLED!");
+ //         process.exit();
+ //      }
+ //   });
 };
 
 init();
