@@ -39,13 +39,13 @@
         "name": "matomy",
         "type" : "raw",
         "requireSearchTerm": false,
-        "active": true,
+        "active": false,
         "isSerp": false,
         "handler": "./raw/matomy",
         "coverage": {
             "cntry": {
                 "type": "white",
-                "values" :["de","es","fr","in","pl","uk","us"]
+                "values" :["au" , "at" , "ar", "br", "cl", "co", "de", "es", "fr", "gb", "hu", "in", "mx", "pe", "pl", "ru", "us", "ve"]
             },
             "prdct": {
                 "type": "white",
