@@ -78,7 +78,7 @@ var matomy = function () {
 	},
 	this.productAndSubid = function(matomyResults,productId,subId){
 		for(var i = 0 ; i < matomyResults.length ; i++){
-			matomyResults[i].lnk += "&dp=" + productId;
+			matomyResults[i].lnk += "?dp=" + productId;
 			if(typeof subId !== 'undefined'){
 				matomyResults[i].lnk += "&dp2=" + subId;
 			}

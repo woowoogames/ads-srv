@@ -7,7 +7,8 @@
     },
     "au": {
         "pricegong": 2,
-        "adworldmedia": 1
+        "adworldmedia": 1,
+        "matomy": 3
     },
     "be": {
         "kelkoo": 2,
