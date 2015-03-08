@@ -1,9 +1,28 @@
 ﻿[
     {
+        "name": "adworldmedia",
+        "type" : "feed",
+        "requireSearchTerm": true,
+        "active": true,
+        "isSerp": false,
+        "handler": "./feeds/adworldmedia",
+        "coverage": {
+            "cntry": {
+                "type": "white",
+                "values" :["us","ca","uk","au","nz"]
+            },
+            "prdct": {
+                "type": "white",
+                "values": ["all"]
+            }
+        }
+    },
+    {
         "name": "admarketplace",
         "type" : "feed",
         "requireSearchTerm": true,
         "active": true,
+        "isSerp": true,
         "handler": "./feeds/admarketplace",
         "coverage": {
             "cntry": {
@@ -21,6 +40,7 @@
         "type" : "raw",
         "requireSearchTerm": false,
         "active": false,
+        "isSerp": false,
         "handler": "./raw/matomy",
         "coverage": {
             "cntry": {
@@ -38,11 +58,12 @@
         "type" : "feed",
         "requireSearchTerm": true,
         "active": true,
+        "isSerp": false,
         "handler": "./feeds/kelkoo",
         "coverage": {
             "cntry": {
                 "type": "white",
-                "values" :["it", "es", "fr", "de", "nl", "be", "ru", "br", "dk", "no", "se", "uk"]
+                "values" :["be", "br", "de", "dk", "es", "fr", "it", "nl", "no", "ru", "se"]
             },
             "prdct": {
                 "type": "white",
@@ -55,11 +76,12 @@
         "type": "feed",
         "requireSearchTerm": true,
         "active": true,
+        "isSerp": false,
         "handler": "./feeds/shopzilla",
         "coverage": {
             "cntry": {
                 "type": "white",
-                "values" :["us"]
+                "values" :["us","de","fr","uk"]
             },
             "prdct": {
               
@@ -73,11 +95,12 @@
         "type": "feed",
         "requireSearchTerm": true,
         "active": true,
+        "isSerp": false,
         "handler": "./feeds/pricegong",
         "coverage": {
             "cntry": {
                 "type": "white",
-                "values" : ["it", "es", "fr", "de", "nl", "be", "ru", "br", "dk", "no", "se", "ca"]
+                "values" : ["at","au","be", "br", "ca", "it", "es", "fr", "de", "nl", "ru", "dk", "no", "se","gb","in","jp","pl","us"]
             },
             "prdct": {
                 "type": "white",
@@ -90,11 +113,12 @@
         "type": "feed",
         "requireSearchTerm": true,
         "active": true,
+        "isSerp": false,
         "handler": "./feeds/shopping",
         "coverage": {
             "cntry": {
                 "type": "white",
-                "values" : ["uk"]
+                "values" : ["uk","us", "de", "fr"]
             },
             "prdct": {
                 "type": "white",
@@ -107,6 +131,7 @@
         "type": "feed",
         "requireSearchTerm": true,
         "active": true,
+        "isSerp": false,
         "handler": "./feeds/firstoffer",
         "coverage": {
             "cntry": {
@@ -124,6 +149,7 @@
     "type": "ddls",
     "requireSearchTerm": false,
     "active": true,
+    "isSerp": false,
     "handler": "./ddls/ddlmngr",
     "coverage": {
             "cntry": {
@@ -141,6 +167,7 @@
     "type": "trnds",
     "requireSearchTerm": false,
     "active": true,
+    "isSerp": false,
     "handler": "./trnds/trndmngr",
     "coverage": {
             "cntry": {
@@ -154,12 +181,13 @@
         }
     },
     {  
-        "name":"buscape",
-        "type":"feed",
-        "requireSearchTerm":true,
-        "active":true,
-        "handler":"./feeds/buscape",
-        "coverage":{  
+    "name":"buscape",
+    "type":"feed",
+    "requireSearchTerm":true,
+    "active":true,
+    "isSerp": false,
+    "handler":"./feeds/buscape",
+    "coverage":{  
             "cntry":{  
                 "type":"white",
                 "values":[  "br","ar","co","cl","mx","pe","ve"]
@@ -177,11 +205,12 @@
     "type":"raw",
     "requireSearchTerm":false,
     "active":true,
+    "isSerp": false,
     "handler":"./raw/buzzcity",
     "coverage":{  
            "cntry":{  
               "type":"white",
-              "values":[  "id","my","in","za","th","br","uk","ng"]
+              "values":["id","my","in","za","th","br","uk","ng"]
            },
            "prdct":{  
               "type":"white",

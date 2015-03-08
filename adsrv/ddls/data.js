@@ -107,7 +107,7 @@
     ],
     "id": 6
   },
-  "ddls7": {
+  "7": {
     "desc": "miniplay",
     "rndrTyp": "iframe",
     "size": "300x250",
@@ -126,6 +126,114 @@
     "lnk": [],
     "subidkey": "",
     "subidval": "",
-    "id": "ddls7"
+    "id": "7"
+  },
+  "8": {
+    "desc": "plymedia_sterkly_entertainment",
+    "rndrTyp": "iframe",
+    "size": "300x250",
+    "ctgry": [
+      "Arts & Entertainment Books"
+    ],
+    "cntry": [],
+    "domains": [],
+    "feed": "",
+    "standalone": true,
+    "source": [
+      "http://cdn.mntrply.com/montiera/tags/xdirect/xdirect.html?p=57551492&serverdomain=montiera&size=300x250&ct=html&ap=1300"
+    ],
+    "lnk": [],
+    "subidkey": "",
+    "subidval": "",
+    "id": 8
+  },
+  "9": {
+    "desc": "plymedia_sterkly_sport",
+    "rndrTyp": "iframe",
+    "size": "300x250",
+    "ctgry": [
+      "Sports"
+    ],
+    "cntry": [],
+    "domains": [],
+    "feed": "",
+    "standalone": true,
+    "source": [
+      "http://cdn.mntrply.com/montiera/tags/xdirect/xdirect.html?p=57651116&serverdomain=montiera&size=300x250&ct=html&ap=1300"
+    ],
+    "lnk": [],
+    "subidkey": "",
+    "subidval": "",
+    "id": 9
+  },
+  "10": {
+    "desc": "plymedia_sterkly_music",
+    "rndrTyp": "iframe",
+    "size": "300x250",
+    "ctgry": [
+      "Music"
+    ],
+    "cntry": [],
+    "domains": [],
+    "feed": "plymedia",
+    "standalone": true,
+    "source": [
+      "http://cdn.mntrply.com/montiera/tags/xdirect/xdirect.html?p=58131656&serverdomain=montiera&size=300x250&ct=html&ap=1300"
+    ],
+    "lnk": [],
+    "subidkey": "",
+    "subidval": "",
+    "id": 10
+  },
+  "11": {
+    "desc": "plymedia_softonic_general",
+    "rndrTyp": "iframe",
+    "size": "300x250",
+    "ctgry": [],
+    "cntry": [],
+    "domains": [],
+    "feed": "plymedia",
+    "standalone": true,
+    "source": [
+      "http://cdn.mntrply.com/montiera/tags/xdirect/xdirect.html?p=58112653&serverdomain=montiera&size=300x250&ct=html&ap=1300"
+    ],
+    "lnk": [],
+    "subidkey": "",
+    "subidval": "",
+    "id": 11
+  },
+  "12": {
+    "desc": "plymedia_softonic_general ",
+    "rndrTyp": "iframe",
+    "size": "300x250",
+    "ctgry": [],
+    "cntry": [],
+    "domains": [],
+    "feed": "",
+    "standalone": true,
+    "source": [
+      "http://cdn.mntrply.com/montiera/tags/xdirect/xdirect.html?p=58112653&serverdomain=montiera&size=300x250&ct=html&ap=1300"
+    ],
+    "lnk": [],
+    "subidkey": "",
+    "subidval": "",
+    "id": 12
+  },
+  "13": {
+    "desc": "plymedia_softonic_general ",
+    "rndrTyp": "iframe",
+    "size": "300x250",
+    "ctgry": [],
+    "cntry": [],
+    "domains": [],
+    "feed": "",
+    "standalone": true,
+    "source": [
+      "http://cdn.mntrply.com/montiera/tags/xdirect/xdirect.html?p=58112653&serverdomain=montiera&size=300x250&ct=html&ap=1300"
+    ],
+    "lnk": [],
+    "subidkey": "",
+    "subidval": "",
+    "id": 13
   }
 }

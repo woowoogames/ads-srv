@@ -13,6 +13,11 @@ var admarketplace = function () {
 		this.mClbk = clbk;
 		try {
 			if(typeof prms.type === "undefined"){
+
+				utl.log("[admarketplace.js][getOffers] - return 0 results");
+				that.mClbk(1, []);
+				return;
+
 				var n = prms.n || 10;
 				var url = this.getURL(prms.type);
 				baseApi.httpGetTimeout(url, function (error, response, body) {
@@ -21,14 +26,26 @@ var admarketplace = function () {
 						return;
 					}
 					var data = baseApi.xmlToJSON(body);
-					if(typeof data.result.adlistings !== 'undefined'){
-						var results = that.format(data.result.adlistings.listing,prms.type);
-						utl.log("[admarketplace.js][getOffers] - return [" + results.length + "] results");
-						that.mClbk(0, results);
+					if(typeof data !== 'undefined'){
+						if(typeof data.result !== 'undefined'){
+							if(typeof data.result.adlistings !== 'undefined'){
+								var results = that.format(data.result.adlistings.listing,prms.type);
+								utl.log("[admarketplace.js][getOffers] - return [" + results.length + "] results");
+								that.mClbk(0, results);
+							}
+							else{
+								utl.log("[admarketplace.js][getOffers] - return 0 results");
+								that.mClbk(1, []);
+							}
+						}
+						else{
+							utl.log("[admarketplace.js][getOffers] - return 0 results");
+							that.mClbk(1, []);
+						}
 					}
 					else{
 						utl.log("[admarketplace.js][getOffers] - return 0 results");
-						that.mClbk(0, []);
+						that.mClbk(1, []);
 					}
 				});
 			}
@@ -36,20 +53,31 @@ var admarketplace = function () {
 				if(prms.type === 'serp'){
 					var n = prms.n || 10;
 					var url = this.getURL(prms.type);
-					console.log("********" + url);
 					baseApi.httpGetTimeout(url, function (error, response, body) {
 						if(error){
 							that.mClbk(1, "[admarketplace.js][getOffers::err] -- fatal error [" + err + "]");
 							return;
 						}
 						var data = baseApi.xmlToJSON(body);
-						if(typeof data.result.adlistings !== 'undefined'){
-							var results = that.format(data.result.adlistings.listing,prms.type);
-							//utl.log("[admarketplace.js][getOffers] - return 0 results");
-							that.mClbk(0, results);
+						if(typeof data !== 'undefined'){
+							if(typeof data.result !== 'undefined'){
+								if(typeof data.result.adlistings !== 'undefined'){
+									var results = that.format(data.result.adlistings.listing,prms.type);
+									that.mClbk(0, results);
+								}
+								else{
+									utl.log("[admarketplace.js][getOffers] - return 0 results");
+									that.mClbk(1, []);
+								}
+							}
+							else{
+								utl.log("[admarketplace.js][getOffers] - return 0 results");
+								that.mClbk(1, []);
+							}
 						}
 						else{
-
+							utl.log("[admarketplace.js][getOffers] - return 0 results");
+							that.mClbk(1, []);
 						}
 					});
 				}
@@ -73,12 +101,12 @@ var admarketplace = function () {
 						else
 							obj.ofrtype = "feed";
 						obj.desc.short = offers[i].description;
-						obj.img.small = offers[i].thumbnail;
+						if(typeof offers[i].thumbnail !== 'undefined')
+							obj.img.small = offers[i].thumbnail;
 						obj.meta.feed = "admrktplce";
 						obj.meta.cntry = that.mPrms.cntry;
 						obj.meta.ctgry = that.mPrms.ctgry;
 						obj.meta.prdct = that.mPrms.prdct;
-						obj.meta.sz = null;
 						obj.lnk = offers[i].clickurl;
 						obj.uid = "admrktplce";
 						rsltArr.push(obj);
@@ -92,12 +120,12 @@ var admarketplace = function () {
 					else
 						obj.ofrtype = "feed";
 					obj.desc.short = offers.description;
-					obj.img.small = offers.thumbnail;
+					if(typeof offers[i].thumbnail !== 'undefined')
+						obj.img.small = offers.thumbnail;
 					obj.meta.feed = "admrktplce";
 					obj.meta.cntry = that.mPrms.cntry;
 					obj.meta.ctgry = that.mPrms.ctgry;
 					obj.meta.prdct = that.mPrms.prdct;
-					obj.meta.sz = null;
 					obj.lnk = offers.clickurl;
 					obj.uid = "admrktplce";
 					rsltArr.push(obj);
@@ -122,7 +150,7 @@ var admarketplace = function () {
 		var prdct = that.mPrms.prdct;
 		var n = that.mPrms.n;
 		if(type == 'serp'){
-			url = "http://montiera_search_us.ampfeed.com/xmlamp/feed?partner=pub_montiera_search_us&v=2&kw=" + st + "&results=" + n + "&ip=" + ip + "&proxy-ip=" + ip + "&ua=" + ua;
+			url = "http://montiera_search_us.ampfeed.com/xmlamp/feed?partner=pub_montiera_search_us&v=2&kw=" + st + "&sub1=" + prdct + "&results=" + n + "&ip=" + ip + "&proxy-ip=" + ip + "&ua=" + ua;
 		}
 		else{
 			url = "http://montiera.ampfeed.com/xmlamp/feed?partner=pub_montiera&v=2&kw=" + st + "&img=1&ptype=pc&puburl=ebay.com&sub1=" + prdct + "&results=" + n + "&ip=" + ip + "&proxy-ip=" + ip + "&ua="+ua+"&rfr=montiera.com";

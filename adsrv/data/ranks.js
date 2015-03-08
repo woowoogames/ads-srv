@@ -2,15 +2,25 @@
     "ar": {
         "buscape": 1
     },
+    "at":{
+        "pricegong": 1
+    },
+    "au": {
+        "pricegong": 2,
+        "adworldmedia": 1
+    },
     "be": {
+        "kelkoo": 2,
         "pricegong": 1
     },
     "br": {
+        "pricegong": 2,
         "buscape": 1,
-        "buzzcity": 1
+        "buzzcity": 3
     },
     "ca": {
-        "pricegong": 1
+        "adworldmedia": 1,
+        "pricegong": 2
     },
     "cl": {
         "buscape": 1
@@ -19,17 +29,21 @@
         "buscape": 1
     },
     "de": {
+        "kelkoo": 2,
         "pricegong": 1,
         "matomy": 1
     },
     "dk": {
-        "kelkoo": 1
+        "kelkoo": 1,
+        "pricegong": 2
     },
     "es": {
+        "kelkoo": 2,
         "pricegong": 1,
         "matomy": 1
     },
     "fr": {
+        "kelkoo": 2,
         "pricegong": 1,
         "matomy": 1
     },
@@ -37,17 +51,16 @@
         "buzzcity": 1
     },
     "in": {
-        "firstoffer" :1,
+        "firstoffer": 2,
         "buzzcity": 1,
         "matomy": 1
     },
     "it": {
-        "kelkoo": 1
+        "pricegong": 1,
+        "kelkoo": 2
     },
-    "us": {
-        "admarketplace":1,
-        "shopzilla": 1,
-        "matomy": 1
+    "jp":{
+        "pricegong": 1
     },
     "my": {
         "buzzcity": 1
@@ -59,10 +72,15 @@
         "buzzcity": 1
     },
     "nl": {
-        "kelkoo": 1
+        "pricegong": 1,
+        "kelkoo": 2
     },
     "no": {
-        "kelkoo": 1
+        "pricegong": 1,
+        "kelkoo": 2
+    },
+    "nz": {
+        "adworldmedia": 1
     },
     "pl": {
         "matomy": 1
@@ -70,29 +88,39 @@
     "pe": {
         "buscape": 1
     },
-
     "ru": {
-        "kelkoo": 1
+        "kelkoo": 1,
+        "pricegong": 2
     },
     "se": {
-        "kelkoo": 1
+        "kelkoo": 1,
+        "pricegong": 2
     },
-
     "ve": {
         "buscape": 1
     },
-
-
     "th": {
         "buzzcity": 1
     },
     "uk": {
-        "ebay": 1,
+        "adworldmedia": 1,
+        "pricegong": 3,
+        "ebay": 2,
         "buzzcity": 1,
+        "matomy": 1
+    },
+    "us": {
+        "adworldmedia": 1,
+        "shopzilla": 2,
+        "pricegong": 3,
+        "ebay": 4,
         "matomy": 1
     },
     "za": {
         "buzzcity": 1
+    },
+    "int" :{
+        "ddls" : 1,
+        "trnds" : 2
     }
-    
 }

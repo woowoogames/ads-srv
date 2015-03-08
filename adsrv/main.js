@@ -9,7 +9,8 @@ var feedsMngr = require('./feedsmngr'),
 	// path = require("path"),
 	utl = require("./utl"),
 	frmtr = require("./formatter"),
-	_ = require("underscore");
+	_ = require("underscore"),
+	influxReporter = require('../influx-client');
 
 
 	var adSrv = {
@@ -26,19 +27,23 @@ var feedsMngr = require('./feedsmngr'),
 	*******************************************************************************************************/
 
 	processRequest: function (request, response) {
-
+		
 		try {
 			utl.log("[main.js][processRequest] url - " + request.url);
 
 			// request params
 			var requestParams = adSrv.getRequestParams(request);
-
+			influxReporter.report('adsrvr', {
+				country: requestParams.cntry,
+				category: requestParams.ctgry,
+				host: requestParams.host,
+			});
 			if(requestParams){
 				// list of feeds to work with according to the request params
 				var feeds = feedsMngr.getFeeds(requestParams);
 
 				// choose the best feeds to work with, sort by priority
-				var sFeeds = lgcMngr.sortFeeds(requestParams.cntry, feeds);
+				var sFeeds = lgcMngr.sortFeeds(requestParams, feeds);
 
 				// Ask the feeds for offers, format and choose the best offers, respond the client 
 				var om = new offersMngr.offersMngr(requestParams, sFeeds, function (error, offers) {
@@ -110,11 +115,22 @@ var feedsMngr = require('./feedsmngr'),
 				}
 			});
 			//requestObject.sz = "300"; // request.params.size;
-			requestObject.type = request.params.type;
+			if(typeof request.params.type !== 'undefined' && typeof request.params.qa !== 'undefined'){
+				requestObject.type = request.params.type;
+				requestObject.qa = request.params.qa;
+			}
+			else if(typeof request.params.qa === 'undefined' && typeof request.params.type !== 'undefined' && request.params.type!== 'serp' && request.params.type!== 'ddls' && request.params.type!== 'trnds'){
+				requestObject.qa = request.params.type;
+			}
+			else{
+				requestObject.type = request.params.type;
+			}
 			if(frmtr.isValidRequest(requestObject)){
 				if (requestObject.limit) {
 					requestObject.limit = parseInt(requestObject.limit);
 				}
+				if(typeof requestObject.cntry == 'undefined')
+					requestObject.cntry = 'int';
 				return requestObject;
 			}
 			else{//request isn't valid!
