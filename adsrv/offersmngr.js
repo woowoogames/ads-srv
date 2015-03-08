@@ -138,8 +138,7 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
     		that.getAsyncOffers();
     		return;
     	}
-
-    	var worker = new feedHandler();
+        var worker = new feedHandler();
     	worker.getOffers(that.mPrms, function (error, offers) {
     		try{
     			utl.log("[offersmngr.js][getAsyncOffers][worker.getOffers] - status [" + error + "]");
@@ -187,7 +186,11 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
     		that.getAsyncRawOffers();
     		return;
     	}
-    	var worker = new feedHandler();
+        var worker;
+        if(raw.name == "matomy")
+            worker = new feedHandler.matomy();
+        else
+            worker = new feedHandler();
     	worker.getOffers(that.mPrms, function (error, offers) {
     		try {
     			utl.log("[offersmngr.js][getAsyncRawOffers][worker.getOffers] - status [" + error + "]");

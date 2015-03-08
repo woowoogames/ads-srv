@@ -3,6 +3,7 @@ var baseApi = require("../baseapi"),
 	q = require('q'),
 	utils = require('util'),
 	utl = require("../utl"),
+    offersMngr = require('../offersmngr'),
 	frmtr = require("../formatter");
 
 var data={};
@@ -38,23 +39,33 @@ var matomy = function () {
 	this.getOffers = function (prms, clbk) {
 		utl.log("[matomy.js][getOffers]");
 		try{
-			var resolution = resolutions[prms.type];
+			//var resolution = resolutions[prms.type];
 			var country = prms.cntry;
 			var category = prms.ctgry;
 			var n = prms.n;
 			category = ctrgyMapper[category];
-		    if(this.safeResults(country,category,resolution)){
-		 	   var arr = data[country][category][resolution];
-		    	var results = shuffle(n,arr);
-		    	if(results.length>0){
-		    		var matomyResults = this.format(results,resolution);
-		    		this.productAndSubid(matomyResults,prms.prdct,prms.subid);
-		    		console.log(matomyResults);
-		    		clbk(0,matomyResults);
-		    	}
-		    	else{
-		    		clbk(1,"[matomy.js][getOffers] - no match");	
-		    	}
+		    if(this.safeResults(country,category)){
+		 	   var arr = data[country][category];
+		 	   if(arr){
+		 	    	var results = [];
+		 	   		if(typeof arr['160x600'] !== 'undefined' && arr['160x600'].length>0)
+		 	   			results.push({size:160 , value :arr['160x600'][Math.floor(Math.random()*arr['160x600'].length)]});
+		 	   		if(typeof arr['300x250'] !== 'undefined' && arr['300x250'].length>0)
+		 	   			results.push({size:300 , value :arr['300x250'][Math.floor(Math.random()*arr['300x250'].length)]});
+		 	   		if(typeof arr['728x90'] !== 'undefined' && arr['728x90'].length>0)
+		 	   			results.push({size:728 , value :arr['728x90'][Math.floor(Math.random()*arr['728x90'].length)]});
+			 	   	if(results.length>0){
+			 	   		var matomyResults = this.format(results);
+			 	   		this.productAndSubid(matomyResults,prms.prdct,prms.subid);
+			 	   		clbk(0,matomyResults);
+			 	   	}
+			 	   	else{
+			 	   		clbk(1,"[matomy.js][getOffers] - no match");	
+			 	   	}
+		 	   }
+		 	   else{
+		 	   		clbk(1,"[matomy.js][getOffers] - no match");	
+		 	   }
 		    }
 		    else{
 		    	clbk(1,"[matomy.js][getOffers] - no match");
@@ -73,20 +84,17 @@ var matomy = function () {
 			}
 		}
 	},
-	this.safeResults = function(country,category,resolution){
+	this.safeResults = function(country,category){
 		if(typeof data[country] !== 'undefined'){
 			if(typeof data[country][category] !== 'undefined')
-				if(typeof data[country][category][resolution] !== 'undefined')
-					return true;
-				else
-					return false;
+				return true;
 			else
 				return false;
 		}
 		else
 			return false;
 	},
-	this.format = function (offers,resolution) {
+	this.format = function (offers) {
 		try{
 			var rsltArr = [];
 			for(var i=0 ; i<offers.length; i++){
@@ -94,10 +102,10 @@ var matomy = function () {
 				try{
 					obj.typ = "img";
 					obj.ofrtype = "raw";
-					obj.img.big = offers[i].banner_img;
+					obj.img.big = offers[i].value.banner_img;
 					obj.meta.feed = "matomy";
-					obj.lnk = offers[i].banner_link;
-					obj.sz = resolution;
+					obj.lnk = offers[i].value.banner_link;
+					obj.sz = offers[i].size;
 					rsltArr.push(obj);
 				}
 				catch(e){}
@@ -108,33 +116,6 @@ var matomy = function () {
 	}
 
 };
-
-function shuffle(n,arr){
-	var n = Math.min(n,arr.length);
-	var results = [];
-	var arrNums = new Array(n);
-	var rnd = Math.floor(Math.random()*arr.length);
-	for(var i=0 ; i<arrNums.length ;i++){
-		while(typeof arrNums[i] === 'undefined'){
-			if(arrNums.indexOf(rnd)==-1)
-				arrNums[i] = rnd;
-			else
-				rnd = Math.floor(Math.random()*arr.length);
-		}
-	}
-	for(var i=0 ; i<arrNums.length ;i++){
-		var result = {banner_img : arr[arrNums[i]].banner_img,
-			banner_link : arr[arrNums[i]].banner_link};
-			results.push(result);
-		}
-		return results;
-}
-
-// var all_resulutions = {
-// 	key_300x250 : undefined,
-// 	key_160x600 : undefined,
-// 	key_728x90  : undefined
-// };
 var all_resulutions = {
 	key_300x250 : {},
 	key_160x600 : {},
@@ -149,7 +130,7 @@ var all_programs = {
 	key_in: undefined
 };
 var resulution_to_load = ["300x250","160x600","728x90"];
-var program_to_load = ["us","fr","pl","es","de","in"];
+var program_to_load = ["au" , "at" , "ar", "br", "cl", "co", "de", "es", "fr", "gb", "hu", "in", "mx", "pe", "pl", "ru", "us", "ve"];
 // var categories_to_load=["Biz Op",
 // 						"Consumer Products",
 // 						"Dating",
@@ -372,48 +353,13 @@ init(function(){
 	create_data_object();
 	console.log("[matomy.js][init] - done! - all files loaded to memory");
 });
-module.exports = matomy;
 
+// update process each day at 24:00
+// baseApi.cron("MatomyUpdate",path.join(path.dirname(__filename),"/matomy_node_server/matomy.js"),'00 00 00 * * *',function(){
+//     offersMngr.mdlsMngr.modules.raw['matomy'].init(); //reload module after update
+// });
 
-
-
-
-
-
-
-
-
-
-//Co-Reg
-//FB Apps
-//Consumer Products
-// Daily Deals
-// Insurance
-// Lead Generation
-// Pay Per Call
-// Social
-// Surveys
-// Utilities
-
-
-// var ctrgyMapper = {
-//     "mobile": "Mobile Content",
-//     "videogames":"Games",
-//     "downloads":"Downloads",
-//     "travel":"Travel",
-//     "dating":"Dating",
-//     "health":"Health and Wellness",
-//     "finance":"Finance",
-//     "celebsngossip":"Other",
-//     "shopping":"eCommerce",
-//     "education":""
-// };
-// Incentivized
-// Entertainment
-// Insurance
-// 'Lead Generation'
-// 'Mobile Apps'
-// 'Consumer Products'
-// Software
-// Surveys 
-// 'Biz Op'
+module.exports = {
+	matomy : matomy,
+	init : init
+}
