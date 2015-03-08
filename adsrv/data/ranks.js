@@ -111,9 +111,9 @@
     },
     "us": {
         "adworldmedia": 1,
-        "pricegong": 2,
-        "ebay": 3,
-        "shopzilla": 4,
+        "shopzilla": 2,
+        "pricegong": 3,
+        "ebay": 4,
         "matomy": 1
     },
     "za": {
