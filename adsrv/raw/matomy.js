@@ -107,6 +107,7 @@ var matomy = function () {
 					obj.lnk = offers[i].value.banner_link;
 					obj.sz = offers[i].size;
 					rsltArr.push(obj);
+					obj.uid = "matomy";
 				}
 				catch(e){}
 			}

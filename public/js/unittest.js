@@ -138,7 +138,7 @@ $(document).ready(function(){
 			var feed = obj[0].meta.feed;
 			var pname = obj[i].desc.short;
 			var pic;
-			if(obj[i].img.small !="")
+			if(obj[i].img.small && obj[i].img.small !="")
 				pic = obj[i].img.small;
 			else
 				pic = obj[i].img.big;
