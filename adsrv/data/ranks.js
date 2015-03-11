@@ -30,9 +30,10 @@
         "buscape": 1
     },
     "de": {
-        "kelkoo": 2,
-        "pricegong": 1,
-        "matomy": 1
+        "kelkoo": 3,
+        "pricegong": 2,
+        "matomy": 1,
+        "shopzilla": 1
     },
     "dk": {
         "kelkoo": 1,
@@ -44,16 +45,17 @@
         "matomy": 1
     },
     "fr": {
-        "kelkoo": 2,
-        "pricegong": 1,
-        "matomy": 1
+        "kelkoo": 3,
+        "pricegong": 2,
+        "matomy": 1,
+        "shopzilla": 1
     },
     "id": {
         "buzzcity": 1
     },
     "in": {
         "firstoffer": 2,
-        "buzzcity": 1,
+        "buzzcity": 2,
         "matomy": 1
     },
     "it": {
@@ -105,10 +107,11 @@
     },
     "uk": {
         "adworldmedia": 1,
-        "pricegong": 3,
-        "ebay": 2,
-        "buzzcity": 1,
-        "matomy": 1
+        "pricegong": 4,
+        "ebay": 3,
+        "buzzcity": 2,
+        "matomy": 1,
+        "shopzilla": 2
     },
     "us": {
         "adworldmedia": 1,

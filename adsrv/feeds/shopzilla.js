@@ -38,7 +38,7 @@ var shopzilla = function () {
 			pub: "606535"
 		},
 
-		gb: {
+		uk: {
 			url: "http://catalog.bizrate.co.uk/services/catalog/v1/api/product/3",
 			api: "b26cb363bbac236af9d172298a5f5049",
 			pub: "606536"
