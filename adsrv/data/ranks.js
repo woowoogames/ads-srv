@@ -20,8 +20,9 @@
         "buzzcity": 3
     },
     "ca": {
+        "pricegrabber":2,
         "adworldmedia": 1,
-        "pricegong": 2
+        "pricegong": 3
     },
     "cl": {
         "buscape": 1
@@ -106,18 +107,20 @@
         "buzzcity": 1
     },
     "uk": {
+        "pricegrabber":2,
         "adworldmedia": 1,
-        "pricegong": 4,
-        "ebay": 3,
+        "pricegong": 5,
+        "ebay": 4,
         "buzzcity": 2,
         "matomy": 1,
-        "shopzilla": 2
+        "shopzilla": 3
     },
     "us": {
+        "pricegrabber":2,
         "adworldmedia": 1,
-        "shopzilla": 2,
-        "pricegong": 3,
-        "ebay": 4,
+        "shopzilla": 3,
+        "pricegong": 4,
+        "ebay": 5,
         "matomy": 1
     },
     "za": {
