@@ -103,7 +103,7 @@ var buscape = function () {
 							that.mClbk(1, []);
 						}
 						else{
-							var results = that.format(offers);
+							var results = that.format(offers,prms);
 							utl.log("[buscape.js][getOffers] - return [" + results.length + "] results");
 							that.mClbk(0, results);
 						}
@@ -143,7 +143,7 @@ var buscape = function () {
 		}
 	};
 
-	this.format = function (offers) {
+	this.format = function (offers,prms) {
 		try{
 			var rsltArr = [];
 			for(var i=0 ; i<offers.length; i++){
@@ -162,7 +162,7 @@ var buscape = function () {
 					obj.meta.ctgry = that.mPrms.ctgry;
 					obj.meta.prdct = that.mPrms.prdct;
 					obj.meta.sz = null;
-					obj.lnk = offers[i].offer.links[0].link.url;
+					obj.lnk = offers[i].offer.links[0].link.url + "&mdasc=" + prms.prdct;
 					obj.prc = offers[i].offer.price.value;
 					obj.store.name = offers[i].offer.seller.sellername;
 					if(typeof offers[i].offer.seller.thumbnail === 'undefined')
