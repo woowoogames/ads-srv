@@ -117,8 +117,15 @@ var pricegrabber = function () {
 	};
 
 	this.getURL = function(pid,key,prms){
-		var url = "http://sws.api.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&q=" + prms.st + "&limit=4&market=" + prms.cntry + "&mode=" + prms.prdct;
+		var url = "http://sws.api.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&q=" + prms.st + "&limit=4&market=" + prms.cntry + "&mode=" + this.fixProduct(prms.prdct);
 		return url;
+	};
+
+	this.fixProduct = function(product){
+		var prefix = "montiera_";
+		var prdct = product.substring(0,4);
+		var num = product.substring(4);
+		return prefix + prdct + "_" + num;
 	}
 
 
