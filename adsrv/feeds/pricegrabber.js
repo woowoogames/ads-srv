@@ -3,7 +3,8 @@ baseApi = require("../baseapi"),
 utl = require("../utl"),
 frmtr = require("../formatter"),
 sha1 = require('sha1'),
-crypto = require('crypto');
+crypto = require('crypto'),
+entities = require("entities");
 
 var pricegrabber = function () {
 	this.mClbk = null;
@@ -76,8 +77,8 @@ var pricegrabber = function () {
 				try{
 					obj.typ = "img";
 					obj.ofrtype = "feed";
-					obj.desc.short = offers[i].title_short;
-					obj.desc.long = offers[i].title;
+					obj.desc.short = entities.decodeXML(offers[i].title_short);
+					obj.desc.long = entities.decodeXML(offers[i].title);
 					obj.img.small = offers[i].image_medium;
 					obj.img.big = offers[i].image_160;
 					obj.meta.feed = "prcgrbr";
@@ -86,7 +87,7 @@ var pricegrabber = function () {
 					obj.meta.prdct = that.mPrms.prdct;
 					obj.sz = "";
 					obj.prc = offers[i].price[0].$t;
-					obj.lnk = offers[i].direct_offer.url;
+					obj.lnk = entities.decodeHTML(offers[i].direct_offer.url);
 					obj.store.rtng = offers[i].direct_offer.rating;
 					obj.store.name = offers[i].direct_offer.retailer;
 					if(typeof offers[i].direct_offer.retailer_logo !== 'undefined')
