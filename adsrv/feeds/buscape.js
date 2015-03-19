@@ -188,8 +188,9 @@ var buscape = function () {
 		var url = map.key;
 		if(typ == "prdct"){
 			url += "?keyword=" + that.mPrms.st;
-			url += "&mdasc=" + that.mPrms.prdct;
+			//url += "&mdasc=" + that.mPrms.prdct;
 			url += "&results=" + that.mPrms.n;
+			url += "&sourceid=23934649";
 		}
 		url += "&format=json";
 		return url;
