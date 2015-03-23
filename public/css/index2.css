@@ -1,0 +1,32 @@
+.nav ul ul {
+    display: none;
+}
+.nav ul ul li {
+    display: block;
+}
+.nav ul li:hover > ul {
+    display: block;
+}
+
+.nav ul:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    padding: 25px 40px;
+    color: #757575;
+    text-decoration: none;
+}
+
+.nav ul ul {
+    padding: 0;
+    position: absolute;
+    z-index:999;
+}

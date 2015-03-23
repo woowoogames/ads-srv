@@ -1,0 +1,92 @@
+﻿body {
+  margin: 0;
+  padding: 0;
+}
+.btn {
+    cursor: pointer;
+    font: 2em/1 'Segoe UI Semibold','Lucida Grande',Verdana,Arial,Helvetica,sans-serif;
+    background-color: #E34234;
+    color: #fff;
+    padding: 20px 40px;
+    margin: 30px 30px;
+    border: none;
+}
+.btn:hover {
+    cursor: pointer;
+    font: 2em/1 'Segoe UI Semibold','Lucida Grande',Verdana,Arial,Helvetica,sans-serif;
+    background-color: #fff;
+    color: #E34234;
+    padding: 20px 40px;
+    margin: 30px 30px;
+    border: none;
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(http://fonts.gstatic.com/s/oswald/v10/yg0glPPxXUISnKUejCX4qfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(http://fonts.gstatic.com/s/oswald/v10/BObL_3V2WX-YniTOi4CsnvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* Correct display for older browsers */
+
+
+.nav ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  /*line-height: 40px;
+  height: 40px;*/
+  width:200px;
+  border-bottom: 1px solid #888;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+
+.nav a:hover {
+  background-color: #005f5f;
+}
+
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+
+@media screen and (min-width: 600px) {
+  .nav li {
+    width: 200px;
+    border-bottom: none;
+    /*height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;*/
+  }
+
+  .nav li {
+    cursor:pointer;
+    display: inline-block;
+  }
+
+  .nav ul {
+    margin: 0 auto;
+  }
+  
+}
