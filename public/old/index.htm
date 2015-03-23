@@ -1,0 +1,73 @@
+	<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="js/bootstrap-3.3.2-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="js/bootstrap-3.3.2-dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="js/bootstrap-3.3.2-dist/css/bootstrap-table.css">
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+
+		<script type="text/javascript" src="js/bootstrap-3.3.2-dist/js/bootstrap-table.min.js"></script>
+		<script type="text/javascript" src="js/unittest.js"></script>
+	</head>
+
+	<body>
+		<div class="row-fluid">
+			<div class="row-fluid">
+				<div class="col-lg-3">
+					<div class="input-group">
+						<div class="row">
+							Select Feed:
+							<select class='form-control' id='feeds'>
+							</select>
+						</div>
+						<div class="row">
+							Select Geo:
+							<select class='form-control' id='geo'>
+							</select>
+						</div>
+						<div class="row">
+							Search Term:<!-- <input class="form-control" id='st' /> -->
+							<select class='form-control' id='st'>
+								<option value="xbox">xbox</option>
+								<option value="iphone 6">iphone 6</option>
+								<option value="ipod">ipod</option>
+								<option value="galaxy s6">galaxy s6</option>
+								<option value="smart tv">smart tv</option>
+							</select>
+						</div>
+
+						<div class="row">
+							Category:<input class="form-control" id='ctgry' />
+						</div>
+						<div class="row">
+							IP:<input class="form-control" id='ip' />
+						</div>
+						<div class="row">
+							<input class='btn btn-lg btn-primary' type='button' value='Submit' id='submit' />	
+							<input class='btn btn-lg btn-primary' type='button' value='AutoTest' id='auto' />	
+							<input class='btn btn-lg btn-primary' type='button' value='Clear' id='clear' />
+						</div>
+						<div>
+							<h3 id="testing">Testing Please Wait..</h3>
+							
+						</div>
+						<div class='spinner'></div>
+						<div class="row">
+							<h3 id="results" style="color: red;">No Results</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-9">
+					<table id="custom_table" data-sortable="true" 
+               								 data-show-pagination-switch="true" data-show-columns="true"
+								             data-search="true"
+								             data-pagination="true" data-page-size="5" data-page-list="[5, 10, 20, 50, 100, 200]"></table>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>

@@ -1,4 +1,5 @@
-﻿[
+
+[
 {
     "name": "adworldmedia",
     "type" : "feed",
