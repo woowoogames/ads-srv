@@ -1,0 +1,42 @@
+﻿textarea {
+    border: 2px solid #ccc;
+    padding: 10px;
+    vertical-align: top;
+    width: 100%;
+}
+
+.animated {
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    transition: height 0.2s;
+}
+
+.mbtn {
+    font: 1.300em/1 'Segoe UI Semibold','Lucida Grande',Verdana,Arial,Helvetica,sans-serif;
+    padding: 16px 24px;
+}
+
+.bblue {
+    color: navy;
+    background-color: #fff;
+    border: 1px solid navy;
+}
+
+.bblue:hover {
+    color: #fff;
+    background-color: navy;
+    border: 1px solid white;
+
+}
+
+.mbtn:hover {
+    font: 1.300em/1 'Segoe UI Semibold','Lucida Grande',Verdana,Arial,Helvetica,sans-serif;
+    padding: 16px 24px;
+}
+
+.loader {
+    background-image: url(../images/ajax-loader.gif);
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}

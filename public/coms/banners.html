@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="../jQueryUI/1.11.0/jquery-ui.css" rel="stylesheet" />
+    <link href="../css/bootstrap-table.min.css" rel="stylesheet" />
+
+    <link href="../css/category.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container" style="width:100%;">
+        <div class="row">
+
+
+            <div id="addBanner" class="col-md-4">
+                <h3>Add Banner</h3>
+                <label class="control-label" for="type">Banner Type:</label>
+                <select class="form-control" id="type" style="margin-bottom:10px;">
+                    <option value="ddls">Direct Deal</option>
+                    <option value="trnd">Trend Banner</option>
+                </select>
+                <form id="addForm" class="col-md-12" style="border: 1px solid #7b002c;padding:10px;">
+                    <div class="col-md-6 has-feedback">
+                        <label class="control-label">Description:</label>
+                        <input placeholder="Banner Description" type="text" class="form-control" id="desc" name="desc" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label" for="rndrTyp">Render Type:</label>
+                        <select class="form-control" id="rndrTyp" style="margin-bottom:10px;">
+                            <option value="img">Image</option>
+                            <option value="iframe">Iframe</option>
+                            <option value="flash">Flash</option>
+                            <option value="html">HTML</option>
+                            <option value="script">Script</option>
+                            <option value="htmlpg">Html Page</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Categories:</label>
+                        <input placeholder="Banner Related Categories" type="text" class="form-control" id="ctgry" name="ctgry" />
+                    </div>
+                    <div class="col-md-6">
+                        <label>Feed:</label>
+                        <input placeholder="Feed" type="text" class="form-control" id="feed">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label" for="size">Size:</label>
+                        <select class="form-control" id="size">
+                            <option value="300x250">300x250</option>
+                            <option value="728x90">728x90</option>
+                            <option value="160x600">160x600</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Domains:</label>
+                        <input placeholder="Active Domains" type="text" class="form-control" id="domains" name="domains">
+                    </div>
+                    <div class="col-md-12">
+                        <label>Countries:</label>
+                        <input placeholder="Active Countries" type="text" class="form-control" id="cntry" name="cntry">
+                    </div>
+
+                    <div class="col-md-12">
+                        <label data-toggle="tooltip" title="Could be img,html,flash,iframe,script">Source</label>
+                        <input placeholder="Source - the display link" type="text" class="form-control" id="source" name="src">
+                        <button id="preview" class="btn btn-primary" style="margin-top:10px;">preview</button>
+                    </div>
+                    <div class="col-md-12">
+                        <label data-toggle="tooltip" title="*Optional navigation link">Link</label>
+                        <input placeholder="Banner Target Url (Click Url) - the navigation link" type="text" class="form-control" id="lnk" name="lnk">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="checkbox" id="standalone">
+                        <label>Stand Alone</label><p class="help-block">*No need to handle the click</p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Product:</label>
+                        <input placeholder="Product" type="text" class="form-control" id="prdct">
+                    </div>
+                    <div class="col-md-12">
+                        <label>subid key</label>
+                        <input style="width: 140px; display: inline-block;" placeholder="name" type="text" class="form-control" id="subidkey" name="subidkey">
+                        <label>subid value</label>
+                        <input style="width: 140px; display: inline-block;" placeholder="value" type="text" class="form-control" id="subidval" name="subidval">
+                    </div>
+                    <div class="col-md-12">
+                        <input type="submit" value="Submit Banner" />
+                        <span id="status"></span>
+                    </div>
+                    
+                    
+                </form>
+
+                <div class="col-md-12" id="formContainer" style="border: 1px solid #7b002c; padding: 40px;">
+                    <h4>Upload File :</h4>
+                    <label for="file" style="width:40%;"> Choose file</label>
+                    <input class="form-control" type="file" name="file" id="file" />
+                    <button id="uploadBtn" class="btn btn-primary" style="margin-top:10px;">Upload</button>
+                </div>
+
+            </div>
+            <div id="display" class="col-md-8">
+
+
+                <table id="table" data-show-refresh="true" data-show-toggle="true"
+                       data-show-pagination-switch="true" data-show-columns="true"
+                       data-show-export="true" data-search="true"
+                       data-pagination=" true" data-page-size="5" data-page-list="[5, 10, 20, 50, 100, 200]"></table>
+            </div>
+            <div id="disp-container" class="col-md-12">
+                <iframe id="bnr-disp" src="about:blank" scrolling="no" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="300" height="250"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="../jQuery/1.10.2/jquery-1.10.2.js"></script>
+    <script src="../jQueryUI/1.11.0/jquery-ui.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/isoLangs.js"></script>
+    <script src="../js/bootstrapValidator.min.js"></script>
+
+    <script src="../js/bootstrap-table.min.js"></script>
+
+
+
+    <script src="js/services.js"></script>
+    <script src="js/banners.js"></script>
+</body>
+</html>

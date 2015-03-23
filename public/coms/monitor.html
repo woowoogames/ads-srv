@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="../css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="../css/jquery.dataTables_themeroller.css" rel="stylesheet" />
+    <link href="../jQueryUI/1.11.0/jquery-ui.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" />
+    <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link href="../css/bootstrapValidator.min.css" rel="stylesheet" />-->
+    <link href="../select2/select2.css" rel="stylesheet" />
+    <link href="../css/monitor.css" rel="stylesheet" />
+    <title></title>
+    <style>
+        td {padding: 10px;}
+        .pad-top {padding-top: 10px;}
+        .pad-bot {padding-bottom: 10px;}
+
+    </style>
+</head>
+
+<body>
+    <div class="container" style="width:100%;">
+
+        <div id="main" style="width:75%;float:left;">
+            <div id="cntrls" style="width: 100%; display: inline-block;">
+                <div class="row">
+                    <div class="col-md-3"><input type="text" id="dfrom" class="dpicker form-control" placeholder="from" /></div>
+                    <div class="col-md-3">
+                        <select class="select form-control" id="rtype">
+                            <option value="300x250" selected="selected">300x250</option>
+                            <option value="serp">Serp</option>
+                            <option value="rltd">Related</option>
+                            <option value="sbx">Top Bar</option>
+                            <option value="ntb">New Tab</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6"><select multiple="multiple" class="select" style="width:100%;" id="prdct"></select></div>
+                </div>
+                <div class="row pad-top">
+                    <div class="col-md-3"><input type="text" id="dto" class="dpicker form-control" placeholder="to" /></div>
+                    <div class="col-md-3">
+                        <select class="select form-control" id="measure">
+                            <option value="bnr" selected="selected">Impressions/Clicks</option>
+                            <option value="ctgry">Category</option>
+                            <option value="feed">Feed</option>
+                            <!--<option value="ctgry_show">Category-Show</option>-->
+                        </select>
+                    </div>
+                    <div class="col-md-6"><select multiple="multiple" class="select" style="width:100%;" id="cntryList"></select></div>
+                </div>
+
+
+                <div style="margin: 10px; display: inline-block; width: 100%;">
+                    <button id="rmv">Remove</button>
+                    <button id="refresh">Submit</button>
+                    <div style="position:absolute;" id="loader"></div>
+                </div>
+            </div>
+
+
+            <div id="mng">
+                <div id="all-tables" style="width:100%;float:left;">
+                    <div id="tblcntnr" style="width:55%;float:left;"></div>
+                    <div id="tblcntnr2" style="width: 40%; float: left; margin-left: 5%;"></div>
+                </div>
+            </div>
+
+        </div>
+        <div id="disp-container" style="float:left;margin:20px">
+            <iframe id="bnr-disp" src="about:blank" scrolling="no" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="300" height="250"></iframe>
+        </div>
+
+        <!--<div id="addBanner" style=" display: inline-block;width:30%;">
+
+            <h3>Add Banner</h3>
+            <label class="control-label" for="type">Banner Type:</label>
+            <select class="form-control" id="type" style="margin-bottom:10px;">
+                <option value="ddls">Direct Deal</option>
+                <option value="trnd">Trend Banner</option>
+            </select>
+            <form id="addForm" style="border: 1px solid #7b002c;padding:40px;">
+                <div class="form-group has-feedback">
+                    <label class="control-label">Description:</label>
+                    <input placeholder="Banner Description" type="text" class="form-control" id="desc" name="desc" />
+                </div>
+                <label class="control-label" for="rndrTyp">Render Type:</label>
+                <select class="form-control" id="rndrTyp" style="margin-bottom:10px;">
+                    <option value="img">Image</option>
+                    <option value="iframe">Iframe</option>
+                    <option value="flash">Flash</option>
+                    <option value="html">HTML</option>
+                    <option value="script">Script</option>
+                    <option value="htmlpg">Html Page</option>
+                </select>
+                <label class="control-label" for="size">Size:</label>
+                <select class="form-control" id="size" style="margin-bottom:10px;">
+                    <option value="300x250">300x250</option>
+                    <option value="728x90">728x90</option>
+                    <option value="160x600">160x600</option>
+                </select>
+                <div class="form-group">
+                    <label>Categories:</label>
+                    <input placeholder="Banner Related Categories" type="text" class="form-control" id="ctgry" name="ctgry" />
+                </div>
+                <div class="form-group">
+                    <label>Countries:</label>
+                    <input placeholder="Active Countries" type="text" class="form-control" id="cntry" name="cntry">
+                </div>
+                <div class="form-group">
+                    <label>Domains:</label>
+                    <input placeholder="Active Domains" type="text" class="form-control" id="domains" name="domains">
+                </div>
+                <div class="form-group">
+                    <label>Feed:</label>
+                    <input placeholder="Feed" type="text" class="form-control" id="feed">
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="standalone">
+                    <label>Stand Alone</label><p class="help-block">*No need to handle the click</p>
+                </div>
+                <div class="form-group">
+                    <label data-toggle="tooltip" title="Could be img,html,flash,iframe,script">Source</label>
+                    <input placeholder="Source - the display link" type="text" class="form-control" id="source" name="src">
+                    <button id="preview" class="btn btn-primary" style="margin-top:10px;">preview</button>
+                </div>
+                <div class="form-group">
+                    <label data-toggle="tooltip" title="*Optional navigation link">Link</label>
+                    <input placeholder="Banner Target Url (Click Url) - the navigation link" type="text" class="form-control" id="lnk" name="lnk">
+                </div>
+                <div class="form-group">
+                    <label>subid key</label>
+                    <input style="width: 140px; display: inline-block;" placeholder="name" type="text" class="form-control" id="subidkey" name="subidkey">
+                    <label>subid value</label>
+                    <input style="width: 140px; display: inline-block;" placeholder="value" type="text" class="form-control" id="subidval" name="subidval">
+                </div>
+
+                <input type="submit" value="Submit Banner" />
+                <div id="status"></div>
+            </form>
+
+            <div id="formContainer" style="border: 1px solid #7b002c; padding: 40px;">
+                <h4>Upload File :</h4>
+                <label for="file" style="width:40%;"> Choose file</label>
+                <input class="form-control" type="file" name="file" id="file" />
+                <button id="uploadBtn" class="btn btn-primary" style="margin-top:10px;">Upload</button>
+            </div>
+
+        </div>-->
+
+
+    </div>
+    <script src="../jQuery/1.10.2/jquery-1.10.2.js"></script>
+    <script src="../jQueryUI/1.11.0/jquery-ui.js"></script>
+    <script src="../js/jquery.dataTables.js"></script>
+    <script src="../js/jquery.dataTables.columnFilter.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../select2/select2.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+    <script src="../js/isoLangs.js"></script>
+    <script src="js/services.js"></script>
+
+    <script src="js/monitor/upload.js"></script>
+    <script src="js/monitor/monitor.js"></script>
+
+</body>
+</html>

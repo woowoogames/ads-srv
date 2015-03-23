@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="../css/jqtree.css" rel="stylesheet" />
+    <link href="../css/category.css" rel="stylesheet" />
+    <style type="text/css">
+        .myMenuStyle {
+            position: absolute;
+            background-color: #eee;
+            border: 1px solid #000;
+            list-style: none;
+        }
+
+            .myMenuStyle > li {
+                background-color: #eee;
+            }
+    </style>
+
+</head>
+<body>
+    <div class="container" style="margin-top:50px;width:100%;">
+        <div id="ajaxloader"></div>
+        <div style="position: absolute; top: 50px">
+            <button id="btn_publish" class="mbtn bblue">Publish</button>
+            <button id="btn_save" class="mbtn bblue">Save</button>
+        </div>
+        <ul id="myMenu" class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+            <!--<li><a href="#edit"><i class="icon-edit"></i> Edit</a></li>-->
+            <li><a href="#add"><i class="icon-plus"></i> Add Node</a><input style="margin:0 10px;" id="add_node" type="text" /> </li>
+            <li><a href="#add_parent"><i class="icon-plus"></i> Add Parent</a><input style="margin:0 10px;" id="add_parent" type="text" /> </li>
+            <li><a href="#update"><i class="icon-plus"></i> Rename Node</a><input style="margin:0 10px;" id="update" type="text" /> </li>
+            <li class="divider"></li>
+            <li><a href="#delete"><i class="icon-remove"></i> Delete</a></li>
+        </ul>
+
+        <div style="margin:100px 0;">
+            <div style="width: 30%; float: left;margin-right:50px; ">
+                <div id="tree1"></div>
+            </div>
+
+            <div id="kwContainer" style="float: left; width: 60%;">
+                <textarea id="kwtext" class='animated' style="height:500px;"></textarea>
+            </div>
+        </div>
+    </div>
+    
+
+
+    
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.autosize.js"></script>
+    <script src="../js/tree.jquery.js"></script>
+    <script src="../js/jqTreeContextMenu.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/category/category.js"></script>
+</body>
+</html>

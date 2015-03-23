@@ -39,7 +39,7 @@ var utl = require("./adsrv/utl");
 var numCPUs = 1; // require('os').cpus().length;
 var baseApi = require('./adsrv/baseapi');
 var rsrcMngr = require('./adsrv/rsrcmngr');
-
+var tools = require('./tools/tools');
 var adsrv = require('./adsrv/main');
 
 
@@ -110,7 +110,8 @@ app.get('/offers/:qa/:type', adsrv.processRequest);
 app.get('/offers/:type', adsrv.processRequest);
 app.get('/offers', adsrv.processRequest);
 app.post('/updateFeed',rsrcMngr.postUpdateFeed);
-
+app.get('/tools/:fn',tools.getData);
+app.post('/tools/:fn',tools.getData);
 //app.get('/300', adsrv.process..);
 //app.get('/ddls', adsrv.process..);
 //app.get('/trnds', adsrv.process..);
