@@ -38,6 +38,7 @@ var path = require('path');
 var utl = require("./adsrv/utl");
 var numCPUs = 1; // require('os').cpus().length;
 var baseApi = require('./adsrv/baseapi');
+var rsrcMngr = require('./adsrv/rsrcMngr');
 
 var adsrv = require('./adsrv/main');
 
@@ -108,6 +109,7 @@ if ('development' == app.get('env')) {
 app.get('/offers/:qa/:type', adsrv.processRequest);
 app.get('/offers/:type', adsrv.processRequest);
 app.get('/offers', adsrv.processRequest);
+app.post('/updateFeed',rsrcMngr.postUpdateFeed);
 
 //app.get('/300', adsrv.process..);
 //app.get('/ddls', adsrv.process..);

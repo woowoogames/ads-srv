@@ -8,6 +8,7 @@
     "email": ""
   },
   "dependencies": {
+    "bluebird": "^2.9.14",
     "cron": "^1.0.6",
     "exec": "^0.2.0",
     "express": "3.4.4",

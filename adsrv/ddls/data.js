@@ -1,4 +1,3 @@
-
 {
   "2": {
     "desc": "binary options",
