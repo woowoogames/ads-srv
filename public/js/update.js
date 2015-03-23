@@ -54,9 +54,15 @@ $(document).ready(function(){
 			var index = $("#feeds").prop("selectedIndex");
 			var feedToUpdate = feeds[index];
 			var geos = $("#geos").select2('val');
-			var indexGb = geos.indexOf('gb');
-			if(indexGb!=-1)
-				geos[indexGb] = 'uk';
+			if(geos){
+				var indexGb = geos.indexOf('gb');
+				if(indexGb!=-1){
+					geos[indexGb] = 'uk';
+				}
+			}
+			else{
+				geos = ["all"];
+			}
 			var isActive = $("[name='isActive']").bootstrapSwitch('state');
 			var isSerp = $("[name='isSerp']").bootstrapSwitch('state');
 			var st = $("[name='searchTerm']").bootstrapSwitch('state');
