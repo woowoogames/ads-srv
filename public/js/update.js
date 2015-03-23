@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	var feeds;
 	var countries = {};
+	var host = 'http://204.145.74.4';
+	//var host = 'http://localhost';
 	//	feeds select
 	var localRender = function(){
 		$("#feeds").empty();
@@ -88,7 +90,7 @@ $(document).ready(function(){
 					}
 				};
 				$.ajax({
-					url:"http://localhost/updateFeed",
+					url: host + "/updateFeed",
 					contentType: "application/json; charset=utf-8",	
 					type:"POST",
 					data: JSON.stringify(dataPost),
@@ -109,7 +111,6 @@ $(document).ready(function(){
 //init feeds select - get feed.js from node server 
 var loadFeeds = function(){
 	$("#feeds").empty();
-	var host = 'http://localhost';
 	$.ajax({
 		url : host + '/data/feeds.js',
 		contentType: "application/json",
