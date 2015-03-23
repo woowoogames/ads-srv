@@ -38,7 +38,7 @@ var path = require('path');
 var utl = require("./adsrv/utl");
 var numCPUs = 1; // require('os').cpus().length;
 var baseApi = require('./adsrv/baseapi');
-var rsrcMngr = require('./adsrv/rsrcMngr');
+var rsrcMngr = require('./adsrv/rsrcmngr');
 
 var adsrv = require('./adsrv/main');
 
