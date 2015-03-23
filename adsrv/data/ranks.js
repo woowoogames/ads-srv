@@ -20,6 +20,7 @@
         "buzzcity": 3
     },
     "ca": {
+        "pricegrabber":3,
         "adworldmedia": 1,
         "pricegong": 2
     },
@@ -106,18 +107,20 @@
         "buzzcity": 1
     },
     "uk": {
+        "pricegrabber":3,
         "adworldmedia": 1,
-        "pricegong": 4,
-        "ebay": 3,
+        "pricegong": 5,
+        "ebay": 4,
         "buzzcity": 2,
         "matomy": 1,
         "shopzilla": 2
     },
     "us": {
+        "pricegrabber":3,
         "adworldmedia": 1,
         "shopzilla": 2,
-        "pricegong": 3,
-        "ebay": 4,
+        "pricegong": 4,
+        "ebay": 5,
         "matomy": 1
     },
     "za": {

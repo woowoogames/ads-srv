@@ -55,8 +55,7 @@ var matomy = function () {
 		 	   		if(typeof arr['728x90'] !== 'undefined' && arr['728x90'].length>0)
 		 	   			results.push({size:728 , value :arr['728x90'][Math.floor(Math.random()*arr['728x90'].length)]});
 			 	   	if(results.length>0){
-			 	   		var matomyResults = this.format(results);
-			 	   		this.productAndSubid(matomyResults,prms.prdct,prms.subid);
+			 	   		var matomyResults = this.format(results,prms);
 			 	   		clbk(0,matomyResults);
 			 	   	}
 			 	   	else{
@@ -76,14 +75,6 @@ var matomy = function () {
 			clbk(1,e);
 		}
 	},
-	this.productAndSubid = function(matomyResults,productId,subId){
-		for(var i = 0 ; i < matomyResults.length ; i++){
-			matomyResults[i].lnk += "?dp=" + productId;
-			if(typeof subId !== 'undefined'){
-				matomyResults[i].lnk += "&dp2=" + subId;
-			}
-		}
-	},
 	this.safeResults = function(country,category){
 		if(typeof data[country] !== 'undefined'){
 			if(typeof data[country][category] !== 'undefined')
@@ -94,7 +85,7 @@ var matomy = function () {
 		else
 			return false;
 	},
-	this.format = function (offers) {
+	this.format = function (offers,prms) {
 		try{
 			var rsltArr = [];
 			for(var i=0 ; i<offers.length; i++){
@@ -104,7 +95,10 @@ var matomy = function () {
 					obj.ofrtype = "raw";
 					obj.img.big = offers[i].value.banner_img;
 					obj.meta.feed = "matomy";
-					obj.lnk = offers[i].value.banner_link;
+					obj.lnk = offers[i].value.banner_link + "?dp=" + prms.prdct +"_" + prms.cntry + "_" + offers[i].size;
+					if(typeof prms.subid !== "undefined"){
+						obj.lnk += "&dp2=" + prms.subid;
+					}
 					obj.sz = offers[i].size;
 					rsltArr.push(obj);
 					obj.uid = "matomy";
