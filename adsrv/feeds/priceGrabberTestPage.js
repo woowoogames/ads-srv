@@ -19,7 +19,9 @@ var pricegrabber = {
 			var finalKey = keySHA1.substring(0,18) + token + keySHA1.substring(18);
 			var url = pricegrabber.getURL("3234",finalKey,st);
 			baseApi.httpGetTimeout(url,function(err, res, body){
-				response.end(body);
+				//response.end(body);
+				var json = baseApi.xmlToJSON(body);
+				response.json(json);
 			});
 		}
 		else{
