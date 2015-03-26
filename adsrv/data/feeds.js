@@ -223,7 +223,7 @@
     "name":"buzzcity",
     "type":"raw",
     "requireSearchTerm":false,
-    "active":true,
+    "active":false,
     "isSerp": false,
     "handler":"./raw/buzzcity",
     "coverage":{  

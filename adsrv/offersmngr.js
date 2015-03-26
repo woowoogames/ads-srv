@@ -121,12 +121,18 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
 
     	utl.log("[offrsmngr.js][getAsyncOffers] - feeds left [" + that.mFeeds.feeds.length + "]");
 
+        var randIndex = Math.floor(Math.random()*that.mFeeds.feeds.length-1);
+        
+        var feed = that.mFeeds.feeds[randIndex];
+        console.log(feed.name);
+
     	if (that.mFeeds.feeds.length == 0) {
     		that.processOffers("feeds", []);
     		return;
     	}
+        that.mFeeds.feeds = [];
 
-    	var feed = that.mFeeds.feeds.pop();
+    	//var feed = that.mFeeds.feeds.pop();
 
     	if (!feed) {
     		that.processOffers("feeds", []);

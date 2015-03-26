@@ -55,7 +55,6 @@
         "buzzcity": 1
     },
     "in": {
-        "firstoffer": 2,
         "buzzcity": 2,
         "matomy": 1
     },
