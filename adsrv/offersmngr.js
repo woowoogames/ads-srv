@@ -78,6 +78,7 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
                 this.getTrnds();
             }
             else{
+                that.mFeeds.feeds = this.filterRoundRubin(feeds);
                 this.getAsyncOffers();
                 this.getDdls();
                 this.getAsyncRawOffers();
@@ -121,18 +122,12 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
 
     	utl.log("[offrsmngr.js][getAsyncOffers] - feeds left [" + that.mFeeds.feeds.length + "]");
 
-        var randIndex = Math.floor(Math.random()*that.mFeeds.feeds.length-1);
-        
-        var feed = that.mFeeds.feeds[randIndex];
-        console.log(feed.name);
-
     	if (that.mFeeds.feeds.length == 0) {
     		that.processOffers("feeds", []);
     		return;
     	}
-        that.mFeeds.feeds = [];
 
-    	//var feed = that.mFeeds.feeds.pop();
+    	var feed = that.mFeeds.feeds.pop();
 
     	if (!feed) {
     		that.processOffers("feeds", []);
@@ -162,6 +157,27 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
     			that.getAsyncOffers(); // try another feed
     		}
     	});
+    };
+
+    this.filterRoundRubin = function(feeds){
+        if(/uk|gb|us|nz|au/i.test(requestParams.cntry)){ //adworld case
+            var adworldmediaFeed = feeds['feeds'].filter(function( obj ) {
+                return obj.name === 'adworldmedia';
+            });
+            var allFeedsWithoutAdworld = feeds['feeds'].filter(function( obj ) {
+                return obj.name !== 'adworldmedia';
+            });
+            var randIndex = Math.floor(Math.random()*allFeedsWithoutAdworld.length);
+            var filtered = [];
+            filtered.push(allFeedsWithoutAdworld[randIndex]);
+            return filtered.concat(adworldmediaFeed);
+        }
+        else{
+             var randIndex = Math.floor(Math.random()*feeds['feeds'].length);
+             var filtered = [];
+             filtered.push(feeds['feeds'][randIndex]);
+             return filtered;
+        }
     };
 
     this.getDdls = function () {
