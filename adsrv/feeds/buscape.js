@@ -121,25 +121,25 @@ var buscape = function () {
 
 	this.geoMap = {
 		br:{
-			key: "http://bws.buscape.com/service/findOfferList/61612f32705041654158633d/br/"
+			key: "http://bws.buscape.com/service/findOfferList/lomadee/61612f32705041654158633d/br/"
 		},
 		ar:{
-			key: "http://bws.buscape.com/service/findOfferList/61612f32705041654158633d/ar/"
+			key: "http://bws.buscape.com/service/findOfferList/lomadee/61612f32705041654158633d/ar/"
 		},
 		co:{
-			key: "http://bws.buscape.com/service/findOfferList/61612f32705041654158633d/co/"
+			key: "http://bws.buscape.com/service/findOfferList/lomadee/61612f32705041654158633d/co/"
 		},
 		cl:{
-			key: "http://bws.buscape.com/service/findOfferList/61612f32705041654158633d/cl/"
+			key: "http://bws.buscape.com/service/findOfferList/lomadee/61612f32705041654158633d/cl/"
 		},
 		mx:{
-			key: "http://bws.buscape.com/service/findOfferList/61612f32705041654158633d/mx/"
+			key: "http://bws.buscape.com/service/findOfferList/lomadee/61612f32705041654158633d/mx/"
 		},
 		pe:{
-			key: "http://bws.buscape.com/service/findOfferList/61612f32705041654158633d/pe/"
+			key: "http://bws.buscape.com/service/findOfferList/lomadee/61612f32705041654158633d/pe/"
 		},
 		ve:{
-			key: "http://bws.buscape.com/service/findOfferList/61612f32705041654158633d/ve/"
+			key: "http://bws.buscape.com/service/findOfferList/lomadee/61612f32705041654158633d/ve/"
 		}
 	};
 
@@ -162,7 +162,7 @@ var buscape = function () {
 					obj.meta.ctgry = that.mPrms.ctgry;
 					obj.meta.prdct = that.mPrms.prdct;
 					obj.meta.sz = null;
-					obj.lnk = offers[i].offer.links[0].link.url + "&mdasc=" + prms.prdct;
+					obj.lnk = offers[i].offer.links[0].link.url + "?mdasc=" + prms.prdct;
 					obj.prc = offers[i].offer.price.value;
 					obj.store.name = offers[i].offer.seller.sellername;
 					if(typeof offers[i].offer.seller.thumbnail === 'undefined')

@@ -26,7 +26,8 @@ var shopping = function () {
 				try {
 					var data, selectOffers = [];
 					if (!error && body) {
-						data = JSON.parse(body);
+						//data = JSON.parse(body);
+						data = baseApi.xmlToJSON(body);
 
 						var itms = data.GeneralSearchResponse.categories.category.items;
 						if (itms.offer) {
@@ -115,8 +116,8 @@ var shopping = function () {
 					obj.desc.short = offer.name || "";
 					////////////// obj.desc.long =  ""; ???
 
-					obj.img.small = shopping.gtImg("small") || "",
-					obj.img.big = shopping.gtImg("big") || "",
+					obj.img.small = this.gtImg("small",offer) || "",
+					obj.img.big = this.gtImg("big",offer) || "",
 
 					obj.lnk = offer.offerURL || "";
 					obj.prc = frmtr.getPrice(offer.originalPrice.value, offer.originalPrice.currency);
@@ -161,14 +162,14 @@ var shopping = function () {
 
 			if (sz == "big") {
 				for (var i = imgs.length - 1; i >= 0; i--) {
-					if (imgs[i] && imgs[i].available == "true") {
+					if (imgs[i] && imgs[i].available == true) {
 						return imgs[i].sourceURL;
 					}
 				}
 			}
 			else {
 				for (var i = 0; i < imgs.length; i++) {
-					if (imgs[i] && imgs[i].available == "true") {
+					if (imgs[i] && imgs[i].available == true) {
 						return imgs[i].sourceURL;
 					}
 				}
