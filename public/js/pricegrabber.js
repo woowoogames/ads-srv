@@ -1,8 +1,8 @@
 $(document).ready(function(){
 	$("#bt_submit").click(function(){
 		$("#spinner").show();
-		var host = "http://localhost"
-		//var host = "http://204.145.74.4"
+		//var host = "http://localhost"
+		var host = "http://204.145.74.4"
 		var st  = $("#st").val();
 		$.ajax({
 			url : host + '/priceGrabberTestPage?search_kw=' + st,
