@@ -10,6 +10,7 @@ var pricegrabber = {
 	get : function (request, response) {
 		if(typeof request.query['search_kw'] !== 'undefined'){
 			var st = request.query['search_kw'];
+			st = st.replace(" ","+");
 			//var ip = "81.218.191.12"; //montiera ip
 			var ip = "204.145.74.4";//verticalAdServer ip
 			//var ip = "77.127.205.229";//local ip
