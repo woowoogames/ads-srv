@@ -6,6 +6,14 @@ sha1 = require('sha1'),
 crypto = require('crypto'),
 entities = require("entities");
 
+String.prototype.trimLeft = function(charlist) {
+  if (charlist === undefined)
+    charlist = "\s";
+ 
+  return this.replace(new RegExp("^[-, ]+"), "");
+};
+
+
 var pricegrabber = function () {
 	this.mClbk = null;
 	this.mPrms = null;
@@ -17,6 +25,7 @@ var pricegrabber = function () {
 		//var ip = "81.218.191.12"; //montiera ip
 		//var ip = "69.65.43.205";//overplay us ip
 		var ip = "204.145.74.4";//verticalAdServer ip
+		//var ip = "77.125.153.46";//local ip
 		var currentKey = this.getCurrentKey("87e713ad792","3234","2.55",ip);
 		var keySHA1 = sha1(currentKey);
 		var token = crypto.randomBytes(8).toString('hex');
@@ -75,9 +84,12 @@ var pricegrabber = function () {
 			for(var i = 0 ; i<offers.length; i++){
 				var obj = frmtr.getOfferObject();
 				try{
+					if(typeof offers[i].direct_offer === 'undefined')
+						continue;
 					obj.typ = "img";
 					obj.ofrtype = "feed";
-					obj.desc.short = entities.decodeXML(offers[i].title_short);
+					//obj.desc.short = entities.decodeXML(offers[i].title_short);
+					obj.desc.short = this.titleFix(offers[i].title_short);
 					obj.desc.long = entities.decodeXML(offers[i].title);
 					obj.img.small = offers[i].image_medium;
 					obj.img.big = offers[i].image_160;
@@ -106,6 +118,65 @@ var pricegrabber = function () {
 		}
 	};
 
+	this.titleFix = function(title){
+		return this.getFixedText(this.decodeHTMLEntities(title).trimLeft())
+	};
+
+	this.getFixedText = function(title){
+		if(title.indexOf('-')!=-1){
+			return title.substring(0,title.indexOf('-'));
+		}
+		else{
+			return title
+		}
+	}
+
+	this.decodeHTMLEntities = function(text) {
+	    var entities = [
+	        ['apos', '\''],
+	        ['amp', '&'],
+	        ['lt', '<'],
+	        ['gt', '>'],
+	        ['#33','!'],
+			['#34','"'],
+			['#35','#'],
+			['#36','$'],
+			['#37','%'],
+			['#38','&'],
+			['#39','\''],
+			['#40','('],
+			['#41',')'],
+			['#42','*'],
+			['#43','+'],
+			['#44',','],
+			['#45','-'],
+			['#46','.'],
+			['#47','/'],
+			['#58',':'],
+			['#59',';'],
+			['#60','<'],
+			['#61','='],
+			['#62','>'],
+			['#63','?'],
+			['#64','@'],
+			['#91','['],
+			['#92','\\'],
+			['#93',']'],
+			['#94','^'],
+			['#95','_'],
+			['#96','`'],
+			['#97','-'],
+			['#123','{'],
+			['#124','|'],
+			['#125','}'],
+	    ];
+
+	    for (var i = 0, max = entities.length; i < max; ++i) 
+	        text = text.replace(new RegExp('&'+entities[i][0]+';', 'g'), entities[i][1]);
+
+	    return text;
+	}
+
 	this.getCurrentKey = function(private_key,pid,version,ip){
 		var date = new Date();
 		date = date.toISOString();
@@ -118,7 +189,8 @@ var pricegrabber = function () {
 	};
 
 	this.getURL = function(pid,key,prms){
-		var url = "http://sws.api.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&q=" + prms.st + "&limit=4&market=" + prms.cntry + "&mode=" + this.fixProduct(prms.prdct);
+		var st = prms.st.replace(" ","+");
+		var url = "http://sws.api.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&q=" + st + "&limit=4&mode=" + this.fixProduct(prms.prdct);
 		return url;
 	};
 

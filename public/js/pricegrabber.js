@@ -1,4 +1,12 @@
 $(document).ready(function(){
+
+	String.prototype.trimLeft = function(charlist) {
+	  if (charlist === undefined)
+	    charlist = "\s";
+	 
+	  return this.replace(new RegExp("^[-, ]+"), "");
+	};
+
 	$("#bt_submit").click(function(){
 		$("#spinner").show();
 		//var host = "http://localhost"
@@ -26,7 +34,7 @@ $(document).ready(function(){
 					"<div style='width:125px;height:300px;float:left;cursor:pointer;'>" +
 					"<div style='width:100%;height:100%;float:left;'>" +
 					"<div id='txt1' style='padding-top: 8px;/* padding-left:5px; */color: #ffffff;font-family:arial,sans-serif;font-size: 20px;/* height:14px; */overflow:hidden;width:145px;text-align:center'>"+ data.document.product[index].catzero.$t + " - " + data.document.product[index].manufacturer +"</div>" +
-					"<div id='txt3' style='padding-left:12px;padding-top: 8px;color:#f9f9f9;font-family:arial,sans-serif;font-size:65%;height:168px;overflow:hidden;width:128px;'>" + decodeHTMLEntities(data.document.product[index].title_short) +
+					"<div id='txt3' style='padding-left:12px;padding-top: 8px;color:#f9f9f9;font-family:arial,sans-serif;font-size:65%;height:168px;overflow:hidden;width:128px;'>" + getFixedText(decodeHTMLEntities(data.document.product[index].title_short).trimLeft()) +
 					"<div id='txt2' style='padding-left:5px;color: #ffffff;font-family:arial,sans-serif;font-size:24px;height:25px;overflow:hidden;width: 168px;margin-top: 9px;margin-left: 16px;text-align: left;'>" + data.document.product[index].direct_offer.price + "</div></div>" +
 					"</div>" +
 					"</div></a>" +
@@ -46,6 +54,15 @@ $(document).ready(function(){
 		for(var i=0 ; i<data.length ;i++){
 			if(typeof data[i].direct_offer !='undefined')
 				return i;
+		}
+	}
+
+	function getFixedText(title){
+		if(title.indexOf('-')!=-1){
+			return title.substring(0,title.indexOf('-'));
+		}
+		else{
+			return title
 		}
 	}
 
