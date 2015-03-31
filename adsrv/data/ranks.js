@@ -11,7 +11,6 @@
         "matomy": 3
     },
     "be": {
-        "kelkoo": 2,
         "pricegong": 1
     },
     "br": {
