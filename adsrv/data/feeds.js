@@ -4,7 +4,7 @@
     "name": "adworldmedia",
     "type" : "feed",
     "requireSearchTerm": true,
-    "active": true,
+    "active": false,
     "isSerp": false,
     "handler": "./feeds/adworldmedia",
     "coverage": {
@@ -22,7 +22,7 @@
     "name": "admarketplace",
     "type" : "feed",
     "requireSearchTerm": true,
-    "active": true,
+    "active": false,
     "isSerp": true,
     "handler": "./feeds/admarketplace",
     "coverage": {
@@ -64,7 +64,7 @@
     "coverage": {
         "cntry": {
             "type": "white",
-            "values" :["br", "de", "dk", "es", "fr", "it", "nl", "no", "ru", "se"]
+            "values" :["de", "dk", "es", "fr", "it", "nl", "no", "ru", "se"]
         },
         "prdct": {
             "type": "white",
@@ -95,7 +95,7 @@
     "name": "pricegong",
     "type": "feed",
     "requireSearchTerm": true,
-    "active": true,
+    "active": false,
     "isSerp": false,
     "handler": "./feeds/pricegong",
     "coverage": {
@@ -137,7 +137,7 @@
     "coverage": {
         "cntry": {
             "type": "white",
-            "values" : ["uk","us", "de", "fr"]
+            "values" : ["uk","us"]
         },
         "prdct": {
             "type": "white",
@@ -155,7 +155,7 @@
     "coverage": {
         "cntry": {
             "type": "white",
-            "values" :["in"]
+            "values" :["all"]
         },
         "prdct" : {
             "type" : "white",
