@@ -87,7 +87,7 @@
     "us": {
         "pricegrabber":3,
         "shopzilla": 2,
-        "ebay": 5,
+        "ebay": 4,
         "matomy": 1
     },
 

@@ -113,7 +113,7 @@
     "name": "pricegrabber",
     "type" : "feed",
     "requireSearchTerm": true,
-    "active": true,
+    "active": false,
     "isSerp": false,
     "handler": "./feeds/pricegrabber",
     "coverage": {
