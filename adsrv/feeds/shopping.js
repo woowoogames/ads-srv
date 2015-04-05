@@ -120,7 +120,7 @@ var shopping = function () {
 					obj.img.big = this.gtImg("big",offer) || "",
 
 					obj.lnk = offer.offerURL || "";
-					obj.prc = frmtr.getPrice(offer.originalPrice.value, offer.originalPrice.currency);
+					obj.prc = frmtr.getPrice(offer.originalPrice.$t, offer.originalPrice.currency);
 
 					obj.store.name = offer.store.name || "";
 
