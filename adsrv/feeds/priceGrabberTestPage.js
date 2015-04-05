@@ -16,6 +16,7 @@ var pricegrabber = {
 			//var ip = "81.218.191.12"; //montiera ip
 			var ip = "204.145.74.4";//verticalAdServer ip
 			//var ip = "77.125.153.46";//local ip
+			//var ip = "localhost";
 			var currentKey = pricegrabber.getCurrentKey("87e713ad792","3234","2.55",ip);
 			var keySHA1 = sha1(currentKey);
 			var token = crypto.randomBytes(8).toString('hex');
@@ -43,7 +44,7 @@ var pricegrabber = {
 		return currentKey;
 	},
 	getURL : function(pid,key,st){
-		var url = "http://sws.api.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&limit=4&q=" + st;
+		var url = "http://sws.api.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&limit=1&q=" + st;
 		return url;
 	}
 }
