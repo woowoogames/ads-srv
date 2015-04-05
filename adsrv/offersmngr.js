@@ -160,24 +160,26 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
     };
 
     this.filterRoundRubin = function(feeds){
-        if(/uk|gb|us|nz|au/i.test(requestParams.cntry)){ //adworld case
-            var adworldmediaFeed = feeds['feeds'].filter(function( obj ) {
-                return obj.name === 'adworldmedia';
+        var filtered = [];
+        // if(/uk|gb|us|nz|au/i.test(requestParams.cntry)){ //adworld case
+        //     var adworldmediaFeed = feeds['feeds'].filter(function( obj ) {
+        //         return obj.name === 'adworldmedia';
+        //     });
+        //     var allFeedsWithoutAdworld = feeds['feeds'].filter(function( obj ) {
+        //         return obj.name !== 'adworldmedia';
+        //     });
+        //     var randIndex = Math.floor(Math.random()*allFeedsWithoutAdworld.length);
+        //     filtered.push(allFeedsWithoutAdworld[randIndex]);
+        //     filtered = filtered.concat(adworldmediaFeed);
+        // }
+        if(typeof that.mPrms.qa === 'undefined'){
+            feeds['feeds'] = feeds['feeds'].filter(function( obj ) {
+                return obj.name !== 'firstoffer';
             });
-            var allFeedsWithoutAdworld = feeds['feeds'].filter(function( obj ) {
-                return obj.name !== 'adworldmedia';
-            });
-            var randIndex = Math.floor(Math.random()*allFeedsWithoutAdworld.length);
-            var filtered = [];
-            filtered.push(allFeedsWithoutAdworld[randIndex]);
-            return filtered.concat(adworldmediaFeed);
         }
-        else{
-             var randIndex = Math.floor(Math.random()*feeds['feeds'].length);
-             var filtered = [];
-             filtered.push(feeds['feeds'][randIndex]);
-             return filtered;
-        }
+        var randIndex = Math.floor(Math.random()*feeds['feeds'].length);
+        filtered.push(feeds['feeds'][randIndex]);
+        return filtered;
     };
 
     this.getDdls = function () {
