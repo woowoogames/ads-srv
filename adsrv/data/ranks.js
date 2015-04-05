@@ -1,129 +1,96 @@
 ﻿{
     "ar": {
-        "buscape": 1
+        "buscape": 1,
+        "matomy": 1
     },
     "at":{
-        "pricegong": 1
+        "matomy": 1
     },
     "au": {
-        "pricegong": 2,
-        "adworldmedia": 1,
-        "matomy": 3
-    },
-    "be": {
-        "pricegong": 1
+        "matomy": 1
     },
     "br": {
-        "pricegong": 2,
         "buscape": 1,
-        "buzzcity": 3
+        "matomy": 1
     },
     "ca": {
-        "pricegrabber":3,
-        "adworldmedia": 1,
-        "pricegong": 2
+        "pricegrabber":1
     },
     "cl": {
-        "buscape": 1
+        "buscape": 1,
+        "matomy": 1
     },
     "co": {
-        "buscape": 1
+        "buscape": 1,
+        "matomy": 1
     },
     "de": {
         "kelkoo": 3,
-        "pricegong": 2,
         "matomy": 1,
         "shopzilla": 1
     },
     "dk": {
-        "kelkoo": 1,
-        "pricegong": 2
+        "kelkoo": 1
     },
     "es": {
         "kelkoo": 2,
-        "pricegong": 1,
         "matomy": 1
     },
     "fr": {
         "kelkoo": 3,
-        "pricegong": 2,
         "matomy": 1,
         "shopzilla": 1
     },
-    "id": {
-        "buzzcity": 1
+    "hu":{
+        "matomy": 1
     },
     "in": {
-        "buzzcity": 2,
         "matomy": 1
     },
     "it": {
-        "pricegong": 1,
         "kelkoo": 2
     },
-    "jp":{
-        "pricegong": 1
-    },
-    "my": {
-        "buzzcity": 1
-    },
     "mx": {
-        "buscape": 1
-    },
-    "ng": {
-        "buzzcity": 1
+        "buscape": 1,
+        "matomy": 1
     },
     "nl": {
-        "pricegong": 1,
         "kelkoo": 2
     },
     "no": {
-        "pricegong": 1,
         "kelkoo": 2
-    },
-    "nz": {
-        "adworldmedia": 1
     },
     "pl": {
         "matomy": 1
     },
     "pe": {
-        "buscape": 1
+        "buscape": 1,
+        "matomy": 1
     },
     "ru": {
         "kelkoo": 1,
-        "pricegong": 2
+        "matomy": 1
     },
     "se": {
-        "kelkoo": 1,
-        "pricegong": 2
+        "kelkoo": 1
     },
     "ve": {
-        "buscape": 1
-    },
-    "th": {
-        "buzzcity": 1
+        "buscape": 1,
+        "matomy": 1
     },
     "uk": {
         "pricegrabber":3,
-        "adworldmedia": 1,
-        "pricegong": 5,
         "ebay": 4,
-        "buzzcity": 2,
         "matomy": 1,
         "shopzilla": 2
     },
     "us": {
         "pricegrabber":3,
-        "adworldmedia": 1,
         "shopzilla": 2,
-        "pricegong": 4,
         "ebay": 5,
         "matomy": 1
     },
-    "za": {
-        "buzzcity": 1
-    },
+
     "int" :{
         "ddls" : 1,
         "trnds" : 2
