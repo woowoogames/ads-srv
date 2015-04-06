@@ -1,10 +1,10 @@
 var utils = require('util'),
-baseApi = require("../baseapi"),
-utl = require("../utl"),
-frmtr = require("../formatter"),
-sha1 = require('sha1'),
-crypto = require('crypto'),
-entities = require("entities");
+	baseApi = require("../baseapi"),
+	utl = require("../utl"),
+	frmtr = require("../formatter"),
+	sha1 = require('sha1'),
+	crypto = require('crypto'),
+	entities = require("entities");
 
 String.prototype.trimLeft = function(charlist) {
   if (charlist === undefined)
@@ -78,43 +78,34 @@ var pricegrabber = function () {
 			return false;
 	};
 
-	this.format = function(offers){
+	this.format = function(offer){
+		var rsltArr = [];
+		var obj = frmtr.getOfferObject();
 		try{
-			var rsltArr = [];
-			for(var i = 0 ; i<offers.length; i++){
-				var obj = frmtr.getOfferObject();
-				try{
-					if(typeof offers[i].direct_offer === 'undefined')
-						continue;
-					obj.typ = "img";
-					obj.ofrtype = "feed";
-					//obj.desc.short = entities.decodeXML(offers[i].title_short);
-					obj.desc.short = this.titleFix(offers[i].title_short);
-					obj.desc.long = entities.decodeXML(offers[i].title);
-					obj.img.small = offers[i].image_medium;
-					obj.img.big = offers[i].image_160;
-					obj.meta.feed = "prcgrbr";
-					obj.meta.cntry = that.mPrms.cntry;
-					obj.meta.ctgry = that.mPrms.ctgry;
-					obj.meta.prdct = that.mPrms.prdct;
-					obj.sz = "";
-					obj.prc = offers[i].price[0].$t;
-					obj.lnk = entities.decodeHTML(offers[i].direct_offer.url);
-					obj.store.rtng = offers[i].direct_offer.rating;
-					obj.store.name = offers[i].direct_offer.retailer;
-					if(typeof offers[i].direct_offer.retailer_logo !== 'undefined')
-						obj.store.logo = offers[i].direct_offer.retailer_logo;
-					obj.uid = "";
-					rsltArr.push(obj);
-				}
-				catch(e){
-					utl.log("[pricegrabber.js][format::err] -- [" + e + "]");
-				}
-			}
-			return rsltArr;			
+			obj.typ = "img";
+			obj.ofrtype = "feed";
+			obj.desc.short = this.titleFix(offer.title_short);
+			obj.desc.long = entities.decodeXML(offer.title);
+			obj.img.small = offer.image_medium;
+			obj.img.big = offer.image_160;
+			obj.meta.feed = "prcgrbr";
+			obj.meta.cntry = that.mPrms.cntry;
+			obj.meta.ctgry = that.mPrms.ctgry;
+			obj.meta.prdct = that.mPrms.prdct;
+			obj.sz = "";
+			obj.prc = offer.price[0].$t;
+			obj.lnk = entities.decodeHTML(offer.offer.url);
+			obj.store.rtng = offer.offer.rating;
+			obj.store.name = offer.offer.retailer;
+			if(typeof offer.offer.retailer_logo !== 'undefined')
+				obj.store.logo = offer.offer.retailer_logo;
+			obj.uid = "";
+			rsltArr.push(obj);
+			return rsltArr;
 		}
-		catch(err){
+		catch(e){
 			utl.log("[pricegrabber.js][format::err] -- [" + e + "]");
+			return rsltArr;
 		}
 	};
 
@@ -170,7 +161,6 @@ var pricegrabber = function () {
 			['#124','|'],
 			['#125','}'],
 	    ];
-
 	    for (var i = 0, max = entities.length; i < max; ++i) 
 	        text = text.replace(new RegExp('&'+entities[i][0]+';', 'g'), entities[i][1]);
 
@@ -190,7 +180,7 @@ var pricegrabber = function () {
 
 	this.getURL = function(pid,key,prms){
 		var st = prms.st.replace(" ","+");
-		var url = "http://sws.api.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&q=" + st + "&limit=4&mode=" + this.fixProduct(prms.prdct);
+		var url = "http://sws.api.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&q=" + st + "&limit=1&offers=1&offer_limit=1&mode=" + this.fixProduct(prms.prdct);
 		return url;
 	};
 
