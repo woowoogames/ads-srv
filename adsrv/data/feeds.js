@@ -40,7 +40,7 @@
     "name": "matomy",
     "type" : "raw",
     "requireSearchTerm": false,
-    "active": true,
+    "active": false,
     "isSerp": false,
     "handler": "./raw/matomy",
     "coverage": {
