@@ -23,22 +23,22 @@ $(document).ready(function(){
 						$('#remove').remove();
 					var index = 0;
 					var htm;
-					if(typeof data.document.product.direct_offer.retailer_logo === 'undefined'){
+					if(typeof data.document.product.offer.retailer_logo === 'undefined'){
 						htm = "<div id='remove' style='text-decoration:none;position: fixed;bottom: -50px;left: 0px;width:300px;height:300px;background:url(\"http://204.145.74.4/images/t2.png\");background-repeat:no-repeat;''>" +
 						"<div style='width:152px;height:300px;float:left;'>" +
 						"<div style='width:150px;height:248px;float:left;'>" +
 						"<div style='width:128px;height:195px;float:left;padding-left:10px;'>" +
-						"<div style='width: 100px;height: 40px;margin-top:15px;margin-left:;font-size: 22px;color: rgb(253, 62, 96);;margin-left: 14px;/* text-align: center; */'>" + data.document.product.direct_offer.retailer + "</div>" +
+						"<div style='width: 100px;height: 40px;margin-top:15px;margin-left:;font-size: 22px;color: rgb(253, 62, 96);;margin-left: 14px;/* text-align: center; */'>" + data.document.product.offer.retailer + "</div>" +
 						"<img id='img1' src='" + data.document.product.image_large + "' style='width:130px;height:162px;margin-top:15px;' />" +
 						"</div>" +
 						"</div>" +
 						"</div>" +
-						"<a href='" + data.document.product.direct_offer.url + "' target=\"_blank\">" +
+						"<a href='" + data.document.product.offer.url + "' target=\"_blank\">" +
 						"<div style='width:125px;height:300px;float:left;cursor:pointer;'>" +
 						"<div style='width:100%;height:100%;float:left;'>" +
 						"<div id='txt1' style='padding-top: 8px;/* padding-left:5px; */color: #ffffff;font-family:arial,sans-serif;font-size: 20px;/* height:14px; */overflow:hidden;width:145px;text-align:center'>"+ data.document.product.catzero.$t + " - " + data.document.product.manufacturer +"</div>" +
 						"<div id='txt3' style='padding-left:12px;padding-top: 8px;color:#f9f9f9;font-family:arial,sans-serif;font-size:65%;height:168px;overflow:hidden;width:128px;'>" + getFixedText(decodeHTMLEntities(data.document.product.title_short).trimLeft()) +
-						"<div id='txt2' style='padding-left:5px;color: #ffffff;font-family:arial,sans-serif;font-size:24px;height:25px;overflow:hidden;width: 168px;margin-top: 9px;margin-left: 16px;text-align: left;'>" + data.document.product.direct_offer.price + "</div></div>" +
+						"<div id='txt2' style='padding-left:5px;color: #ffffff;font-family:arial,sans-serif;font-size:24px;height:25px;overflow:hidden;width: 168px;margin-top: 9px;margin-left: 16px;text-align: left;'>" + data.document.product.offer.price + "</div></div>" +
 						"</div>" +
 						"</div></a>" +
 						"</div>";
@@ -48,17 +48,17 @@ $(document).ready(function(){
 						"<div style='width:152px;height:300px;float:left;'>" +
 						"<div style='width:150px;height:248px;float:left;'>" +
 						"<div style='width:128px;height:195px;float:left;padding-left:10px;'>" +
-						"<div style='width: 100px;height: 40px;margin-top:15px;margin-left:;font-size: 22px;color: rgb(253, 62, 96);;margin-left: 14px; text-align: center;'><img id='img1' src='" + data.document.product.direct_offer.retailer_logo + "' style=\"text-align: center;\" '/>" + data.document.product.direct_offer.retailer + "</div>" +
+						"<div style='width: 100px;height: 40px;margin-top:15px;margin-left:;font-size: 22px;color: rgb(253, 62, 96);;margin-left: 14px; text-align: center;'><img id='img1' src='" + data.document.product.offer.retailer_logo + "' style=\"text-align: center;\" '/>" + data.document.product.offer.retailer + "</div>" +
 						"<img id='img1' src='" + data.document.product.image_large + "' style='width:130px;height:162px;margin-top:15px;' />" +
 						"</div>" +
 						"</div>" +
 						"</div>" +
-						"<a href='" + data.document.product.direct_offer.url + "' target=\"_blank\">" +
+						"<a href='" + data.document.product.offer.url + "' target=\"_blank\">" +
 						"<div style='width:125px;height:300px;float:left;cursor:pointer;'>" +
 						"<div style='width:100%;height:100%;float:left;'>" +
 						"<div id='txt1' style='padding-top: 8px;/* padding-left:5px; */color: #ffffff;font-family:arial,sans-serif;font-size: 20px;/* height:14px; */overflow:hidden;width:145px;text-align:center'>"+ data.document.product.catzero.$t + " - " + data.document.product.manufacturer +"</div>" +
 						"<div id='txt3' style='padding-left:12px;padding-top: 8px;color:#f9f9f9;font-family:arial,sans-serif;font-size:65%;height:168px;overflow:hidden;width:128px;'>" + getFixedText(decodeHTMLEntities(data.document.product.title_short).trimLeft()) +
-						"<div id='txt2' style='padding-left:5px;color: #ffffff;font-family:arial,sans-serif;font-size:24px;height:25px;overflow:hidden;width: 168px;margin-top: 9px;margin-left: 16px;text-align: left;'>" + data.document.product.direct_offer.price + "</div></div>" +
+						"<div id='txt2' style='padding-left:5px;color: #ffffff;font-family:arial,sans-serif;font-size:24px;height:25px;overflow:hidden;width: 168px;margin-top: 9px;margin-left: 16px;text-align: left;'>" + data.document.product.offer.price + "</div></div>" +
 						"</div>" +
 						"</div></a>" +
 						"</div>";
@@ -77,7 +77,7 @@ $(document).ready(function(){
 
 function findIndex(data){
 	for(var i=0 ; i<data.length ;i++){
-		if(typeof data[i].direct_offer !='undefined')
+		if(typeof data[i].offer !='undefined')
 			return i;
 	}
 }
