@@ -13,13 +13,29 @@
             try {
                 this.Events();
                 this.Table();
-                
+                $("#prdct").select2({
+                    removeOnSelect : true
+                });
+                $.ajax({
+                    url:"http://204.145.74.4/tools/GetProducts",
+                    dataType: 'json',
+                    success : function(prdcts){
+                        for(var prdctIndex in prdcts.Rows){
+                            $("#prdct").append("<option value=" + prdcts.Rows[prdctIndex].prdcts + ">" +prdcts.Rows[prdctIndex].mont_prdcts +"</option>");
+                        }
+                    },
+                    error: function(a,b,c){
+                        alert(a);
+                        alert(b);
+                        alert(c);
+                    }   
+                });
             } catch (e) {
 
             }
 
         },
-       
+
         "Table": function () {
 
             Services.GetBanners(function (banners) {
@@ -50,42 +66,43 @@
                 //    ]
                 //});
 
+});
+
+
+
+},
+
+"Events":function(){
+    $(superGeoCountries).each(function (idx, val) {
+        mngr.CodeToCountry[val.value.toLowerCase()] = val.label;
+        mngr.CountryToCode[val.label] = val.value.toLowerCase();
+    });
+    this.SetMultiSelect("#cntry", $.keys(mngr.CountryToCode));
+    this.SetMultiSelect("#ctgry", mngr.allCategories);
+
+
+
+    $("#preview").click(function () {
+        try {
+            $("#bnr-disp").attr("src", $("#source").val());
+            $("#disp-container").click(function () {
+                if ($("#lnk").val()) {
+                    window.open($("#lnk").val());
+                }
+                return false;
             });
-
-            
-          
-        },
-
-        "Events":function(){
-            $(superGeoCountries).each(function (idx, val) {
-                mngr.CodeToCountry[val.value.toLowerCase()] = val.label;
-                mngr.CountryToCode[val.label] = val.value.toLowerCase();
-            });
-            this.SetMultiSelect("#cntry", $.keys(mngr.CountryToCode));
-            this.SetMultiSelect("#ctgry", mngr.allCategories);
-           
+            return false;
+        } catch (e) { }
+    });
 
 
-            $("#preview").click(function () {
-                try {
-                    $("#bnr-disp").attr("src", $("#source").val());
-                    $("#disp-container").click(function () {
-                        if ($("#lnk").val()) {
-                            window.open($("#lnk").val());
-                        }
-                        return false;
-                    });
-                    return false;
-                } catch (e) { }
-            });
-
-
-            this.Validate();
-        },
+    this.Validate();
+},
 
         //#region Add Banner
 
-        "AddBanner": function () {
+        "AddBanner": function () { 
+            //$("#prdct").select2('val')
             try {
                 var banner = {};
                 $.each($("#addForm").find("input,select").not(':input[type=button], :input[type=submit], :input[type=reset]'), function (idx, elem) {
@@ -110,25 +127,28 @@
                     if ($(elem).attr("type") == "checkbox") {
                         banner[$(elem).attr("id")] = $(elem).is(":checked");
                     }
+                    if ($(elem).attr("id") == "prdct") {
+                        banner[$(elem).attr("id")] = $(elem).val() == null ? [] : $(elem).val();
+                    }
                     else {
                         banner[$(elem).attr("id")] = $(elem).val() || $(elem).text();
                     }
-                });
-                console.log(JSON.stringify(banner, null, "\t"));
-                $("#status").text("adding banner...");
-                $("#loader").addClass("loader");
-                Services.addBanner(banner, $("#type").val(), function (data) {
-                    $("#status").text(data && data.response);
-                    setTimeout(function () {
-                        $("#status").text("");
-                        $("#loader").removeClass("loader");
-                    }, 4000);
-                    
-                });
+                    });
+                    console.log(JSON.stringify(banner, null, "\t"));
+                    $("#status").text("adding banner...");
+                    $("#loader").addClass("loader");
+                    Services.addBanner(banner, $("#type").val(), function (data) {
+                        $("#status").text(data && data.response);
+                        setTimeout(function () {
+                            $("#status").text("");
+                            $("#loader").removeClass("loader");
+                        }, 4000);
+
+                    });
                 return false;
-            }
-            catch (e) {
-            }
+                }
+                catch (e) {
+                }
         },
 
         //#endregion
@@ -171,8 +191,8 @@
                   if (event.keyCode === $.ui.keyCode.TAB &&
                       $(this).autocomplete("instance").menu.active) {
                       event.preventDefault();
-                  }
-              })
+              }
+          })
               .autocomplete({
                   minLength: 0,
                   source: function (request, response) {
@@ -196,17 +216,17 @@
                       return false;
                   }
               });
-        }
+          }
 
 
-    }
+      }
 
 
 
-})(window);
+  })(window);
 
 
-$(document).ready(function () {
+  $(document).ready(function () {
 
     Services.GetCategories(function (tree) {
         var arr = [], traverse = function (root, callback) {
@@ -224,7 +244,6 @@ $(document).ready(function () {
         traverse(tree[0], function (node) { if (node && node.name) { arr.push(node.name); } });
         mngr.allCategories = arr;
         mngr.Init();
-        
     });
 
 
