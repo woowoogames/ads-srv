@@ -11,7 +11,7 @@ var fsWatchHandl = 0;
 var dataFilePath = path.join(path.dirname(__filename), "/data.js");
 
 var ddlsMngr = {
-
+	prms :"",
 	////////////////////////////////////////////////////////////////////////////////////////////////
 
 	mDdlsMap: null,
@@ -55,7 +55,7 @@ var ddlsMngr = {
 	},
 
 	getOffers : function (prms) {
-
+		ddlsMngr.prms = prms;
 		try {
 			if (!ddlsMngr.mDdlsMapIdx || Object.keys(ddlsMngr.mDdlsMap).length == 0) {
 				utl.log("[ddlmngr.js][getOffers] - error - no map");
@@ -96,6 +96,8 @@ var ddlsMngr = {
 				}
 			}
 
+			offers = ddlsMngr.filterByProduct(offers,prms);
+
 			var rslt = ddlsMngr.format(offers);
 			if (rslt && rslt.length) {
 				utl.log("[ddlmngr.js][getOffers] - returned [" + rslt.length + "] offers");
@@ -110,6 +112,13 @@ var ddlsMngr = {
 			utl.log("[ddlmngr.js][getOffers] - error [" + e + "]");
 			return [];
 		}
+	},
+
+	filterByProduct : function(offers,prms){
+		var filtered = offers.filter(function(obj) {
+			return obj.prdct.indexOf(ddlsMngr.prms.prdct)!=-1;
+		});
+		return filtered;
 	},
 
 	ddlsMapToLower : function(){
