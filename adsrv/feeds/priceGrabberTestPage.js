@@ -44,7 +44,7 @@ var pricegrabber = {
 		return currentKey;
 	},
 	getURL : function(pid,key,st){
-		var url = "http://sws.api.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&limit=1&q=" + st;
+		var url = "http://sws.api.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&limit=1&offers=1&offer_limit=1&q=" + st;
 		return url;
 	}
 }
