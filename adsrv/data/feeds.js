@@ -95,7 +95,7 @@
     "name": "pricegong",
     "type": "feed",
     "requireSearchTerm": true,
-    "active": false,
+    "active": true,
     "isSerp": false,
     "handler": "./feeds/pricegong",
     "coverage": {

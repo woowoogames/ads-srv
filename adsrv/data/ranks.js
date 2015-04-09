@@ -14,7 +14,7 @@
         "matomy": 1
     },
     "ca": {
-        "pricegrabber":1
+        "pricegong":1
     },
     "cl": {
         "buscape": 1,
