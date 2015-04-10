@@ -13,9 +13,6 @@
         "buscape": 1,
         "matomy": 1
     },
-    "ca": {
-        "pricegong":1
-    },
     "cl": {
         "buscape": 1,
         "matomy": 1
