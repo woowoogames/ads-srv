@@ -4,11 +4,15 @@ var baseApi = require('./baseapi'),
 	_ = require("underscore"),
 	utl = require("./utl"),
 	fs = require("fs"),
-	path = require("path");
+	path = require("path"),
+	lgcmngr = require("./lgcmngr");
 
 
 var feedFilePath = path.join(path.dirname(__filename), "/data/feeds.js");
+var rankFilePath = path.join(path.dirname(__filename), "/data/ranks.js");
+
 var fsWatchHandl = 0;
+var fsWatchRanks = 0;
 
 var feedsMngr = {
 
@@ -24,6 +28,15 @@ var feedsMngr = {
 				feedsMngr.loadFeeds(function() {
 					//console.dir(feedsMngr.feedsMap);
 				});	
+			},500);
+		});
+		fs.watch(rankFilePath,function(e){
+			clearTimeout(fsWatchRanks);
+			fsWatchRanks = setTimeout(function(){
+				console.log(rankFilePath + " changed");
+				lgcmngr.loadRanks(function(){
+					console.log(rankFilePath + " loaded to memory");
+				});
 			},500);
 		});
 	},
