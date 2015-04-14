@@ -10,6 +10,7 @@ Promise = require('bluebird');
 
 
 var feedFilePath = path.join(path.dirname(__filename), "/data/feeds.js");
+var rankFilePath = path.join(path.dirname(__filename), "/data/ranks.js");
 
 // load the system resources
 var rsrcMngr = {
@@ -32,11 +33,38 @@ var rsrcMngr = {
 							removeAt = feed;
 						}
 					}
+					var GeoDiff = utl.arrayDiff(allFeeds[removeAt].coverage.cntry.values,feedToUpdate.coverage.cntry.values);
 					allFeeds.splice(removeAt,1);
 					allFeeds.splice(removeAt,0,feedToUpdate);
-					baseApi.renameFileSync(path.join(path.dirname(__filename), "/data/feeds.js"),path.join(path.dirname(__filename), "/data/feeds_backup.js"));
-					baseApi.writeFileSync(path.join(path.dirname(__filename), "/data/feeds.js"),JSON.stringify(allFeeds,null,"\t"));
+					rsrcMngr.updateRank(GeoDiff,feedToUpdate.name).then(function(ranks){
+						baseApi.renameFileSync(path.join(path.dirname(__filename), "/data/ranks.js"),path.join(path.dirname(__filename), "/data/ranks_backup.js"));
+					    baseApi.writeFileSync(path.join(path.dirname(__filename), "/data/ranks.js"),JSON.stringify(ranks,null,"\t"));
+					    baseApi.renameFileSync(path.join(path.dirname(__filename), "/data/feeds.js"),path.join(path.dirname(__filename), "/data/feeds_backup.js"));
+					    baseApi.writeFileSync(path.join(path.dirname(__filename), "/data/feeds.js"),JSON.stringify(allFeeds,null,"\t"));
+					 	console.log("done!");
+					 	//to do
+					 	//check if ranks.js reload to memory after update
+					 	//when adding country to feed update ranks.js file!
+					}).catch(function(){
+						console.log("bad");
+					});
 					resolve();
+				}
+				reject();
+			});
+		});
+	},
+	updateRank : function(removedGeos,feedName){
+		return new Promise(function(resolve,reject){
+			baseApi.readFile(rankFilePath,function(err,data){
+				if(!err){
+					var ranks = JSON.parse(data);
+					for(var rank in ranks){
+						if(removedGeos.indexOf(rank)!=-1 && Object.keys(ranks[rank]).indexOf(feedName)!=-1){
+							delete ranks[rank][feedName];
+						}
+					}
+					resolve(ranks);
 				}
 				reject();
 			});
