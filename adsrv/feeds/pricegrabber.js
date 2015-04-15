@@ -180,7 +180,7 @@ var pricegrabber = function () {
 
 	this.getURL = function(pid,key,prms){
 		var st = prms.st.replace(" ","+");
-		var url = "http://sws.api.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&q=" + st + "&limit=1&offers=1&offer_limit=1&mode=" + this.fixProduct(prms.prdct);
+		var url = "http://sws.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&q=" + st + "&limit=1&offers=1&offer_limit=1&mode=" + this.fixProduct(prms.prdct);
 		return url;
 	};
 
