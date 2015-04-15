@@ -54,9 +54,6 @@
     "nl": {
         "kelkoo": 2
     },
-    "no": {
-        "kelkoo": 2
-    },
     "pl": {
         "matomy": 1
     },
@@ -76,8 +73,7 @@
         "matomy": 1
     },
     "uk": {
-        "pricegrabber":3,
-        "ebay": 4,
+        "ebay": 2,
         "matomy": 1,
         "shopzilla": 2
     },
