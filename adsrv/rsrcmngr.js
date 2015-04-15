@@ -33,10 +33,9 @@ var rsrcMngr = {
 							removeAt = feed;
 						}
 					}
-					var GeoDiff = utl.arrayDiff(allFeeds[removeAt].coverage.cntry.values,feedToUpdate.coverage.cntry.values);
 					allFeeds.splice(removeAt,1);
 					allFeeds.splice(removeAt,0,feedToUpdate);
-					rsrcMngr.updateRank(GeoDiff,feedToUpdate.name).then(function(ranks){
+					rsrcMngr.updateRank(feedToUpdate.coverage.cntry.values,feedToUpdate.name).then(function(ranks){
 						baseApi.renameFileSync(path.join(path.dirname(__filename), "/data/ranks.js"),path.join(path.dirname(__filename), "/data/ranks_backup.js"));
 					    baseApi.writeFileSync(path.join(path.dirname(__filename), "/data/ranks.js"),JSON.stringify(ranks,null,"\t"));
 					    baseApi.renameFileSync(path.join(path.dirname(__filename), "/data/feeds.js"),path.join(path.dirname(__filename), "/data/feeds_backup.js"));
@@ -54,21 +53,38 @@ var rsrcMngr = {
 			});
 		});
 	},
-	updateRank : function(removedGeos,feedName){
+	updateRank : function(geos,feedName){
 		return new Promise(function(resolve,reject){
 			baseApi.readFile(rankFilePath,function(err,data){
 				if(!err){
 					var ranks = JSON.parse(data);
+					var ranksGeos = Object.keys(ranks);
+					for(var i=0 ; i<geos.length ;i++){
+						if(ranksGeos.indexOf(geos[i])==-1){
+							ranks[geos[i]] = {};
+						}
+					}
 					for(var rank in ranks){
-						if(removedGeos.indexOf(rank)!=-1 && Object.keys(ranks[rank]).indexOf(feedName)!=-1){
+						if(geos.indexOf(rank)!=-1 && Object.keys(ranks[rank]).indexOf(feedName)==-1){
+							ranks[rank][feedName] = 1;
+						}
+						else if(geos.indexOf(rank)==-1 && Object.keys(ranks[rank]).indexOf(feedName)!=-1){
 							delete ranks[rank][feedName];
 						}
 					}
-					resolve(ranks);
+					resolve(rsrcMngr.sortRanks(ranks));
 				}
 				reject();
 			});
 		});
+	},
+	sortRanks:function(ranks){
+		var sortedKeys = Object.keys(ranks).sort();
+		var sortedRanks = {};
+		for(var ind in sortedKeys){
+			sortedRanks[sortedKeys[ind]] = ranks[sortedKeys[ind]];
+		}
+		return sortedRanks;
 	},
 	init: function (clbk) {
 		/*
