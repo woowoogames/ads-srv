@@ -64,7 +64,7 @@
     "coverage": {
         "cntry": {
             "type": "white",
-            "values" :["de", "dk", "es", "fr", "it", "nl", "no", "ru", "se"]
+            "values" :["de", "dk", "es", "fr", "it", "nl", "ru", "se"]
         },
         "prdct": {
             "type": "white",

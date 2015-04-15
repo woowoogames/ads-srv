@@ -33,11 +33,11 @@ var feedsMngr = require('./feedsmngr'),
 
 			// request params
 			var requestParams = adSrv.getRequestParams(request);
-			influxReporter.report('adsrvr', {
-				country: requestParams.cntry,
-				category: requestParams.ctgry,
-				host: requestParams.host,
-			});
+			// influxReporter.report('adsrvr', {
+			// 	country: requestParams.cntry,
+			// 	category: requestParams.ctgry,
+			// 	host: requestParams.host,
+			// });
 			if(requestParams){
 				// list of feeds to work with according to the request params
 				var feeds = feedsMngr.getFeeds(requestParams);
