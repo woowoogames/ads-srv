@@ -82,7 +82,7 @@
     "coverage": {
         "cntry": {
             "type": "white",
-            "values" :["us","de","fr","uk"]
+            "values" :["de","fr","uk"]
         },
         "prdct": {
 
@@ -113,13 +113,13 @@
     "name": "pricegrabber",
     "type" : "feed",
     "requireSearchTerm": true,
-    "active": false,
+    "active": true,
     "isSerp": false,
     "handler": "./feeds/pricegrabber",
     "coverage": {
         "cntry": {
             "type": "white",
-            "values" :["us","uk","ca"]
+            "values" :["us"]
         },
         "prdct": {
             "type": "white",
@@ -137,7 +137,7 @@
     "coverage": {
         "cntry": {
             "type": "white",
-            "values" : ["uk","us"]
+            "values" : ["uk"]
         },
         "prdct": {
             "type": "white",

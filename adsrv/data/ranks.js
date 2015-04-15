@@ -82,10 +82,7 @@
         "shopzilla": 2
     },
     "us": {
-        "pricegrabber":3,
-        "shopzilla": 2,
-        "ebay": 4,
-        "matomy": 1
+        "pricegrabber":1
     },
 
     "int" :{
