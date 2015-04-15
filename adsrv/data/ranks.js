@@ -78,7 +78,9 @@
         "shopzilla": 2
     },
     "us": {
-        "pricegrabber":1
+        "pricegrabber":1,
+        "ebay": 1,
+        "shopzilla":1
     },
 
     "int" :{

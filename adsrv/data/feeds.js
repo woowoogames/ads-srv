@@ -82,7 +82,7 @@
     "coverage": {
         "cntry": {
             "type": "white",
-            "values" :["de","fr","uk"]
+            "values" :["us","de","fr","uk"]
         },
         "prdct": {
 
@@ -137,7 +137,7 @@
     "coverage": {
         "cntry": {
             "type": "white",
-            "values" : ["uk"]
+            "values" : ["us","uk"]
         },
         "prdct": {
             "type": "white",
