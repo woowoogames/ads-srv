@@ -2,7 +2,7 @@ $(document).ready(function(){
 	var feeds;
 	var countries = {};
 	var host = 'http://204.145.74.4';
-	//var host = 'http://localhost:5000';
+	//var host = 'http://localhost';
 	//	feeds select
 	var localRender = function(){
 		$("#feeds").empty();
@@ -33,9 +33,9 @@ $(document).ready(function(){
 			$("[name='st']").bootstrapSwitch('toggleState');
 		}
 		loadContriesSelect2(feed.coverage.cntry.values);
+		loadProducts(feed.coverage.prdct.values);
 	};
 	//switches
-
 
 	//select2 
 	var loadContriesSelect2 = function(geos){
@@ -44,6 +44,9 @@ $(document).ready(function(){
 	};
 	var select2ResetValues = function(){
 		$("#geos").select2('val', 'All');
+	};
+	var loadProducts = function(prdcts){
+		$("#prdcts").select2('val',prdcts);
 	};
 	//select2 
 
@@ -54,6 +57,7 @@ $(document).ready(function(){
 			var index = $("#feeds").prop("selectedIndex");
 			var feedToUpdate = feeds[index];
 			var geos = $("#geos").select2('val');
+			var products = $("#prdcts").select2('val');
 			if(geos){
 				var indexGb = geos.indexOf('gb');
 				if(indexGb!=-1){
@@ -72,6 +76,7 @@ $(document).ready(function(){
 				feeds[index].isActive = isActive;
 				feeds[index].isSerp = isSerp;
 				feeds[index].coverage.cntry.values = geos;
+				feeds[index].coverage.prdct.values = products;
 				$("#spinner").show();
 				$("#successs").show();
 				setTimeout(function(){
@@ -91,7 +96,7 @@ $(document).ready(function(){
 						},
 						"prdct": {
 							"type": "white",
-							"values": ["all"]
+							"values": products
 						}
 					}
 				};
@@ -114,48 +119,51 @@ $(document).ready(function(){
 		});
 });
 
+//////////////////////////////////////////////////
+////////////            ajax       ///////////////
+//////////////////////////////////////////////////
 //init feeds select - get feed.js from node server 
 var loadFeeds = function(){
 	$("#feeds").empty();
-	$.ajax({
+	return $.ajax({
 		url : host + '/data/feeds.js',
 		contentType: "application/json",
-		dataType: 'json',
-		success: function(obj){
-			feeds = obj;
-			gbUkFix(feeds);
-			for(var i=0 ; i<feeds.length ; i++){
-				$("#feeds").append("<option value=\"" + feeds[i].name + "\">" + feeds[i].name + "</option>");			
-			}
-		},
-		error: function(jqXHR, textStatus, errorThrown) {
-			console.log(textStatus, errorThrown);
-		}
-	}).done(function(){
-		loadButtons(feeds[0]);
+		dataType: 'json'
 	});
 };
-
 //init select2 -geos - get feed.js from node server 
 var select2Geos = function(){
-	$.ajax({
+	return $.ajax({
 		url:"http://publishers.saferev.com/tools.asmx/GetCountries?token=B1ng007",
-		dataType: 'jsonp',
-		success : function(geos){
-			for(var geoIndex in geos.Rows){
-				$("#geos").append("<option value=" + geos.Rows[geoIndex].value.toLowerCase() + ">" +geos.Rows[geoIndex].label +"</option>");
-			}
-			createGeoObject(geos);
-		},
-		error: function(a,b,c){
-			alert(a);
-			alert(b);
-			alert(c);
-		}	
-	}).done(function(){
-		loadButtons(feeds[0]);
+		dataType: 'jsonp'
 	});
 };
+var select2Product = function(){
+	return $.ajax({
+		url :host + "/tools/GetProducts",
+		dataType: 'jsonp'	
+	});
+};
+//////////////////////////////////////////////////
+
+$.when(loadFeeds(),select2Geos(),select2Product()).done(function(feed,geos,prdcts){
+	feed = feed[0];
+	feeds = feed;//global
+	geos = geos[0];
+	gbUkFix(feed);
+	for(var i=0 ; i<feed.length ; i++){
+		$("#feeds").append("<option value=\"" + feed[i].name + "\">" + feed[i].name + "</option>");			
+	}
+	for(var geoIndex in geos.Rows){
+		$("#geos").append("<option value=" + geos.Rows[geoIndex].value.toLowerCase() + ">" +geos.Rows[geoIndex].label +"</option>");
+	}
+	createGeoObject(geos);
+	$("#prdcts").append("<option value=all>all</option>");
+	for(var prdIndex in prdcts[0].Rows){
+		$("#prdcts").append("<option value=" + prdcts[0].Rows[prdIndex].prdcts.toLowerCase() + ">" + prdcts[0].Rows[prdIndex].mont_prdcts +"</option>");
+	}
+	loadButtons(feeds[0]);
+});
 
 var createGeoObject = function(geos){
 	for(var geoIndex in geos.Rows){
@@ -165,6 +173,9 @@ var createGeoObject = function(geos){
 
 var initPageView = function(){
 	$("#geos").select2({
+		removeOnSelect : true 
+	});	
+	$("#prdcts").select2({
 		removeOnSelect : true 
 	});
 	$("#spinner").hide();
@@ -186,6 +197,7 @@ var gbUkFix = function(feeds){
 var init = function(){
 	initPageView();
 	select2Geos();
+	select2Product();
 	loadFeeds();
 };
 init();

@@ -26,7 +26,7 @@ var feedsMngr = {
 			fsWatchHandl = setTimeout(function() {
 				console.log(feedFilePath + " changed");
 				feedsMngr.loadFeeds(function() {
-					//console.dir(feedsMngr.feedsMap);
+					console.log(feedFilePath + " loaded to memory");
 				});	
 			},500);
 		});
@@ -81,18 +81,16 @@ var feedsMngr = {
 		var activeFeeds = _.filter(feedsMngr.feedsMap, function (feed) {
 			return feed.active;
 		});
-
 		// 2. filter by coverage filters
 		activeFeeds = _.filter(activeFeeds, function (feed) {
-
 			return _.every(feed.coverage, function (filterObject, filterName) {
-
 				var queryVal, passTest = true, filterType = filterObject.type.toLowerCase(), foundMatch = false;
 				filterName = filterName.toLowerCase();
 				if (filterName in requestParams) {
 
 					queryVal = requestParams[filterName];
 					foundMatch = filterObject.values.indexOf(queryVal) > -1 || filterObject.values.indexOf("all") > -1;
+
 					if (foundMatch && filterType === "black") {
 						passTest = false;
 					}
@@ -112,6 +110,13 @@ var feedsMngr = {
 			});
 		}
 
+		//4. filter by product
+		activeFeeds = _.filter(activeFeeds,function(feed){
+			if(feed.coverage.prdct.values.indexOf("all")!=-1)
+				return true;
+			else
+				return _.contains(feed.coverage.prdct.values,requestParams.prdct);
+		});
         // console.log("feedsMngr::activeFeeds=[" + activeFeeds + "]");
 		return activeFeeds;
 	}
