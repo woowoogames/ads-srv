@@ -157,7 +157,7 @@ var ddlsMngr = {
 					obj.img.big = obj.img.small = offer.source[k] || "",
 					obj.lnk = offer.lnk[k] || "",
 
-					// obj.sz = ??
+				    obj.sz = ddlsMngr.getSize(rslt[i].size);
 					// place for subid
 
 					rsltArr.push(obj);
@@ -171,6 +171,15 @@ var ddlsMngr = {
 		}
 		catch (e) { }
 		return null;
+	},
+
+	getSize :function(size){
+		if(typeof size !== 'undefined'){
+			var sizeCase = size.split("x");
+			return sizeCase[0];
+		}
+		else
+			return 0;
 	},
 
 	createIdxMap: function () {
