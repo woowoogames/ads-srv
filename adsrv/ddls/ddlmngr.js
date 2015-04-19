@@ -1,9 +1,9 @@
 
 var baseApi = require("../baseapi"),
-	path = require("path"),
-	utl = require("../utl"),
-	fs = require("fs"),
-	frmtr = require("../formatter");
+path = require("path"),
+utl = require("../utl"),
+fs = require("fs"),
+frmtr = require("../formatter");
 
 
 
@@ -72,29 +72,33 @@ var ddlsMngr = {
 				return [];
 			}
 
+			var offers = [];
+
 			var ctgry = cntry[prms.ctgry];
-			if (!ctgry) {
+			var nonCategories = ddlsMngr.getRandomNonCtrgy(prms);
+			if (!ctgry && nonCategories.length==0) {
 				utl.log("[ddlmngr.js][getOffers] - no deals");
 				return [];
 			}
-
-			var offers = [];
-			var n = ctgry.length;
-
-			if (n <= prms.n) {
-				for (var i = 0 ; i < n ; i++) {
-					offers.push(ddlsMngr.mDdlsMap[ctgry[i]]);
+			if(ctgry){
+				var n = ctgry.length;
+				if (n <= prms.n) {
+					for (var i = 0 ; i < n ; i++) {
+						offers.push(ddlsMngr.mDdlsMap[ctgry[i]]);
+					}
 				}
-			}
-			else{
-				var count = 0, idxs = ",";
-				while(offers.length < 10 && (count++) < 100){
-					var k = Math.floor(Math.random() * (ctgry.length));
-					if(idxs.indexOf("," + k + ",") < 0){
-						offers.push(ddlsMngr.mDdlsMap[ctgry[k]]);
+				else{
+					var count = 0, idxs = ",";
+					while(offers.length < 10 && (count++) < 100){
+						var k = Math.floor(Math.random() * (ctgry.length));
+						if(idxs.indexOf("," + k + ",") < 0){
+							offers.push(ddlsMngr.mDdlsMap[ctgry[k]]);
+						}
 					}
 				}
 			}
+
+			offers = ddlsMngr.smartConcat(offers,nonCategories);
 
 			offers = ddlsMngr.filterByProduct(offers,prms);
 
@@ -111,6 +115,34 @@ var ddlsMngr = {
 		catch (e) {
 			utl.log("[ddlmngr.js][getOffers] - error [" + e + "]");
 			return [];
+		}
+	},
+
+	getRandomNonCtrgy : function(prms){
+		var DefaultDdls = [];
+		for(var ddl in ddlsMngr.mDdlsMap){
+			if(ddlsMngr.mDdlsMap[ddl].cntry.indexOf(prms.cntry)!=-1){
+				if(ddlsMngr.mDdlsMap[ddl].ctgry.length == 0){//non category ddls
+					DefaultDdls.push(ddlsMngr.mDdlsMap[ddl]);
+				}
+			}
+		}
+		return DefaultDdls;
+	},			
+
+	smartConcat : function(offers,RandomDddls){
+		if(offers.length>2)
+			return offers;
+		else{
+			var randOffers = [];
+			var size = 3-offers.length;
+			size = Math.min(size,RandomDddls.length);
+			for(var i=0;i<size ;i++){
+				var randInd = Math.floor(Math.random()*RandomDddls.length-i);
+				randOffers.push(RandomDddls[randInd]);
+				RandomDddls[randInd] = RandomDddls[RandomDddls.length-1-i];
+			}
+			return offers.concat(randOffers);
 		}
 	},
 
@@ -132,8 +164,8 @@ var ddlsMngr = {
 		var n = keys.length;
 		var newobj={}
 		while (n--) {
-		  key = keys[n];
-		  newobj[key.toLowerCase()] = obj[key];
+			key = keys[n];
+			newobj[key.toLowerCase()] = obj[key];
 		}
 		return newobj;
 	},
@@ -157,7 +189,7 @@ var ddlsMngr = {
 					obj.img.big = obj.img.small = offer.source[k] || "",
 					obj.lnk = offer.lnk[k] || "",
 
-				    obj.sz = ddlsMngr.getSize(rslt[i].size);
+					obj.sz = ddlsMngr.getSize(rslt[i].size);
 					// place for subid
 
 					rsltArr.push(obj);
@@ -186,7 +218,7 @@ var ddlsMngr = {
 		var idxMap = {};
 		try{
 			for (var ofr in ddlsMngr.mDdlsMap) {
-			
+
 				var cntrs = ddlsMngr.mDdlsMap[ofr].cntry;
 				var ctgrs = ddlsMngr.mDdlsMap[ofr].ctgry;
 
