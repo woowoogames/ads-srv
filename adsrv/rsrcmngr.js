@@ -57,6 +57,8 @@ var rsrcMngr = {
 		return new Promise(function(resolve,reject){
 			baseApi.readFile(rankFilePath,function(err,data){
 				if(!err){
+					if(feedName == "shopping")
+						feedName = "ebay";
 					var ranks = JSON.parse(data);
 					var ranksGeos = Object.keys(ranks);
 					for(var i=0 ; i<geos.length ;i++){
