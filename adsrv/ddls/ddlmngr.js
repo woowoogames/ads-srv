@@ -97,12 +97,13 @@ var ddlsMngr = {
 					}
 				}
 			}
-
-			offers = ddlsMngr.smartConcat(offers,nonCategories);
+			else{
+				offers = ddlsMngr.smartConcat(offers,nonCategories);
+			}
 
 			offers = ddlsMngr.filterByProduct(offers,prms);
 
-			var rslt = ddlsMngr.format(offers);
+			var rslt = ddlsMngr.format(offers,prms);
 			if (rslt && rslt.length) {
 				utl.log("[ddlmngr.js][getOffers] - returned [" + rslt.length + "] offers");
 				return rslt;
@@ -121,6 +122,11 @@ var ddlsMngr = {
 	getRandomNonCtrgy : function(prms){
 		var DefaultDdls = [];
 		for(var ddl in ddlsMngr.mDdlsMap){
+			if(ddlsMngr.mDdlsMap[ddl].cntry.length == 0){
+				if(ddlsMngr.mDdlsMap[ddl].ctgry.length==0){
+					DefaultDdls.push(ddlsMngr.mDdlsMap[ddl]);
+				}				
+			}
 			if(ddlsMngr.mDdlsMap[ddl].cntry.indexOf(prms.cntry)!=-1){
 				if(ddlsMngr.mDdlsMap[ddl].ctgry.length == 0){//non category ddls
 					DefaultDdls.push(ddlsMngr.mDdlsMap[ddl]);
@@ -148,7 +154,10 @@ var ddlsMngr = {
 
 	filterByProduct : function(offers,prms){
 		var filtered = offers.filter(function(obj) {
-			return obj.prdct.indexOf(ddlsMngr.prms.prdct)!=-1;
+			if(obj.prdct.length==0)
+				return true;
+			else
+				return obj.prdct.indexOf(ddlsMngr.prms.prdct)!=-1;
 		});
 		return filtered;
 	},
@@ -170,7 +179,7 @@ var ddlsMngr = {
 		return newobj;
 	},
 
-	format : function (rslt) {
+	format : function (rslt,prms) {
 		try {
 			var rsltArr = [];
 			for (var i = 0 ; i < rslt.length ; i++) {
@@ -186,7 +195,7 @@ var ddlsMngr = {
 					obj.desc.long = obj.desc.short = offer.desc || "";
 
 					var k = Math.floor(Math.random() * (offer.source.length));
-					obj.img.big = obj.img.small = offer.source[k] || "",
+					obj.img.big = obj.img.small = ddlsMngr.imgFormat(offer.source[k],prms) || "",
 					obj.lnk = offer.lnk[k] || "",
 
 					obj.sz = ddlsMngr.getSize(rslt[i].size);
@@ -203,6 +212,12 @@ var ddlsMngr = {
 		}
 		catch (e) { }
 		return null;
+	},
+
+	imgFormat :function(url,prms){
+		url = url.replace("#prdct#",prms.prdct);
+		url = url.replace("#cntry#",prms.cntry);
+		return url;
 	},
 
 	getSize :function(size){
