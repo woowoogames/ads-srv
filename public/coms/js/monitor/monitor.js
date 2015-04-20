@@ -29,19 +29,24 @@
 
                 });
                 $("#rmv").click(function () {
-                    var rmvBnrsArr = $("input:checked").parent().text().match(/t[0-9]+/g);
-                    if (rmvBnrsArr) {
-                        $("#status").text("removing...");
-                        $("#loader").addClass("loader");
-                        Services.deleteBanner(rmvBnrsArr.join(),"ddls", function () {
+                   var rmvBnrsArr = [];
+                   $.each($("input:checked").parent(),function(idx,elem) {
+                    if($(elem).text().split("_").length && $(elem).text().split("_")[1]){
+                        rmvBnrsArr.push($(elem).text().split("_")[1]);
+                    }
+                });
+                   if (rmvBnrsArr.length) {
+                    $("#status").text("removing...");
+                    $("#loader").addClass("loader");
+                    Services.deleteBanner(rmvBnrsArr.join(),"ddls", function () {
                             //remove from table
                             $("#status").text("");
                             $("#loader").removeClass("loader");
                             $("input:checked").parent().parent().remove();
                         });
-                    }
+                }
 
-                });
+            });
 
             });
 
@@ -133,22 +138,22 @@
                     callback();
                 }
             });*/
-        },
-        "SetMultiSelect": function (selector, FeedArr) {
-            function split(val) {
-                return val.split(/,\s*/);
-            }
-            function extractLast(term) {
-                return split(term).pop();
-            }
-            $(selector)
+},
+"SetMultiSelect": function (selector, FeedArr) {
+    function split(val) {
+        return val.split(/,\s*/);
+    }
+    function extractLast(term) {
+        return split(term).pop();
+    }
+    $(selector)
               // don't navigate away from the field on tab when selecting an item
               .bind("keydown", function (event) {
                   if (event.keyCode === $.ui.keyCode.TAB &&
                       $(this).autocomplete("instance").menu.active) {
                       event.preventDefault();
-                  }
-              })
+              }
+          })
               .autocomplete({
                   minLength: 0,
                   source: function (request, response) {
@@ -172,8 +177,8 @@
                       return false;
                   }
               });
-        },
-        "getPrdcts": function (callback) {
+          },
+          "getPrdcts": function (callback) {
             try {
                 Services.GetProducts(function (prdcts) {
                     callback(prdcts);
@@ -192,35 +197,35 @@
 
             var $table = $('<table id="dt" class="table" style="width:100%;"><thead></thead>' +
                 '<tfoot>' +
-                    '<tr>' +
-                        '<th>Total</th>' +
+                '<tr>' +
+                '<th>Total</th>' +
                         '<th></th>' +//impressions
                         '<th></th>' +//clicks
                         '<th></th>' +//ctr
-                    '</tr>' +
-                '</tfoot></table>');
+                        '</tr>' +
+                        '</tfoot></table>');
             var $trHead = $("<tr/>"), $trFoot = $("<tr/>"), columns = [];
                // columns = [{ "width": "40%" }, { "width": "20%" }, { "width": "20%" }, { "width": "20%" }];
-            $.each(data["Columns"], function (prp) {
+               $.each(data["Columns"], function (prp) {
                 $trHead.append("<th>" + prp + "</th>");
                 $trFoot.append("<th>" + prp + "</th>");
                 columns.length == 0 ? columns.push({ "data": prp, "width": "70%" }) : columns.push({ "data": prp, "width": "10%" });
 
             });
-            
-            var rows;
+               
+               var rows;
             //$table.find("thead").append($trHead.clone());
             $table.find("thead").append($trHead.clone());
             $table.find("tfoot").append($trFoot);
             $(cntnr).html($table);
             var oTable = $table.DataTable({
                 "data": data["Rows"],
-               
+                
                 aoColumns: [
-                      { "mDataProp": isCntry ? "cntry" : $("#measure").val(),"width":"60%" },
-                      { "mDataProp": "impressions" },
-                      { "mDataProp": "clicks" },
-                      { "mDataProp": "ctr" }
+                { "mDataProp": isCntry ? "cntry" : $("#measure").val(),"width":"60%" },
+                { "mDataProp": "impressions" },
+                { "mDataProp": "clicks" },
+                { "mDataProp": "ctr" }
                 ],
                 "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
                     try {
@@ -273,45 +278,45 @@
                         nCells[1].innerHTML = ' ' + filteredImp + ' (' + iTotalImp + ')';
                         nCells[2].innerHTML = ' ' + filteredClicks + ' (' + iTotalClicks + ')';
                         nCells[3].innerHTML = ' ' + filteredCtr + '% (' + iTotalCTR + '%)';
-                    
+                        
                     }
                     catch (e) {
                     }
                 }
             });
-            $table.on('search.dt', function (e,settings) {
-                try {
-                    rows = oTable.rows({ filter: 'applied' });
-                    rows = rows.data();
-                   
-                }
-                catch (a) {}
-            });
+$table.on('search.dt', function (e,settings) {
+    try {
+        rows = oTable.rows({ filter: 'applied' });
+        rows = rows.data();
+        
+    }
+    catch (a) {}
+});
 
-            $table.on('click', 'tr', function () {
-                if ($(this).hasClass('selected')) {
-                    $(this).removeClass('selected');
-                }
-                else {
-                    $table.find("tr.selected").removeClass('selected');
-                    $(this).addClass('selected');
-                }
-            });
-        },
-        "buildCountryByCategoryTable": function (category) {
+$table.on('click', 'tr', function () {
+    if ($(this).hasClass('selected')) {
+        $(this).removeClass('selected');
+    }
+    else {
+        $table.find("tr.selected").removeClass('selected');
+        $(this).addClass('selected');
+    }
+});
+},
+"buildCountryByCategoryTable": function (category) {
 
-            try {
-                var data = mngr.CountryByCategory[category];
-                mngr.ShowTable("#tblcntnr2", data, true);
-            }
-            catch (e) {
-            }
+    try {
+        var data = mngr.CountryByCategory[category];
+        mngr.ShowTable("#tblcntnr2", data, true);
+    }
+    catch (e) {
+    }
 
-        },
-        "getCTR": function (data) {
-            /*{"op":"clk","bnr":"300x250","info":"ddls-b.html-ddl10003","cntry":"ca","cnt":5.0}"*/
-            var catVar, countAgg = {}, newData = { "Columns": {}, "Rows": [] },countVar = $("#measure").val();
-            newData.Columns[countVar] = "String";
+},
+"getCTR": function (data) {
+    /*{"op":"clk","bnr":"300x250","info":"ddls-b.html-ddl10003","cntry":"ca","cnt":5.0}"*/
+    var catVar, countAgg = {}, newData = { "Columns": {}, "Rows": [] },countVar = $("#measure").val();
+    newData.Columns[countVar] = "String";
             //if ($("#rtype").val() == "300x250" && countVar == "bnr") {
             //    $.extend(newData.Columns, { "info":"String", "impressions": "String", "clicks": "String", "ctr": "String" });
             //}
@@ -322,7 +327,7 @@
             $.each(data["Rows"], function (idx, val) {
                 catVar = val[countVar];
                 if (countVar == "bnr") {
-                        catVar += "_" + val.info;
+                    catVar += "_" + val.info;
                 }
                 if (!mngr.IsDeleted(val.info)) {
                     countAgg[catVar] = countAgg[catVar] || {};
@@ -364,57 +369,57 @@
 
 
 
-                    if (imp) {
-                        ctrVal = (clicks / imp) * 100;
-                        ctrVal = ctrVal.toFixed(2) + "%";
-                    }
+if (imp) {
+    ctrVal = (clicks / imp) * 100;
+    ctrVal = ctrVal.toFixed(2) + "%";
+}
 
-                    var obj = {
-                        impressions: parseInt(imp),
-                        clicks: parseInt(clicks),
-                        ctr: ctrVal
-                    };
-                    obj[countVar] = cat;
-                    if (countVar == "bnr") {
-                        obj[countVar] = "<input class='isrmv' type='checkbox' />" + cat;
-                    }
-                    newData.Rows.push(obj);
+var obj = {
+    impressions: parseInt(imp),
+    clicks: parseInt(clicks),
+    ctr: ctrVal
+};
+obj[countVar] = cat;
+if (countVar == "bnr") {
+    obj[countVar] = "<input class='isrmv' type='checkbox' />" + cat;
+}
+newData.Rows.push(obj);
 
-                }
-                catch (e) {
-                    console.log(e);
-                }
+}
+catch (e) {
+    console.log(e);
+}
 
-            });
+});
 
-            mngr.ShowTable("#tblcntnr", newData);
+mngr.ShowTable("#tblcntnr", newData);
 
-        },
-        "IsDeleted": function (tid) {
-            if (tid) {
-                var p = tid.match(/^t[0-9]+$/gi);
-                if (p && p[0]) {
-                    return mngr.deletedBanners[p[0]] !== undefined;
-                }
-            }
-            return false;
-        },
-        "getStats": function () {
+},
+"IsDeleted": function (tid) {
+    if (tid) {
+        var p = tid.match(/^t[0-9]+$/gi);
+        if (p && p[0]) {
+            return mngr.deletedBanners[p[0]] !== undefined;
+        }
+    }
+    return false;
+},
+"getStats": function () {
 
 
-            Services.GetStats({
-                    in_StartDate: $("#dfrom").val(),
-                    in_EndDate: $("#dto").val(),
-                    in_Cntry: ($("#cntryList").val() && $("#cntryList").val().join()) || "",
-                    in_Prdct: ($("#prdct").val() && $("#prdct").val().join()) || "",
-                    in_Op: $("#measure").val(),
-                    rtype: $("#rtype").val(),
-                    sFormat:""
-                },function (data) {
-                    mngr.data = $.extend(true, {}, data);
-                    mngr.getCTR(mngr.data);
-                    $("#loader").removeClass("loader");
-            });
+    Services.GetStats({
+        in_StartDate: $("#dfrom").val(),
+        in_EndDate: $("#dto").val(),
+        in_Cntry: ($("#cntryList").val() && $("#cntryList").val().join()) || "",
+        in_Prdct: ($("#prdct").val() && $("#prdct").val().join()) || "",
+        in_Op: $("#measure").val(),
+        rtype: $("#rtype").val(),
+        sFormat:""
+    },function (data) {
+        mngr.data = $.extend(true, {}, data);
+        mngr.getCTR(mngr.data);
+        $("#loader").removeClass("loader");
+    });
 
             /*$.ajax({
                 url: 'coms.asmx/GetStats',
@@ -434,7 +439,7 @@
                     $("#loader").removeClass("loader");
                 }
             });*/
-        }
+}
 
         //#endregion
 
