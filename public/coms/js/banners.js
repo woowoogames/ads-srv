@@ -27,7 +27,7 @@
                             removeOnSelect : true
                         });
                         $.ajax({
-                            url:"http://localhost/tools/GetProducts",
+                            url:"http://204.145.74.4/tools/GetProducts",
                             dataType: 'json',
                             success : function(prdcts){
                                 for(var prdctIndex in prdcts.Rows){
