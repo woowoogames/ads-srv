@@ -48,13 +48,14 @@
 
                 "RenderBanner" : function(banner){
                     $("#ctgry").select2('val',banner.ctgry);
+                    $("#cntry").select2('val',banner.cntry);
                     $("#desc").val(banner.desc);
                     $("#domains").val(banner.domains);
                     $("#feed").val(banner.feed);
                     $("#prdct").select2('val',banner.prdct);
                     $("#rndrTyp").val(banner.rndrTyp);
                     $("#size").val(banner.size);
-                    $("#source").val(banner.source);
+                    $("#source").val($(banner.source).attr("src"));
                     $('#standalone').prop('checked', banner.standalone);
                     $("#subidkey").val(banner.subidkey);
                     $("#subidval").val(banner.subidval);
