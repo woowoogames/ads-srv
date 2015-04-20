@@ -12,7 +12,7 @@
 
             window.mngr = {
                 "allCategories": [], products: [], banners: [], CodeToCountry: {},CountryToCode:{},
-                "currentId" : 0,
+                "currentId" : null,
                 "Init": function () {
                     try {
                         this.Events();
@@ -27,7 +27,7 @@
                             removeOnSelect : true
                         });
                         $.ajax({
-                            url:"http://204.145.74.4/tools/GetProducts",
+                            url:"http://localhost/tools/GetProducts",
                             dataType: 'json',
                             success : function(prdcts){
                                 for(var prdctIndex in prdcts.Rows){
@@ -76,6 +76,7 @@
                             var result = $.grep(mngr.banners.data, function(e){ return e.id == row.id; });
                             mngr.RenderBanner(result[0]);
                             mngr.currentId = row.id;
+
                         });
 
                         $("button[name='refresh'").click(function () {
@@ -132,21 +133,19 @@
                 } catch (e) { }
             });
 
+            $("#update_bt").click(function(){
+                mngr.AddBanner(mngr.currentId);
+                return false;
+            });
 
             this.Validate();
         },
 
-        "setSelect2" : function(values){
-
-        },
-
         //#region Add Banner
 
-        "AddBanner": function () { 
+        "AddBanner": function (id) { 
             try {
-                var banner = {
-                    id : mngr.currentId
-                };
+                var banner = id ? {"id" : id} : {};
                 $.each($("#addForm").find("input,select").not(':input[type=button], :input[type=submit], :input[type=reset]'), function (idx, elem) {
                     if ($(elem).attr("id") == "cntry") {
                         var theVal = $(elem).val() || $(elem).text();
@@ -180,6 +179,7 @@
                 $("#status").text("adding banner...");
                 $("#loader").addClass("loader");
                 Services.addBanner(banner, $("#type").val(), function (data) {
+                    mngr.currentId = null;
                     $("#status").text(data && data.response);
                     setTimeout(function () {
                         $("#status").text("");
@@ -213,7 +213,8 @@
                     lnk: { validators: { uri: { message: 'The link address is not valid' } } }
                 }
             }).on('success.form.bv', function (e) {
-                mngr.AddBanner();
+               
+                mngr.AddBanner(null);
                 e.preventDefault();
                 return false;
             });
