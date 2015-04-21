@@ -158,10 +158,25 @@
                     //     banner[$(elem).attr("id")] = countries;
                     //     return true;
                     // }
+                    // if($(elem).attr("id") == "cntry" || $(elem).attr("id") == "ctgry"){
+
+                    //     banner[$(elem).attr("id")] = ($(elem).val() instanceof Array) ? [] : $(elem).val();
+                    // }
                     if($(elem).attr("id") == "cntry"){
-                        banner[$(elem).attr("id")] = $("#cntry").val();
+                       var values = $("#cntry").select2('val');
+                        if(values instanceof Array)
+                          banner[$(elem).attr("id")]=values;
+                        else
+                          banner[$(elem).attr("id")] = [];
                     }
-                    if ($(elem).attr("id") == "source" || $(elem).attr("id") == "ctgry" || $(elem).attr("id") == "lnk" || $(elem).attr("id") == "domains") {
+                    if($(elem).attr("id") == "ctgry"){
+                       var values = $("#ctgry").select2('val');
+                        if(values instanceof Array)
+                          banner[$(elem).attr("id")]=values;
+                        else
+                          banner[$(elem).attr("id")] = [];
+                    }
+                    if ($(elem).attr("id") == "source"  || $(elem).attr("id") == "lnk" || $(elem).attr("id") == "domains") {
                         var theVal = $(elem).val() || $(elem).text();
                         banner[$(elem).attr("id")] = [];
                         if (theVal)
@@ -175,7 +190,8 @@
                         banner[$(elem).attr("id")] = $(elem).val() == null ? [] : $(elem).val();
                     }
                     else {
-                        banner[$(elem).attr("id")] = $(elem).val() || $(elem).text();
+                        if($(elem).attr("id") != "cntry" && $(elem).attr("id") != "ctgry")
+                            banner[$(elem).attr("id")] = $(elem).val() || $(elem).text();
                     }
                 });
                 console.log(JSON.stringify(banner, null, "\t"));
@@ -188,7 +204,6 @@
                         $("#status").text("");
                         $("#loader").removeClass("loader");
                     }, 4000);
-
                 });
                 return false;
             }
