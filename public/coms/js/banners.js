@@ -147,16 +147,19 @@
             try {
                 var banner = id ? {"id" : id} : {};
                 $.each($("#addForm").find("input,select").not(':input[type=button], :input[type=submit], :input[type=reset]'), function (idx, elem) {
-                    if ($(elem).attr("id") == "cntry") {
-                        var theVal = $(elem).val() || $(elem).text();
-                        theVal = $.trim(theVal).replace(/,+/g, ",").replace(/^,|,$/g, "").replace(/\s*,\s*/g, ",").split(",");
-                        var countries = [];
-                        $.each(theVal, function (idx, val) {
-                            var cc = mngr.CountryToCode[val];
-                            if (cc) { countries.push(cc); }
-                        });
-                        banner[$(elem).attr("id")] = countries;
-                        return true;
+                    // if ($(elem).attr("id") == "cntry") {
+                    //     var theVal = $(elem).val() || $(elem).text();
+                    //     theVal = $.trim(theVal).replace(/,+/g, ",").replace(/^,|,$/g, "").replace(/\s*,\s*/g, ",").split(",");
+                    //     var countries = [];
+                    //     $.each(theVal, function (idx, val) {
+                    //         var cc = mngr.CountryToCode[val];
+                    //         if (cc) { countries.push(cc); }
+                    //     });
+                    //     banner[$(elem).attr("id")] = countries;
+                    //     return true;
+                    // }
+                    if($(elem).attr("id") == "cntry"){
+                        banner[$(elem).attr("id")] = $("#cntry").val();
                     }
                     if ($(elem).attr("id") == "source" || $(elem).attr("id") == "ctgry" || $(elem).attr("id") == "lnk" || $(elem).attr("id") == "domains") {
                         var theVal = $(elem).val() || $(elem).text();
