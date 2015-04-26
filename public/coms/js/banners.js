@@ -303,7 +303,7 @@
                         banner[$("#feed").attr("id")] = $("#feed").val();
                         banner[$("#cntry").attr('id')] = $("#cntry").select2('val')==null ? [] : $("#cntry").select2('val');
                         banner[$("#source").attr("id")] = [$("#source").val()];
-                        banner[$("#lnk").attr("id")] = $("#lnk").val();
+                        banner[$("#lnk").attr("id")] = [$("#lnk").val()];
                         banner[$("#size").attr("id")] = $("#size").val();
                         banner[$("#domains").attr("id")] = $("#domains").val().split(',');
                         banner[$("#standalone").attr('id')] = $("#standalone").prop('checked');
