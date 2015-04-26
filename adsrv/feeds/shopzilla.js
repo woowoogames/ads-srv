@@ -177,15 +177,15 @@ var shopzilla = function () {
 					obj.desc.short = offer.title || "";
 				    obj.desc.long = offer.description;
 
-					obj.img.small = that.gtImg(offer.images);
+					obj.img.small = frmtr.urlDecode(that.gtImg(offer.images));
 					try{
-						obj.img.big = offer.images.image[2].value;
+						obj.img.big = frmtr.urlDecode(offer.images.image[2].value);
 					}
 					catch(e){
 						obj.img.big = "";
 					}
 
-					obj.lnk = offer.url.value;
+					obj.lnk = frmtr.urlDecode(offer.url.value);
 					obj.prc = offer.price.value.replace(/\s+/g,"");
 
 					obj.store.name = offer.merchantName || "";

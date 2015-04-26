@@ -187,10 +187,10 @@ var kelkoo = function () {
 					obj.desc.short = offer.Title || "";
 					obj.desc.long = offer.Description || "";
 
-					obj.img.small = that.gtImg(offer);
+					obj.img.small = frmtr.urlDecode(that.gtImg(offer));
 					////////////////////////////////////obj.img.big = ?? 
 
-					obj.lnk = offer.Url;
+					obj.lnk = frmtr.urlDecode(offer.Url);
 					obj.prc = frmtr.getPrice(offer.Price.Price, offer.Price.currency);
 
 					obj.store.name = offer.Merchant.Name || "";

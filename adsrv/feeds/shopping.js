@@ -116,10 +116,10 @@ var shopping = function () {
 					obj.desc.short = offer.name || "";
 					////////////// obj.desc.long =  ""; ???
 
-					obj.img.small = this.gtImg("small",offer) || "",
-					obj.img.big = this.gtImg("big",offer) || "",
+					obj.img.small = frmtr.urlDecode(this.gtImg("small",offer) || "");
+					obj.img.big = frmtr.urlDecode(this.gtImg("big",offer) || "");
 
-					obj.lnk = offer.offerURL || "";
+					obj.lnk = frmtr.urlDecode(offer.offerURL || "");
 					obj.prc = frmtr.getPrice(offer.originalPrice.$t, offer.originalPrice.currency);
 
 					obj.store.name = offer.store.name || "";

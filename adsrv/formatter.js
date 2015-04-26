@@ -1,7 +1,10 @@
 ﻿
 var utl = require("./utl"),
 	path = require("path"),
-	baseApi = require("./baseapi");
+	baseApi = require("./baseapi"),
+	Entities = require('html-entities').XmlEntities;
+
+entities = new Entities();
 
 var formatter = {
 	cnfg : {
@@ -65,6 +68,10 @@ var formatter = {
 			
 		}
 
+    },
+
+    urlDecode : function(url){
+    	return entities.decode(url);
     },
 
 	normalize: function (requestParams, offrsArr) {
