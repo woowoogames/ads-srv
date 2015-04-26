@@ -40,3 +40,8 @@
     height: 80px;
     margin: 0 auto;
 }
+
+.modal .modal-body {
+    max-height: 50%;
+    overflow-y: auto;
+}
