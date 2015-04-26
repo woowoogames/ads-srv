@@ -292,7 +292,6 @@
                 },
                 //#region Add Banner
 
-<<<<<<< HEAD
                 "AddBanner": function (id) {
                     try {
                         var banner = id ? {"id" : id} : {};
@@ -360,84 +359,6 @@
                     catch (e) {
 
                     }
-=======
-        "AddBanner": function (id) { 
-            try {
-                var banner = id ? {"id" : id} : {};
-                $.each($("#addForm").find("input,select").not(':input[type=button], :input[type=submit], :input[type=reset]'), function (idx, elem) {
-                    // if ($(elem).attr("id") == "cntry") {
-                    //     var theVal = $(elem).val() || $(elem).text();
-                    //     theVal = $.trim(theVal).replace(/,+/g, ",").replace(/^,|,$/g, "").replace(/\s*,\s*/g, ",").split(",");
-                    //     var countries = [];
-                    //     $.each(theVal, function (idx, val) {
-                    //         var cc = mngr.CountryToCode[val];
-                    //         if (cc) { countries.push(cc); }
-                    //     });
-                    //     banner[$(elem).attr("id")] = countries;
-                    //     return true;
-                    // }
-                    // if($(elem).attr("id") == "cntry" || $(elem).attr("id") == "ctgry"){
-
-                    //     banner[$(elem).attr("id")] = ($(elem).val() instanceof Array) ? [] : $(elem).val();
-                    // }
-                    if($(elem).attr("id") == "cntry"){
-                       var values = $("#cntry").select2('val');
-                        if(values instanceof Array)
-                          banner[$(elem).attr("id")]=values;
-                        else
-                          banner[$(elem).attr("id")] = [];
-                    }
-                    if($(elem).attr("id") == "ctgry"){
-                       var values = $("#ctgry").select2('val');
-                        if(values instanceof Array)
-                          banner[$(elem).attr("id")]=values;
-                        else
-                          banner[$(elem).attr("id")] = [];
-                    }
-                    if ($(elem).attr("id") == "source"  || $(elem).attr("id") == "lnk" || $(elem).attr("id") == "domains") {
-                        var theVal = $(elem).val() || $(elem).text();
-                        banner[$(elem).attr("id")] = [];
-                        if (theVal)
-                            banner[$(elem).attr("id")] = $.trim(theVal).replace(/,+/g, ",").replace(/^,|,$/g, "").replace(/\s*,\s*/g, ",").split(",");
-                        return true;
-                    }
-                    if ($(elem).attr("type") == "checkbox") {
-                        banner[$(elem).attr("id")] = $(elem).is(":checked");
-                    }
-                    if ($(elem).attr("id") == "prdct") {
-                        banner[$(elem).attr("id")] = $(elem).val() == null ? [] : $(elem).val();
-                    }
-                    else {
-                        if($(elem).attr("id") != "cntry" && $(elem).attr("id") != "ctgry")
-                            banner[$(elem).attr("id")] = $(elem).val() || $(elem).text();
-                    }
-                });
-                console.log(JSON.stringify(banner, null, "\t"));
-                $("#status").text("adding banner...");
-                $("#loader").addClass("loader");
-                Services.addBanner(banner, $("#type").val(), function (data) {
-                    mngr.currentId = null;
-                    $("#status").text(data && data.response);
-                    setTimeout(function () {
-                        $("#status").text("");
-                        $("#loader").removeClass("loader");
-                    }, 4000);
-                });
-                return false;
-            }
-            catch (e) {
-
-            }
-        },
-        //#endregion
-        "Validate": function () {
-            var validate = true;
-            $('#addForm').bootstrapValidator({
-                feedbackIcons: {
-                    valid: 'glyphicon glyphicon-ok',
-                    invalid: 'glyphicon glyphicon-remove',
-                    validating: 'glyphicon glyphicon-refresh'
->>>>>>> master
                 },
                 //#endregion
                 "Validate": function () {
