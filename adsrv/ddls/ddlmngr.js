@@ -195,8 +195,8 @@ var ddlsMngr = {
 					obj.desc.long = obj.desc.short = offer.desc || "";
 
 					var k = Math.floor(Math.random() * (offer.source.length));
-					obj.img.big = obj.img.small = ddlsMngr.imgFormat(offer.source[k],prms) || "",
-					obj.lnk = offer.lnk[k] || "",
+					obj.img.big = obj.img.small = frmtr.ddlsFormat(offer.source[k],prms) || "",
+					obj.lnk = frmtr.ddlsFormat(offer.lnk[k],prms) || "",
 
 					obj.sz = ddlsMngr.getSize(rslt[i].size);
 					// place for subid
@@ -212,12 +212,6 @@ var ddlsMngr = {
 		}
 		catch (e) { }
 		return null;
-	},
-
-	imgFormat :function(url,prms){
-		url = url.replace("#prdct#",prms.prdct);
-		url = url.replace("#cntry#",prms.cntry);
-		return url;
 	},
 
 	getSize :function(size){

@@ -236,7 +236,13 @@ var formatter = {
 		}
 		catch (e) { }
 		return "";
-	}
+	},
+
+	ddlsFormat :function(url,prms){
+		url = url.replace("#prdct#",prms.prdct);
+		url = url.replace("#cntry#",prms.cntry);
+		return url;
+	},
 
 }
 
