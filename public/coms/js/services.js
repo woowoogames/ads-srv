@@ -112,13 +112,13 @@ var Services = {
             callback(e);
         }
     },
-    "deleteBanner": function (bnrs,type, callback) {
+    "deleteBanner": function (bnrs, callback) {
         $.ajax({
             url: '/tools/DeleteBanner',
-            data: { "bids": bnrs, "type": type },
+            data: { "bids": bnrs},
             dataType: "json",
             success: function (data) {
-                callback();
+                callback(data);
             },
             fail: function () {
                 callback();

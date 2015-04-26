@@ -11,6 +11,14 @@
 <body>
     <div class="container" style="width:100%;">
         <div class="row">
+<<<<<<< HEAD
+            <div id="addBanner" class="col-md-12">
+                <div class="col-md-12 has-feedback">
+                    <h3>Banner Details</h3>
+                    <button id="addbanner_bt" class="btn btn-primary"> Add New Banner</button>
+                </div>
+<!--                 <div class="col-md-12" id="formContainer" style="border: 1px solid #7b002c; padding: 40px;">
+=======
 
 
             <div id="addBanner" class="col-md-4">
@@ -113,38 +121,38 @@
                 </form>
 
                 <div class="col-md-12" id="formContainer" style="border: 1px solid #7b002c; padding: 40px;">
+>>>>>>> master
                     <h4>Upload File :</h4>
                     <label for="file" style="width:40%;"> Choose file</label>
                     <input class="form-control" type="file" name="file" id="file" />
                     <button id="uploadBtn" class="btn btn-primary" style="margin-top:10px;">Upload</button>
-                </div>
-
+                </div> -->
+                <div id="display" class="col-md-12">
+                <table id="table" data-show-refresh="true" 
+                    data-show-pagination-switch="true" 
+                    data-show-export="true" data-search="true"
+                    data-pagination="true" data-page-size="5" data-page-list="[5, 10, 20, 50, 100, 200]">
+                </table>
             </div>
-            <div id="display" class="col-md-8">
-
-
-                <table id="table" data-show-refresh="true" data-show-toggle="true"
-                data-show-pagination-switch="true" data-show-columns="true"
-                data-show-export="true" data-search="true"
-                data-pagination=" true" data-page-size="5" data-page-list="[5, 10, 20, 50, 100, 200]"></table>
             </div>
-            <div id="disp-container" class="col-md-12">
-                <iframe id="bnr-disp" src="about:blank" scrolling="no" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="300" height="250"></iframe>
-            </div>
+
+        <div id="disp-container" class="col-md-12">
+            <iframe id="bnr-disp" src="about:blank" scrolling="no" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="300" height="250"></iframe>
         </div>
     </div>
+</div>
 
-    <script src="../jQuery/1.10.2/jquery-1.10.2.js"></script>
-    <script src="../jQueryUI/1.11.0/jquery-ui.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/isoLangs.js"></script>
-    <script src="../js/bootstrapValidator.min.js"></script>
+<script src="../jQuery/1.10.2/jquery-1.10.2.js"></script>
+<script src="../jQueryUI/1.11.0/jquery-ui.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/isoLangs.js"></script>
+<script src="../js/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="../js/bootbox.min.js"></script>
+<script src="../js/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="../select2/select2.min.js"></script>
 
-    <script src="../js/bootstrap-table.min.js"></script>
-    <script type="text/javascript" src="../select2/select2.min.js"></script>
 
-
-    <script src="js/services.js"></script>
-    <script src="js/banners.js"></script>
+<script src="js/services.js"></script>
+<script src="js/banners.js"></script>
 </body>
 </html>
