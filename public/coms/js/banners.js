@@ -55,18 +55,14 @@
                         elem.visible  =false;
                     }  
                 });
-
                 $('#table').bootstrapTable("destroy");
                 $("#table").remove();
                 var table = '<table id="table" data-show-refresh="true"'+
-                'data-show-pagination-switch="true"'+
-                'data-show-export="true" data-search="true"'+
-                'data-pagination="true" data-page-size="5" data-page-list="[5, 10, 20, 50, 100, 200]">'+
-                '</table>';
-
+                            'data-show-pagination-switch="true"'+
+                            'data-show-export="true" data-search="true"'+
+                            'data-pagination="true" data-page-size="5" data-page-list="[5, 10, 20, 50, 100, 200]">'+
+                            '</table>';
                 $("#addBanner").append(table);
-
-
                         // var sourceImg = $('#source').val();
                         // var image = '<img src=' + sourceImg +' style=\'height: 160px;width: 200px;\'>';
                         // mngr.image = image;
@@ -78,6 +74,7 @@
                                     label : "Save",
                                     className: "btn-success",
                                     callback : function(){
+                                        $("#spinner").show();
                                         if(mngr.currentId)
                                             return mngr.AddBanner(mngr.currentId);
                                         else
@@ -91,7 +88,9 @@
                                     callback : function(){
                                         bootbox.confirm("Are you sure you want to delete?", function(result) {
                                           if(result){
+                                            $("#spinner").show();
                                             Services.deleteBanner(mngr.currentId,function(data){
+                                                $("#spinner").hide();
                                                 mngr.currentId = null;
                                                 return true;
                                             })
@@ -107,30 +106,9 @@
                             mngr.Dialog("Edit Banner:",bootboxButtonObj);
                             mngr.RenderBanner(result[0]);
                         });
-
                         $("button[name='refresh'").click(function () {
                             mngr.Table();
                         });
-                                            /*$table.bootstrapTable('refresh', {
-                                                silent: true,
-                                                contentType: "application/json",
-                                                dataType: "json",
-                                                url: 'coms.asmx/GetBanners',
-                                                ajaxOptions: {
-                                                    dataFilter: function (data) {
-                                                        return data.d;
-                                                    }
-                                                }
-                                            });*/
-                                            //$('#table').bootstrapTable({
-                                            //    method: 'get',
-                                            //    url: 'coms.asmx/GetBanners',
-                                            //    contentType: "text/html",
-                                            //    dataType: "json",
-                                            //    columns: [
-                                            //        { field: 'id', title: 'ID' }, { field: 'desc', title: 'Description' }, { field: 'size', title: 'Size' }, { field: 'source', title: 'Source' }
-                                            //    ]
-                                            //});
                     });
                 },
 
@@ -153,144 +131,143 @@
                         } catch (e) { }
                     });
 
-                $("#addbanner_bt").click(function(){
-                   var bootboxButtonObj ={
-                    success : {
-                        label : 'Add New Banner',
-                        className: "btn-success",
-                        callback : function(){
-                            if(mngr.currentId)
-                                return mngr.AddBanner(mngr.currentId);
-                            else
-                                return mngr.AddBanner(null);
-                        }
-                    }
-                };
-                mngr.currentId = null;
-                mngr.Dialog("Add New Banner:",bootboxButtonObj);
-                });
-
+                    $("#addbanner_bt").click(function(){
+                       var bootboxButtonObj ={
+                        success : {
+                            label : 'Add New Banner',
+                            className: "btn-success",
+                            callback : function(){
+                                $("#spinner").show();
+                                if(mngr.currentId)
+                                    return mngr.AddBanner(mngr.currentId);
+                                else
+                                    return mngr.AddBanner(null);
+                                }
+                            }
+                        };
+                        mngr.currentId = null;
+                        mngr.Dialog("Add New Banner:",bootboxButtonObj);
+                    });
                 },
 
                 "Dialog": function(Text,buttons){
                     bootbox.dialog({
                         title:Text,
-                        message :   '<script>$("#prdct").select2({'+
-                            'removeOnSelect : true'+
-                            '});'+
-                '$("#cntry").select2({'+
-                 'removeOnSelect : true'+
-                 '});'+
-                '$("#ctgry").select2({'+
-                 'removeOnSelect : true'+
-                 '});' +
-                'for(var geoIndex in mngr.CountryToCode){' +
-                '    $("#cntry").append("<option value=" + mngr.CountryToCode[geoIndex] + ">" + geoIndex +"</option>");' +
-                '}' +
-                'for(var catIndex in mngr.allCategories){' +
-                '    $("#ctgry").append("<option value=" + mngr.allCategories[catIndex] + ">" + mngr.allCategories[catIndex] +"</option>");' +
-                '}' +
-                'for(var prdctIndex in mngr.prdcts.Rows){'+
-                '$("#prdct").append("<option value=" + mngr.prdcts.Rows[prdctIndex].prdcts + ">" +mngr.prdcts.Rows[prdctIndex].mont_prdcts +"</option>");'+
-                '}'+
-                '</script>' +
-                '<div><form id="addForm" class="col-md-12" >' +
-                '<div class="col-md-12 has-feedback">' +
-                '<label class="control-label" for="type">Banner Type:</label>'+
-                '<select class="form-control" id="type" style="margin-bottom:10px;">'+
-                '<option value="ddls">Direct Deal</option>'+
-                '<option value="trnd">Trend Banner</option>'+
-                '</select>'+
-                '</div>' +
-                '<div class="col-md-6 has-feedback">' +
-                '<label class="control-label">Description:</label>' +
-                '<input placeholder="Banner Description" type="text" class="form-control" id="desc" name="desc" />' +
-                '</div>' +
-                '<div class="col-md-6">' +
-                '<label class="control-label" for="rndrTyp">Render Type:</label>' +
-                '<select class="form-control" id="rndrTyp" style="margin-bottom:10px;">' +
-                '<option value="img">Image</option>' +
-                '<option value="iframe">Iframe</option>' +
-                '<option value="flash">Flash</option>' +
-                '<option value="html">HTML</option>' +
-                '<option value="script">Script</option>' +
-                '<option value="htmlpg">Html Page</option>' +
-                '<option value="ntb">New Tab</option>' +
-                '</select>' +
-                '</div>' +
-                '<div class="col-md-6">' +
-                '<label>Categories:</label>' +
-                '<select multiple="multiple" class="select" id="ctgry" style="width:90%"> </select>' +
-                '</div>' +
-                '<div class="col-md-6">' +
-                '<label>Feed:</label>' +
-                '<input placeholder="Feed" type="text" class="form-control" id="feed">' +
-                '</div>' +
-                '<div class="col-md-6">' +
-                '<label class="control-label" for="size">Size:</label>' +
-                '<select class="form-control" id="size">' +
-                '<option value="300x250">300x250</option>' +
-                '<option value="728x90">728x90</option>' +
-                '<option value="160x600">160x600</option>' +
-                '</select>' +
-                '</div>' +
-                '<div class="col-md-6">' +
-                '<label>Domains:</label>'+
-                '<input placeholder="Active Domains" type="text" class="form-control" id="domains" name="domains">'+
-                '</div>'+
-                '<div class="col-md-12">'+
-                '<label>Countries:</label>'+
-                '<select multiple="multiple" class="select" id="cntry" style="width:90%"> </select>'+
-                '</div>'+
-                '<div class="col-md-12">'+
-                '<label data-toggle="tooltip" title="Could be img,html,flash,iframe,script">Source</label>'+
-                '</div>' +
-                '<div class="col-md-8">'+
-                '<input placeholder="Source - the display link" type="text" class="form-control" id="source" name="src">'+
-                '</div>' +
-                '<div class="col-md-4">'+
-                '<a id="popover" class="btn" rel="popover" data-content="" title="Banner Preview">View</a>' +
-                '</div>'+
-                '<div class="col-md-12">'+
-                '<label data-toggle="tooltip" title="*Optional navigation link">Link</label>'+
-                '<input placeholder="Banner Target Url (Click Url) - the navigation link" type="text" class="form-control" id="lnk" name="lnk">'+
-                '</div>'+
-                '<div class="col-md-12">'+
-                '<div class="col-md-12">'+
-                '<input type="checkbox" id="standalone">'+
-                '<label>Stand Alone</label><p class="help-block">*No need to handle the click</p>'+
-                '</div>'+
-                '</div>'+
-                '<div class="col-md-12">'+
-                '<div class="col-md-6">'+
-                '<label>Product:</label>'+
-                '</div>'+
-                '<div class="col-md-6">'+
-                '<select multiple="multiple" class="select" id="prdct" style="width:100%"> </select>'+
-                '</div>'+
-                '</div>'+
-                '<div class="col-md-12"> '+
-                '<div class="col-md-6">'+
-                '<label>subid key</label>'+
-                '</div>'+
-                '<div class="col-md-6">'+
-                '<input style="width: 100%;" placeholder="name" type="text" class="form-control" id="subidkey" name="subidkey">'+
-                '</div>'+
-                '</div>'+
-                '<div class="col-md-12">'+
-                '<div class="col-md-6">'+
-                '<label>subid value</label>'+
-                '</div>'+
-                '<div class="col-md-6">'+
-                '<input style="width: 100%;" placeholder="value" type="text" class="form-control" id="subidval" name="subidval">'+
-                '</div>'+
-                '</div>'+
-                '<div class="col-md-12">'+
-                '<span id="status"></span>'+
-                '</div>'+
-                '</form></div>',
-                buttons:buttons
-                });
+                        message :'<script>$("#prdct").select2({'+
+                                 'removeOnSelect : true'+
+                                 '});'+
+                                 '$("#cntry").select2({'+
+                                  'removeOnSelect : true'+
+                                  '});'+
+                                 '$("#ctgry").select2({'+
+                                  'removeOnSelect : true'+
+                                  '});' +
+                                 'for(var geoIndex in mngr.CountryToCode){' +
+                                 '    $("#cntry").append("<option value=" + mngr.CountryToCode[geoIndex] + ">" + geoIndex +"</option>");' +
+                                 '}' +
+                                 'for(var catIndex in mngr.allCategories){' +
+                                 '    $("#ctgry").append("<option value=" + mngr.allCategories[catIndex] + ">" + mngr.allCategories[catIndex] +"</option>");' +
+                                 '}' +
+                                 'for(var prdctIndex in mngr.prdcts.Rows){'+
+                                 '$("#prdct").append("<option value=" + mngr.prdcts.Rows[prdctIndex].prdcts + ">" +mngr.prdcts.Rows[prdctIndex].mont_prdcts +"</option>");'+
+                                 '}'+
+                                 '</script>' +
+                                 '<div><form id="addForm" class="col-md-12" >' +
+                                 '<div class="col-md-12 has-feedback">' +
+                                 '<label class="control-label" for="type">Banner Type:</label>'+
+                                 '<select class="form-control" id="type" style="margin-bottom:10px;">'+
+                                 '<option value="ddls">Direct Deal</option>'+
+                                 '<option value="trnd">Trend Banner</option>'+
+                                 '</select>'+
+                                 '</div>' +
+                                 '<div class="col-md-6 has-feedback">' +
+                                 '<label class="control-label">Description:</label>' +
+                                 '<input placeholder="Banner Description" type="text" class="form-control" id="desc" name="desc" />' +
+                                 '</div>' +
+                                 '<div class="col-md-6">' +
+                                 '<label class="control-label" for="rndrTyp">Render Type:</label>' +
+                                 '<select class="form-control" id="rndrTyp" style="margin-bottom:10px;">' +
+                                 '<option value="img">Image</option>' +
+                                 '<option value="iframe">Iframe</option>' +
+                                 '<option value="flash">Flash</option>' +
+                                 '<option value="html">HTML</option>' +
+                                 '<option value="script">Script</option>' +
+                                 '<option value="htmlpg">Html Page</option>' +
+                                 '<option value="ntb">New Tab</option>' +
+                                 '</select>' +
+                                 '</div>' +
+                                 '<div class="col-md-6">' +
+                                 '<label>Categories:</label>' +
+                                 '<select multiple="multiple" class="select" id="ctgry" style="width:90%"> </select>' +
+                                 '</div>' +
+                                 '<div class="col-md-6">' +
+                                 '<label>Feed:</label>' +
+                                 '<input placeholder="Feed" type="text" class="form-control" id="feed">' +
+                                 '</div>' +
+                                 '<div class="col-md-6">' +
+                                 '<label class="control-label" for="size">Size:</label>' +
+                                 '<select class="form-control" id="size">' +
+                                 '<option value="300x250">300x250</option>' +
+                                 '<option value="728x90">728x90</option>' +
+                                 '<option value="160x600">160x600</option>' +
+                                 '</select>' +
+                                 '</div>' +
+                                 '<div class="col-md-6">' +
+                                 '<label>Domains:</label>'+
+                                 '<input placeholder="Active Domains" type="text" class="form-control" id="domains" name="domains">'+
+                                 '</div>'+
+                                 '<div class="col-md-12">'+
+                                 '<label>Countries:</label>'+
+                                 '<select multiple="multiple" class="select" id="cntry" style="width:90%"> </select>'+
+                                 '</div>'+
+                                 '<div class="col-md-12">'+
+                                 '<label data-toggle="tooltip" title="Could be img,html,flash,iframe,script">Source</label>'+
+                                 '</div>' +
+                                 '<div class="col-md-8">'+
+                                 '<input placeholder="Source - the display link" type="text" class="form-control" id="source" name="src">'+
+                                 '</div>' +
+                                 '<div class="col-md-4">'+
+                                 '<a id="popover" class="btn" rel="popover" data-content="" title="Banner Preview">View</a>' +
+                                 '</div>'+
+                                 '<div class="col-md-12">'+
+                                 '<label data-toggle="tooltip" title="*Optional navigation link">Link</label>'+
+                                 '<input placeholder="Banner Target Url (Click Url) - the navigation link" type="text" class="form-control" id="lnk" name="lnk">'+
+                                 '</div>'+
+                                 '<div class="col-md-12">'+
+                                 '<div class="col-md-12">'+
+                                 '<input type="checkbox" id="standalone">'+
+                                 '<label>Stand Alone</label><p class="help-block">*No need to handle the click</p>'+
+                                 '</div>'+
+                                 '</div>'+
+                                 '<div class="col-md-12">'+
+                                 '<div class="col-md-6">'+
+                                 '<label>Product:</label>'+
+                                 '</div>'+
+                                 '<div class="col-md-6">'+
+                                 '<select multiple="multiple" class="select" id="prdct" style="width:100%"> </select>'+
+                                 '</div>'+
+                                 '</div>'+
+                                 '<div class="col-md-12"> '+
+                                 '<div class="col-md-6">'+
+                                 '<label>subid key</label>'+
+                                 '</div>'+
+                                 '<div class="col-md-6">'+
+                                 '<input style="width: 100%;" placeholder="name" type="text" class="form-control" id="subidkey" name="subidkey">'+
+                                 '</div>'+
+                                 '</div>'+
+                                 '<div class="col-md-12">'+
+                                 '<div class="col-md-6">'+
+                                 '<label>subid value</label>'+
+                                 '</div>'+
+                                 '<div class="col-md-6">'+
+                                 '<input style="width: 100%;" placeholder="value" type="text" class="form-control" id="subidval" name="subidval">'+
+                                 '</div>'+
+                                 '</div>'+
+                                 '<div class="col-md-12">'+
+                                 '</div>'+
+                                 '</form></div>',
+                            buttons:buttons
+                            });
                 },
                 //#region Add Banner
 
@@ -313,49 +290,11 @@
                         banner[$("#subidval").attr("id")] = $("#subidval").val();
                         console.log(banner);
                         mngr.currentId = null;
-
-                        // $.each($("#addForm").find("input,select").not(':input[type=button], :input[type=submit], :input[type=reset]'), function (idx, elem) {
-                        //     if ($(elem).attr("id") == "cntry") {
-                        //         var theVal = $(elem).val() || $(elem).text();
-                        //         theVal = $.trim(theVal).replace(/,+/g, ",").replace(/^,|,$/g, "").replace(/\s*,\s*/g, ",").split(",");
-                        //         var countries = [];
-                        //         $.each(theVal, function (idx, val) {
-                        //             var cc = mngr.CountryToCode[val];
-                        //             if (cc) { countries.push(cc); }
-                        //         });
-                        //         banner[$(elem).attr("id")] = countries;
-                        //         return true;
-                        //     }
-                        //     if ($(elem).attr("id") == "source" || $(elem).attr("id") == "ctgry" || $(elem).attr("id") == "lnk" || $(elem).attr("id") == "domains") {
-                        //         var theVal = $(elem).val() || $(elem).text();
-                        //         banner[$(elem).attr("id")] = [];
-                        //         if (theVal)
-                        //             banner[$(elem).attr("id")] = $.trim(theVal).replace(/,+/g, ",").replace(/^,|,$/g, "").replace(/\s*,\s*/g, ",").split(",");
-                        //         return true;
-                        //     }
-                        //     if ($(elem).attr("type") == "checkbox") {
-                        //         banner[$(elem).attr("id")] = $(elem).is(":checked");
-                        //     }
-                        //     if ($(elem).attr("id") == "prdct") {
-                        //         banner[$(elem).attr("id")] = $(elem).val() == null ? [] : $(elem).val();
-                        //     }
-                        //     else {
-                        //         banner[$(elem).attr("id")] = $(elem).val() || $(elem).text();
-                        //     }
-                        // });
-                        // console.log(JSON.stringify(banner, null, "\t"));
-                        // // $("#status").text("adding banner...");
-                        // $("#loader").addClass("loader");z
                         Services.addBanner(banner, "ddls", function (data) {
+                            $("#spinner").hide();
                             mngr.currentId = null;
-                            return false;
-                            // $("#status").text(data && data.response);
-                            // setTimeout(function () {
-                            //     $("#status").text("");
-                            //     $("#loader").removeClass("loader");
-                            // }, 4000);
-                    });
-                        return true;
+                            return true;
+                        });
                     }
                     catch (e) {
 
