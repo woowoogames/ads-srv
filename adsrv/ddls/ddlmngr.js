@@ -144,7 +144,7 @@ var ddlsMngr = {
 			var size = 3-offers.length;
 			size = Math.min(size,RandomDddls.length);
 			for(var i=0;i<size ;i++){
-				var randInd = Math.floor(Math.random()*RandomDddls.length-i);
+				var randInd = Math.floor(Math.random()*(RandomDddls.length-i));
 				randOffers.push(RandomDddls[randInd]);
 				RandomDddls[randInd] = RandomDddls[RandomDddls.length-1-i];
 			}
