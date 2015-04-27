@@ -45,6 +45,7 @@
             $("#subidkey").val(banner.subidkey);
             $("#subidval").val(banner.subidval);
             $("#type").val(banner.type);
+            $("#lnk").val(banner.lnk);
         },
         "Table": function () {
             Services.GetBanners(function (banners) {
