@@ -1,10 +1,10 @@
 
 var baseApi = require("../baseapi"),
-path = require("path"),
-utl = require("../utl"),
-fs = require("fs"),
-frmtr = require("../formatter");
-
+	path = require("path"),
+	utl = require("../utl"),
+	fs = require("fs"),
+	frmtr = require("../formatter"),
+	_ = require("underscore");
 
 
 var fsWatchHandl = 0;
@@ -143,11 +143,12 @@ var ddlsMngr = {
 			var randOffers = [];
 			var size = 3-offers.length;
 			size = Math.min(size,RandomDddls.length);
-			for(var i=0;i<size ;i++){
-				var randInd = Math.floor(Math.random()*(RandomDddls.length-i));
-				randOffers.push(RandomDddls[randInd]);
-				RandomDddls[randInd] = RandomDddls[RandomDddls.length-1-i];
-			}
+			randOffers = _.sample(RandomDddls,size);
+			// for(var i=0;i<size ;i++){
+			// 	var randInd = Math.floor(Math.random()*(RandomDddls.length-i));
+			// 	randOffers.push(RandomDddls[randInd]);
+			// 	RandomDddls[randInd] = RandomDddls[RandomDddls.length-1-i];
+			// }
 			return offers.concat(randOffers);
 		}
 	},
