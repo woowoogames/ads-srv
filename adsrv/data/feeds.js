@@ -6,6 +6,7 @@
     "requireSearchTerm": true,
     "active": false,
     "isSerp": false,
+    "https": false,
     "handler": "./feeds/adworldmedia",
     "coverage": {
         "cntry": {
@@ -24,6 +25,7 @@
     "requireSearchTerm": true,
     "active": false,
     "isSerp": true,
+    "https": false,
     "handler": "./feeds/admarketplace",
     "coverage": {
         "cntry": {
@@ -42,6 +44,7 @@
     "requireSearchTerm": false,
     "active": false,
     "isSerp": false,
+    "https": false,
     "handler": "./raw/matomy",
     "coverage": {
         "cntry": {
@@ -60,6 +63,7 @@
     "requireSearchTerm": true,
     "active": true,
     "isSerp": false,
+    "https": false,
     "handler": "./feeds/kelkoo",
     "coverage": {
         "cntry": {
@@ -78,6 +82,7 @@
     "requireSearchTerm": true,
     "active": true,
     "isSerp": false,
+    "https": false,
     "handler": "./feeds/shopzilla",
     "coverage": {
         "cntry": {
@@ -97,6 +102,7 @@
     "requireSearchTerm": true,
     "active": false,
     "isSerp": false,
+    "https": false,
     "handler": "./feeds/pricegong",
     "coverage": {
         "cntry": {
@@ -115,6 +121,7 @@
     "requireSearchTerm": true,
     "active": true,
     "isSerp": false,
+    "https": true,
     "handler": "./feeds/pricegrabber",
     "coverage": {
         "cntry": {
@@ -133,6 +140,7 @@
     "requireSearchTerm": true,
     "active": true,
     "isSerp": false,
+    "https": false,
     "handler": "./feeds/shopping",
     "coverage": {
         "cntry": {
@@ -151,6 +159,7 @@
     "requireSearchTerm": true,
     "active": true,
     "isSerp": false,
+    "https": false,
     "handler": "./feeds/firstoffer",
     "coverage": {
         "cntry": {
@@ -169,6 +178,7 @@
     "requireSearchTerm": false,
     "active": true,
     "isSerp": false,
+    "https": false,
     "handler": "./ddls/ddlmngr",
     "coverage": {
         "cntry": {
@@ -187,6 +197,7 @@
     "requireSearchTerm": false,
     "active": true,
     "isSerp": false,
+    "https": false,
     "handler": "./trnds/trndmngr",
     "coverage": {
         "cntry": {
@@ -205,6 +216,7 @@
     "requireSearchTerm":true,
     "active":true,
     "isSerp": false,
+    "https": false,
     "handler":"./feeds/buscape",
     "coverage":{  
         "cntry":{  
@@ -225,6 +237,7 @@
     "requireSearchTerm":false,
     "active":false,
     "isSerp": false,
+    "https": false,
     "handler":"./raw/buzzcity",
     "coverage":{  
        "cntry":{  

@@ -39,30 +39,36 @@ var feedsMngr = require('./feedsmngr'),
 			// });
 			if(requestParams){
 				// list of feeds to work with according to the request params
-				var feeds = feedsMngr.getFeeds(requestParams);
+				var feeds = feedsMngr.getFeeds(requestParams) ;
 
-				// choose the best feeds to work with, sort by priority
-				var sFeeds = lgcMngr.sortFeeds(requestParams, feeds);
+				if(feeds.length>0){
+					// choose the best feeds to work with, sort by priority
+					var sFeeds = lgcMngr.sortFeeds(requestParams, feeds);
+					
+					// Ask the feeds for offers, format and choose the best offers, respond the client 
+					var om = new offersMngr.offersMngr(requestParams, sFeeds, function (error, offers) {
 
-				// Ask the feeds for offers, format and choose the best offers, respond the client 
-				var om = new offersMngr.offersMngr(requestParams, sFeeds, function (error, offers) {
+						response.header("Cache-Control", "no-cache, no-store, must-revalidate");
+						response.header("Pragma", "no-cache");
+						response.header("Expires", 0);
 
-					response.header("Cache-Control", "no-cache, no-store, must-revalidate");
-					response.header("Pragma", "no-cache");
-					response.header("Expires", 0);
+						var resData = (error ? { "error": error } : offers);
+						resData = frmtr.normalize(requestParams, resData); // add env params to each offer (cntry, ctgry, prdct etc.)
+						resData = lgcMngr.chooseOffers(requestParams, resData); // choose the best offers to return to the client
 
-					var resData = (error ? { "error": error } : offers);
-					resData = frmtr.normalize(requestParams, resData); // add env params to each offer (cntry, ctgry, prdct etc.)
-					resData = lgcMngr.chooseOffers(requestParams, resData); // choose the best offers to return to the client
-
-					if (requestParams.callback) {
-						response.jsonp(resData);
-					}
-					else {
-						response.json(resData);
-					}
-				});
-				om.getOffers();
+						if (requestParams.callback) {
+							response.jsonp(resData);
+						}
+						else {
+							response.json(resData);
+						}
+					});
+					om.getOffers();					
+				}
+				else{
+					utl.log("[main.js][processRequest] - no feeds available");
+					response.jsonp({status : "no feeds available"});
+				}
 			}//invalid request
 			else{
 				utl.log("[main.js][processRequest] - invalid request");
