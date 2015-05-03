@@ -117,6 +117,14 @@ var feedsMngr = {
 			else
 				return _.contains(feed.coverage.prdct.values,requestParams.prdct);
 		});
+
+		if(requestParams.type == "https"){
+			activeFeeds = _.filter(activeFeeds,function(feed){
+				if(feed.https)
+					return true;
+			});
+		}
+
         // console.log("feedsMngr::activeFeeds=[" + activeFeeds + "]");
 		return activeFeeds;
 	}
