@@ -208,7 +208,7 @@ var formatter = {
 		if(typeof requestObject.type === 'undefined')
 			return true;
 		else{
-			if(requestObject.type == "serp" || requestObject.type == "ddls" || requestObject.type == "trnds")
+			if(requestObject.type == "serp" || requestObject.type == "ddls" || requestObject.type == "trnds" || requestObject.type == "https")
 				return true;
 			else
 				return false;
