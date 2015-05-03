@@ -179,8 +179,14 @@ var pricegrabber = function () {
 	};
 
 	this.getURL = function(pid,key,prms){
+		var url;
 		var st = prms.st.replace(" ","+");
-		var url = "http://sws.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&q=" + st + "&limit=1&offers=1&offer_limit=1&mode=" + this.fixProduct(prms.prdct);
+		if(typeof prms.type !== 'undefined' && prms.type == 'https'){
+			url = "http://sws.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&q=" + st + "&limit=1&offers=1&offer_limit=1&mode=" + this.fixProduct(prms.prdct) + "&secured_images=1";
+		}
+		else{
+			url = "http://sws.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&q=" + st + "&limit=1&offers=1&offer_limit=1&mode=" + this.fixProduct(prms.prdct);
+		}
 		return url;
 	};
 

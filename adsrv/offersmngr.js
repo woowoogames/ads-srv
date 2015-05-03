@@ -69,7 +69,11 @@ var offersMngr = function (requestParams, feeds, finalCallback) {
             if(typeof that.mPrms.qa !== 'undefined'){
                 this.qaClear();
             }
-            if(this.mPrms.type === 'ddls'){ // only ddls
+            else if(typeof that.mPrms.type !== 'undefined' && that.mPrms.type === 'https'){
+                this.mPrcsCount = 1;
+                this.getAsyncOffers();
+            }
+            else if(this.mPrms.type === 'ddls'){ // only ddls
                 this.mPrcsCount = 1;
                 this.getDdls();    
             }

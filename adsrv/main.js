@@ -27,7 +27,6 @@ var feedsMngr = require('./feedsmngr'),
 	*******************************************************************************************************/
 
 	processRequest: function (request, response) {
-		
 		try {
 			utl.log("[main.js][processRequest] url - " + request.url);
 
@@ -118,6 +117,9 @@ var feedsMngr = require('./feedsmngr'),
 			if(typeof request.params.type !== 'undefined' && typeof request.params.qa !== 'undefined'){
 				requestObject.type = request.params.type;
 				requestObject.qa = request.params.qa;
+			}
+			else if(typeof request.params.type !== 'undefined' && request.params.type == 'https'){
+				requestObject.type = request.params.type;
 			}
 			else if(typeof request.params.qa === 'undefined' && typeof request.params.type !== 'undefined' && request.params.type!== 'serp' && request.params.type!== 'ddls' && request.params.type!== 'trnds'){
 				requestObject.qa = request.params.type;
