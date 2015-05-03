@@ -67,7 +67,7 @@ var feedsMngr = require('./feedsmngr'),
 				}
 				else{
 					utl.log("[main.js][processRequest] - no feeds available");
-					response.jsonp({status : "no feeds available"});
+					response.jsonp([]);
 				}
 			}//invalid request
 			else{
