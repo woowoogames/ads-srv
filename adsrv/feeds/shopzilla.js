@@ -177,9 +177,9 @@ var shopzilla = function () {
 					obj.desc.short = offer.title || "";
 				    obj.desc.long = offer.description;
 
-					obj.img.small = frmtr.urlDecode(that.gtImg(offer.images));
+					obj.img.small =  this.httpsPrefixCheck(frmtr.urlDecode(that.gtImg(offer.images)));
 					try{
-						obj.img.big = frmtr.urlDecode(offer.images.image[2].value);
+						obj.img.big =  this.httpsPrefixCheck(frmtr.urlDecode(offer.images.image[2].value));
 					}
 					catch(e){
 						obj.img.big = "";
@@ -212,6 +212,17 @@ var shopzilla = function () {
 		return null;
 
     };
+
+    this.httpsPrefixCheck = function(url){
+		if(typeof that.mPrms.type !== 'undefined' && that.mPrms.type == 'https'){
+			var newUrl = url.substring(url.indexOf("?sq"));
+			var httpsPrefix = "https://d.bizrate.com/resize";
+			return httpsPrefix + newUrl;
+		}
+		else{
+			return url;
+		}
+	};
 
 	this.gtPlcmntId = function () {
 		try{

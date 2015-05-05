@@ -82,7 +82,7 @@
     "requireSearchTerm": true,
     "active": true,
     "isSerp": false,
-    "https": false,
+    "https": true,
     "handler": "./feeds/shopzilla",
     "coverage": {
         "cntry": {
