@@ -244,6 +244,10 @@ var formatter = {
 		return url;
 	},
 
+	ctrgyNameFormat : function(ctgryName){
+		return ctgryName.toLowerCase().replace(/#| |,|&/g, '');
+	}
+
 }
 
 module.exports = formatter;

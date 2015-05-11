@@ -57,6 +57,7 @@ var ddlsMngr = {
 	getOffers : function (prms) {
 		ddlsMngr.prms = prms;
 		try {
+			prms.ctgry = frmtr.ctrgyNameFormat(prms.ctgry);
 			if (!ddlsMngr.mDdlsMapIdx || Object.keys(ddlsMngr.mDdlsMap).length == 0) {
 				utl.log("[ddlmngr.js][getOffers] - error - no map");
 				return [];
@@ -65,6 +66,11 @@ var ddlsMngr = {
 			var cntry = ddlsMngr.mDdlsMapIdx[prms.cntry];
 			if(!cntry){
 				cntry = ddlsMngr.mDdlsMapIdx["int"];
+			}
+			if(typeof ddlsMngr.mDdlsMapIdx['int'] !== 'undefined'){
+				if(typeof ddlsMngr.mDdlsMapIdx['int'][prms.ctgry] !== 'undefined'){
+					cntry[prms.ctgry] = ddlsMngr.mDdlsMapIdx['int'][prms.ctgry];
+				}
 			}
 
 			if(!cntry){
@@ -245,6 +251,7 @@ var ddlsMngr = {
 
 					for (var j = 0 ; j < ctgrs.length ; j++) {
 						var crntCtgry = ctgrs[j];
+						crntCtgry = frmtr.ctrgyNameFormat(crntCtgry);
 						if (!idxMap[crntCntry][crntCtgry]) {
 							idxMap[crntCntry][crntCtgry] = [];
 						}

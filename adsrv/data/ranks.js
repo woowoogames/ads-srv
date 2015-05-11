@@ -3,7 +3,7 @@
         "buscape": 1,
         "matomy": 1
     },
-    "at":{
+    "at": {
         "matomy": 1
     },
     "au": {
@@ -35,14 +35,17 @@
     },
     "fr": {
         "kelkoo": 3,
-        "matomy": 1,
-        "shopzilla": 1
+        "matomy": 1
     },
-    "hu":{
+    "hu": {
         "matomy": 1
     },
     "in": {
         "matomy": 1
+    },
+    "int": {
+        "ddls": 1,
+        "trnds": 2
     },
     "it": {
         "kelkoo": 2
@@ -54,11 +57,11 @@
     "nl": {
         "kelkoo": 2
     },
-    "pl": {
-        "matomy": 1
-    },
     "pe": {
         "buscape": 1,
+        "matomy": 1
+    },
+    "pl": {
         "matomy": 1
     },
     "ru": {
@@ -68,21 +71,16 @@
     "se": {
         "kelkoo": 1
     },
-    "ve": {
-        "buscape": 1,
-        "matomy": 1
-    },
     "uk": {
         "ebay": 2,
         "matomy": 1,
         "shopzilla": 2
     },
     "us": {
-        "pricegrabber":1
+        "pricegrabber": 1
     },
-
-    "int" :{
-        "ddls" : 1,
-        "trnds" : 2
+    "ve": {
+        "buscape": 1,
+        "matomy": 1
     }
 }
