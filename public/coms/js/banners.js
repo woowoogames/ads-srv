@@ -163,13 +163,13 @@
                                   'removeOnSelect : true'+
                                   '});' +
                                  'for(var geoIndex in mngr.CountryToCode){' +
-                                 '    $("#cntry").append("<option value=" + mngr.CountryToCode[geoIndex] + ">" + geoIndex +"</option>");' +
+                                 '    $("#cntry").append("<option value=\'" + mngr.CountryToCode[geoIndex] + "\' >" + geoIndex +"</option>");' +
                                  '}' +
                                  'for(var catIndex in mngr.allCategories){' +
-                                 '    $("#ctgry").append("<option value=" + mngr.allCategories[catIndex] + ">" + mngr.allCategories[catIndex] +"</option>");' +
+                                 '    $("#ctgry").append("<option value=\'" + mngr.allCategories[catIndex] + "\'>" + mngr.allCategories[catIndex] +"</option>");' +
                                  '}' +
                                  'for(var prdctIndex in mngr.prdcts.Rows){'+
-                                 '$("#prdct").append("<option value=" + mngr.prdcts.Rows[prdctIndex].prdcts + ">" +mngr.prdcts.Rows[prdctIndex].mont_prdcts +"</option>");'+
+                                 '$("#prdct").append("<option value=\'" + mngr.prdcts.Rows[prdctIndex].prdcts + "\' >" +mngr.prdcts.Rows[prdctIndex].mont_prdcts +"</option>");'+
                                  '}'+
                                  '</script>' +
                                  '<div><form id="addForm" class="col-md-12" >' +
@@ -290,11 +290,11 @@
                         banner[$("#subidval").attr("id")] = $("#subidval").val();
                         console.log(banner);
                         mngr.currentId = null;
-                        Services.addBanner(banner, "ddls", function (data) {
-                            $("#spinner").hide();
-                            mngr.currentId = null;
-                            return true;
-                        });
+                        // Services.addBanner(banner, "ddls", function (data) {
+                        //     $("#spinner").hide();
+                        //     mngr.currentId = null;
+                        //     return true;
+                        // });
                     }
                     catch (e) {
 
