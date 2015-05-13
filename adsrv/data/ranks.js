@@ -1,4 +1,5 @@
-﻿{
+﻿
+{
     "ar": {
         "buscape": 1,
         "matomy": 1
