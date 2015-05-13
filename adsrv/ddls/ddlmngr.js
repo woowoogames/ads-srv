@@ -103,9 +103,7 @@ var ddlsMngr = {
 					}
 				}
 			}
-			else{
-				offers = ddlsMngr.smartConcat(offers,nonCategories);
-			}
+			offers = ddlsMngr.smartConcat(offers,nonCategories);
 
 			offers = ddlsMngr.filterByProduct(offers,prms);
 
