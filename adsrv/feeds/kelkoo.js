@@ -96,7 +96,6 @@ var kelkoo = function () {
 		try {
 			var geoObject = this.config.geosMap[this.mPrms.cntry];
 			var signedURL = this.signURL(geoObject);
-
 			baseApi.httpGetTimeout(signedURL, function (error, response, body) {
 				try {
 					var data, selectProducts, selectedOffers;
@@ -135,11 +134,14 @@ var kelkoo = function () {
 				URL_ts = "timestamp",
 				URL_partner = "aid";
                 
-                
 			var time = Math.floor(Date.now() / 1000);
-                
+            var path = this.config.path;
+
+            if(typeof that.mPrms.type !== 'undefined' && that.mPrms.type == 'https')
+            	path += "&imagesOverSsl=1";
+
 			// format URL
-			var URLtmp = this.config.path + "&" + URL_partner + "=" + geoObject.prtnrId + "&" + URL_ts + "=" + time;
+			var URLtmp = path + "&" + URL_partner + "=" + geoObject.prtnrId + "&" + URL_ts + "=" + time;
                 
 			// to md5
 			var token = crypto.createHash('md5').update(URLtmp + geoObject.affltKey).digest("base64").replace(/\+/g, '.').replace(/\//g, '_').replace(/=/g, '-');
