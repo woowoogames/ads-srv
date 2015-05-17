@@ -288,13 +288,13 @@
                         banner[$("#prdct").attr('id')] = $("#prdct").select2('val')==null ? [] : $("#prdct").select2('val');
                         banner[$("#subidkey").attr("id")] = $("#subidkey").val();
                         banner[$("#subidval").attr("id")] = $("#subidval").val();
-                        console.log(banner);
+                        //console.log(banner);
                         mngr.currentId = null;
-                        // Services.addBanner(banner, "ddls", function (data) {
-                        //     $("#spinner").hide();
-                        //     mngr.currentId = null;
-                        //     return true;
-                        // });
+                        Services.addBanner(banner, "ddls", function (data) {
+                            $("#spinner").hide();
+                            mngr.currentId = null;
+                            return true;
+                        });
                     }
                     catch (e) {
 
