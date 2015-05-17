@@ -95,7 +95,7 @@
         "requireSearchTerm": true,
         "active": true,
         "isSerp": false,
-        "https": false,
+        "https": true,
         "handler": "./feeds/kelkoo",
         "coverage": {
             "cntry": {
