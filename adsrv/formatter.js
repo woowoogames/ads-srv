@@ -174,6 +174,8 @@ var formatter = {
 	},
 
 	validIp : function(ip){
+		if(ip=="")
+			return true;
 		var ipPattern = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]).){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/g;
 		return ipPattern.test(ip);
 	},
