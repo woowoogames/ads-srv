@@ -13,11 +13,12 @@ $(document).ready(function () {
 
 		$("#spinner").show();
 		
-		var host = "http://204.145.74.4/priceGrabberTestPage?v=1&search_kw=" + st + "&cntry=" + cntry;
+		
 		var st = $("#st").val();
 		var cntry = $("#slctCntry").val();
+		var host = "http://204.145.74.4/priceGrabberTestPage?v=1&search_kw=" + st + "&cntry=" + cntry;
 		// var host = "http://localhost:3000/priceGrabberTestPage?v=1&search_kw=" + st + "&cntry=" + cntry;
-
+		ui
 		$.ajax({
 			url: host,
 			contentType: "application/json",
