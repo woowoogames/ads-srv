@@ -1,4 +1,6 @@
-$(document).ready(function(){
+
+
+$(document).ready(function () {
 
 	String.prototype.trimLeft = function(charlist) {
 		if (charlist === undefined)
@@ -7,13 +9,17 @@ $(document).ready(function(){
 		return this.replace(new RegExp("^[-, ]+"), "");
 	};
 
-	$("#bt_submit").click(function(){
+	$("#bt_submit").click(function () {
+
 		$("#spinner").show();
-		//var host = "http://localhost"
-		var host = "http://204.145.74.4"
-		var st  = $("#st").val();
+		
+		var host = "http://204.145.74.4/priceGrabberTestPage?v=1&search_kw=" + st + "&cntry=" + cntry;
+		var st = $("#st").val();
+		var cntry = $("#slctCntry").val();
+		// var host = "http://localhost:3000/priceGrabberTestPage?v=1&search_kw=" + st + "&cntry=" + cntry;
+
 		$.ajax({
-			url : host + '/priceGrabberTestPage?search_kw=' + st,
+			url: host,
 			contentType: "application/json",
 			dataType: 'json',
 			success: function(data){
@@ -23,6 +29,10 @@ $(document).ready(function(){
 						$('#remove').remove();
 					var index = 0;
 					var htm;
+
+					var price = data.document.product.offer.price;
+					price = price.replace("&amp;pound;", "&pound;").replace("CAD$", "$");
+
 					if(typeof data.document.product.offer.retailer_logo === 'undefined'){
 						htm = "<div id='remove' style='text-decoration:none;position: fixed;bottom: -50px;left: 0px;width:300px;height:300px;background:url(\"http://204.145.74.4/images/t2.png\");background-repeat:no-repeat;''>" +
 						"<div style='width:152px;height:300px;float:left;'>" +
@@ -38,7 +48,7 @@ $(document).ready(function(){
 						"<div style='width:100%;height:100%;float:left;'>" +
 						"<div id='txt1' style='padding-top: 8px;/* padding-left:5px; */color: #ffffff;font-family:arial,sans-serif;font-size: 20px;/* height:14px; */overflow:hidden;width:145px;text-align:center'>"+ data.document.product.catzero.$t + " - " + data.document.product.manufacturer +"</div>" +
 						"<div id='txt3' style='padding-left:12px;padding-top: 8px;color:#f9f9f9;font-family:arial,sans-serif;font-size:65%;height:168px;overflow:hidden;width:128px;'>" + getFixedText(decodeHTMLEntities(data.document.product.title_short).trimLeft()) +
-						"<div id='txt2' style='padding-left:5px;color: #ffffff;font-family:arial,sans-serif;font-size:24px;height:25px;overflow:hidden;width: 168px;margin-top: 9px;margin-left: 16px;text-align: left;'>" + data.document.product.offer.price + "</div></div>" +
+						"<div id='txt2' style='padding-left:5px;color: #ffffff;font-family:arial,sans-serif;font-size:24px;height:25px;overflow:hidden;width: 168px;margin-top: 9px;margin-left: 16px;text-align: left;'>" + price + "</div></div>" +
 						"</div>" +
 						"</div></a>" +
 						"</div>";
@@ -58,7 +68,7 @@ $(document).ready(function(){
 						"<div style='width:100%;height:100%;float:left;'>" +
 						"<div id='txt1' style='padding-top: 8px;/* padding-left:5px; */color: #ffffff;font-family:arial,sans-serif;font-size: 20px;/* height:14px; */overflow:hidden;width:145px;text-align:center'>"+ data.document.product.catzero.$t + " - " + data.document.product.manufacturer +"</div>" +
 						"<div id='txt3' style='padding-left:12px;padding-top: 8px;color:#f9f9f9;font-family:arial,sans-serif;font-size:65%;height:168px;overflow:hidden;width:128px;'>" + getFixedText(decodeHTMLEntities(data.document.product.title_short).trimLeft()) +
-						"<div id='txt2' style='padding-left:5px;color: #ffffff;font-family:arial,sans-serif;font-size:24px;height:25px;overflow:hidden;width: 168px;margin-top: 9px;margin-left: 16px;text-align: left;'>" + data.document.product.offer.price + "</div></div>" +
+						"<div id='txt2' style='padding-left:5px;color: #ffffff;font-family:arial,sans-serif;font-size:24px;height:25px;overflow:hidden;width: 168px;margin-top: 9px;margin-left: 16px;text-align: left;'>" + price + "</div></div>" +
 						"</div>" +
 						"</div></a>" +
 						"</div>";
