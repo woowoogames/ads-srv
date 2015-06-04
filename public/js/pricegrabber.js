@@ -17,8 +17,12 @@ $(document).ready(function () {
 		var st = $("#st").val();
 		var cntry = $("#slctCntry").val();
 		// var host = "http://localhost:3000/priceGrabberTestPage?v=1&search_kw=" + st + "&cntry=" + cntry;
+
+
 		var host = "http://204.145.74.4/priceGrabberTestPage?v=1&search_kw=" + st + "&cntry=" + cntry;
 
+		console.log("------------------");
+		console.log(host);
 
 		$.ajax({
 			url: host,
