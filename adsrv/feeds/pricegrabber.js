@@ -19,7 +19,8 @@ var pricegrabber = function () {
 	this.mPrms = null;
 
 	this.cnfg = {
-		ip : "81.218.191.12", //"204.145.74.4",
+		// ip: "81.218.191.12",
+		ip: "204.145.74.4",
 		private_key : "",
 		pid : "",
 		version : "2.55"
