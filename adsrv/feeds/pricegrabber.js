@@ -18,19 +18,30 @@ var pricegrabber = function () {
 	this.mClbk = null;
 	this.mPrms = null;
 
+	this.cnfg = {
+		ip : "81.218.191.12", //"204.145.74.4",
+		private_key : "",
+		pid : "",
+		version : "2.55"
+	};
+
 	var that = this;
 	this.getOffers = function (prms, clbk) {
 		this.mPrms = prms;
 		this.mClbk = clbk;
 		//var ip = "81.218.191.12"; //montiera ip
 		//var ip = "69.65.43.205";//overplay us ip
-		var ip = "204.145.74.4";//verticalAdServer ip
+		//verticalAdServer ip
 		//var ip = "77.125.153.46";//local ip
-		var currentKey = this.getCurrentKey("87e713ad792","3234","2.55",ip);
+
+		this.setConfig(prms.cntry);
+		var currentKey = this.getCurrentKey();
+
 		var keySHA1 = sha1(currentKey);
 		var token = crypto.randomBytes(8).toString('hex');
 		var finalKey = keySHA1.substring(0,18) + token + keySHA1.substring(18);
-		var url = this.getURL("3234",finalKey,prms);
+		var url = this.getURL(finalKey,prms);
+		
 		try {
 			baseApi.httpGetTimeout(url,function(err, res, body){
 				try{
@@ -62,6 +73,25 @@ var pricegrabber = function () {
 			that.mClbk(1, e);
 		}
 	};
+
+	this.setConfig = function (cntry) {
+		
+		switch (cntry) {
+			case "uk":
+				this.cnfg.private_key = "f87d0b06d42";
+				this.cnfg.pid = "3385";
+				break;
+			case "ca":
+				this.cnfg.private_key = "34d2e646282";
+				this.cnfg.pid = "3386";
+				break;
+			default: // us
+				this.cnfg.private_key = "87e713ad792";
+				this.cnfg.pid = "3234";
+				break;
+		}
+
+	},
 
 	this.saftyCheck = function(json){
 		if(typeof json !== 'undefined'){
@@ -167,25 +197,21 @@ var pricegrabber = function () {
 	    return text;
 	}
 
-	this.getCurrentKey = function(private_key,pid,version,ip){
+	this.getCurrentKey = function (private_key, pid, version, ip) {
 		var date = new Date();
 		date = date.toISOString();
 		var year = date.substring(0,4);
 		var month = date.substring(5,7);
 		var day = date.substring(8,10);
 		var hour = date.substring(11,13);
-		var currentKey = private_key + "," + year + "," + month + "," + day + "," + hour + "," + pid + "," + version + "," + ip;
+		var currentKey = this.cnfg.private_key + "," + year + "," + month + "," + day + "," + hour + "," + this.cnfg.pid + "," + this.cnfg.version + "," + this.cnfg.ip;
 		return currentKey;
 	};
 
-	this.getURL = function(pid,key,prms){
-		var url;
-		var st = prms.st.replace(" ","+");
+	this.getURL = function(key,prms){
+		var url = "http://sws.pricegrabber.com/search_xml.php?pid=" + this.cnfg.pid + "&key=" + key + "&version=2.55" + "&q=" + prms.st.replace(" ", "+") + "&limit=1&offers=1&offer_limit=1&mode=" + this.fixProduct(prms.prdct);
 		if(typeof prms.type !== 'undefined' && prms.type == 'https'){
-			url = "http://sws.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&q=" + st + "&limit=1&offers=1&offer_limit=1&mode=" + this.fixProduct(prms.prdct) + "&secured_images=1";
-		}
-		else{
-			url = "http://sws.pricegrabber.com/search_xml.php?pid=" + pid + "&key=" + key + "&version=2.55" + "&q=" + st + "&limit=1&offers=1&offer_limit=1&mode=" + this.fixProduct(prms.prdct);
+			url += "&secured_images=1";
 		}
 		return url;
 	};
