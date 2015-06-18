@@ -1,0 +1,14 @@
+﻿
+.search-box {
+	width:564px;
+	height:27px;
+	font-size:20px;
+	border:1px solid transparent;
+	margin:42px 0 0 24px;
+	color:#808080;
+	margin-top:200px;
+}
+
+.searched-item {
+	cursor:pointer;
+}

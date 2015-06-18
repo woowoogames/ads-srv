@@ -1,0 +1,44 @@
+﻿
+.wide-offer {
+	height:100px;
+	overflow:hidden;
+	padding:0;
+	margin:0;
+}
+
+.wide-offer .image {
+	width:200px;
+	height:100px;
+}
+
+.wide-offer .image img {
+	max-width:200px;
+	max-height:100px;
+}
+
+.wide-offer .title {
+	font-family:Arial;
+	font-size:16px;
+	color:#808080;
+}
+
+.wide-offer .price {
+	font-family:Arial;
+	font-size:22px;
+	color:green;
+}
+
+.wide-offer .storeName {
+	font-family:Arial;
+	font-size:15px;
+	color:#f00;
+}
+
+
+.square-offer {
+	width:300px;
+	height:300px;
+	border:1px solid green;
+	padding:0;
+	margin:0;
+}

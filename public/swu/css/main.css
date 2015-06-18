@@ -1,0 +1,25 @@
+﻿body {
+	padding:0;
+	margin:0;
+}
+
+.border {
+	border:1px solid red;
+}
+
+.fill-screen {
+    background-size: cover;
+    background-position: center;
+}
+
+.content-area {
+	width:100%;
+	min-height:1800px;
+	border:1px solid gray;
+	padding:0;
+	margin:0;
+}
+
+
+
+
