@@ -10,7 +10,7 @@ var feedsMngr = require('./feedsmngr'),
 	trndsMngr = require('./trnds/trndmngr'),
 	rsrcMngr = require('./rsrcmngr'),
 	lgcMngr = require('./lgcmngr'),
-	wghts = require('./wghts'),
+	// wghts = require('./wghts'),
 	baseApi = require("./baseapi"),
 	// path = require("path"),
 	utl = require("./utl"),
@@ -112,9 +112,9 @@ var feedsMngr = require('./feedsmngr'),
 		});
 		
 		// [[wghts]]
-		wghts.init(function (status) {
-			utl.log("[main.js][init][wghts.init] - status=[" + status + "]");
-		});
+		// wghts.init(function (status) {
+		// 	utl.log("[main.js][init][wghts.init] - status=[" + status + "]");
+		// });
 
 		feedsMngr.init(function (status) {
 			utl.log("[main.js][init][feedsMngr.init] - status=[" + status + "]");
