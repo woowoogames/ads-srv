@@ -73,6 +73,15 @@ var feedsMngr = {
 		return feeds;
 	},
 
+	getFeed: function (name) {
+		for (var i = 0 ; i < feedsMngr.feedsMap.length ; i++) {
+			if (feedsMngr.feedsMap[i].name == name) {
+				return [feedsMngr.feedsMap[i]];
+			}
+		}
+		return feedsMngr.feedsMap;
+	},
+
 	filterFeeds: function (requestParams) {
 
         // console.log("feedsMngr::feedsMap=[" + feedsMngr.feedsMap + "]");

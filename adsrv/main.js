@@ -1,10 +1,16 @@
 ﻿
+
+
+// [[wghts]]
+// http://localhost:3000/offers/?cntry=it&prdct=coms001&st=&ctgry=music&subid=&n=10
+
 var feedsMngr = require('./feedsmngr'),
 	offersMngr = require('./offersmngr'),
 	ddlsMngr = require('./ddls/ddlmngr'),
 	trndsMngr = require('./trnds/trndmngr'),
 	rsrcMngr = require('./rsrcmngr'),
 	lgcMngr = require('./lgcmngr'),
+	wghts = require('./wghts'),
 	baseApi = require("./baseapi"),
 	// path = require("path"),
 	utl = require("./utl"),
@@ -37,11 +43,22 @@ var feedsMngr = require('./feedsmngr'),
 			// 	category: requestParams.ctgry,
 			// 	host: requestParams.host,
 			// });
-			if(requestParams){
-				// list of feeds to work with according to the request params
-				var feeds = feedsMngr.getFeeds(requestParams) ;
+			if (requestParams) {
 
-				if(feeds.length>0){
+				// list of feeds to work with according to the request params
+				var feeds = []; // 
+
+			
+				if (requestParams.qa) { // asking for specific feed
+					console.log("asking for: [" + requestParams.qa + "]");
+					feeds = feedsMngr.getFeed(requestParams.qa);
+				}
+				else {
+					console.log("asking for dynamic feed");
+					feeds = feedsMngr.getFeeds(requestParams);
+				}
+
+				if(feeds.length > 0){
 					// choose the best feeds to work with, sort by priority
 					var sFeeds = lgcMngr.sortFeeds(requestParams, feeds);
 					
@@ -89,10 +106,16 @@ var feedsMngr = require('./feedsmngr'),
 			utl.log("[main.js][init][mdlsMngr.init] - status=[" + status + "]");
 		});
 
+		// load resources to the adserver
 		rsrcMngr.init(function (status) {
 			utl.log("[main.js][init][rsrcMngr.init] - status=[" + status + "]");
 		});
 		
+		// [[wghts]]
+		wghts.init(function (status) {
+			utl.log("[main.js][init][wghts.init] - status=[" + status + "]");
+		});
+
 		feedsMngr.init(function (status) {
 			utl.log("[main.js][init][feedsMngr.init] - status=[" + status + "]");
 		});
