@@ -2,8 +2,9 @@
 
 var baseApi = require('./baseapi'),
 	utl = require("./utl"),
-	path = require("path"),
-	wghts = require('./wghts'); // [[wghts]]
+	path = require("path");
+
+	// wghts = require('./wghts'); // [[wghts]]
 
 var lgcMngr = {
 
@@ -169,7 +170,9 @@ var lgcMngr = {
 		}
 
 		return rslts;
-	},
+	}
+	/*
+	,
 
 	chooseDdls: function (requestParams, dls) {
 
@@ -195,6 +198,7 @@ var lgcMngr = {
 
 		return ddl || ddl[0];
 	}
+	*/
 	
 };
 
