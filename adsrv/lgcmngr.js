@@ -2,7 +2,8 @@
 
 var baseApi = require('./baseapi'),
 	utl = require("./utl"),
-	path = require("path");
+	path = require("path"),
+	wghts = require('./wghts'); // [[wghts]]
 
 var lgcMngr = {
 
@@ -88,17 +89,28 @@ var lgcMngr = {
 	},
 
 	sortByRank: function (cntry, feeds) {
+
+		var rslt = [];
 		try{
 			if (feeds.length < 2) {
 				return feeds;
 			}
 
-			feeds.sort(function (a, b) {
+			var max = 0, ct = lgcMngr.mRankMap[cntry];
+
+			// first, choose only "ranked" feeds
+			for (var i = 0 ; i < feeds.length ; i++) {
+				if (ct[feeds[i].name]) {
+					rslt.push(feeds[i]);
+				}
+			}
+
+			rslt.sort(function (a, b) {
 				return lgcMngr.gtRank(cntry, a.name) < lgcMngr.gtRank(cntry, b.name);
 			});
 		}
 		catch (e) { }
-		return feeds;
+		return rslt;
 	},
 
 	gtRank: function (cntry, feedName) {
@@ -135,7 +147,12 @@ var lgcMngr = {
 			}
 		}
 
-		if (pOffers.ddls) {
+		// [[wghts]]
+		if (pOffers.ddls && pOffers.ddls.length > 0) {
+
+			// var ddl = lgcMngr.chooseDdls(requestParams, pOffers.ddls);
+			// rslts.push(ddl);
+
 			var count = 2;
 			if (rslts.length < 4) {
 				count = 6;
@@ -152,6 +169,31 @@ var lgcMngr = {
 		}
 
 		return rslts;
+	},
+
+	chooseDdls: function (requestParams, dls) {
+
+		if (dls.length == 1) {
+			return dls[0];
+		}
+
+		var k = Math.floor(Math.random() * 1000);
+		if (k % 7 == 0) {
+			return dls[Math.floor(Math.random() * dls.length)]; // 14% of the traffic has no weights
+		}
+
+		var w = wghts.gtWght(requestParams.cntry);
+		var max = 0, ddl = null;
+
+		for (var i = 0 ; i < dls.length ; i++) {
+			var crnt = dls[i];
+			if (w[crnt.uid] && w[crnt.uid] > max) {
+				ddl = crnt;
+				max = w[crnt.uid];
+			}
+		}
+
+		return ddl || ddl[0];
 	}
 	
 };
