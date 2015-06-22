@@ -22,12 +22,16 @@ $(document).ready(function(){
 	var loadButtons = function(feed){
 		var isActiveValue = $("[name='isActive']").bootstrapSwitch('state');
 		var isSerpValue = $("[name='isSerp']").bootstrapSwitch('state');
+		var isHttpsValue = $("[name='isHttps']").bootstrapSwitch('state');
 		var st = $("[name='searchTerm']").bootstrapSwitch('state');
 		if(feed.active != isActiveValue){
 			$("[name='isActive']").bootstrapSwitch('toggleState');
 		}
 		if(feed.isSerp != isSerpValue){
 			$("[name='isSerp']").bootstrapSwitch('toggleState');
+		}
+		if (feed.isHttps != isHttpsValue) {
+			$("[name='isHttps']").bootstrapSwitch('toggleState');
 		}
 		if(feed.requireSearchTerm !=st){
 			$("[name='st']").bootstrapSwitch('toggleState');
@@ -69,12 +73,14 @@ $(document).ready(function(){
 			}
 			var isActive = $("[name='isActive']").bootstrapSwitch('state');
 			var isSerp = $("[name='isSerp']").bootstrapSwitch('state');
+			var isHttps = $("[name='isHttps']").bootstrapSwitch('state');
 			var st = $("[name='searchTerm']").bootstrapSwitch('state');
 			if(result){
 				//local feeds update
 				feeds[index].st = st;
 				feeds[index].isActive = isActive;
 				feeds[index].isSerp = isSerp;
+				feeds[index].isHttps = isHttps;
 				feeds[index].coverage.cntry.values = geos;
 				feeds[index].coverage.prdct.values = products;
 				$("#spinner").show();
@@ -88,6 +94,7 @@ $(document).ready(function(){
 					"requireSearchTerm": st,
 					"active": isActive,
 					"isSerp": isSerp,
+					"https": isHttps,
 					"handler": feedToUpdate.handler,
 					"coverage": {
 						"cntry": {
@@ -182,6 +189,7 @@ var initPageView = function(){
 	$("#successs").hide();
 	$("[name='isActive']").bootstrapSwitch();
 	$("[name='isSerp']").bootstrapSwitch();
+	$("[name='isHttps']").bootstrapSwitch();
 	$("[name='searchTerm']").bootstrapSwitch();
 };
 
