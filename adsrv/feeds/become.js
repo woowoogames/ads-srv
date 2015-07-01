@@ -11,7 +11,7 @@ var becomeurope = function () {
 		us: "us.channel.become.com/livexml/3.1/montiera-us.portal/",
 		uk: "uk.channel.become.eu/livexml/3.1/montiera-uk.portal/",
 		de: "de.channel.become.eu/livexml/3.1/montiera-de.portal/",
-		au: "de.channel.become.eu/livexml/3.1/montiera-at.portal/",
+		at: "de.channel.become.eu/livexml/3.1/montiera-at.portal/",
 		fr: "fr.channel.become.eu/livexml/3.1/montiera-fr.portal/",
 		it: "it.channel.become.eu/livexml/3.1/montiera-it.portal/"
 	};
