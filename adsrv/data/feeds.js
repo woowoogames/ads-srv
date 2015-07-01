@@ -98,7 +98,12 @@
 			"cntry": {
 				"type": "white",
 				"values": [
-                    "us"
+                    "us",
+					"de",
+					"fr",
+					"uk",
+					"it",
+					"at"
 				]
 			},
 			"prdct": {
@@ -115,6 +120,7 @@
 		"requireSearchTerm": true,
 		"active": true,
 		"isSerp": false,
+		"https": true,
 		"handler": "./feeds/kelkoo",
 		"coverage": {
 			"cntry": {
@@ -125,7 +131,8 @@
 					"nl",
 					"ru",
 					"es",
-					"se"
+					"se",
+					"de"
 				]
 			},
 			"prdct": {
@@ -142,6 +149,7 @@
 		"requireSearchTerm": true,
 		"active": true,
 		"isSerp": false,
+		"https": true,
 		"handler": "./feeds/shopzilla",
 		"coverage": {
 			"cntry": {
@@ -167,6 +175,7 @@
 		"requireSearchTerm": true,
 		"active": false,
 		"isSerp": false,
+		"https": false,
 		"handler": "./feeds/pricegong",
 		"coverage": {
 			"cntry": {
@@ -206,6 +215,7 @@
 		"requireSearchTerm": true,
 		"active": true,
 		"isSerp": false,
+		"https": true,
 		"handler": "./feeds/pricegrabber",
 		"coverage": {
 			"cntry": {
@@ -236,7 +246,8 @@
 			"cntry": {
 				"type": "white",
 				"values": [
-					"uk"
+					"uk",
+					"us"
 				]
 			},
 			"prdct": {
@@ -319,7 +330,7 @@
 		"name": "buscape",
 		"type": "feed",
 		"requireSearchTerm": true,
-		"active": true,
+		"active": false,
 		"isSerp": false,
 		"https": false,
 		"handler": "./feeds/buscape",
