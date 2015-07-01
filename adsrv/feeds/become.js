@@ -1,3 +1,4 @@
+
 var utils = require('util'),
 baseApi = require("../baseapi"),
 utl = require("../utl"),
@@ -5,17 +6,24 @@ frmtr = require("../formatter");
 
 
 var becomeurope = function () {
+
 	var geoUrls = {
 		us: "us.channel.become.com/livexml/3.1/montiera-us.portal/",
-		uk: "uk.channel.become.com/livexml/3.1/montiera-uk.portal/",
-		de: "de.channel.become.com/livexml/3.1/montiera-de.portal/",
-		fr: "fr.channel.become.com/livexml/3.1/montiera-fr.portal/",
-		it: "it.channel.become.com/livexml/3.1/montiera-it.portal/"
+		uk: "uk.channel.become.eu/livexml/3.1/montiera-uk.portal/",
+		de: "de.channel.become.eu/livexml/3.1/montiera-de.portal/",
+		au: "de.channel.become.eu/livexml/3.1/montiera-at.portal/",
+		fr: "fr.channel.become.eu/livexml/3.1/montiera-fr.portal/",
+		it: "it.channel.become.eu/livexml/3.1/montiera-it.portal/"
 	};
+
 
 	var that = this;
 
 	this.getOffers = function (prms, clbk) {
+
+//		http://montiera:rze64jtkf@de.channel.become.eu/livexml/3.1/montiera-de.portal/devcenter/index
+//		http://montiera:rze64jtkf@de.channel.become.eu/livexml/3.1/montiera-de.portal/query?qry=xbox&img=I&cf=oi&pge=5&campID=coms038&rtype=JSON
+// 		http://montiera:rze64jtkf@us.channel.become.com/livexml/3.1/montiera-us.portal/query?qry=xbox&img=I&cf=oi&pge=5&campID=coms038&rtype=JSON
 
 		this.mPrms = prms;
 		var url = 'http://montiera:rze64jtkf@' + this.getUrl();
