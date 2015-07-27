@@ -116,13 +116,6 @@ app.post('/tools/:fn',tools.getData);
 
 app.get('/priceGrabberTestPage',priceGrabberTest);
 
-//app.get('/300', adsrv.process..);
-//app.get('/ddls', adsrv.process..);
-//app.get('/trnds', adsrv.process..);
-//app.get('/offers:sz', adsrv.process..);  
-
-
-
 
 
 adsrv.init();

@@ -6,8 +6,8 @@ var Footer = React.createClass({
         
     render: function () {
 
-    	return <footer class="container-fluid footer fill-screen">
-                    <div class="row">
+    	return <footer className="container-fluid footer fill-screen">
+                    <div className="row">
                         <h1>FOOTER</h1>
                     </div>
                </footer>;

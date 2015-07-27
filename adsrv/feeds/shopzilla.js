@@ -11,6 +11,7 @@ var shopzilla = function () {
 
 	var that = this;
 
+
 	// var clientCallback,
 	this.geosMap = {
 

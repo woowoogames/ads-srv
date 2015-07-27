@@ -19,7 +19,6 @@ var SBX = React.createClass( {
 var Searched = React.createClass( {
 
 	handleClick : function (e) {
-		debugger;
 		var st = e.target.innerText;
 		this.props.hndlr.search(st);
 	},

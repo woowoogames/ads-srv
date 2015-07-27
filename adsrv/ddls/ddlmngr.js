@@ -54,7 +54,11 @@ var ddlsMngr = {
 		}
 	},
 
-	getOffers : function (prms) {
+	getOffers: function (prms) {
+
+
+
+
 		ddlsMngr.prms = prms;
 		try {
 			prms.ctgry = frmtr.ctrgyNameFormat(prms.ctgry);
@@ -67,6 +71,7 @@ var ddlsMngr = {
 			if(!cntry){
 				cntry = ddlsMngr.mDdlsMapIdx["int"];
 			}
+
 			if(typeof ddlsMngr.mDdlsMapIdx['int'] !== 'undefined'){
 				if(typeof ddlsMngr.mDdlsMapIdx['int'][prms.ctgry] !== 'undefined'){
 					cntry[prms.ctgry] = ddlsMngr.mDdlsMapIdx['int'][prms.ctgry];
@@ -103,8 +108,8 @@ var ddlsMngr = {
 					}
 				}
 			}
-			offers = ddlsMngr.smartConcat(offers,nonCategories);
 
+			offers = ddlsMngr.smartConcat(offers, nonCategories);
 			offers = ddlsMngr.filterByProduct(offers,prms);
 
 			var rslt = ddlsMngr.format(offers,prms);

@@ -3,10 +3,7 @@
   "version": "0.0.0",
   "description": "nodesrv",
   "main": "app.js",
-  "author": {
-    "name": "user",
-    "email": ""
-  },
+  "author": "user",
   "dependencies": {
     "bluebird": "^2.9.14",
     "cron": "^1.0.6",
@@ -27,6 +24,20 @@
     "underscore": "^1.7.0",
     "vash": "^0.7.12-1",
     "xml2js": "^0.4.4",
-    "xml2json": "^0.5.1"
-  }
+    "xml2json": "^0.5.1",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/MontieraTech/verticalAdServer.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MontieraTech/verticalAdServer/issues"
+  },
+  "homepage": "https://github.com/MontieraTech/verticalAdServer"
 }

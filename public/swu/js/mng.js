@@ -2,6 +2,16 @@
 
 'use strict';
 
+
+
+
+var rpt = {
+	snd : function (typ, feed, cmpnnt){
+
+	}
+}
+
+
 var SWU = React.createClass( {
 
     getInitialState : function () {
@@ -9,6 +19,10 @@ var SWU = React.createClass( {
         	offersData : [],
         	searchTerms : []
         }
+    },
+
+    rpt : function (typ, feed, cmpnnt){
+    	rpt.snd(typ, feed, cmpnnt);
     },
 
     // adsrv.js    
@@ -24,12 +38,13 @@ var SWU = React.createClass( {
     	}
 
     	this.setState({ offersData : newData });
+
+    	// setTimeout(function (){ dragDrop.init(); }, 200);
     },
     
     // sbx.js
     search : function (st) {
     	
-    	debugger;
     	var strms = this.state.searchTerms;
     	if($.inArray(st, strms) < 0){
     		strms.push(st);
@@ -40,12 +55,14 @@ var SWU = React.createClass( {
         adsrv.gt(st, this);
     },
 
+	// drag
+	//<div id="drgbl" ondrop="drop(event)" ondragover="allowDrop(event)"></div> 
     render: function () {
-    	return <div class="container-fluid">
+    	return <div className="container-fluid">
                     <TopBar></TopBar>
                     <SBX hndlr={this}></SBX>
 					<Searched hndlr={this} terms={this.state.searchTerms}></Searched>
-                    <ContentArea offers={this.state.offersData}></ContentArea>
+					<ContentArea offers={this.state.offersData}></ContentArea>
                     <Footer></Footer>
                 </div>
     }

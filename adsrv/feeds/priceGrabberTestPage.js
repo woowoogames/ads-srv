@@ -17,37 +17,43 @@ entities = require("entities");
 var pricegrabber = {
 
 	cnfg : {
-		ip: "204.145.74.4", /////////////////////////////////
+		// ip: "204.145.74.4", 
+		ip : "81.218.191.12",
 		private_key : "",
 		pid : "",
 		version : "2.55"
 	},
 
 	get: function (request, response) {
+		try{
+			if(typeof request.query['search_kw'] !== 'undefined'){
 
-		if(typeof request.query['search_kw'] !== 'undefined'){
+				var st = request.query['search_kw'];
+				st = st.replace(" ","+");
 
-			var st = request.query['search_kw'];
-			st = st.replace(" ","+");
+				var cntry = request.query['cntry'];
+				pricegrabber.setConfig(cntry);
 
-			var cntry = request.query['cntry'];
-			pricegrabber.setConfig(cntry);
-
-			var currentKey = pricegrabber.getCurrentKey();
-			var keySHA1 = sha1(currentKey);
-			var token = crypto.randomBytes(8).toString('hex');
-			var finalKey = keySHA1.substring(0,18) + token + keySHA1.substring(18);
-			var url = pricegrabber.getURL(finalKey,st);
-			console.log(url);
-			// alert(url);
-			baseApi.httpGetTimeout(url,function(err, res, body){
-				//response.end(body);
-				var json = baseApi.xmlToJSON(body);
-				response.json(json);
-			});
+				var currentKey = pricegrabber.getCurrentKey();
+				console.log("test page -- " + url);
+				var keySHA1 = sha1(currentKey);
+				var token = crypto.randomBytes(8).toString('hex');
+				var finalKey = keySHA1.substring(0,18) + token + keySHA1.substring(18);
+				var url = pricegrabber.getURL(finalKey,st);
+				console.log("test page -- " + url);
+				// alert(url);
+				baseApi.httpGetTimeout(url,function(err, res, body){
+					//response.end(body);
+					var json = baseApi.xmlToJSON(body);
+					response.json(json);
+				});
+			}
+			else{
+				response.json({status:"error"});	
+			}
 		}
-		else{
-			response.json({status:"error"});	
+		catch (e) {
+			console.log(e);
 		}
 	},
 

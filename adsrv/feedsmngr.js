@@ -85,7 +85,6 @@ var feedsMngr = {
 	filterFeeds: function (requestParams) {
 
         // console.log("feedsMngr::feedsMap=[" + feedsMngr.feedsMap + "]");
-
 		// 1. get all active feeds.
 		var activeFeeds = _.filter(feedsMngr.feedsMap, function (feed) {
 			return feed.active;

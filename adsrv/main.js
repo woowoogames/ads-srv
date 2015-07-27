@@ -48,7 +48,6 @@ var feedsMngr = require('./feedsmngr'),
 				// list of feeds to work with according to the request params
 				var feeds = []; // 
 
-			
 				if (requestParams.qa) { // asking for specific feed
 					console.log("asking for: [" + requestParams.qa + "]");
 					feeds = feedsMngr.getFeed(requestParams.qa);
@@ -100,7 +99,7 @@ var feedsMngr = require('./feedsmngr'),
 
 	init: function () {
 
-		//loading all feeds moudle each modoule init will be execute if exiest
+		// loading all feeds moudle each modoule init will be execute if exiest
 
 		offersMngr.mdlsMngr.init(function (status) {
 			utl.log("[main.js][init][mdlsMngr.init] - status=[" + status + "]");

@@ -12,11 +12,13 @@
         "currentId" : null,
         "image" : null,
         "Init": function () {
-            try {
+        	try {
+
                 this.Events();
                 this.Table();
                 $.ajax({
-                    url:"http://204.145.74.4/tools/GetProducts",
+                	// url:"http://204.145.74.4/tools/GetProducts",
+                	url: "http://localhost:3000/tools/GetProducts",
                     dataType: 'json',
                     success : function(prdcts){
                         mngr.prdcts = prdcts;
@@ -376,7 +378,7 @@
 
 $(document).ready(function () {
 
-    Services.GetCategories(function (tree) {
+	Services.GetCategories(function (tree) {
         var arr = [], traverse = function (root, callback) {
             function traverse(root, nodeName) {
                 $.each(root.children, function (idx, node) {

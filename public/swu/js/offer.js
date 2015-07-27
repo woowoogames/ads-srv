@@ -2,14 +2,29 @@
 
 'use strict';
 
+// drag
+
+//draggable="true" ondragstart="drag(event)"
+
+
 var WideOffer = React.createClass( {
     
+	handleClick : function (){
+		try{
+			SWU.rpt("clk", this.props.data.meta.feed, "wide-offer");
+			window.open(this.props.data.lnk);
+		}
+		catch(e){}
+	},
+
 	render: function () {
 
 		var desc = this.props.data.desc.short || this.props.data.desc.long;
 		var img = this.props.data.img.big || this.props.data.img.small;
 
-		return <div className="row">
+		var id = "offer" + Math.floor(Math.random() * 100000);
+		
+		return <div className="row wow fadeInLeft" id={id} draggable="true" className="myDrgbl" onClick={this.handleClick} >
 					<div className="wide-offer col-md-9">
 						
 						<div className="image col-md-1"><img src={img} /></div>

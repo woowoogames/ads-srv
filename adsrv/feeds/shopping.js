@@ -184,10 +184,13 @@ var shopping = function () {
     		key: "30478f92-ebea-47aa-97cd-35c81ed2c6b3", // api key
     		trk: "8083573" // tracking id
     	},
+
+		// de disabled by ebay.com
     	de: {
     		key: "82054fb2-171a-461a-947c-d6f1d2bdda63", // api key
     		trk: "8084317" // tracking id
     	},
+
     	uk: {
     		key: "90747bd0-98fc-4114-b818-ae5db5354cda", // api key
     		trk: "8084316" // tracking id
@@ -195,6 +198,8 @@ var shopping = function () {
     };
 
     this.getURL = function (typ) {
+
+    	// http://api.ebaycommercenetwork.com/publisher/3.0/rest/GeneralSearch?apiKey=30478f92-ebea-47aa-97cd-35c81ed2c6b3&numItems=5&trackingId=8083573&subTrackingId=123&keyword=xbox
 
     	var map = that.geoMap[that.mPrms.cntry] || that.geoMap["us"];
     	var url = "http://api.ebaycommercenetwork.com/publisher/3.0/rest/GeneralSearch" +

@@ -29,3 +29,24 @@
     opacity: 0.9;
 }
 
+.topcatswrpr {
+	position:absolute;
+	left:10px;
+	top:10px;
+	width:800px;
+	height:45px;
+	border:1px solid transparent;
+}
+
+.topcatsfield {
+	height:45px;
+	border-right:1px solid transparent;
+	float:left;
+	cursor:pointer
+}
+
+.categories {
+	padding:0;
+	margin:0;
+	float:left;
+}
